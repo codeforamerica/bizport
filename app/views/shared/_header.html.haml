@@ -1,9 +1,10 @@
 .top-bar
   .top-bar-left
     %ul.dropdown.menu{ "data-dropdown-menu" => true }
-      %li.menu-text Long Beach BizPort
+      %li.menu-text
+        %a{ href: '/' } Long Beach BizPort
       %li
-        %a{ href: "#"} Start a Business
+        %a{ href: start_business_plan_path } Start a Business
         %ul.menu.vertical
           %li
             %a{ href: start_business_plan_path } Create a Business Plan
