@@ -1,9 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:700|Open+Sans:400,300italic,700);
 
 body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3 {
-    color: $color-almostblack;
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: $color-black;
 }
