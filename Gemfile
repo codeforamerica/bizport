@@ -6,6 +6,7 @@ gem 'rails', '>= 5.0.0.beta3'
 gem 'rails_12factor'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
+gem 'therubyracer'
 
 gem 'foundation-rails'
 gem 'sass-rails'
@@ -29,6 +30,9 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
