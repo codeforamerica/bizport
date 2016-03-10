@@ -1,24 +1,10 @@
-## README
+setup key-based SSH
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Set secret key on remote server
+http://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-key-base-for-production-environment-on-h/26172408#26172408
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Configure SELinux
+http://linux.die.net/man/8/getsebool
+https://wiki.apache.org/httpd/13PermissionDenied
