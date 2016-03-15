@@ -1,5 +1,16 @@
 .title-bar,
 .top-bar,
 .top-bar .menu {
-    background-color: #333333;
+  background-color: #333333;
+}
+
+.off-canvas {
+  background-color: #333333;
+
+  a {
+    color: #DDDDDD;
+  }
+  a:hover {
+    color: #FFFFFF;
+  }
 }
