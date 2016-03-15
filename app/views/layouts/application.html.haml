@@ -9,4 +9,31 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    .off-canvas-wrapper
+      .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
+        / off-canvas title bar for 'small' screen
+        .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "widemenu"}
+          .title-bar-left
+            %span.title-bar-title Long Beach BIZPORT
+          .title-bar-right
+            %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
+        / off-canvas right menu
+        #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
+          %ul.vertical.dropdown.menu{"data-dropdown-menu" => true}
+            = render 'shared/header_nav_biz_steps'
+        / "wider" top-bar menu for 'medium' and up
+        #widemenu.top-bar
+          .top-bar-left
+            %ul.dropdown.menu{"data-dropdown-menu" => true}
+              %li.menu-text Foundation
+              %li.has-submenu
+                %a{:href => "#"} Item 1
+                %ul.menu.submenu.vertical{"data-submenu" => true}
+                  = render 'shared/header_nav_biz_steps'
+              %li
+                %a{:href => "#"} About
+          .top-bar-right
+        / original content goes in this container
+        .off-canvas-content{"data-off-canvas-content" => true}
+          .row.column
+            = yield
