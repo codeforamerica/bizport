@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'static#about'
 
+  resources :questions
+
   namespace :start do
     get 'business-plan' => '/static#business_plan'
     get 'finance-your-business' => '/static#finance_your_business'

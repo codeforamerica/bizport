@@ -22,6 +22,8 @@
           %ul.vertical.dropdown.menu{"data-dropdown-menu" => true}
             %li
               %a{ href: about_path } About
+            %li
+              %a{ href: questions_path } FAQ
             %li.title Start a Business
             = render 'shared/header_nav_biz_steps'
         / "wider" top-bar menu for 'medium' and up
@@ -35,6 +37,8 @@
                   = render 'shared/header_nav_biz_steps'
               %li
                 %a{ href: about_path } About
+              %li
+                %a{ href: questions_path } FAQ
           .top-bar-right
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
