@@ -2,6 +2,11 @@ class StaticController < ApplicationController
   def home
   end
 
+  def about
+  end
+
+
+  # START A BUSINESS STEPS
   def business_plan
   end
 

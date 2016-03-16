@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
+  get '/about' => 'static#about'
+
   namespace :start do
     get 'business-plan' => '/static#business_plan'
     get 'finance-your-business' => '/static#finance_your_business'

@@ -1,13 +1,18 @@
 .title-bar,
 .top-bar,
 .top-bar .menu {
-  background-color: #333333;
+  background-color: $color-black;
 }
 
 .off-canvas {
-  background-color: #333333;
+  background-color: $color-black;
+  height: 100%;
 
-  a {
+  li.title {
+    font-weight: bold;
+  }
+
+  li, a {
     color: #DDDDDD;
   }
   a:hover {
