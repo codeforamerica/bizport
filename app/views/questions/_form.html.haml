@@ -6,9 +6,11 @@
         - @question.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :question_text
-    = f.text_field :question_text
+  .row{ style: "text-align: center;" }
+    What do you need help with to start your business?
+  .row
+    .columns.small-12.medium-10
+      = f.text_field :question_text
 
-  .actions
-    = f.submit 'Save'
+    .columns.small-12.medium-2
+      = f.submit('Save', class: 'button button-primary')

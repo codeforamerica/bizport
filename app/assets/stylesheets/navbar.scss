@@ -8,8 +8,14 @@
   background-color: $color-black;
   height: 100%;
 
+  .nav-mobile-business-step {
+    padding-left: 15px;
+  }
+
   li.title {
     font-weight: bold;
+    padding: 0.7rem 1rem;
+    line-height: 1;
   }
 
   li, a {

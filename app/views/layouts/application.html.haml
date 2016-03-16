@@ -19,12 +19,15 @@
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
-          %ul.vertical.dropdown.menu{"data-dropdown-menu" => true}
+          %ul.vertical.menu{"data-dropdown-menu" => true}
+            %li
+              %a{ href: root_path } Home
             %li
               %a{ href: about_path } About
             %li
               %a{ href: questions_path } FAQ
-            %li.title Start a Business
+            %li.title
+              Start a Business
             = render 'shared/header_nav_biz_steps'
         / "wider" top-bar menu for 'medium' and up
         #widemenu.top-bar
@@ -43,4 +46,4 @@
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
           = yield
-    =render 'shared/footer'
+    = render 'shared/footer'
