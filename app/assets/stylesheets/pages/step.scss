@@ -11,6 +11,17 @@
   margin: 0 auto;
 }
 
+.step-intro {
+  margin-top: 20px;
+}
+
+.step-section-learn,
+.step-section-do {
+  margin-top: 10px;
+  border-top: 1px solid $color-black;
+  padding-top: 20px;
+}
+
 .icon-business-plan {
   display: inline-block;
   height: 70px;
@@ -25,6 +36,19 @@
   width: 70px;
   background-size: cover;
   background-image: url(image_path('noun_220206_Funding.svg'));
+}
+
+.icon-container-circle {
+  height: 58px;
+  width: 58px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.icon-container-square {
+  height: 58px;
+  width: 58px;
+  padding: 5px;
 }
 
 .icon-learn {
