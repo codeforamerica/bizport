@@ -2,10 +2,43 @@
   background-color: $color-lightblue;
   color: #FFFFFF;
   text-align: right;
+  padding-right: 3%;
 }
 
 .content-container {
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.icon-business-plan {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-image: url(image_path('noun_170213_Business_Plan.svg'));
+}
+
+.icon-finance {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-image: url(image_path('noun_220206_Funding.svg'));
+}
+
+.icon-learn {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-size: cover;
+  background-image: url(image_path('noun_216972_Learn.svg'));
+}
+
+.icon-do {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-size: cover;
+  background-image: url(image_path('noun_216965_Do.svg'));
 }
