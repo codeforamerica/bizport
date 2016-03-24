@@ -1,1 +1,17 @@
-CONTACT US
+%h1 Contact Us
+
+.content-container
+  Feel free to reach out to us at
+  %a{ href:"mailto:longbeach@codeforamerica.org?subject=Comments%20on%20Long%20Beach%20business%20portal" } LongBeach@codeforamerica.org
+  with comments.
+
+  .row.margin-top-20
+
+    To sign up for our newsletter and project updates, please enter your email below:
+
+    = render 'subscriptions/form'
+
+    - if flash[:notice].present?
+      .callout.success
+        = flash[:notice]
+

@@ -3,6 +3,7 @@ class StaticController < ApplicationController
   end
 
   def contact
+    @subscription = Subscription.new
   end
 
 
