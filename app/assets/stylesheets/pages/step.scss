@@ -22,6 +22,20 @@
   padding-top: 20px;
 }
 
+.step-section-do {
+  ul {
+    margin-left: 0px;
+  }
+
+  li {
+    list-style: none;
+
+    > input[type='checkbox'] {
+      margin-right: 10px;
+    }
+  }
+}
+
 .icon-business-plan {
   display: inline-block;
   height: 70px;
