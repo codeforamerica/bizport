@@ -1,5 +1,14 @@
 .footer {
-    background-color: $color-black;
-    height: 100%;
-    color: #DDDDDD;
+  background-color: $color-black;
+  height: 100%;
+  color: $color-lightgray;
+
+  a {
+    text-decoration: underline;
+    color: $color-lightgray;
+
+    &:hover {
+      color: $color-darkgray;
+    }
+  }
 }
