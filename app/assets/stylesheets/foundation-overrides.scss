@@ -1,11 +1,13 @@
 .menu > li > a {
-  color: #DDDDDD;
+  color: $color-lightgray;
 }
 
 .is-dropdown-submenu-parent.is-down-arrow > a::after {
-  border-top-color: #DDDDDD;
+  border-top-color: $color-lightgray;
 }
 
 .button {
+  @include font-raleway;
   background-color: $color-darkblue;
 }
+.button.secondary { background-color: $color-darkgray; }

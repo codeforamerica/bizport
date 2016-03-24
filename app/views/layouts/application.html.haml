@@ -15,7 +15,7 @@
         .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "widemenu"}
           .title-bar-left
             %span.title-bar-title.logo-longbeach
-              %a{ href: "http://foundation.zurb.com/index.html" }
+              %a{ href: root_path }
                 %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
@@ -25,7 +25,7 @@
             %li
               %a{ href: root_path } Home
             %li
-              %a{ href: about_path } About
+              %a{ href: contact_path } Contact
             %li
               %a{ href: questions_path } FAQ
             %li.title
@@ -36,14 +36,14 @@
           .top-bar-left
             %ul.dropdown.menu{"data-dropdown-menu" => true}
               %li.topbar-title.logo-longbeach
-                %a{ href: "http://foundation.zurb.com/index.html" }
+                %a{ href: root_path }
                   %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
               %li.has-submenu
                 %a{ href: start_business_plan_path } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
                   = render 'shared/header_nav_biz_steps'
               %li
-                %a{ href: about_path } About
+                %a{ href: contact_path } Contact
               %li
                 %a{ href: questions_path } FAQ
           .top-bar-right
