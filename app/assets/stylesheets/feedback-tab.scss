@@ -1,0 +1,19 @@
+.feedback-tab {
+  position: absolute;
+  right: 0px;
+  top: 300px;
+  z-index: 1;
+
+  a {
+    transform: rotate(90deg);
+    transform-origin: right top 0;
+    display: block;
+
+    background-color: $color-lightblue;
+    color: $color-black;
+    padding: 5px;
+    padding-top: 0px; // transform rotates so `top` is `right`
+    border: 1px solid black;
+    border-top: 0px;
+  }
+}
