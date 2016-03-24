@@ -1,0 +1,11 @@
+.menu > li > a {
+  color: #DDDDDD;
+}
+
+.is-dropdown-submenu-parent.is-down-arrow > a::after {
+  border-top-color: #DDDDDD;
+}
+
+.button {
+  background-color: $color-darkblue;
+}
