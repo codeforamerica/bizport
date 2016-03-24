@@ -8,6 +8,4 @@
 
 .button {
   @include font-raleway;
-  background-color: $color-darkblue;
 }
-.button.secondary { background-color: $color-darkgray; }
