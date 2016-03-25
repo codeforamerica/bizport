@@ -9,8 +9,9 @@
     transform-origin: right top 0;
     display: block;
 
-    background-color: $color-lightblue;
-    color: $color-black;
+    background-color: $color-darkgray;
+    color: #FFFFFF;
+    box-shadow: 1px 1px 3px #778187;
     padding: 5px;
     padding-top: 0px; // transform rotates so `top` is `right`
     border: 1px solid black;
