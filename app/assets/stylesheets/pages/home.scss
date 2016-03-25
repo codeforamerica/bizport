@@ -1,0 +1,20 @@
+.home {
+  .content-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    background-image: url(image_path('home-hero.jpg'));
+
+    .hero-copy {
+      width: 80%;
+      padding: 20px;
+      margin: 20px auto;
+
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+    }
+  }
+}
