@@ -1,0 +1,96 @@
+@mixin icon {
+  display: inline-block;
+  background-size: cover;
+}
+
+.icon-business-plan {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_170213_Business_Plan.svg'));
+}
+
+.icon-license {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_9041_License.svg'));
+}
+
+.icon-finance {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_220206_Funding.svg'));
+}
+
+.icon-location {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_220213_Location.svg'));
+}
+
+.icon-name {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_220210_Name.svg'));
+}
+
+.icon-register {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_154111_Register.svg'));
+}
+
+.icon-location {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_220213_Location.svg'));
+}
+
+.icon-building {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_179119_Building.svg'));
+}
+
+.icon-key {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_206771_Key.svg'));
+}
+
+.icon-container-circle {
+  @include icon;
+  height: 58px;
+  width: 58px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.icon-container-square {
+  @include icon;
+  height: 58px;
+  width: 58px;
+  padding: 5px;
+}
+
+.icon-learn {
+  @include icon;
+  height: 48px;
+  width: 48px;
+  background-image: url(image_path('noun_216972_Learn.svg'));
+}
+
+.icon-do {
+  @include icon;
+  height: 48px;
+  width: 48px;
+  background-image: url(image_path('noun_216965_Do.svg'));
+}
