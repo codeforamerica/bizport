@@ -8,8 +8,8 @@
     %p The time has come to find a place for your business. It may sound easy, but there are a lot of things to take into account before signing the lease.
   
   .row.step-section.step-section-learn
-    .columns.medium-2.large-1
-      .icon-container-circle.background-lightblue.show-for-medium
+    .columns.medium-2.large-1.show-for-medium
+      .icon-container-circle.background-lightblue
         %i.icon-learn.float-right
     .columns.medium-10.large-11
       %h2 Learn
@@ -35,15 +35,21 @@
           %a{ href: 'http://www.longbeach.gov/finance/business-info/business-licenses/bids/' }
 
   .row.step-section.step-section-do
-    .columns.medium-2.large-1
-      .icon-do.float-right.show-for-medium
+    .columns.medium-2.large-1.show-for-medium
+      .icon-container-square.background-lightblue
+        .icon-do.float-right
     .columns.medium-10.large-11
       %h2 Do
 
       .callout.primary NOTE: Do not sign a lease until you've checked with the city to make sure the building can be used for your type of business. 
 
-      %ol
-        %li Identify several locations well-suited for your business. Real estate agents can help with this process.
-        %li Check with the planning and zoning desk on the 4th floor of city hall (lin%li to see if your business is allowed in the locations you've selected.
-        %li Negotiate the lease with the landlord. Real estate brokers can help with this step. (more advice is needed here on common negotiable lease terms)
-        %li Sign the lease.
+      %ul
+        %li
+          %input{ type:'checkbox' } Identify several locations well-suited for your business. Real estate agents can help with this process.
+        %li
+          %input{ type:'checkbox' } Check with the planning and zoning desk on the 4th floor of city hall (lin%li
+          %input{ type:'checkbox' } to see if your business is allowed in the locations you've selected.
+        %li
+          %input{ type:'checkbox' } Negotiate the lease with the landlord. Real estate brokers can help with this step. (more advice is needed here on common negotiable lease terms)
+        %li
+          %input{ type:'checkbox' } Sign the lease.
