@@ -14,7 +14,14 @@
     .columns.medium-10.large-11
       %h2 Learn
 
-      %p Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish (writing a business plan), (planning your finances), and (selecting a location) before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
+      %p 
+        Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish
+        %a{ href: start_business_plan_path } writing a business plan
+        , 
+        %a{ href: start_finance_your_business_path } planning your finances
+        , and
+        %a{ href: start_find_a_location_path } selecting a location
+        before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
 
   .row.step-section.step-section-do
     .columns.medium-2.large-1.show-for-medium
@@ -27,4 +34,4 @@
         %li 
           %input{ type:'checkbox' } 
             Register your name with the county using the 
-            %a{ href: 'http://lavote.net/home/county-clerk/fictitious-business-names/general-info' } Fictitious Business Name Application (link to document)
+            %a{ href: 'http://lavote.net/home/county-clerk/fictitious-business-names/general-info' } Fictitious Business Name Application

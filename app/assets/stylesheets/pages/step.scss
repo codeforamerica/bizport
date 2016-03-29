@@ -25,13 +25,18 @@
 .step-section-do {
   ul {
     margin-left: 0px;
+
+    li ul {
+      margin-left: 3rem;
+    }
   }
 
-  ul li {
+  .columns > ul > li {
     list-style: none;
 
     > input[type='checkbox'] {
       margin-right: 10px;
+      margin-bottom: 0;
     }
   }
 }

@@ -9,3 +9,9 @@
 .button {
   @include font-raleway;
 }
+
+// this style seems like it should already exist in Foundation (it's in the vars)
+// but just isn't rendering (not even overridden, afaik)
+li {
+  margin-bottom: $list-margin-bottom;
+}
