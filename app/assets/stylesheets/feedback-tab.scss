@@ -12,9 +12,9 @@
     background-color: $color-darkgray;
     color: #FFFFFF;
     box-shadow: 1px 1px 3px #778187;
-    padding: 5px;
+    padding: 10px;
     padding-top: 5px; // transform rotates so `top` is `right`
-    padding-top: 5px; // transform rotates so `bottom` is `left`
+    padding-bottom: 5px; // transform rotates so `bottom` is `left`
     border-top: 0px;
   }
 }

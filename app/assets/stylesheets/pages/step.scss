@@ -15,10 +15,14 @@
   margin-top: 20px;
 }
 
+.step-intro,
+.step-section-learn {
+  border-bottom: 1px solid $color-black;
+}
+
 .step-section-learn,
 .step-section-do {
   margin-top: 10px;
-  border-top: 1px solid $color-black;
   padding-top: 20px;
 }
 
