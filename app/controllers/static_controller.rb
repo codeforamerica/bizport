@@ -6,6 +6,8 @@ class StaticController < ApplicationController
     @subscription = Subscription.new
   end
 
+  def profile
+  end
 
   # START A BUSINESS STEPS
   def business_plan
