@@ -5,7 +5,16 @@
 }
 
 .logo-longbeach {
-  max-width: 200px;
+  font-size: 26px;
+  font-family: 'Raleway';
+}
+.logo-longbeach_long {
+  color: $color-logo-lightblue;
+  font-weight: 500;
+}
+.logo-longbeach_beach {
+  color: $color-logo-darkblue;
+  font-weight: 800;
 }
 
 .off-canvas {

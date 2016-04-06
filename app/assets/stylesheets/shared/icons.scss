@@ -1,13 +1,14 @@
 @mixin icon {
   display: inline-block;
   background-size: cover;
+  opacity: 0.8;
 }
 
 .icon-business-plan {
   @include icon;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('noun_170213_Business_Plan.svg'));
+  height: 60px;
+  width: 65px;
+  background-image: url(image_path('noun_111382_Plan.png'));
 }
 
 .icon-license {

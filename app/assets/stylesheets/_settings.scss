@@ -95,8 +95,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Raleway';
+$header-font-weight: bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
@@ -233,11 +233,11 @@ $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: #fff;
 $button-color-alt: #000;
-$button-radius: $global-radius;
+$button-radius: 0.3rem;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
+  default: 1.25rem,
   large: 1.25rem,
 );
 $button-opacity-disabled: 0.25;

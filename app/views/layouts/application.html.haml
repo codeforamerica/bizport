@@ -23,7 +23,9 @@
           .title-bar-left
             %span.title-bar-title.logo-longbeach
               %a{ href: root_path }
-                %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
+                %span.logo-longbeach_long> LONG
+                %span.logo-longbeach_beach> BEACH
+                / %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
