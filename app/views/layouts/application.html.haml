@@ -48,7 +48,10 @@
             %ul.dropdown.menu{"data-dropdown-menu" => true}
               %li.topbar-title.logo-longbeach
                 %a{ href: root_path }
-                  %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
+                  %span.logo-longbeach_long> LONG
+                  %span.logo-longbeach_beach> BEACH
+                / %a{ href: root_path }
+                /   %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
               %li.has-submenu
                 %a{ href: start_business_plan_path } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
