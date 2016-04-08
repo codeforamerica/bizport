@@ -10,7 +10,7 @@
       .icon-container-square.background-lightblue
         .icon-do.float-right
     .columns.medium-10.large-11
-      %h4 My Checklist
+      %h4 Checklist
 
       %ul
         %li
@@ -25,13 +25,9 @@
   .step-intro
     %h5 Importance of a Business Plan:
     %p Before you start your business, it's important to have a clear plan for how your business will operate and make money. Writing a business plan will help you prepare for the rest of the business setup process.
+  .row
     .columns.small-12.medium-6
-      %a.link-box{ href:'#' }
-        .link-box_icon-container
-          .link-box_icon
-        .link-box_title
-          %div VIEW
-          %div Sample Business Plan (PDF)
+      = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
 
   .row.step-section.step-section-learn
     %h5 Business Plan Components
@@ -64,24 +60,15 @@
     %h5 Take a Class:
     %p The SBDC (Small Business Development Center) has free courses and advisors that can help you with this process.
     .columns.small-12.medium-6
-      %a.link-box{ href:'https://longbeachsbdc.org/' }
-        .link-box_icon-container
-          .link-box_icon
-        .link-box_title
-          %div SBDC: Small Business Development Center
-          %div longbeachsbdc.org
+      = render 'shared/link_box', link:'https://longbeachsbdc.org/', line_1:'SBDC: Small Business Development Center', line_2:'longbeachsbdc.org'
     .columns.small-12.medium-6
       %p The SBDC helps entrepreneurs realize the dream of business ownership and helps existing businesses remain competitive in a complex, ever-changing global marketplace.
 
   .row.step-section
     %h5 Get a Mentor:
+  .row
     .columns.small-12.medium-6
-      %a.link-box{ href:'https://www.score.org/mentoring/request/' }
-        .link-box_icon-container
-          .link-box_icon
-        .link-box_title
-          %div SCORE: Service Corps of Retired Executives
-          %div ScoreLA.org
+      = render 'shared/link_box', link:'https://www.score.org/mentoring/request/', line_1:'SCORE: Service Corps of Retired Executives', line_2:'ScoreLA.org'
     .columns.small-12.medium-6
       %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
 
