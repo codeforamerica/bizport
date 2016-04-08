@@ -12,9 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require readmore
 //= require foundation
 //= require_tree .
 
-$(document).foundation();
-
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+  $('.step-section').readmore({
+    collapsedHeight: 300,
+    speed: 500,
+    moreLink: '<a href="#" class="readmore text-center">More<span class="arrow arrow-more"></span></a>',
+    lessLink: '<a href="#" class="readmore text-center">Less<span class="arrow arrow-less"></span></a>',
+  });
+});

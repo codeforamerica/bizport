@@ -40,6 +40,25 @@
   }
 }
 
+.readmore {
+  @include font-raleway;
+  font-size: 18px;
+
+  .arrow {
+    display: inline-block;
+    height: 20px;
+    width: 35px;
+    background-image: url(image_path('icon-more.png'));
+    position: relative;
+    top: 5px;
+    left: 10px;
+    background-size: cover;
+  }
+  .arrow.arrow-less {
+    transform: rotate(180deg); // flips arrow upside down
+  }
+}
+
 .link-box_icon {
   opacity: 0.8;
   height: 70px;
