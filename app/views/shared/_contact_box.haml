@@ -1,0 +1,16 @@
+-# type | ['phone', 'email']
+-# contact_info
+
+- if type == 'phone'
+  %a.media-object.contact-box{ href:"tel:+1#{contact_info.gsub(/\D/, '')}"} 
+    .media-object-section.middle
+      %div{ class:"contact-box_icon-#{type}" }
+    .media-object-section.middle
+      #{contact_info}
+- elsif type == 'email'
+  %a.media-object.contact-box{ href:"mailto:#{contact_info}" }
+    .media-object-section.middle
+      %div{ class:"contact-box_icon-#{type}" }
+    .media-object-section.middle
+      #{contact_info}
+
