@@ -1,0 +1,15 @@
+-# phone
+-# email
+
+.media-object.combo
+  %a.contact-box{ href:"tel:+1#{phone.gsub(/\D/, '')}"} 
+    .media-object-section.middle
+      %div{ class:"contact-box_icon-phone" }
+    .media-object-section.middle
+      #{phone}
+  %a.contact-box{ href:"mailto:#{email}" }
+    .media-object-section.middle
+      %div{ class:"contact-box_icon-email" }
+    .media-object-section.middle
+      #{email}
+

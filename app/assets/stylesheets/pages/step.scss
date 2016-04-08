@@ -59,6 +59,26 @@
   }
 }
 
+.media-object.combo {
+  &:hover { // don't hoverstyle the whole card at once
+    background-color: $color-lightgray;
+  }
+
+  > .contact-box {
+    border-bottom: 1px solid $color-darkgray;
+    display: block;
+
+    &:hover {
+      background-color: $color-darkgray;
+      cursor: pointer;
+    }
+  }
+
+  .contact-box:last-child {
+    border-bottom: none;
+  }
+}
+
 .contact-box_icon-phone {
   background-image: url(image_path('icon-share.png'));
   height: 70px;
