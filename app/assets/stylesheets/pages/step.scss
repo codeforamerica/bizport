@@ -28,6 +28,21 @@
   padding-top: 20px;
 }
 
+.step-section {
+  position: relative; // gets the absolute positioning right for the :before pseudoelement below
+}
+
+.step-section:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
+  content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 150px, white);
+  pointer-events: none;
+}
+
 .step-section-checklist {
   .sticky {
     padding-right: 5px;

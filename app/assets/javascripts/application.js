@@ -23,5 +23,16 @@ $(function(){
     speed: 500,
     moreLink: '<a href="#" class="readmore text-center">More<span class="arrow arrow-more"></span></a>',
     lessLink: '<a href="#" class="readmore text-center">Less<span class="arrow arrow-less"></span></a>',
+    
+    // seems like these classes should be added by the library, but they're not...
+    beforeToggle: function(trigger, element, expanded) { 
+      if (!expanded) { // The "open" link was clicked
+        $(element).addClass('readmore-expanded');
+        $(element).removeClass('readmore-collapsed');
+      } else if (expanded) { // The "close" link was clicked
+        $(element).addClass('readmore-collapsed');
+        $(element).removeClass('readmore-expanded');
+      }
+    }
   });
 });
