@@ -1,8 +1,15 @@
-.step-title {
-  background-color: $color-lightblue;
+.step-header {
+  background-color: $color-mediumblue;
   color: #FFFFFF;
-  text-align: right;
-  padding-right: 3%;
+}
+
+.step-title {
+  margin: 0 auto;
+  padding: 10px;
+
+  h1, h2, h3, h4, h5 {
+    font-size: 1.5rem;
+  }
 }
 
 .content-container {
@@ -16,12 +23,17 @@
 }
 
 .step-section,
-.step-section-do {
+.step-section-checklist {
   margin-top: 10px;
   padding-top: 20px;
 }
 
-.step-section-do {
+.step-section-checklist {
+  .sticky {
+    padding-right: 5px;
+    border-right: 1px solid $color-lightgray;
+  }
+
   ul {
     margin-left: 0px;
 
@@ -70,11 +82,11 @@
 .media-object { // additions to Foundation style
   @include font-raleway;
   box-shadow: 0px 2px 4px $color-black;
-  background-color: $color-lightgray;
+  background-color: $white;
   padding: 10px;
   
   &:hover {
-    background-color: $color-darkgray;
+    background-color: $color-lightgray;
   }
 }
 
@@ -84,11 +96,11 @@
   }
 
   > .contact-box {
-    border-bottom: 1px solid $color-darkgray;
+    border-bottom: 1px solid $color-lightgray;
     display: block;
 
     &:hover {
-      background-color: $color-darkgray;
+      background-color: $color-lightgray;
       cursor: pointer;
     }
   }
@@ -130,7 +142,7 @@
     font-weight: 500;
     font-size: 16px;
     padding: 5px;
-    background-color: $color-darkgray;
+    background-color: $color-lightgray;
     color: white;
   }
 

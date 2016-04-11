@@ -1,90 +1,90 @@
-.step-title
-  %i.icon-business-plan.float-left
-  %h3 Step 1
-  %h1 Planning
+.step-header
+  .step-title.text-center
+    %i.icon-business-plan
+    %h3 Step 1:
+    %h1 Create a Business Plan
 
 .content-container
 
-  .row.step-section.step-section-do
-    .columns.medium-2.large-1.show-for-medium
-      .icon-container-square.background-lightblue
-        .icon-do.float-right
-    .columns.medium-10.large-11
-      %h4 Checklist
+  .row
+    .columns.small-12.medium-6.step-section.step-section-checklist
+      .columns{"data-sticky-container" => "true"}
+        .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
+          %h4 Checklist
 
-      %ul
+          %ul
+            %li
+              %input{ type:'checkbox' } Write a business plan and marketing plan, and conduct a feasibility study. SBDC has free courses that can help you with this process.
+              %a{ href:'http://longbeachsbdc.org/', target:'_blank'}
+            %li
+              %input{ type:'checkbox' } Show it to people you trust, and ask for feedback.
+            %li
+              %input{ type:'checkbox' } Connect with a mentor through SCORE.
+
+    #step-content.columns.small-12.medium-6
+      .step-intro
+        %h5 Importance of a Business Plan:
+        %p Before you start your business, it's important to have a clear plan for how your business will operate and make money. Writing a business plan will help you prepare for the rest of the business setup process.
+      .row
+        .columns.small-12
+          = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
+
+      .row.step-section.step-section-learn
+        %h5 Business Plan Components
+
+        %p Every business is a little different, but here are the pieces of a typical business plan:
+
         %li
-          %input{ type:'checkbox' } Write a business plan and marketing plan, and conduct a feasibility study. SBDC has free courses that can help you with this process.
-          %a{ href:'http://longbeachsbdc.org/', target:'_blank'}
+          %strong Executive Summary:
+          %span A few sentences that give an overview of your business, describing the product or service and your goals for the next year or two.
         %li
-          %input{ type:'checkbox' } Show it to people you trust, and ask for feedback.
+          %strong Market Analysis:
+          %span Who are the target customers for the business? Are there any businesses providing the same service that might be in competition with your business? Would a particular location in the city be important for your business to succeed?
         %li
-          %input{ type:'checkbox' } Connect with a mentor through SCORE:
-          %a{ href: 'https://www.score.org/mentoring/request/' } https://www.score.org/mentoring/request/
+          %strong Organization & Management:
+          %span Think about what it will take to run the business each day. Will you need employees? What will the hours of the business be? Will you close for weekends and holidays?
+        %li
+          %strong Service or Product:
+          %span Each product that you sell costs something to make, and each service that you provide takes employee time. Whether you're providing a product or a service, carefully calculate your costs so that you know how much you need to charge customers in order to make money.
+        %li
+          %strong Marketing & Sales:
+          %span Every business needs a way to get customers. Write a little about how you plan to advertise and sell, and make sure to note what those marketing and sales activities will cost.
+        %li
+          %strong Finances:
+          %span Using your estimates of what it will cost to open your business, operate, do marketing, and sell to customers, calculate how much money you need to start. If you don't have enough, think about
+          %a{ href: start_finance_your_business_path } how to get additional money.
 
-  .step-intro
-    %h5 Importance of a Business Plan:
-    %p Before you start your business, it's important to have a clear plan for how your business will operate and make money. Writing a business plan will help you prepare for the rest of the business setup process.
-  .row
-    .columns.small-12.medium-6
-      = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
+          (links to 2-3 example business plans that follow the pattern above)
 
-  .row.step-section.step-section-learn
-    %h5 Business Plan Components
+      .row.step-section
+        %h5 Take a Class:
+        %p The SBDC (Small Business Development Center) has free courses and advisors that can help you with this process.
+        .columns.small-12
+          = render 'shared/link_box', link:'https://longbeachsbdc.org/', line_1:'SBDC: Small Business Development Center', line_2:'longbeachsbdc.org'
+        .columns.small-12
+          %p The SBDC helps entrepreneurs realize the dream of business ownership and helps existing businesses remain competitive in a complex, ever-changing global marketplace.
 
-    %p Every business is a little different, but here are the pieces of a typical business plan:
+      .row.step-section
+        %h5 Get a Mentor:
+      .row
+        .columns.small-12
+          = render 'shared/link_box', link:'https://www.score.org/mentoring/request/', line_1:'SCORE: Service Corps of Retired Executives', line_2:'ScoreLA.org'
+          = render 'shared/contact_box_combo', phone:'(562) 938-5100', email:'sbdcinfo@lbcc.edu'
+        .columns.small-12
+          %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
 
-    %li
-      %strong Executive Summary:
-      %span A few sentences that give an overview of your business, describing the product or service and your goals for the next year or two.
-    %li
-      %strong Market Analysis:
-      %span Who are the target customers for the business? Are there any businesses providing the same service that might be in competition with your business? Would a particular location in the city be important for your business to succeed?
-    %li
-      %strong Organization & Management:
-      %span Think about what it will take to run the business each day. Will you need employees? What will the hours of the business be? Will you close for weekends and holidays?
-    %li
-      %strong Service or Product:
-      %span Each product that you sell costs something to make, and each service that you provide takes employee time. Whether you're providing a product or a service, carefully calculate your costs so that you know how much you need to charge customers in order to make money.
-    %li
-      %strong Marketing & Sales:
-      %span Every business needs a way to get customers. Write a little about how you plan to advertise and sell, and make sure to note what those marketing and sales activities will cost.
-    %li
-      %strong Finances:
-      %span Using your estimates of what it will cost to open your business, operate, do marketing, and sell to customers, calculate how much money you need to start. If you don't have enough, think about
-      %a{ href: start_finance_your_business_path } how to get additional money.
+      .row
+        .columns.small-12
+          %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
+            .map-box_title
+              SBDC: Main Office
+            .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
+        .columns.small-12
+          %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
+            .map-box_title
+              SBDC: Downtown Long Beach Office
+            .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|309+Pine+Ave,+Long+Beach,+CA)" }
 
-      (links to 2-3 example business plans that follow the pattern above)
-
-  .row.step-section
-    %h5 Take a Class:
-    %p The SBDC (Small Business Development Center) has free courses and advisors that can help you with this process.
-    .columns.small-12.medium-6
-      = render 'shared/link_box', link:'https://longbeachsbdc.org/', line_1:'SBDC: Small Business Development Center', line_2:'longbeachsbdc.org'
-    .columns.small-12.medium-6
-      %p The SBDC helps entrepreneurs realize the dream of business ownership and helps existing businesses remain competitive in a complex, ever-changing global marketplace.
-
-  .row.step-section
-    %h5 Get a Mentor:
-  .row
-    .columns.small-12.medium-6
-      = render 'shared/link_box', link:'https://www.score.org/mentoring/request/', line_1:'SCORE: Service Corps of Retired Executives', line_2:'ScoreLA.org'
-      = render 'shared/contact_box_combo', phone:'(562) 938-5100', email:'sbdcinfo@lbcc.edu'
-    .columns.small-12.medium-6
-      %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
-
-  .row
-    .columns.small-12.medium-6
-      %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
-        .map-box_title
-          SBDC: Main Office
-        .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
-    .columns.small-12.medium-6
-      %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
-        .map-box_title
-          SBDC: Downtown Long Beach Office
-        .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|309+Pine+Ave,+Long+Beach,+CA)" }
-
-  .row
-    .columns.small-12.small-centered.medium-6
-      %a.button.expanded{ href:start_finance_your_business_path } Step 2: Create a Finance Plan
+      .row
+        .columns.small-12.small-centered
+          %a.button.expanded{ href:start_finance_your_business_path } Step 2: Create a Finance Plan

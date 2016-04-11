@@ -1,21 +1,15 @@
 // official city colors
-$color-lightblue: #17b9d9;
 $color-darkblue: #136194;
+$color-mediumblue: #17b9d9;
 $color-black: #333333;
-$color-darkgray: #778187;
+$color-lightgray: #778187;
 
-$color-logo-lightblue: #17b9d9;
-$color-logo-darkblue: #c7f6ff;
+$color-logo-darkblue: #17b9d9;
+$color-lightblue: #c7f6ff;
+$color-lighterblue: #edfbfe;
 
-$color-lightgray: #DDDDDD;
-$color-darkgreen: #54b847;
-$color-yellow: #e9ca33;
-$color-orange: #dc565e;
-$color-green: #7eb945;
-$color-red: #c52d37;
-$color-purple: #8e6eb0;
-$color-indigo: #6f6eaf;
+$color-darkgray: #595f5f;
 
 .background-lightblue {
-  background-color: $color-lightblue;
+  background-color: $color-mediumblue;
 }
