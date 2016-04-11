@@ -23,6 +23,8 @@ $(function(){
     speed: 500,
     moreLink: '<a href="#" class="readmore text-center">More<span class="arrow arrow-more"></span></a>',
     lessLink: '<a href="#" class="readmore text-center">Less<span class="arrow arrow-less"></span></a>',
+
+    blockCSS: 'display: block;', // override default CSS, which has width settings that conflict with Foundation
     
     // seems like these classes should be added by the library, but they're not...
     beforeToggle: function(trigger, element, expanded) { 

@@ -22,14 +22,12 @@
               %input{ type:'checkbox' } Connect with a mentor through SCORE.
 
     #step-content.columns.small-12.medium-6
-      .step-intro
+      .row.step-section.margin-top-30
         %h5 Importance of a Business Plan:
         %p Before you start your business, it's important to have a clear plan for how your business will operate and make money. Writing a business plan will help you prepare for the rest of the business setup process.
-      .row
-        .columns.small-12
-          = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
+        = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
 
-      .row.step-section.step-section-learn
+      .row.step-section
         %h5 Business Plan Components
 
         %p Every business is a little different, but here are the pieces of a typical business plan:
@@ -59,31 +57,24 @@
       .row.step-section
         %h5 Take a Class:
         %p The SBDC (Small Business Development Center) has free courses and advisors that can help you with this process.
-        .columns.small-12
-          = render 'shared/link_box', link:'https://longbeachsbdc.org/', line_1:'SBDC: Small Business Development Center', line_2:'longbeachsbdc.org'
-        .columns.small-12
-          %p The SBDC helps entrepreneurs realize the dream of business ownership and helps existing businesses remain competitive in a complex, ever-changing global marketplace.
+        = render 'shared/link_box', link:'https://longbeachsbdc.org/', line_1:'SBDC: Small Business Development Center', line_2:'longbeachsbdc.org'
+        %p The SBDC helps entrepreneurs realize the dream of business ownership and helps existing businesses remain competitive in a complex, ever-changing global marketplace.
 
       .row.step-section
         %h5 Get a Mentor:
-      .row
-        .columns.small-12
-          = render 'shared/link_box', link:'https://www.score.org/mentoring/request/', line_1:'SCORE: Service Corps of Retired Executives', line_2:'ScoreLA.org'
-          = render 'shared/contact_box_combo', phone:'(562) 938-5100', email:'sbdcinfo@lbcc.edu'
-        .columns.small-12
-          %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
+        = render 'shared/link_box', link:'https://www.score.org/mentoring/request/', line_1:'SCORE: Service Corps of Retired Executives', line_2:'ScoreLA.org'
+        = render 'shared/contact_box_combo', phone:'(562) 938-5100', email:'sbdcinfo@lbcc.edu'
+        %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
 
-      .row
-        .columns.small-12
-          %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
-            .map-box_title
-              SBDC: Main Office
-            .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
-        .columns.small-12
-          %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
-            .map-box_title
-              SBDC: Downtown Long Beach Office
-            .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|309+Pine+Ave,+Long+Beach,+CA)" }
+      .row.margin-top-30
+        %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
+          .map-box_title
+            SBDC: Main Office
+          .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
+        %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
+          .map-box_title
+            SBDC: Downtown Long Beach Office
+          .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|309+Pine+Ave,+Long+Beach,+CA)" }
 
       .row.margin-top-30
         .columns.small-12.small-centered

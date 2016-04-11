@@ -18,10 +18,6 @@
   margin: 0 auto;
 }
 
-.step-intro {
-  margin-top: 20px;
-}
-
 .step-section,
 .step-section-checklist {
   margin-top: 10px;
@@ -99,6 +95,8 @@
   box-shadow: 0px 2px 4px $color-black;
   background-color: $white;
   padding: 10px;
+  margin-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
+  margin-right: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
   
   &:hover {
     background-color: $color-lightgray;
