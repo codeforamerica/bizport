@@ -25,7 +25,6 @@
               %a{ href: root_path }
                 %span.logo-longbeach_long> LONG
                 %span.logo-longbeach_beach> BEACH
-                / %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
@@ -35,8 +34,6 @@
               %a{ href: root_path } Home
             %li
               %a{ href: contact_path } Contact
-            %li
-              %a{ href: profile_path } Profile
             %li
               %a{ href: questions_path } FAQ
             %li.title
@@ -50,16 +47,12 @@
                 %a{ href: root_path }
                   %span.logo-longbeach_long> LONG
                   %span.logo-longbeach_beach> BEACH
-                / %a{ href: root_path }
-                /   %img{ src: image_path('logo-longbeach.png'), alt: "Long Beach Logo" }
               %li.has-submenu
                 %a{ href: start_business_plan_path } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
                   = render 'shared/header_nav_biz_steps'
               %li
                 %a{ href: contact_path } Contact
-              %li
-                %a{ href: profile_path } Profile
               %li
                 %a{ href: questions_path } FAQ
           .top-bar-right

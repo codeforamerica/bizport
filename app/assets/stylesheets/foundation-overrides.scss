@@ -1,5 +1,9 @@
 .menu > li > a {
-  color: $color-lightgray;
+  color: $white;
+}
+
+.title-bar .menu-icon {
+  margin-top: 10px;
 }
 
 .is-dropdown-submenu-parent.is-down-arrow > a::after {

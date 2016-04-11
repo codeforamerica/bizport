@@ -8,7 +8,7 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
 
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 6.2.0'
 gem 'sass-rails'
 gem 'haml-rails', '~> 0.9'
 # Use jquery as the JavaScript library
