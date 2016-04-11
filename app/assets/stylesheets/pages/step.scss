@@ -18,13 +18,9 @@
   margin: 0 auto;
 }
 
-.step-section,
-.step-section-checklist {
+.step-section {
   margin-top: 10px;
   padding-top: 20px;
-}
-
-.step-section {
   position: relative; // gets the absolute positioning right for the :before pseudoelement below
 }
 
@@ -39,7 +35,7 @@
   pointer-events: none;
 }
 
-.step-section-checklist {
+.checklist {
   .sticky {
     padding-right: 5px;
 
@@ -56,13 +52,8 @@
     }
   }
 
-  .columns > ul > li {
+  .sticky > ul > li {
     list-style: none;
-
-    > input[type='checkbox'] {
-      margin-right: 10px;
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -87,9 +78,9 @@
 
 .link-box_icon {
   opacity: 0.8;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('icon-share.png'));
+  height: 69px;
+  width: 69px;
+  background-image: url(image_path('share_button_light_blue.png'));
   background-size: cover;
 }
 
@@ -108,7 +99,7 @@
 
 .media-object.combo {
   &:hover { // don't hoverstyle the whole card at once
-    background-color: $color-lightgray;
+    background-color: $white;
   }
 
   > .contact-box {
@@ -127,16 +118,18 @@
 }
 
 .contact-box_icon-phone {
-  background-image: url(image_path('icon-share.png'));
-  height: 70px;
-  width: 70px;
+  background-image: url(image_path('phone_light_blue_401501-200.png'));
+  height: 44px;
+  width: 44px;
+  margin: 13px;
   background-size: cover;
 }
 
 .contact-box_icon-email {
-  background-image: url(image_path('icon-share.png'));
-  height: 70px;
-  width: 70px;
+  background-image: url(image_path('email_light_blue_32727-200.png'));
+  height: 43px;
+  width: 46px;
+  margin: 13px 12px;
   background-size: cover;
 }
 

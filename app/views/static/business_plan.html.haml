@@ -7,23 +7,22 @@
 .content-container
 
   .row
-    .columns.small-12.medium-6.step-section.step-section-checklist
-      .columns{"data-sticky-container" => "true"}
-        .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
-          %h4 Checklist
+    .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
+      .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
+        %h4 My Checklist
 
-          %ul
-            %li
-              %input{ type:'checkbox' }
-              %label Write a business plan and marketing plan, and conduct a feasibility study. SBDC has free courses that can help you with this process.
-            %li
-              %input{ type:'checkbox' }
-              %label Show it to people you trust, and ask for feedback.
-            %li
-              %input{ type:'checkbox' }
-              %label Connect with a mentor through SCORE.
+        %ul
+          %li
+            %input{ type:'checkbox', id:'checklist-1' }
+            %label{ for:'checklist-1' } Write a business plan and marketing plan, and conduct a feasibility study. SBDC has free courses that can help you with this process.
+          %li
+            %input{ type:'checkbox', id:'checklist-2' }
+            %label{ for:'checklist-2' } Show it to people you trust, and ask for feedback.
+          %li
+            %input{ type:'checkbox', id:'checklist-3' }
+            %label{ for:'checklist-3' } Connect with a mentor through SCORE.
 
-    #step-content.columns.small-12.medium-6
+    #step-content.columns.small-12.medium-7
       .row.step-section.margin-top-30
         %h5 Importance of a Business Plan:
         %p Before you start your business, it's important to have a clear plan for how your business will operate and make money. Writing a business plan will help you prepare for the rest of the business setup process.
@@ -69,11 +68,11 @@
         %p SCORE matches entrepreneurs with mentors who provide professional guidance and information to maximize the success of America's existing and emerging small businesses.
 
       .row.margin-top-30
-        %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
+        %a.media-object.map-box{ href:'https://www.google.com/maps/place/Los+Angeles+Small+Business+Development+Center+Regional+Network+(Lead+Center)/@33.8241696,-118.1375455,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd323e2bf1b531:0x62b8fa356ef8c81d' }
           .map-box_title
             SBDC: Main Office
           .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
-        %a.media-object.map-box.column{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
+        %a.media-object.map-box{ href:'https://www.google.com/maps/place/Long+Beach+SBDC+-+Downtown+Office,+309+Pine+Ave,+Long+Beach,+CA+90802/@33.7707967,-118.1947527,17z/data=!4m2!3m1!1s0x80dd313848533301:0xdfdabf7b8344f22e' }
           .map-box_title
             SBDC: Downtown Long Beach Office
           .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|309+Pine+Ave,+Long+Beach,+CA)" }
