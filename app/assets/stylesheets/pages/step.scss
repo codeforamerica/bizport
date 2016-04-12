@@ -19,8 +19,12 @@
 }
 
 .step-section {
-  margin-bottom: 10px;
+  margin-top: 20px;
   position: relative; // gets the absolute positioning right for the :before pseudoelement below
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .step-section:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
