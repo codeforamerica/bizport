@@ -12,9 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
+
 //= require readmore
 //= require readmore-config
-//= require foundation
+
+//= require intercom
+
 //= require_tree .
 
 $(function(){
