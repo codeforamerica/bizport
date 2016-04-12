@@ -19,8 +19,7 @@
 }
 
 .step-section {
-  margin-top: 10px;
-  padding-top: 20px;
+  margin-bottom: 10px;
   position: relative; // gets the absolute positioning right for the :before pseudoelement below
 }
 
@@ -37,8 +36,6 @@
 
 .checklist {
   .sticky {
-    padding-right: 5px;
-
     @include breakpoint(medium up) {
       border-right: 1px solid $color-lightgray;
     }
