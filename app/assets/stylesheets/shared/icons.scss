@@ -7,6 +7,13 @@
 .icon-business-plan {
   @include icon;
   height: 65px;
+  width: 70px;
+  background-image: url(image_path('noun_111382_Plan.png'));
+}
+
+.icon-business-plan-blue {
+  @include icon;
+  height: 65px;
   width: 65px;
   background-image: url(image_path('step_one_extra_light_blue_111382-200.png'));
 }
