@@ -19,9 +19,6 @@ class StaticController < ApplicationController
   def find_a_location
   end
 
-  def choose_a_name
-  end
-
   def register_your_business
   end
 
