@@ -1,53 +1,56 @@
-.step-title
-  %i.icon-license.float-left
-  %h3 Step 6
-  %h1 Permits and Licenses
-
-  %h2 Learn
-
+.step-header
+  .step-title.text-center
+    %i.icon-license
+    %h3 Step 5:
+    %h1 Permits and Licenses
 
 .content-container
 
-  .row.step-section.step-section-learn
-    .columns.medium-2.large-1.show-for-medium
-      .icon-container-circle.background-lightblue
-        %i.icon-learn.float-right
-    .columns.medium-10.large-11
-      %h2 Learn
-      %h3 Licenses
-      %p Some business types require special licenses to operate. Examples include food preparation, alcohol sales, tobacco sales, or massage services. City staff can tell you what licenses your business might need in order to operate.
-      
+  .row
+    .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
+      .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
+        %h4 My Checklist
 
-      %h3 Permits
+        %ul
+          = render 'shared/checklist_item', item_text:"Fill out permit applications"
+          = render 'shared/checklist_item', item_text:"Submit applications & physical copies of the plans to the 4th floor of City Hall"
+          = render 'shared/checklist_item', item_text:"Pay permit fees"
+          = render 'shared/checklist_item', item_text:"Check the status of your permits"
+          = render 'shared/checklist_item', item_text:"Take survey"
 
-      %p Permits are proof that your building and facilities follow city rules ("code") and are safe for you, your employees, and your customers. 
+    #step-content.columns.small-12.medium-7
+      .margin-all-10
+        .row.step-section
+          %h5 Licenses
+          %p Some business types require special licenses to operate. Examples include food preparation, alcohol sales, tobacco sales, or massage services. City staff can tell you what licenses your business might need in order to operate.
 
-      %p If you are starting a business in a building that needs to be renovated, you will need to get permits to make changes. In order to get permits, you must submit drawings ("plans") and construction documents to the city.
+        .row.step-section
+          %h5 Permits
+          %p Permits are proof that your building and facilities follow city rules ("code") and are safe for you, your employees, and your customers.
 
-      %p Construction rules can be complicated. A professional architect or contractor may be able to offer helpful advice and planning assistance, as well as create necessary site plan drawings and construction documents (CDs). For large projects, you may need a licensed architect to approve your plans before showing them to city staff.
+          If you are starting a business in a building that needs to be renovated, you will need to get permits to make changes. In order to get permits, you must submit drawings ("plans") and construction documents to the city.
 
-      %p In order to apply for permits, you will need:
-      %ul
-        %li 
-          A completed 
-          %a{ href: 'http://www.lbds.info/civica/filebank/blobdload.asp?BlobID=4336' } Development Services Permit Application
-        %li Plans and construction documents that show new changes
+          Construction rules can be complicated. A professional architect or contractor may be able to offer helpful advice and planning assistance, as well as create necessary site plan drawings and construction documents (CDs). For large projects, you may need a licensed architect to approve your plans before showing them to city staff.
 
-  .row.step-section.step-section-checklist
-    .columns.medium-2.large-1.show-for-medium
-      .icon-container-square.background-lightblue
-        .icon-do.float-right
-    .columns.medium-10.large-11
-      %h2 Do
-      %ul
-        %li
-          %input{ type:'checkbox' } Fill out permit applications
-        %li
-          %input{ type:'checkbox' } Submit applications & physical copies of the plans to the 4th floor of City Hall
-        %li
-          %input{ type:'checkbox' } Pay permit fees
-        %li
-          %input{ type:'checkbox' } 
-            Check the status of your permits on the city website at
-            %a{ href: 'http://www.lbds.info/projects/project_status_inquiry.asp' } http://www.lbds.info/projects/project_status_inquiry.asp
-          -# TODO: embed this form into site
+          In order to apply for permits, you will need:
+          %ul
+            %li
+              %span A completed 
+              %a{ href:'http://www.lbds.info/civica/filebank/blobdload.asp?BlobID=4336' } Development Services Permit Application
+            %li
+              Plans and construction documents that show new changes
+
+          %h5 Pay Permit Fees
+
+          %h5 Permit Status
+          %p You can check the status of your permit using the form below.
+          %iframe{ src:'http://sapphire.longbeach.gov/HPLandMgmt/PB/SitusInquiry.asp', style:"width: 100%;", frameborder:0 }
+
+          %h5 Feedback
+          %p Give feedback to the permit department by filling out the survey.
+
+          = render 'shared/link_box', link:'bit.ly/longbeachbusiness', line_1:'FILL OUT', line_2:'Entrepreneur Experience Survey'
+
+        .row.margin-top-30
+          .columns.small-12.small-centered
+            %a.button.expanded{ href:start_finance_your_business_path } Step 6: Building and Inspections
