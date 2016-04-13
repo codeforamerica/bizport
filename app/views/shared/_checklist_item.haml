@@ -1,0 +1,7 @@
+-# item_text | String
+- random_id = SecureRandom.uuid
+
+%li
+  %input{ type:'checkbox', id:"checklist-#{random_id}" } 
+  %label{ for:"checklist-#{random_id}" } 
+    = item_text
