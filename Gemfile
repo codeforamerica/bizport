@@ -10,6 +10,7 @@ gem 'therubyracer'
 
 gem 'foundation-rails', '~> 6.2.0'
 gem 'sass-rails'
+gem 'autoprefixer-rails'
 gem 'haml-rails', '~> 0.9'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
