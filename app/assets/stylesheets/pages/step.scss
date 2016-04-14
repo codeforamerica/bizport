@@ -78,10 +78,21 @@
   }
 }
 
+.callout {
+  border-radius: 0;
+}
+
+.link-box {
+  border-radius: $global-radius;
+  line-height: 1.4;
+  font-weight: 500 !important; // overrides .media-object, which sets it to 800
+  text-decoration: underline;
+}
+
 .link-box_icon {
   opacity: 0.8;
-  height: 69px;
-  width: 69px;
+  height: 50px;
+  width: 50px;
   background-image: url(image_path('share_button_light_blue.png'));
   background-size: cover;
 }
