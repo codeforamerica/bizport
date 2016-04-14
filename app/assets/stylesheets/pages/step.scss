@@ -5,10 +5,17 @@
 
 .step-title {
   margin: 0 auto;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   h1, h2, h3, h4, h5 {
     font-size: 1.5rem;
+    line-height: 0.9;
+  }
+
+  i {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -85,7 +92,6 @@
 .link-box {
   border-radius: $global-radius;
   line-height: 1.4;
-  font-weight: 500 !important; // overrides .media-object, which sets it to 800
   text-decoration: underline;
 }
 
