@@ -24,6 +24,12 @@
   width: 70px;
   background-image: url(image_path('noun_9041_License.svg'));
 }
+.icon-license-blue {
+  @include icon;
+  height: 52px;
+  width: 83px;
+  background-image: url(image_path('noun_9041_License_light_blue.png'));
+}
 
 .icon-finance {
   @include icon;
@@ -31,12 +37,11 @@
   width: 70px;
   background-image: url(image_path('noun_220206_Funding.svg'));
 }
-
-.icon-location {
+.icon-finance-blue {
   @include icon;
-  height: 70px;
+  height: 69px;
   width: 70px;
-  background-image: url(image_path('noun_220213_Location.svg'));
+  background-image: url(image_path('noun_220206_Funding_light_blue.png'));
 }
 
 .icon-name {
@@ -52,12 +57,24 @@
   width: 70px;
   background-image: url(image_path('noun_154111_Register.svg'));
 }
+.icon-register-blue {
+  @include icon;
+  height: 55px;
+  width: 80px;
+  background-image: url(image_path('noun_154111_Register_light_blue.png'));
+}
 
 .icon-location {
   @include icon;
   height: 70px;
   width: 70px;
   background-image: url(image_path('noun_220213_Location.svg'));
+}
+.icon-location-blue {
+  @include icon;
+  height: 70px;
+  width: 55px;
+  background-image: url(image_path('noun_220213_Location_light_blue.png'));
 }
 
 .icon-building {
@@ -66,12 +83,24 @@
   width: 70px;
   background-image: url(image_path('noun_179119_Building.svg'));
 }
+.icon-building-blue {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('noun_179119_Building_light_blue.png'));
+}
 
 .icon-key {
   @include icon;
   height: 70px;
   width: 70px;
   background-image: url(image_path('noun_206771_Key.svg'));
+}
+.icon-key-blue {
+  @include icon;
+  height: 34px;
+  width: 70px;
+  background-image: url(image_path('noun_206771_Key_light_blue.png'));
 }
 
 .icon-container-circle {

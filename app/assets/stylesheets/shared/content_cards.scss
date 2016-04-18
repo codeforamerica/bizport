@@ -1,0 +1,97 @@
+.link-box {
+  border-radius: $global-radius;
+  line-height: 1.4;
+  text-decoration: underline;
+}
+
+
+.media-object { // additions to Foundation style
+  @include font-raleway;
+  box-shadow: 0px 1px 4px $color-lightgray;
+  background-color: $white;
+  padding: 10px;
+  margin-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
+  margin-right: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
+
+  .link-box_icon {
+    opacity: 0.8;
+    height: 50px;
+    width: 50px;
+    background-image: url(image_path('share_button_light_blue.png'));
+    background-size: cover;
+  }
+
+  &:hover {
+    background-color: $color-mediumblue;
+    color: $white;
+
+    .link-box_icon {
+      background-image: url(image_path('foo.png'));
+    }
+  }
+}
+
+.media-object.combo {
+  border-radius: $global-radius;
+
+  &:hover { // don't hoverstyle the whole card at once
+    background-color: $white;
+  }
+
+  > .contact-box {
+    border-bottom: 1px solid $color-lightgray;
+    display: block;
+
+    &:hover {
+      background-color: $color-lightgray;
+      cursor: pointer;
+    }
+  }
+
+  .contact-box:last-child {
+    border-bottom: none;
+  }
+}
+
+.contact-box_icon-phone {
+  background-image: url(image_path('phone_light_blue_401501-200.png'));
+  height: 44px;
+  width: 44px;
+  margin: 13px;
+  background-size: cover;
+}
+
+.contact-box_icon-email {
+  background-image: url(image_path('email_light_blue_32727-200.png'));
+  height: 43px;
+  width: 46px;
+  margin: 13px 12px;
+  background-size: cover;
+}
+
+.map-box {
+  margin-bottom: 5px;
+  padding: 0;
+  background-color: $color-lightgray;
+  overflow: hidden;
+
+  .map-box_image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 125px;
+  }
+
+  .map-box_title {
+    @include font-raleway;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px;
+    background-color: $color-lightgray;
+    color: white;
+  }
+
+  img {
+    width: 100%;
+  }
+}
