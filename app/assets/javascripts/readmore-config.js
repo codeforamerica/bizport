@@ -3,8 +3,8 @@ $(function(){
     collapsedHeight: 300,
     heightMargin: 50,
     speed: 250,
-    moreLink: '<a href="#" class="readmore text-center">More<span class="arrow arrow-more"></span></a>',
-    lessLink: '<a href="#" class="readmore text-center">Less<span class="arrow arrow-less"></span></a>',
+    moreLink: '<a href="#" class="readmore text-center"><span class="arrow arrow-more"></span></a>',
+    lessLink: '<a href="#" class="readmore text-center"><span class="arrow arrow-less"></span></a>',
 
     blockCSS: 'display: block;', // override default CSS, which has width settings that conflict with Foundation
     
