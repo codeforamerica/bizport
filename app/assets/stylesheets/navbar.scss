@@ -22,12 +22,26 @@
   border-color: $white transparent transparent;
 }
 
+#widemenu {
+  .numbering, .title {
+    display: table-cell;
+  }
+  .numbering {
+    padding-right: 5px;
+  }
+}
+
 .off-canvas {
   background-color: $color-black;
   height: 100%;
 
   .nav-mobile-business-step {
-    padding-left: 15px;
+    margin-left: 20px;
+
+    .numbering {
+      display: none;
+    }
+
   }
 
   li.title {
