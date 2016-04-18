@@ -1,55 +1,56 @@
-.step-header
-  .step-title.text-center
-    %i.icon-register
-    %h3 Step 4
-    %h1 Register Your Business
+.step
+  .step-header
+    .step-title.text-center
+      %i.icon-register
+      %h3 Step 4
+      %h1 Register Your Business
 
-.content-container
+  .content-container
 
-  .row
-    .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
-      .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
-        %h4 My Checklist
+    .row
+      .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
+        .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
+          %h4 My Checklist
 
-        .callout.primary.margin-right-10
-          NOTE: Do not sign a lease until you've checked with the city to make sure the building can be used for your type of business.
-        %ul
-          = render 'shared/checklist_item', item_text:"Create a business name and consider the branding implications"
-          = render 'shared/checklist_item', item_text:"Register your Fictitious Business Name with LA county"
-          = render 'shared/checklist_item', item_text:"Apply for a Federal Employer Identification Number"
-          = render 'shared/checklist_item', item_text:"Apply for a California State Board of Equalization Seller's Permit"
-          = render 'shared/checklist_item', item_text:"Determine which licenses and permits are required for your business type."
-          = render 'shared/checklist_item', item_text:"Apply for a City of Long Beach Business License "
+          .callout.primary.margin-right-10
+            NOTE: Do not sign a lease until you've checked with the city to make sure the building can be used for your type of business.
+          %ul
+            = render 'shared/checklist_item', item_text:"Create a business name and consider the branding implications"
+            = render 'shared/checklist_item', item_text:"Register your Fictitious Business Name with LA county"
+            = render 'shared/checklist_item', item_text:"Apply for a Federal Employer Identification Number"
+            = render 'shared/checklist_item', item_text:"Apply for a California State Board of Equalization Seller's Permit"
+            = render 'shared/checklist_item', item_text:"Determine which licenses and permits are required for your business type."
+            = render 'shared/checklist_item', item_text:"Apply for a City of Long Beach Business License "
 
-    #step-content.columns.small-12.medium-7
-      .margin-all-10
-        .row.step-section
-          %strong Branding
-          %p If you need help coming up with a business name that fits in with your branding strategy, SBDC has free marketing courses.
+      #step-content.columns.small-12.medium-7
+        .margin-all-10
+          .row.step-section
+            %strong Branding
+            %p If you need help coming up with a business name that fits in with your branding strategy, SBDC has free marketing courses.
 
-          = render 'shared/link_box', link:'http://longbeachsbdc.org', line_1:'TAKE A FREE CLASS', line_2:'Small Business Development Center'
+            = render 'shared/link_box', link:'http://longbeachsbdc.org', line_1:'TAKE A FREE CLASS', line_2:'Small Business Development Center'
 
-        .row.step-section
-          %strong Register the Business Name
-          %p Registering your company name will help protect the identity of your business by ensuring that other businesses of the same type can’t register the same name. It costs money, and fees will vary based on your type of business, location, and number of employees.
+          .row.step-section
+            %strong Register the Business Name
+            %p Registering your company name will help protect the identity of your business by ensuring that other businesses of the same type can’t register the same name. It costs money, and fees will vary based on your type of business, location, and number of employees.
 
 
-          = render 'shared/link_box', link:'http://lavote.net/home/county-clerk/fictitious-business-names/general-info', line_1:'REGISTER', line_2:'Fictitious Business Name'
+            = render 'shared/link_box', link:'http://lavote.net/home/county-clerk/fictitious-business-names/general-info', line_1:'REGISTER', line_2:'Fictitious Business Name'
 
-          = render 'shared/link_box', link:'#', line_1:'REGISTER', line_2:'State of California'
+            = render 'shared/link_box', link:'#', line_1:'REGISTER', line_2:'State of California'
 
-          %p If you’ve chosen a name and want to make it official, register it with the State of California and County of Los Angeles so you can start "Doing Business As" (DBA) your company.
+            %p If you’ve chosen a name and want to make it official, register it with the State of California and County of Los Angeles so you can start "Doing Business As" (DBA) your company.
 
-          %p Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish (writing a business plan), (planning your finances), and (selecting a location) before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
+            %p Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish (writing a business plan), (planning your finances), and (selecting a location) before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
 
-          = render 'shared/link_box', link:'https://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online', line_1:'APPLY', line_2:'Federal Employer Identification Number (FEIN)'
+            = render 'shared/link_box', link:'https://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online', line_1:'APPLY', line_2:'Federal Employer Identification Number (FEIN)'
 
-          = render 'shared/link_box', link:'http://www.boe.ca.gov/info/reg.htm', line_1:'APPLY', line_2:"California State Board of Equalization Seller's Permit"
+            = render 'shared/link_box', link:'http://www.boe.ca.gov/info/reg.htm', line_1:'APPLY', line_2:"California State Board of Equalization Seller's Permit"
 
-          = render 'shared/link_box', link:'http://www.longbeach.gov/finance/business-info/business-licenses/business-licenses/', line_1:'APPLY', line_2:'Business License'
+            = render 'shared/link_box', link:'http://www.longbeach.gov/finance/business-info/business-licenses/business-licenses/', line_1:'APPLY', line_2:'Business License'
 
-          %p Fill out this form and take it to the 4th floor of City Hall. While it is possible to mail the form in, visiting the office in person will ensure that you're able to ask and answer any questions that may come up as city staff review the form.
+            %p Fill out this form and take it to the 4th floor of City Hall. While it is possible to mail the form in, visiting the office in person will ensure that you're able to ask and answer any questions that may come up as city staff review the form.
 
-        .row.margin-top-30
-          .columns.small-12.small-centered
-            %a.button.expanded{ href:start_permits_and_licenses_path } Step 5: Permits and Licenses
+          .row.margin-top-30
+            .columns.small-12.small-centered
+              %a.button.secondary.expanded{ href:start_permits_and_licenses_path } Step 5: Permits and Licenses

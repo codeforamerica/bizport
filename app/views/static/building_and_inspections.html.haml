@@ -1,39 +1,40 @@
-.step-header
-  .step-title.text-center
-    %i.icon-building
-    %h3 Step 6:
-    %h1 Building and Inspections
+.step
+  .step-header
+    .step-title.text-center
+      %i.icon-building
+      %h3 Step 6:
+      %h1 Building and Inspections
 
-.content-container
+  .content-container
 
-  .row
-    .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
-      .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
-        %h4 My Checklist
+    .row
+      .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
+        .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
+          %h4 My Checklist
 
-        %ul
-          = render 'shared/checklist_item', item_text:"Schedule appointments with Inspectors"
-          = render 'shared/checklist_item', item_text:"Be available at your business when the inspector arrives."
-          = render 'shared/checklist_item', item_text:"Have a physical copy of your plans available for the inspector to review."
-          = render 'shared/checklist_item', item_text:"Get a Certificate of Occupancy"
+          %ul
+            = render 'shared/checklist_item', item_text:"Schedule appointments with Inspectors"
+            = render 'shared/checklist_item', item_text:"Be available at your business when the inspector arrives."
+            = render 'shared/checklist_item', item_text:"Have a physical copy of your plans available for the inspector to review."
+            = render 'shared/checklist_item', item_text:"Get a Certificate of Occupancy"
 
 
-    #step-content.columns.small-12.medium-7
-      .margin-all-10
-        .row.step-section
-          %h5 Learn
-          %p As you complete each phase of construction, you'll need to have city inspectors visit to ensure that the work meets the safety standards in the Long Beach city code.
+      #step-content.columns.small-12.medium-7
+        .margin-all-10
+          .row.step-section
+            %h5 Learn
+            %p As you complete each phase of construction, you'll need to have city inspectors visit to ensure that the work meets the safety standards in the Long Beach city code.
 
-          %p There are several types of inspections, including fire, plumbing, health, mechanical, and electric. You may have to have several inspections from each category as construction proceeds. When you finish construction, you'll need a final inspection for each category of work you've done.
-          %p The cost of these inspections is included in the fees you paid with your permit applications. 
+            %p There are several types of inspections, including fire, plumbing, health, mechanical, and electric. You may have to have several inspections from each category as construction proceeds. When you finish construction, you'll need a final inspection for each category of work you've done.
+            %p The cost of these inspections is included in the fees you paid with your permit applications. 
 
-        = render 'shared/link_box', link:'http://www.lbds.info/building/inspection_services', line_1:'SCHEDULE', line_2:'Inspection'
+          = render 'shared/link_box', link:'http://www.lbds.info/building/inspection_services', line_1:'SCHEDULE', line_2:'Inspection'
 
-        = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6105'
+          = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6105'
 
-        %h5 Certificate of Occupancy
-        %p Continue doing work and scheduling inspections until you receive final approval from the city. This final approval will allow you to get a "certificate of occupancy," which will allow you to begin using your location to do business.
+          %h5 Certificate of Occupancy
+          %p Continue doing work and scheduling inspections until you receive final approval from the city. This final approval will allow you to get a "certificate of occupancy," which will allow you to begin using your location to do business.
 
-        .row.margin-top-30
-          .columns.small-12.small-centered
-            %a.button.expanded{ href:start_open_your_business_path } Step 7: Open Your Business
+          .row.margin-top-30
+            .columns.small-12.small-centered
+              %a.button.secondary.expanded{ href:start_open_your_business_path } Step 7: Open Your Business
