@@ -105,7 +105,7 @@
 
 .media-object { // additions to Foundation style
   @include font-raleway;
-  box-shadow: 0px 2px 4px $color-black;
+  box-shadow: 0px 1px 4px $color-lightgray;
   background-color: $white;
   padding: 10px;
   margin-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
@@ -117,6 +117,8 @@
 }
 
 .media-object.combo {
+  border-radius: $global-radius;
+
   &:hover { // don't hoverstyle the whole card at once
     background-color: $white;
   }
