@@ -17,6 +17,11 @@
   font-weight: 800;
 }
 
+// override for dropdown menu carat
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: $white transparent transparent;
+}
+
 .off-canvas {
   background-color: $color-black;
   height: 100%;
@@ -37,4 +42,6 @@
   a:hover {
     color: #FFFFFF;
   }
+
+
 }
