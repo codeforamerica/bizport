@@ -10,7 +10,7 @@
     display: block;
 
     background-color: $color-lightgray;
-    color: #FFFFFF;
+    color: $white;
     box-shadow: 1px 1px 3px #778187;
     padding: 10px;
     padding-top: 5px; // transform rotates so `top` is `right`

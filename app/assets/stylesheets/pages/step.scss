@@ -7,7 +7,7 @@
 
   .step-header {
     background-color: $color-mediumblue;
-    color: #FFFFFF;
+    color: $white;
   }
 
   .step-title {
@@ -90,10 +90,6 @@
     .arrow.arrow-less {
       transform: rotate(180deg); // flips arrow upside down
     }
-  }
-
-  .callout {
-    border-radius: 0;
   }
 
   .link-box {
