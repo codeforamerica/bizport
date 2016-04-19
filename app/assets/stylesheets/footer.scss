@@ -2,14 +2,14 @@
   margin-top: 30px;
   padding: 30px;
   background-color: $color-black;
-  color: $color-lightgray;
+  color: $color-mediumgray;
 
   a {
     text-decoration: underline;
-    color: $color-lightgray;
+    color: $color-mediumgray;
 
     &:hover {
-      color: $color-lightgray;
+      color: $color-mediumgray;
     }
   }
 }

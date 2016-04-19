@@ -7,7 +7,7 @@
 .media-object { // additions to Foundation style
   @include font-raleway;
   border-radius: $global-radius;
-  box-shadow: 0px 1px 4px $color-lightgray;
+  box-shadow: 0px 1px 4px $color-mediumgray;
   background-color: $white;
   padding: 10px;
   margin-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
@@ -38,11 +38,11 @@
   }
 
   > .contact-box {
-    border-bottom: 1px solid $color-lightgray;
+    border-bottom: 1px solid $color-mediumgray;
     display: block;
 
     &:hover {
-      background-color: $color-lightgray;
+      background-color: $color-mediumgray;
       cursor: pointer;
     }
   }
@@ -70,7 +70,7 @@
 .map-box {
   margin-bottom: 5px;
   padding: 0;
-  background-color: $color-lightgray;
+  background-color: $color-mediumgray;
   overflow: hidden;
   position: relative;
 
@@ -99,7 +99,7 @@
     font-weight: 500;
     font-size: 16px;
     padding: 5px;
-    background-color: $color-lightgray;
+    background-color: $color-mediumgray;
     color: white;
   }
 

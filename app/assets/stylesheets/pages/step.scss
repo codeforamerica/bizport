@@ -50,7 +50,7 @@
   .checklist {
     .sticky {
       @include breakpoint(medium up) {
-        border-right: 1px solid $color-lightgray;
+        border-right: 1px solid $color-mediumgray;
       }
     }
 
