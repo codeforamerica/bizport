@@ -28,7 +28,7 @@
   }
 
   .step-section {
-    margin-top: 20px;
+    margin-top: 30px;
     position: relative; // gets the absolute positioning right for the :before pseudoelement below
 
     &:first-child {
@@ -74,13 +74,18 @@
 
     .arrow {
       display: inline-block;
-      height: 20px;
-      width: 35px;
-      background-image: url(image_path('icon-more.png'));
+      height: 16px;
+      width: 44px;
+      margin: 14px 0; // expand vertical size to meet minimum 44px tap target height
+      background-image: url(image_path('expand_dark_blue.png'));
       position: relative;
       top: 5px;
       left: 10px;
       background-size: cover;
+
+      &:hover {
+        background-image: url(image_path('expand_light_blue.png'));
+      }
     }
     .arrow.arrow-less {
       transform: rotate(180deg); // flips arrow upside down
