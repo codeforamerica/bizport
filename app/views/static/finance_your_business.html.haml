@@ -2,7 +2,7 @@
   .step-header
     .step-title.text-center
       %i.icon-finance-blue
-      %h3 Step 2:
+      %h1 Step 2:
       %h1 Create a Financial Plan
 
   .content-container
@@ -13,69 +13,78 @@
           %h2 My Checklist
 
           %ul
-            %li
-              %input{ type:'checkbox', id:'checklist-1' }
-              %label{ for:'checklist-1' } Create a Financial Plan
-            %li
-              %input{ type:'checkbox', id:'checklist-2' }
-              %label{ for:'checklist-2' } Calculate needed starting capital.
-            %li
-              %input{ type:'checkbox', id:'checklist-3' }
-              %label{ for:'checklist-3' } Calculate Financial Projections.
-            %li
-              %input{ type:'checkbox', id:'checklist-4' }
-              %label{ for:'checklist-4' } Calculate your Break Even point
-            %li
-              %input{ type:'checkbox', id:'checklist-5' }
-              %label{ for:'checklist-5' } Review plan with FREE resources like SBDC
-            %li
-              %input{ type:'checkbox', id:'checklist-6' }
-              %label{ for:'checklist-6' } Explore available loans from the city, the bank, and friends and family.
+            = render 'shared/checklist_item', item_text:"Create a Financial Plan"
+            = render 'shared/checklist_item', item_text:"Calculate needed starting capital."
+            = render 'shared/checklist_item', item_text:"Calculate Financial Projections. "
+            = render 'shared/checklist_item', item_text:"Calculate your Break Even point"
+            = render 'shared/checklist_item', item_text:"Review plan with FREE resources like SBDC"
+            = render 'shared/checklist_item', item_text:"Explore available loans from the city, the bank, and friends and family."
 
       #step-content.columns.small-12.medium-7
         .step-section
-          %h5 Capital
+          %h2 Capital
           %p You have a plan, now you need money to cover your startup expenses and to sustain your business. This includes money to buy equipment as well as to cover any construction, permit or licensing fees.
 
-          %p Be sure that you prepare enough money to run your business for at least the first several months, as it may take time to set up before you have enough customers to be profitable. Starting a business can be expensive. Using the calculations and estimates from your business plan [link to Step 1], decide if you have enough money to begin, or if you need additional money first. Lenders want to see the entrepreneur has his/her capital invested in the business. Have skin in the game.
+          %p Starting a business can be expensive. Be sure that you prepare enough money to run your business for at least the first several months. It may take time to set up before you have enough customers to be profitable.
+
+          %p
+            Using the calculations and estimates from
+            %a{ href: start_business_plan_path } your business plan
+            , decide if you have enough money to begin, or if you need additional capital first. Lenders want to see that you have some of your own capital invested in your business.
+
+          %h3 Financial Projections
+
+          %p You will need financial projections for at least the first three years of operation.
+
+          = render 'shared/link_box', link:'http://www.scorela.org/financial-projections/', line_1:'VIEW', line_2:'Financial Projections Template'
+
+          %h3 Break Even Point
+
+          %p Determine how long it will take for your business to become profitable: How many customers might you need? How long will it take to find those customers?
+
+          = render 'shared/link_box', link:'http://www.scorela.org/financial-projections/', line_1:'EDIT', line_2:'Break-Even Calculator'
+
+          %h3 Sources and Uses of Funds
+
+          %p Show a summary of major purchases (the sources) and what specific capital will purchase (the uses).
+
+          %p Remember that a business plan is required when applying for bank funding.
 
         .step-section
-          %h5 Financial Projections
+          %h2 Funding Sources
 
-          %p Before you start your business, have a clear plan for how it will operate and make money. Writing a business plan will serve as a road map for how to prepare for the rest of the business setup process.
+          %p Here are some ways to get additional money if you need it:
 
-          = render 'shared/link_box', link:'http://www.bplans.com/sample_business_plans.php', line_1:'VIEW', line_2:'Sample Business Plan (PDF)'
+          %h3 Federal Loans
 
-          = render 'shared/link_box', link:'https://www.sba.gov/sites/default/files/SBA%201010C.pdf', line_1:'EDIT', line_2:'Business Plan Template (PDF)'
+          %p Fill out a short questionnaire and you can be matched with participating SBA Lenders through the LINC (Leveraging Information and Networks to access Capital) online referral tool. Submit your loan needs and LINC will connect you with lending partners and the SBA-backed financing programs to help get your business off the ground.
 
-        .step-section
-          %h5 Break Even Point
+          = render 'shared/link_box', link:'https://www.sba.gov/tools/linc', line_1:'VIEW', line_2:'Linc Loans'
 
-          %p Determine how long it will take for your business to become profitable. How many customers might you need? How long will it take to find those customers?
-
-        .step-section
-          %h5 Sources and Uses of Funds
-
-          %p Show a summary where the capital used to funds major purchases will come from (the sources) and what this capital will purchase (the uses). A business plan is required if applying for funding through a bank.
-
-        .step-section
-          %h5 Funding Sources
-
-          %strong City Loans:
+          %h3 City Loans:
 
           %p The City of Long Beach has a loan program for small businesses. City loans are based on the quality of your business plan as well as your resume and other personal qualifications. Credit score is part of the decision, but a low credit score might not prevent you from getting a loan.
 
           = render 'shared/link_box', link:'http://www.longbeach.gov/citymanager/economic-development/grow-long-beach-fund-loan-program/', line_1:'EXPLORE', line_2:'City Loans'
 
-          %strong Economic Development Office
+          %h3 Economic Development Office
 
-          = render 'shared/contact_box_combo', phone:'#', email:'#'
+          %a.media-object.map-box{ href:'https://www.google.com/maps/place/333+W+Ocean+Blvd,+Long+Beach,+CA+90802/@33.7680406,-118.1978274,17z/data=!3m1!4b1!4m2!3m1!1s0x80dd3137402a8497:0x79566f5bd25cc963' }
+            .map-box_title
+              City Hall
+            .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?center=333+W.+Ocean+Blvd.+Long+Beach,+CA+90802&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid|color:blue|333+W.+Ocean+Blvd.+Long+Beach,+CA+90802)" }
 
-          %strong Private Loans
+          = render 'shared/contact_box_combo', phone:'(562) 570-6172', email:'Seyed.Jalali@longbeach.gov '
 
-          %p Many banks will also give loans to small businesses. The requirements for these loans may be more demanding, however, and interest rates may also be higher. You are encouraged to contact your bank first for current rates and terms.
+          %h3 Private Loans
 
-          = render 'shared/link_box', link:'#', line_1:'VIEW', line_2:'Storefront Improvement Grants'
+          %p Many banks will also give loans to small businesses. The requirements for these loans may be more demanding and interest rates may also be higher. You are encouraged to contact your bank for current rates and terms.
+
+          %p If you don’t have good credit, you may be able to use a “loan guarantee” program to apply for private bank loans with lower credit requirements but a slightly higher interest rate. California’s State Treasurer and Small Business Financial Development Corporation (SBFDC) both operate loan guarantee programs for small businesses.
+
+          = render 'shared/link_box', link:'http://sbfdoc.com/programs/program-overview/', line_1:'VIEW', line_2:'SBFDC Loan Guarantee Program'
+
+          = render 'shared/link_box', link:'http://www.treasurer.ca.gov/cpcfa/calcap/sb/summary.asp', line_1:'VIEW', line_2:'CalCAP'
 
         .row.margin-top-30
           .columns.small-12.small-centered
