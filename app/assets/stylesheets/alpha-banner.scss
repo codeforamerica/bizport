@@ -1,5 +1,7 @@
 .alpha-banner {
-  padding: 5px;
-  background-color: $color-lightgray;
-  color: $color-black;
+  @include font-raleway;
+  background-color: $color-black;
+  color: $white;
+  padding-left: 10px;
+  margin-bottom: -10px;
 }

@@ -13,16 +13,14 @@
     .off-canvas-wrapper
       .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
         .alpha-banner
-          This site is a work in progress.
-          .float-right
-            %a{ href: contact_path } Learn More
+          Welcome to the pilot of
         / off-canvas title bar for 'small' screen
         .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "widemenu"}
           .title-bar-left
             %span.title-bar-title.logo-longbeach
               %a{ href: root_path }
-                %span.logo-longbeach_long> LONG
-                %span.logo-longbeach_beach> BEACH
+                %span.logo-longbeach_long> BIZ
+                %span.logo-longbeach_beach> PORT
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
@@ -44,8 +42,8 @@
             %ul.dropdown.menu{"data-dropdown-menu" => true}
               %li.topbar-title.logo-longbeach
                 %a{ href: root_path }
-                  %span.logo-longbeach_long> LONG
-                  %span.logo-longbeach_beach> BEACH
+                  %span.logo-longbeach_long> BIZ
+                  %span.logo-longbeach_beach> PORT
               %li.has-submenu
                 %a{ href: start_business_plan_path } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
