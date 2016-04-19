@@ -2,7 +2,7 @@
   .step-header
     .step-title.text-center
       %i.icon-location-blue
-      %h3 Step 3:
+      %h1 Step 3:
       %h1 Business Location
 
   .content-container
@@ -13,45 +13,17 @@
           %h2 My Checklist
 
           %ul
-            %li
-              %input{ type:'checkbox', id:'checklist-1' }
-              %label{ for:'checklist-1' } Consider home-based vs. brick and mortar
-            %li
-              %input{ type:'checkbox', id:'checklist-2' }
-              %label{ for:'checklist-2' } Consider the size of the property you need for your business
-            %li
-              %input{ type:'checkbox', id:'checklist-3' }
-              %label{ for:'checklist-3' } Identify several locations well-suited for your business.
-            %li
-              %input{ type:'checkbox', id:'checklist-4' }
-              %label{ for:'checklist-4' } Consider working with a commercial broker to help with this process.
-            %li
-              %input{ type:'checkbox', id:'checklist-5' }
-              %label{ for:'checklist-5' } Explore a FREE location selection tool from Gateway Cities Council of Governments
-            %li
-              %input{ type:'checkbox', id:'checklist-6' }
-              %label{ for:'checklist-6' } Talk to current tenants and neighbors to see if the landlord maintains the property well.
-            %li
-              %input{ type:'checkbox', id:'checklist-7' }
-              %label{ for:'checklist-7' } See if your business is allowed in the locations you've selected.
-            %li
-              %input{ type:'checkbox', id:'checklist-8' }
-              %label{ for:'checklist-8' } Find a commercial broker
-            %li
-              %input{ type:'checkbox', id:'checklist-9' }
-              %label{ for:'checklist-9' } Draft a Letter of Intent (LOI)
-            %li
-              %input{ type:'checkbox', id:'checklist-10' }
-              %label{ for:'checklist-10' } Have a commercial broker or lawyer look over the lease.
-            %li
-              %input{ type:'checkbox', id:'checklist-11' }
-              %label{ for:'checklist-11' } Negotiate the lease with the landlord
-            %li
-              %input{ type:'checkbox', id:'checklist-12' }
-              %label{ for:'checklist-12' } Create a sitemap
-            %li
-              %input{ type:'checkbox', id:'checklist-13' }
-              %label{ for:'checklist-13' } Draft and sign the lease
+            = render 'shared/checklist_item', item_text:"Consider home-based vs. brick and mortar"
+            = render 'shared/checklist_item', item_text:"Consider the size of the property you need for your business"
+            = render 'shared/checklist_item', item_text:"Identify several locations well-suited for your business. "
+            = render 'shared/checklist_item', item_text:"Consider working with a commercial broker to help with this process."
+            = render 'shared/checklist_item', item_text:"Explore a FREE location selection tool from Gateway Cities Council of Governments "
+            = render 'shared/checklist_item', item_text:"See if your business type is allowed in the locations you've selected."
+            = render 'shared/checklist_item', item_text:"Draft a Letter of Intent (LOI)"
+            = render 'shared/checklist_item', item_text:"Get feedback on your lease by a lawyer or commercial broker"
+            = render 'shared/checklist_item', item_text:"Create a sitemap"
+            = render 'shared/checklist_item', item_text:"Draft and sign the lease"
+
 
       #step-content.columns.small-12.medium-7
         .step-section
@@ -59,13 +31,14 @@
             NOTE: Do not sign a lease until you've checked with the city to make sure the building can be used for your type of business.
 
         .step-section
-          %p There are a lot of things to take into account before signing the lease. As you select a location for your business, consider the following.
+          %h2 Home Based vs. Brick & Mortar
+          %p There are differences between starting a Home Based Business and a Brick and Mortar. For example, if you’re starting a restaurant you may need a liquor license, zoning inspection, etc.
 
-          %strong Home Based vs. Brick & Mortar
-          %p Consider the differences in project scope between a Home Based Businesses versus a Brick and Mortar.
+          %h3 Brick & Mortar
+          %p There are a lot of things to take into account before signing the lease. Consider the following as you select a location for your business:
 
-          %strong Zoning:
-          %p Different business types are only allowed in certain parts of the city, and it is illegal to run a business in a building that is not zoned for that type of activity. Always check with the city (link) before signing a lease.
+          %h3 Zoning:
+          %p Different business types are only allowed in certain parts of the city, and it is illegal to run a business in a building that is not permitted or zoned for that type of activity. Always check with the City’s planning department (link) before signing a lease.
 
           = render 'shared/link_box', link:'http://www.gatewaycogsiteprospector.org/search.html?zpesst=gatewaycog&zpemode=search&zpesearchtype=BUILDINGS&zpeminsize=1100&zpemaxsize=14000&zpeattributes=145%3A%5B%3D%5D1&zpepropertytype=9&zpegeoentitylist=%2B', line_1:'EXPLORE', line_2:'Free commercial property search tool'
 
@@ -76,70 +49,59 @@
               Planning and Zoning Department
             .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
 
-          = render 'shared/contact_box_combo', phone:'#', email:'#'
+          = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6651'
 
-        .step-section
-          %h5 Square Footage
+          %h3 Square Footage
+          %p Consider the size of the property you need for your business: How much square footage do you need? Is there room for expansion?
 
-          %p Consider the size of the property you need for your business. How much square footage do you need? Is there room for expansion?
-
-        .step-section
-          %h5 Sitemap
-
+          %h3 Sitemap
           %p The city requires you to provide a site plan showing the interior and exterior layout of the business.
 
-        .step-section
-          %h5 Internet Speed
+          %h3 Internet Speed
+          %p Consider the internet connectivity of your location. The City of Long Beach is in the process of getting Google Fiber up and running, which will dramatically improve internet speeds. But in the meantime, some properties have weaker internet connections. Talk to the city to determine if the property you are considering falls under that.
 
-          %p Consider the internet connectivity of your location. The City of Long Beach is in the process of getting Google Fiber up and running which will dramatically improve internet speeds. But in the meantime, some properties have weak internet connections. Talk to the city to determine if the property you are considering falls under that.
-
-        .step-section
-          %h5 Accessibility for Customers:
-          %p Pick a location that your target customers can easily reach.
-          %p Check out Walkscore to assess your property’s walkability, bikeability, and access to public transit.
+          %h3 Accessibility for Customers:
+          %p Pick a location that your target customers can easily reach. Check out Walkscore to assess your property’s walkability, bikeability, and access to public transit.
 
           = render 'shared/link_box', link:'https://www.walkscore.com/', line_1:'EXPLORE', line_2:'walkscore.com'
 
           %p If you think most of your customers will drive, consider the parking minimums the city has placed on the property.
 
-        .step-section
-          %h5 Rent:
+          %h3 Rent:
           %p Make sure that you can afford the rent, based on the revenue and cost expectations from your business plan.
 
-        .step-section
-          %h5 Remodeling Costs and Time:
+          %h3 Remodeling Costs and Time:
           %p You may need to do repairs or remodeling on the property before moving in. Look carefully to determine how much you might need to spend on this work before you can open your business. Hire a licensed architect for tenant improvement plans. The architect can also provide a fairly accurate cost estimate for the improvements.  A professional contractor may be able to give you advice. The cost of certain improvements may be negotiated as part of the lease/rent agreement.
 
-        .step-section
-          %h5 Business Improvement Districts (BIDs):
-          %p Certain areas of Long Beach are served by BIDs which coordinate a variety of services and activities to help businesses in that area. Businesses in these areas are required to pay an annual fee to their BID - usually a few hundred dollars. In return, BIDs may clean the streets, host local events, represent business needs to the city, or provide other business support services.
+          %h3 Business Improvement Districts (BIDs):
+          %p Certain areas of Long Beach are served by BIDs which coordinate a variety of services and activities to help businesses in that area. Businesses and/or property owners in these areas are required to pay an annual fee to their BID - usually a few hundred dollars. In return, BIDs may clean the streets, enhance security, host local events, represent business needs to the city, or provide other business support services.  BIDs offer supplemental services not already provided by the municipality.
 
           = render 'shared/link_box', link:'https://www.google.com/maps/d/u/0/viewer?mid=zRyOlKekBcLw.kEgylOcIk5Qk', line_1:'VIEW', line_2:'Properties that fall under a BID area'
           = render 'shared/link_box', link:'http://www.longbeach.gov/finance/business-info/business-licenses/bids/', line_1:'VIEW', line_2:'BID fee list'
 
-        .step-section
-          %h5 Commercial Brokers real estate agents:
+          %p We recommend getting in touch with your BID director if you are interested in a property that falls into that territory. They can help you through the process of setting up a brick and mortar business.
+
+          %h3 Commercial Brokers real estate agents:
           %p It is highly recommended that you hire a commercial broker to represent you in the negotiations. A professional real estate broker will ensure your interest is protected. Understand the lease terms such as who will be responsible for repairs, taxes, common area expenses, etc. Understand the different players in the commercial real estate world and their roles: Commercial brokers, property managers, leasing managers, and property insurance agents.
 
-        .step-section
-          %h5 Negotiate the lease with the landlord. 
+          %h3 Letter of Intent (LOI)
 
+          = render 'shared/link_box', link:'http://www.nolo.com/legal-encyclopedia/clb-commercial-lease-letter-intent', line_1:'VIEW', line_2:'LOI Template'
+
+          %h3 Tips for working with landlords
           %ul
-            %li
-              %span Length of lease: Month-to-month or over a number of years?
-            %li
-              %span Are renovations or modifications needed, and what are the costs? Tenant improvement costs may be negotiated as part of the lease/rent.
-            %li
-              %span Price / Square Footage
-            %li
-              %span What sort of property insurance is included? Fire etc?
-            %li
-              %span What utilities are included?
-            %li
-              %span Who is responsible for building maintenance? Repairs? Bringing building up to code?
+            %li Talk to current tenants and neighbors to see if the landlord maintains the property well.
 
-        .step-section
-          %h5 Draft and sign the lease
+          %h3 Negotiate the lease with the landlord.
+          %ul
+            %li Length of lease: Month to month or over a number of years?
+            %li Are renovations or modifications needed, what are the costs, who will be responsible for obtaining the necessary permits from the City? Tenant improvement costs may be negotiated as part of the lease/rent.
+            %li Price / square footage
+            %li What sort of property insurance is included (i.e. fire, flood)?
+            %li Are utilities included?
+            %li Who is responsible for building maintenance and repairs and bringing the building up to code?
+
+          %h3 Draft and sign the lease
 
         .row.margin-top-30
           .columns.small-12.small-centered
