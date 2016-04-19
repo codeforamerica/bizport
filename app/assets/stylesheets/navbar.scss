@@ -53,6 +53,11 @@
   li, a {
     color: $white;
   }
+
+  a {
+    display: inline-block;
+    padding: 10px 0;
+  }
   a:hover {
     color: $color-mediumgray;
   }
