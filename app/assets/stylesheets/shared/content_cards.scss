@@ -1,5 +1,4 @@
 .link-box {
-  border-radius: $global-radius;
   line-height: 1.4;
   text-decoration: underline;
 }
@@ -7,6 +6,7 @@
 
 .media-object { // additions to Foundation style
   @include font-raleway;
+  border-radius: $global-radius;
   box-shadow: 0px 1px 4px $color-lightgray;
   background-color: $white;
   padding: 10px;
@@ -32,7 +32,6 @@
 }
 
 .media-object.combo {
-  border-radius: $global-radius;
 
   &:hover { // don't hoverstyle the whole card at once
     background-color: $white;
@@ -57,7 +56,6 @@
   background-image: url(image_path('phone_blue_401501-200.png'));
   height: 52px;
   width: 52px;
-  margin: 9px;
   background-size: cover;
 }
 
@@ -65,7 +63,7 @@
   background-image: url(image_path('email_blue_32727-200.png'));
   height: 43px;
   width: 46px;
-  margin: 13px 12px;
+  margin: 4px 3px;
   background-size: cover;
 }
 
