@@ -26,7 +26,10 @@
     color: $white;
 
     .link-box_icon {
-      background-image: url(image_path('foo.png'));
+      width: 36px;
+      height: 36px;
+      margin: 7px;
+      background-image: url(image_path('share_button_white.png'));
     }
   }
 }
