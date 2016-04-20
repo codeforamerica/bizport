@@ -41,7 +41,7 @@
     }
   }
 
-  .step-section:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
+  .step-section[data-readmore]:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
     content: '';
     width: 100%;
     height: 100%;
