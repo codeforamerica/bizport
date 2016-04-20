@@ -83,9 +83,6 @@
       width: 44px;
       margin: 14px 0; // expand vertical size to meet minimum 44px tap target height
       background-image: url(image_path('expand_dark_blue.png'));
-      position: relative;
-      top: 5px;
-      left: 10px;
       background-size: cover;
 
       &:hover {
