@@ -2,7 +2,7 @@
   .step-header
     .step-title.text-center
       %i.icon-building-blue
-      %h3 Step 6:
+      %h1 Step 6:
       %h1 Building and Inspections
 
   .content-container
@@ -13,26 +13,36 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Schedule appointments with Inspectors"
+            = render 'shared/checklist_item', item_text:"Schedule inspections"
             = render 'shared/checklist_item', item_text:"Be available at your business when the inspector arrives."
             = render 'shared/checklist_item', item_text:"Have a physical copy of your plans available for the inspector to review."
             = render 'shared/checklist_item', item_text:"Get a Certificate of Occupancy"
 
-
       #step-content.columns.small-12.medium-7
         .step-section
-          %h5 Learn
+          %h2 Inspections
           %p As you complete each phase of construction, you'll need to have city inspectors visit to ensure that the work meets the safety standards in the Long Beach city code.
 
-          %p There are several types of inspections, including fire, plumbing, health, mechanical, and electric. You may have to have several inspections from each category as construction proceeds. When you finish construction, you'll need a final inspection for each category of work you've done.
-          %p The cost of these inspections is included in the fees you paid with your permit applications.
+          %p There are several types of inspections, including fire, plumbing, health, mechanical, and electric. You may have to have several inspections from each category as construction proceeds. When you finish construction, you'll need a final inspection for each category of work you've done. The cost of these inspections is included in the fees you paid with your permit applications.
 
-        = render 'shared/link_box', link:'http://www.lbds.info/building/inspection_services', line_1:'SCHEDULE', line_2:'Inspection'
 
-        = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6105'
+          = render 'shared/link_box', link:'http://www.lbds.info/building/inspection_services', line_1:'SCHEDULE', line_2:'Inspection'
 
-        %h5 Certificate of Occupancy
-        %p Continue doing work and scheduling inspections until you receive final approval from the city. This final approval will allow you to get a "certificate of occupancy," which will allow you to begin using your location to do business.
+          %p Inspections can usually be scheduled for the next business day.
+
+          = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6105'
+
+        .step-section
+          %h2 Inspection Day
+          %p You need to be on site when your inspection occurs. The business must be fully prepared to operate. If you need to reschedule your inspection date and time, please give at least 24 hours notice and contact:
+
+          = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6105'
+
+          %p If you are unprepared or miss a scheduled business license inspection without giving a minimum of 24 hours notice, you will be charged a re-inspection fee of $192.37.
+
+        .step-section
+          %h2 Certificate of Occupancy
+          %p Continue doing work and scheduling inspections until you receive final approval from the city. This final approval will allow you to get a "certificate of occupancy," which will allow you to begin using your location to do business.
 
         .row.margin-top-30
           .columns.small-12.small-centered
