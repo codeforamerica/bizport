@@ -2,6 +2,9 @@ class StaticController < ApplicationController
   def home
   end
 
+  def survey
+  end
+
   def contact
     @subscription = Subscription.new
   end

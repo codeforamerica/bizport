@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
+  get '/survey' => 'static#survey'
   get '/contact' => 'static#contact'
   get '/profile' => 'static#profile'
   resources :subscriptions, only: [:create]

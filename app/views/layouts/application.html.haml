@@ -29,6 +29,8 @@
             %li
               %a{ href: root_path } Home
             %li
+              %a{ href: survey_path } Survey
+            %li
               %a{ href: contact_path } Contact
             %li
               %a{ href: questions_path } FAQ
@@ -48,6 +50,8 @@
                 %a{ href: start_business_plan_path } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
                   = render 'shared/header_nav_biz_steps'
+              %li
+                %a{ href: survey_path } Survey
               %li
                 %a{ href: contact_path } Contact
               %li
