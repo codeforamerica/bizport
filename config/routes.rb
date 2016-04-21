@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/survey' => 'static#survey'
   get '/contact' => 'static#contact'
   get '/profile' => 'static#profile'
+  get '/checklist' => 'static#checklist'
   resources :subscriptions, only: [:create]
 
   resources :questions

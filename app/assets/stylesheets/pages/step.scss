@@ -52,27 +52,6 @@
     pointer-events: none;
   }
 
-  .checklist {
-    .sticky {
-      @include breakpoint(medium up) {
-        border-right: 1px solid $color-mediumgray;
-      }
-    }
-
-    ul {
-      margin-left: 0px;
-
-      li ul {
-        margin-left: 3rem;
-      }
-    }
-
-    .sticky > ul > li {
-      list-style: none;
-      margin-bottom: 10px;
-    }
-  }
-
   .readmore {
     @include font-raleway;
     font-size: 18px;

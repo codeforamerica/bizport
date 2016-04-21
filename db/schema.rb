@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20160421181647) do
   create_table "checklist_items", force: :cascade do |t|
     t.string   "item_text"
     t.string   "category"
+    t.string   "category_name"
     t.integer  "order_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "questions", force: :cascade do |t|

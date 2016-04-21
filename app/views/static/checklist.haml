@@ -1,0 +1,7 @@
+.content-container
+  - ChecklistItem.select(:category, :category_name).uniq.each do |category|
+    .row.checklist
+      %h3= category.category_name
+      %ul
+        - ChecklistItem.where(category: category.category).each do |item|
+          = render 'shared/checklist_item', item_text: item.item_text

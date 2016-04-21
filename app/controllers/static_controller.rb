@@ -12,6 +12,9 @@ class StaticController < ApplicationController
   def profile
   end
 
+  def checklist
+  end
+
   # START A BUSINESS STEPS
   def business_plan
   end
