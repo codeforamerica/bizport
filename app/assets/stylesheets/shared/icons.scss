@@ -7,8 +7,10 @@
 .icon-business-plan {
   @include icon;
   height: 65px;
-  width: 70px;
-  background-image: url(image_path('noun_111382_Plan.png'));
+  width: 65px;
+  position: relative;
+  left: 8px;
+  background-image: url(image_path('step1_icon_dark_blue.png'));
 }
 
 .icon-business-plan-blue {
@@ -20,9 +22,9 @@
 
 .icon-license {
   @include icon;
-  height: 70px;
+  height: 45px;
   width: 70px;
-  background-image: url(image_path('noun_9041_License.svg'));
+  background-image: url(image_path('step5_icon_dark_blue.png'));
 }
 .icon-license-blue {
   @include icon;
@@ -35,7 +37,7 @@
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('noun_220206_Funding.svg'));
+  background-image: url(image_path('step2_icon_dark_blue.png'));
 }
 .icon-finance-blue {
   @include icon;
@@ -53,9 +55,9 @@
 
 .icon-register {
   @include icon;
-  height: 70px;
+  height: 48px;
   width: 70px;
-  background-image: url(image_path('noun_154111_Register.svg'));
+  background-image: url(image_path('step4_icon_dark_blue.png'));
 }
 .icon-register-blue {
   @include icon;
@@ -67,8 +69,8 @@
 .icon-location {
   @include icon;
   height: 70px;
-  width: 70px;
-  background-image: url(image_path('noun_220213_Location.svg'));
+  width: 56px;
+  background-image: url(image_path('step3_icon_dark_blue.png'));
 }
 .icon-location-blue {
   @include icon;
@@ -81,7 +83,7 @@
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('noun_179119_Building.svg'));
+  background-image: url(image_path('step6_icon_dark_blue.png'));
 }
 .icon-building-blue {
   @include icon;
@@ -94,7 +96,7 @@
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('noun_206771_Key.svg'));
+  background-image: url(image_path('step7_icon_dark_blue.png'));
 }
 .icon-key-blue {
   @include icon;
