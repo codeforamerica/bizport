@@ -13,10 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Schedule inspections"
-            = render 'shared/checklist_item', item_text:"Be available at your business when the inspector arrives."
-            = render 'shared/checklist_item', item_text:"Have a physical copy of your plans available for the inspector to review."
-            = render 'shared/checklist_item', item_text:"Get a Certificate of Occupancy"
+            - ChecklistItem.where(category: 'inspections').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
       #step-content.columns.small-12.medium-7
         .step-section

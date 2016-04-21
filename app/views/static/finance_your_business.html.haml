@@ -13,12 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Create a Financial Plan"
-            = render 'shared/checklist_item', item_text:"Calculate needed starting capital."
-            = render 'shared/checklist_item', item_text:"Calculate Financial Projections. "
-            = render 'shared/checklist_item', item_text:"Calculate your Break Even point"
-            = render 'shared/checklist_item', item_text:"Review plan with FREE resources like SBDC"
-            = render 'shared/checklist_item', item_text:"Explore available loans from the city, the bank, and friends and family."
+            - ChecklistItem.where(category: 'finance').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
       #step-content.columns.small-12.medium-7
         .step-section

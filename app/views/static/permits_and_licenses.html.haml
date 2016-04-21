@@ -13,13 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Fill out permit applications"
-            = render 'shared/checklist_item', item_text:"Submit applications and physical copies of the plans to City Hall"
-            = render 'shared/checklist_item', item_text:"Pay Plan Check fees"
-            = render 'shared/checklist_item', item_text:"Get plans reviewed by the City "
-            = render 'shared/checklist_item', item_text:"Pay permit fees"
-            = render 'shared/checklist_item', item_text:"Check the status of your permits "
-            = render 'shared/checklist_item', item_text:"Take survey"
+            - ChecklistItem.where(category: 'permits').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
       #step-content.columns.small-12.medium-7
         .step-section

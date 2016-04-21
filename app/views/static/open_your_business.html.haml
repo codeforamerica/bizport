@@ -13,14 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Receive Business License"
-            = render 'shared/checklist_item', item_text:"Receive Certificate of Occupancy"
-            = render 'shared/checklist_item', item_text:"Hire Employees"
-            = render 'shared/checklist_item', item_text:"Put up workplace posters"
-            = render 'shared/checklist_item', item_text:"Sign up your businesses services on Planet Bid"
-            = render 'shared/checklist_item', item_text:"Start doing business!"
-            = render 'shared/checklist_item', item_text:"Consider joining the Chamber of Commerce"
-            = render 'shared/checklist_item', item_text:"Edits to Business License"
+            - ChecklistItem.where(category: 'open').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
 
       #step-content.columns.small-12.medium-7

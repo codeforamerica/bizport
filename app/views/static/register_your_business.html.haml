@@ -15,13 +15,8 @@
           .callout.margin-right-10
             NOTE: Order of tasks matters here!
           %ul
-            = render 'shared/checklist_item', item_text:"Determine your Business Structure"
-            = render 'shared/checklist_item', item_text:"Create a business name and consider the branding implications"
-            = render 'shared/checklist_item', item_text:"Register your Fictitious Business Name with LA county "
-            = render 'shared/checklist_item', item_text:"Apply for a Federal Employer Identification Number "
-            = render 'shared/checklist_item', item_text:"Apply for a California State Board of Equalization Seller's Permit [Retail Only]"
-            = render 'shared/checklist_item', item_text:"Determine which licenses and permits are required for your business type."
-            = render 'shared/checklist_item', item_text:"Apply for a City of Long Beach Business License "
+            - ChecklistItem.where(category: 'register').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
       #step-content.columns.small-12.medium-7
         .step-section

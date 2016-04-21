@@ -13,12 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Determine if I need a Business License"
-            = render 'shared/checklist_item', item_text:"Write a business plan"
-            = render 'shared/checklist_item', item_text:"Check out the classes at SBDC"
-            = render 'shared/checklist_item', item_text:"Get feedback on your Business Plan"
-            = render 'shared/checklist_item', item_text:"Connect with a mentor"
-
+            - ChecklistItem.where(category: 'planning').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
       #step-content.columns.small-12.medium-7
         .step-section

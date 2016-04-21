@@ -13,16 +13,8 @@
           %h2 My Checklist
 
           %ul
-            = render 'shared/checklist_item', item_text:"Consider home-based vs. brick and mortar"
-            = render 'shared/checklist_item', item_text:"Consider the size of the property you need for your business"
-            = render 'shared/checklist_item', item_text:"Identify several locations well-suited for your business. "
-            = render 'shared/checklist_item', item_text:"Consider working with a commercial broker to help with this process."
-            = render 'shared/checklist_item', item_text:"Explore a FREE location selection tool from Gateway Cities Council of Governments "
-            = render 'shared/checklist_item', item_text:"See if your business type is allowed in the locations you've selected."
-            = render 'shared/checklist_item', item_text:"Draft a Letter of Intent (LOI)"
-            = render 'shared/checklist_item', item_text:"Get feedback on your lease by a lawyer or commercial broker"
-            = render 'shared/checklist_item', item_text:"Create a sitemap"
-            = render 'shared/checklist_item', item_text:"Draft and sign the lease"
+            - ChecklistItem.where(category: 'location').each do |item|
+              = render 'shared/checklist_item', item_text: item.item_text
 
 
       #step-content.columns.small-12.medium-7
