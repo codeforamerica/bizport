@@ -33,10 +33,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
-  gem 'capistrano', '~> 3.4'
+  gem 'capistrano', '3.4.0'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails'
-  gem 'capistrano3-puma'
+  gem 'capistrano3-puma', git: 'https://github.com/seuros/capistrano-puma', branch: 'master'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
