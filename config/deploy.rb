@@ -6,6 +6,8 @@ set :repo_url, 'git@github.com:rossettistone/bizport.git'
 
 set :rbenv_ruby, File.read('.ruby-version').strip
 
+set :puma_bind, 'tcp://0.0.0.0:9951'
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

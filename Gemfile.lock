@@ -203,8 +203,8 @@ DEPENDENCIES
   autoprefixer-rails
   byebug
   capistrano (= 3.4.0)
-  capistrano-rails
-  capistrano-rbenv
+  capistrano-rails (= 1.1.6)
+  capistrano-rbenv (= 2.0.4)
   capistrano3-puma!
   foundation-rails (~> 6.2.0)
   haml-rails (~> 0.9)
