@@ -1,7 +1,7 @@
 $(function(){
   $('.step-section').readmore({
     collapsedHeight: 300,
-    heightMargin: 50,
+    heightMargin: 300,
     speed: 250,
     moreLink: '<a href="#" class="readmore text-center"><span class="arrow arrow-more"></span></a>',
     lessLink: '<a href="#" class="readmore text-center"><span class="arrow arrow-less"></span></a>',

@@ -47,7 +47,7 @@
         .step-section
           %h2 Permit Status
           %p You can check the status of your permit using the form below.
-          %iframe{ src:'http://sapphire.longbeach.gov/HPLandMgmt/PB/SitusInquiry.asp', style:"width: 100%;", frameborder:0 }
+          = render 'shared/link_box', link:'http://www.lbds.info/projects/project_status_inquiry.asp', line_1:'VIEW', line_2:'Permit Status'
 
         .step-section
           %h2 Feedback

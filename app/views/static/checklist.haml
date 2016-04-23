@@ -1,7 +1,7 @@
 .content-container
-  - ['planning', 'finance', 'location', 'register', 'permits', 'inspections', 'open'].each do |category|
+  - ['planning', 'finance', 'location', 'register', 'permits', 'inspections', 'open'].each_with_index do |category, i|
     .row.checklist
-      %h3= ChecklistItem.find_by(category: category).category_name
+      %h3 Step #{i+1}: #{ChecklistItem.find_by(category: category).category_name}
       %ul
         - ChecklistItem.where(category: category).order(:order_number).each do |item|
           = render 'shared/checklist_item', item_text: item.item_text
