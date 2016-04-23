@@ -5,7 +5,6 @@
 
 
 .media-object { // additions to Foundation style
-  @include font-raleway;
   border-radius: $global-radius;
   box-shadow: 0px 1px 4px $color-mediumgray;
   background-color: $white;
