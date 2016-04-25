@@ -1,22 +1,27 @@
-%h1 Contact Us
+- content_for :title, "Contact Us"
 
-.content-container
-  %p The Long Beach business portal is a new initiative by the City of Long Beach, in partnership with Code for America, to centralize and improve the resources that entrepreneurs need to start a business in the city. While every effort has been made to ensure the quality and accuracy of information on this site, errors and omissions are likely to exist, and we welcome your feedback to improve the site.
+.step
+  .step-header
+    .step-title.text-center
+      %h1 Contact Us
 
-  %p Feel free to reach out to us with comments.
+  .content-container
+    %p The Long Beach business portal is a new initiative by the City of Long Beach, in partnership with Code for America, to centralize and improve the resources that entrepreneurs need to start a business in the city. While every effort has been made to ensure the quality and accuracy of information on this site, errors and omissions are likely to exist, and we welcome your feedback to improve the site.
 
-  = render 'shared/contact_box', type:'email', contact_info:'longbeach@codeforamerica.org'
+    %p Feel free to reach out to us with comments.
 
-  %p If you have a moment, please fill out our survey on the process of starting a business. Your response will help us to identify where the most work and improvement is needed.
+    = render 'shared/contact_box', type:'email', contact_info:'longbeach@codeforamerica.org'
 
-  = render 'shared/link_box', link:'https://lisa317.typeform.com/to/mHoveY', line_1:'VISIT', line_2:'Business Process Survey'
+    %p If you have a moment, please fill out our survey on the process of starting a business. Your response will help us to identify where the most work and improvement is needed.
 
-  .row.margin-top-20
+    = render 'shared/link_box', link:'https://lisa317.typeform.com/to/mHoveY', line_1:'VISIT', line_2:'Business Process Survey'
 
-    To sign up for our newsletter and project updates, please enter your email below:
+    .row.margin-top-20
 
-    = render 'subscriptions/form'
+      To sign up for our newsletter and project updates, please enter your email below:
 
-    - if flash[:notice].present?
-      .callout.success
-        = flash[:notice]
+      = render 'subscriptions/form'
+
+      - if flash[:notice].present?
+        .callout.success
+          = flash[:notice]
