@@ -1,7 +1,13 @@
-.content-container
-  - ['planning', 'finance', 'location', 'register', 'permits', 'inspections', 'open'].each_with_index do |category, i|
-    .row.checklist
-      %h3 Step #{i+1}: #{ChecklistItem.find_by(category: category).category_name}
-      %ul
-        - ChecklistItem.where(category: category).order(:order_number).each do |item|
-          = render 'shared/checklist_item', item_text: item.item_text
+.step
+  .step-header
+    .step-title.text-center
+      %i.icon-business-plan-blue
+      %h1 My Checklist
+  .content-container
+    - [{ name: 'planning', link: start_business_plan_path }, { name: 'finance', link: start_finance_your_business_path }, { name: 'location', link: start_find_a_location_path }, { name: 'register', link: start_register_your_business_path }, { name: 'permits', link: start_permits_and_licenses_path }, { name: 'inspections', link: start_building_and_inspections_path }, { name: 'open', link: start_open_your_business_path }].each_with_index do |category, i|
+      .row.checklist
+        %h3
+          %a{ href: category[:link], style:"text-decoration: underline;" } Step #{i+1}: #{ChecklistItem.find_by(category: category[:name]).category_name}
+        %ul
+          - ChecklistItem.where(category: category[:name]).order(:order_number).each do |item|
+            = render 'shared/checklist_item', item_text: item.item_text
