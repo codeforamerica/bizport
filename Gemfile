@@ -40,5 +40,13 @@ group :development do
   gem 'capistrano3-puma', git: 'https://github.com/seuros/capistrano-puma', branch: 'master'
 end
 
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'codeclimate-test-reporter', require: false
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
