@@ -12,16 +12,15 @@ gem 'foundation-rails', '~> 6.2.0'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
 gem 'haml-rails', '~> 0.9'
-# Use jquery as the JavaScript library
+
 gem 'jquery-rails'
-# Use Puma as the app server
+
 gem 'puma'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'sitemap_generator'
 
 gem 'newrelic_rpm'
 gem 'bugsnag'

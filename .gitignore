@@ -17,6 +17,10 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore generated sitemap (only needed on prod)
+/public/sitemap.xml.gz
+/public/sitemap.xml
+
 # Ignore Byebug command history file.
 .byebug_history
 

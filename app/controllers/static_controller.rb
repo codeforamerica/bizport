@@ -9,9 +9,6 @@ class StaticController < ApplicationController
     @subscription = Subscription.new
   end
 
-  def profile
-  end
-
   def checklist
   end
 
