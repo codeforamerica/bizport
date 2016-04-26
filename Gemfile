@@ -24,6 +24,7 @@ gem 'sitemap_generator'
 
 gem 'newrelic_rpm'
 gem 'bugsnag'
+gem 'keen'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
