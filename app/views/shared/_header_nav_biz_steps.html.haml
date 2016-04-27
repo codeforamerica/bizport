@@ -1,28 +1,5 @@
-%li.nav-mobile-business-step
-  %a{ href: start_business_plan_path }
-    .numbering> 1)
-    .title> Create a Business Plan
-%li.nav-mobile-business-step
-  %a{ href: start_finance_your_business_path }
-    .numbering> 2)
-    .title> Finance Your Business
-%li.nav-mobile-business-step
-  %a{ href: start_find_a_location_path }
-    .numbering> 3)
-    .title> Business Location
-%li.nav-mobile-business-step
-  %a{ href: start_register_your_business_path }
-    .numbering> 4)
-    .title> Register Your Business
-%li.nav-mobile-business-step
-  %a{ href: start_permits_and_licenses_path }
-    .numbering> 5)
-    .title> Permits and Licenses
-%li.nav-mobile-business-step
-  %a{ href: start_building_and_inspections_path }
-    .numbering> 6)
-    .title> Inspections
-%li.nav-mobile-business-step
-  %a{ href: start_open_your_business_path }
-    .numbering> 7)
-    .title> Open Your Business
+- Comfy::Cms::Page.find_by(slug:'start').children.published.each do |page|
+  %li.nav-mobile-business-step
+    %a{ href: "#{page.full_path}" }
+      .numbering> #{page.position})
+      .title> #{page.label}
