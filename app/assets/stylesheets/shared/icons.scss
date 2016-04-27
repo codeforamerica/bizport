@@ -16,7 +16,8 @@
   @include icon;
   height: 55px;
   width: 55px;
-  background-image: url(image_path('step_one_extra_light_blue_111382-200.png'));
+  opacity: 0.8; // gives it a light blue shade when placed on blue background
+  background-image: url(image_path('step1_icon_white.png'));
 }
 
 .icon-license {
@@ -119,14 +120,7 @@
   padding: 5px;
 }
 
-.icon-learn {
-  @include icon;
-  height: 48px;
-  width: 48px;
-  background-image: url(image_path('noun_216972_Learn.svg'));
-}
-
-.icon-do {
+.icon-checklist {
   @include icon;
   height: 48px;
   width: 48px;

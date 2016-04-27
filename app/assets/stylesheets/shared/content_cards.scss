@@ -20,16 +20,20 @@
     background-size: cover;
   }
 
-  &:hover {
-    background-color: $color-mediumblue;
+  &:hover, &:active {
     color: $white;
-
     .link-box_icon {
       width: 36px;
       height: 36px;
       margin: 7px;
       background-image: url(image_path('share_button_white.png'));
     }
+  }
+  &:hover {
+    background-color: $color-darkblue;
+  }
+  &:active {
+    background-color: $color-mediumblue;
   }
 }
 
@@ -43,9 +47,21 @@
     border-bottom: 1px solid $color-lightgray;
     display: block;
 
-    &:hover {
-      background-color: $color-mediumgray;
+    &:hover, &:active {
       cursor: pointer;
+      .contact-box_icon-phone {
+        background-image: url(image_path('phone_icon_white.png'))
+      }
+      .contact-box_icon-email {
+        background-image: url(image_path('email_icon_white.png'));
+      }
+    }
+
+    &:hover {
+      background-color: $color-darkblue;
+    }
+    &:active {
+      background-color: $color-mediumblue;
     }
   }
 
@@ -63,10 +79,10 @@
 }
 
 .contact-box_icon-email {
-  background-image: url(image_path('email_blue_32727-200.png'));
-  height: 43px;
-  width: 46px;
-  margin: 4px 3px;
+  background-image: url(image_path('email_icon_blue.png'));
+  height: 35px;
+  width: 38px;
+  margin: 8px 8px;
   background-size: cover;
 }
 
