@@ -2,6 +2,10 @@
 .top-bar,
 .top-bar .menu {
   background-color: $color-black;
+  
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .logo-longbeach {
@@ -57,9 +61,11 @@
   a {
     display: inline-block;
     padding: 10px 0;
-  }
-  a:hover {
-    color: $color-mediumgray;
+    
+    &:hover {
+      color: $color-mediumgray;
+      text-decoration: underline;
+    }
   }
 
 
