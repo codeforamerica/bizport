@@ -1,15 +1,15 @@
--# phone
--# email
+-# param_1: phone
+-# param_2: email
 
 .media-object.combo
-  %a.contact-box{ href:"tel:+1#{phone.gsub(/\D/, '')}"} 
+  %a.contact-box{ href:"tel:+1#{param_1.gsub(/\D/, '')}"} 
     .media-object-section.middle
       %div{ class:"contact-box_icon-phone" }
     .media-object-section.middle
-      #{phone}
-  %a.contact-box{ href:"mailto:#{email}" }
+      #{param_1}
+  %a.contact-box{ href:"mailto:#{param_2}" }
     .media-object-section.middle
       %div{ class:"contact-box_icon-email" }
     .media-object-section.middle
-      #{email}
+      #{param_2}
 

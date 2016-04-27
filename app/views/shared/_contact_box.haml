@@ -1,16 +1,16 @@
--# type | ['phone', 'email']
--# contact_info
+-# param_1: type | ['phone', 'email']
+-# param_2: contact_info
 
-- if type == 'phone'
-  %a.media-object.contact-box{ href:"tel:+1#{contact_info.gsub(/\D/, '')}"} 
+- if param_1 == 'phone'
+  %a.media-object.contact-box{ href:"tel:+1#{param_2.gsub(/\D/, '')}"} 
     .media-object-section.middle
-      %div{ class:"contact-box_icon-#{type}" }
+      %div{ class:"contact-box_icon-#{param_1}" }
     .media-object-section.middle
-      #{contact_info}
-- elsif type == 'email'
-  %a.media-object.contact-box{ href:"mailto:#{contact_info}" }
+      #{param_2}
+- elsif param_1 == 'email'
+  %a.media-object.contact-box{ href:"mailto:#{param_2}" }
     .media-object-section.middle
-      %div{ class:"contact-box_icon-#{type}" }
+      %div{ class:"contact-box_icon-#{param_1}" }
     .media-object-section.middle
-      #{contact_info}
+      #{param_2}
 
