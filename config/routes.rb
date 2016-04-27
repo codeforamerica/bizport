@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     get 'open-your-business' => '/static#open_your_business'
   end
 
+  comfy_route :cms_admin, :path => '/admin'
+  comfy_route :cms, :path => '/', :sitemap => false # Make sure this routeset is defined last
+
 end

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta3'
+gem 'rails', '4.2.6'
 gem 'rails_12factor'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
@@ -21,6 +21,8 @@ gem 'puma'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'sitemap_generator'
+
+gem 'comfortable_mexican_sofa'
 
 gem 'newrelic_rpm'
 gem 'bugsnag'
