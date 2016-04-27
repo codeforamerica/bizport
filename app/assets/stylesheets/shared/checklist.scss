@@ -5,6 +5,10 @@
     @include breakpoint(medium up) {
       border-right: 1px solid $color-mediumgray;
     }
+
+    h2 a {
+      text-decoration: underline;
+    }
   }
 
   ul {
