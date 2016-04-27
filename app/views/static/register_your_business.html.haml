@@ -1,91 +1,67 @@
-- content_for :title, "Step 4: Register Your Business"
+.step-section
+  %h2 Business Structure
 
-.step
-  .step-header
-    .step-title.text-center
-      %i.icon-register-blue
-      %h1 Step 4
-      %h1 Register Your Business
+  {{ cms:partial:shared/link_box:"http://www.businessportal.ca.gov/Business-Assistance/Start-a-Business/Choosing-a-Business-Structure":"LEARN MORE":"Business Structures" }}
 
-  .content-container
+.step-section
+  %h3 Branding
+  %p SBDC has free marketing courses to help you create a name for your business that aligns with your overall strategy.
 
-    .row
-      .checklist.columns.small-12.medium-5{"data-sticky-container" => "true"}
-        .sticky{"data-anchor" => "step-content", "data-sticky" => "true"}
-          %h2
-            %a{ href: checklist_path } My Checklist
+  {{ cms:partial:shared/link_box:"http://longbeachsbdc.org/services-2/":"TAKE A FREE CLASS":"Marketing / Branding Course" }}
 
-          .callout.margin-right-10
-            NOTE: Order of tasks matters here!
-          %ul
-            - ChecklistItem.where(category: 'register').each do |item|
-              = render 'shared/checklist_item', item_text: item.item_text
+  %h3 Availability of Name
 
-      #step-content.columns.small-12.medium-7
-        .step-section
-          %h2 Business Structure
+  {{ cms:partial:shared/link_box:"http://www.sos.ca.gov/business-programs/business-entities/name-availability/":"CHECK":"Business Name Availability" }}
 
-          = render 'shared/link_box', link:'http://www.businessportal.ca.gov/Business-Assistance/Start-a-Business/Choosing-a-Business-Structure', line_1:'LEARN MORE', line_2:'Business Structures'
+.step-section
+  %h3 Register the Business Name
+  %p Registering your company name is an optional step that will help protect the identity of your business. It ensures that similar businesses types can’t register the same name. Registration fees vary based on your type of business, location, and number of employees.
 
-        .step-section
-          %h3 Branding
-          %p SBDC has free marketing courses to help you create a name for your business that aligns with your overall strategy.
+  {{ cms:partial:shared/link_box:"http://lavote.net/home/county-clerk/fictitious-business-names/general-info":"REGISTER":"Fictitious Business Name" }}
 
-          = render 'shared/link_box', link:'http://longbeachsbdc.org/services-2/', line_1:'TAKE A FREE CLASS', line_2:'Marketing / Branding Course'
+  {{ cms:partial:shared/link_box:"#":"REGISTER":"State of California" }}
 
-          %h3 Availability of Name
+  %p If you’ve chosen a name and want to make it official, register it with the State of California and County of Los Angeles so you can start "Doing Business As" (DBA) your company.
 
-          = render 'shared/link_box', link:'http://www.sos.ca.gov/business-programs/business-entities/name-availability/', line_1:'CHECK', line_2:'Business Name Availability'
+  %p Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish (writing a business plan), (planning your finances), and (selecting a location) before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
 
-        .step-section
-          %h3 Register the Business Name
-          %p Registering your company name is an optional step that will help protect the identity of your business. It ensures that similar businesses types can’t register the same name. Registration fees vary based on your type of business, location, and number of employees.
+  %h3 Federal Employer Identification Number (FEIN)
 
-          = render 'shared/link_box', link:'http://lavote.net/home/county-clerk/fictitious-business-names/general-info', line_1:'REGISTER', line_2:'Fictitious Business Name'
+  %p If you hire employees, you must apply for a Federal Employee Identification Number . If your business is a sole proprietorship, a FEIN may be helpful, but is not necessary.
 
-          = render 'shared/link_box', link:'#', line_1:'REGISTER', line_2:'State of California'
+  {{ cms:partial:shared/link_box:"https://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online":"APPLY":"Federal Employer Identification Number (FEIN)" }}
 
-          %p If you’ve chosen a name and want to make it official, register it with the State of California and County of Los Angeles so you can start "Doing Business As" (DBA) your company.
+  {{ cms:partial:shared/link_box:"http://www.boe.ca.gov/info/reg.htm":"APPLY', line_2:"California State Board of Equalization Seller's Permit" }}
 
-          %p Applying for a fictitious business name (FBN) is the first piece of paperwork that you'll file for your business. It's best to finish (writing a business plan), (planning your finances), and (selecting a location) before you file, since the application isn't free and you'll have to file more paperwork if you want to change your name later.
+  .step-section
+  %h2 Business License
 
-          %h3 Federal Employer Identification Number (FEIN)
+  {{ cms:partial:shared/link_box:"http://www.longbeach.gov/finance/business-info/business-licenses/business-licenses/":"APPLY":"Business License" }}
 
-          %p If you hire employees, you must apply for a Federal Employee Identification Number . If your business is a sole proprietorship, a FEIN may be helpful, but is not necessary.
+  %p Fill out this form and submit it to the city. Visiting the office in person will ensure that you're able to ask and answer any questions that may come up as city staff review.
 
-          = render 'shared/link_box', link:'https://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online', line_1:'APPLY', line_2:'Federal Employer Identification Number (FEIN)'
+  %p If your business is located outside of the City and you’re applying for an “Out of City” business license, you can mail the form.
 
-          = render 'shared/link_box', link:'http://www.boe.ca.gov/info/reg.htm', line_1:'APPLY', line_2:"California State Board of Equalization Seller's Permit"
+  %h3 Address:
+  City Of Long Beach Business License Application
+  Fourth Floor
+  City Hall 333 W. Ocean Boulevard
+  Long Beach, CA 90802
 
-          .step-section
-          %h2 Business License
+  %h3 Renew in 1 Year
+  %p A business license is valid for one year from the date it was issued. It must be renewed each year. A renewal notice is sent to the license holder 10 days prior to the due date, and they have 30 days to pay without penalty. You are still responsible for payment by the due date even if you do not receive a notice. If you change your mailing address during the year, contact the Business License Department to report the change.
 
-          = render 'shared/link_box', link:'http://www.longbeach.gov/finance/business-info/business-licenses/business-licenses/', line_1:'APPLY', line_2:'Business License'
+  %h3 Penalty Fee
+  %p You will be fined 25% of your payment fee if you do not pay within 30 days of the due date. An additional 10% penalty will be added for each month the bill goes unpaid. The postmark date will determine whether or not your payment is delinquent.
 
-          %p Fill out this form and submit it to the city. Visiting the office in person will ensure that you're able to ask and answer any questions that may come up as city staff review.
+  %h3 Multiple Businesses at One Location
+  %p You are required to obtain an additional license for each business activity even if it is in the same location. For example, if you are a restaurant and you sell retail items, you need a restaurant business license AND a retail business license.
 
-          %p If your business is located outside of the City and you’re applying for an “Out of City” business license, you can mail the form.
+  %p If you have more than one business license at the same location, you may choose to pay for all employees on one license. If so, you will pay for the employees on the license with the higher employee rate.
 
-          %h3 Address:
-          City Of Long Beach Business License Application
-          Fourth Floor
-          City Hall 333 W. Ocean Boulevard
-          Long Beach, CA 90802
+  %p (L.B.M.C 3.80.420.6)
 
-          %h3 Renew in 1 Year
-          %p A business license is valid for one year from the date it was issued. It must be renewed each year. A renewal notice is sent to the license holder 10 days prior to the due date, and they have 30 days to pay without penalty. You are still responsible for payment by the due date even if you do not receive a notice. If you change your mailing address during the year, contact the Business License Department to report the change.
-
-          %h3 Penalty Fee
-          %p You will be fined 25% of your payment fee if you do not pay within 30 days of the due date. An additional 10% penalty will be added for each month the bill goes unpaid. The postmark date will determine whether or not your payment is delinquent.
-
-          %h3 Multiple Businesses at One Location
-          %p You are required to obtain an additional license for each business activity even if it is in the same location. For example, if you are a restaurant and you sell retail items, you need a restaurant business license AND a retail business license.
-
-          %p If you have more than one business license at the same location, you may choose to pay for all employees on one license. If so, you will pay for the employees on the license with the higher employee rate.
-
-          %p (L.B.M.C 3.80.420.6)
-
-        .row.margin-top-30
-          .columns.small-12.small-centered
-            %a.button.secondary.expanded{ href:start_permits_and_licenses_path }
-              %h2 Step 5: Permits and Licenses
+.row.margin-top-30
+  .columns.small-12.small-centered
+    %a.button.secondary.expanded{ href:start_permits_and_licenses_path }
+      %h2 Step 5: Permits and Licenses

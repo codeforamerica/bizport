@@ -2,7 +2,7 @@
 label: Home Fixture Page
 layout: content
 parent: 
-target_page: "/business_plan"
+target_page: "/business-plan"
 categories: []
 is_published: true
 position: 0

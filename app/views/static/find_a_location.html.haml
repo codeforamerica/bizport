@@ -15,9 +15,6 @@
           %h2
             %a{ href: checklist_path } My Checklist
 
-          %ul
-            - ChecklistItem.where(category: 'location').each do |item|
-              = render 'shared/checklist_item', item_text: item.item_text
 
 
       #step-content.columns.small-12.medium-7
@@ -35,7 +32,7 @@
           %h3 Zoning:
           %p Different business types are only allowed in certain parts of the city, and it is illegal to run a business in a building that is not permitted or zoned for that type of activity. Always check with the City’s planning department (link) before signing a lease.
 
-          = render 'shared/link_box', link:'http://www.gatewaycogsiteprospector.org/search.html?zpesst=gatewaycog&zpemode=search&zpesearchtype=BUILDINGS&zpeminsize=1100&zpemaxsize=14000&zpeattributes=145%3A%5B%3D%5D1&zpepropertytype=9&zpegeoentitylist=%2B', line_1:'EXPLORE', line_2:'Free commercial property search tool'
+          {{ cms:partial:shared/link_box:"http://www.gatewaycogsiteprospector.org/search.html?zpesst=gatewaycog&zpemode=search&zpesearchtype=BUILDINGS&zpeminsize=1100&zpemaxsize=14000&zpeattributes=145%3A%5B%3D%5D1&zpepropertytype=9&zpegeoentitylist=%2B":"EXPLORE":"Free commercial property search tool" }}
 
           %p Contact the Planning and Zoning departments to confirm that your business type works in that zoned area.
 
@@ -44,7 +41,7 @@
               Planning and Zoning Department
             .map-box_image{ style:"background-image:url(http://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x200&maptype=roadmap&key=AIzaSyDNMwk_TfOkVkYQYNEe_8e2M7k6z_KCx1A&format=png&visual_refresh=true&markers=size:mid|color:blue|4900+E+Conant+St+Suite+108,+Long+Beach,+CA+90808)" }
 
-          = render 'shared/contact_box', type:'phone', contact_info:'(562) 570-6651'
+          {{ cms:partial:shared/contact_box:phone:"(562) 570-6651" }}
 
           %h3 Square Footage
           %p Consider the size of the property you need for your business: How much square footage do you need? Is there room for expansion?
@@ -58,7 +55,7 @@
           %h3 Accessibility for Customers:
           %p Pick a location that your target customers can easily reach. Check out Walkscore to assess your property’s walkability, bikeability, and access to public transit.
 
-          = render 'shared/link_box', link:'https://www.walkscore.com/', line_1:'EXPLORE', line_2:'walkscore.com'
+          {{ cms:partial:shared/link_box:https://www.walkscore.com/:"EXPLORE":"walkscore.com" }}
 
           %p If you think most of your customers will drive, consider the parking minimums the city has placed on the property.
 
@@ -71,8 +68,8 @@
           %h3 Business Improvement Districts (BIDs):
           %p Certain areas of Long Beach are served by BIDs which coordinate a variety of services and activities to help businesses in that area. Businesses and/or property owners in these areas are required to pay an annual fee to their BID - usually a few hundred dollars. In return, BIDs may clean the streets, enhance security, host local events, represent business needs to the city, or provide other business support services.  BIDs offer supplemental services not already provided by the municipality.
 
-          = render 'shared/link_box', link:'https://www.google.com/maps/d/u/0/viewer?mid=zRyOlKekBcLw.kEgylOcIk5Qk', line_1:'VIEW', line_2:'Properties that fall under a BID area'
-          = render 'shared/link_box', link:'http://www.longbeach.gov/finance/business-info/business-licenses/bids/', line_1:'VIEW', line_2:'BID fee list'
+          {{ cms:partial:shared/link_box:"https://www.google.com/maps/d/u/0/viewer?mid=zRyOlKekBcLw.kEgylOcIk5Qk":"VIEW":"Properties that fall under a BID area" }}
+          {{ cms:partial:shared/link_box:"http://www.longbeach.gov/finance/business-info/business-licenses/bids/":"VIEW":"BID fee list" }}
 
           %p We recommend getting in touch with your BID director if you are interested in a property that falls into that territory. They can help you through the process of setting up a brick and mortar business.
 
@@ -81,7 +78,7 @@
 
           %h3 Letter of Intent (LOI)
 
-          = render 'shared/link_box', link:'http://www.nolo.com/legal-encyclopedia/clb-commercial-lease-letter-intent', line_1:'VIEW', line_2:'LOI Template'
+          {{ cms:partial:shared/link_box:"http://www.nolo.com/legal-encyclopedia/clb-commercial-lease-letter-intent":"VIEW":"LOI Template" }}
 
           %h3 Tips for working with landlords
           %ul
