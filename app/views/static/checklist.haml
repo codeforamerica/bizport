@@ -6,7 +6,7 @@
       %i.icon-business-plan-blue
       %h1 My Checklist
   .content-container
-    - [{ name: 'planning', link: start_business_plan_path }, { name: 'finance', link: start_finance_your_business_path }, { name: 'location', link: start_find_a_location_path }, { name: 'register', link: start_register_your_business_path }, { name: 'permits', link: start_permits_and_licenses_path }, { name: 'inspections', link: start_building_and_inspections_path }, { name: 'open', link: start_open_your_business_path }].each_with_index do |category, i|
+    - [{ name: 'planning', link: '/start/business-plan' }, { name: 'finance', link: '/start/finance-your-business' }, { name: 'location', link: '/start/find-a-location' }, { name: 'register', link: '/start/register-your-business' }, { name: 'permits', link: '/start/permits-and-licenses' }, { name: 'inspections', link: '/start/building-and-inspections' }, { name: 'open', link: '/start/open-your-business' }].each_with_index do |category, i|
       .row.checklist
         %h3
           %a{ href: category[:link], style:"text-decoration: underline;" } Step #{i+1}: #{ChecklistItem.find_by(category: category[:name]).category_name}
