@@ -3,7 +3,7 @@
   background-size: cover;
 }
 
-.icon-business-plan {
+.icon-step-1, .icon-business-plan {
   @include icon;
   height: 65px;
   width: 65px;
@@ -20,7 +20,7 @@
   background-image: url(image_path('step1_icon_white.png'));
 }
 
-.icon-license {
+.icon-step-5, .icon-license {
   @include icon;
   height: 45px;
   width: 70px;
@@ -33,7 +33,7 @@
   background-image: url(image_path('noun_9041_License_light_blue.png'));
 }
 
-.icon-finance {
+.icon-step-2, .icon-finance {
   @include icon;
   height: 70px;
   width: 70px;
@@ -53,7 +53,7 @@
   background-image: url(image_path('noun_220210_Name.svg'));
 }
 
-.icon-register {
+.icon-step-4, .icon-register {
   @include icon;
   height: 48px;
   width: 70px;
@@ -66,7 +66,7 @@
   background-image: url(image_path('noun_154111_Register_light_blue.png'));
 }
 
-.icon-location {
+.icon-step-3, .icon-location {
   @include icon;
   height: 70px;
   width: 56px;
@@ -79,7 +79,7 @@
   background-image: url(image_path('noun_220213_Location_light_blue.png'));
 }
 
-.icon-building {
+.icon-step-6, .icon-building {
   @include icon;
   height: 70px;
   width: 70px;
@@ -92,7 +92,7 @@
   background-image: url(image_path('noun_179119_Building_light_blue.png'));
 }
 
-.icon-key {
+.icon-step-7, .icon-key {
   @include icon;
   height: 70px;
   width: 70px;

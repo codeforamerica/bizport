@@ -9,66 +9,14 @@
         Our site is a work in progress and we have a ways to go, so we would greatly appreciate your feedback.
 
   .row.small-up-1.medium-up-3.text-center
-    .column.margin-bottom-30
-      %a{ href: start_business_plan_path }
-        .row
-          %i.icon-business-plan
-        .row
+    - Comfy::Cms::Page.find_by(slug:'start').children.published.order(:position).each do |page|
+      .column.margin-bottom-30
+        %a{ href: page.full_path }
           .row
-            Step 1:
+            %i{ class: "icon-step-#{page.position}" }
           .row
-            Create a Business Plan
-    .column.margin-bottom-30
-      %a{ href: start_finance_your_business_path }
-        .row
-          %i.icon-finance
-        .row
-          .row
-            Step 2:
-          .row
-            Finance Your Business
-    .column.margin-bottom-30
-      %a{ href: start_find_a_location_path }
-        .row
-          %i.icon-location
-        .row
-          .row
-            Step 3:
-          .row
-            Find a Location
-    .column.margin-bottom-30
-      %a{ href: start_register_your_business_path }
-        .row
-          %i.icon-register
-        .row
-          .row
-            Step 4:
-          .row
-            Register Your Business
-    .column.margin-bottom-30
-      %a{ href: start_permits_and_licenses_path }
-        .row
-          %i.icon-license
-        .row
-          .row
-            Step 5:
-          .row
-            Permits and Licenses
-    .column.margin-bottom-30
-      %a{ href: start_building_and_inspections_path }
-        .row
-          %i.icon-building
-        .row
-          .row
-            Step 6:
-          .row
-            Inspections
-    .column.margin-bottom-30
-      %a{ href: start_open_your_business_path }
-        .row
-          %i.icon-key
-        .row
-          .row
-            Step 7:
-          .row
-            Open Your Business
+            .row
+              Step #{page.position}:
+            .row
+              = page.label
+      
