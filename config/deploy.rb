@@ -8,6 +8,13 @@ set :rbenv_ruby, File.read('.ruby-version').strip
 
 set :puma_bind, 'tcp://0.0.0.0:9951'
 
+# Notify Bugsnag of new releases
+require "bugsnag/capistrano"
+set :bugsnag_api_key, "7af36b6215b3d92b6cd8f20a3ceb6a26"
+
+require 'new_relic/recipes'
+after "deploy:updated", "newrelic:notice_deployment"
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -27,7 +34,7 @@ set :puma_bind, 'tcp://0.0.0.0:9951'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
