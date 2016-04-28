@@ -12,6 +12,7 @@ set :puma_bind, 'tcp://0.0.0.0:9951'
 require "bugsnag/capistrano"
 set :bugsnag_api_key, "7af36b6215b3d92b6cd8f20a3ceb6a26"
 
+# Notify NewRelic of new releases
 require 'new_relic/recipes'
 after "deploy:updated", "newrelic:notice_deployment"
 
