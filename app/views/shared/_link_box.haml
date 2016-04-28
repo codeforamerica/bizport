@@ -1,10 +1,10 @@
--# param_1: link
--# param_2: line_1
--# param_3: line_2
+- link = link || param_1
+- line_1 = line_1 || param_2
+- line_2 = line_2 || param_3
 
-%a.media-object.link-box{ href:"#{param_1}", target:'_blank' }
+%a.media-object.link-box{ href:"#{link}", target:'_blank' }
   .media-object-section.middle
     .link-box_icon
   .media-object-section.middle
-    %div #{param_2}
-    %div #{param_3}
+    %div #{line_1}
+    %div #{line_2}
