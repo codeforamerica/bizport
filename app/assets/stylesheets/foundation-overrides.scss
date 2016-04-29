@@ -13,3 +13,7 @@
 .button {
   @include font-raleway;
 }
+
+.off-canvas-content {
+  padding-bottom: 0;
+}
