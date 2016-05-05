@@ -7,12 +7,21 @@ class ApplicationController < ActionController::Base
   # used in CMS "step" pages to set up "next page" links
   def next_step_page(component)
     page = Comfy::Cms::Page.find_by(full_path: request.path)
-    next_page = Comfy::Cms::Page.find_by(position: page.position+1)
+    # TODO: Refactor from Ruby logic into query for speed
+    next_page = Comfy::Cms::Page.where(position: page.position+1).select{ |p| p.categories.any?{|c| c.label == "Step" } }.first
     case component
     when "title"
-      return "Step #{next_page.position}: #{next_page.label}"
+      if next_page
+        return "Step #{next_page.position}: #{next_page.label}"
+      else
+        return "Return to Homepage"
+      end
     when "path"
-      return next_page.full_path
+      if next_page
+        return next_page.full_path
+      else
+        return "/"
+      end
     end
   end
   helper_method :next_step_page
