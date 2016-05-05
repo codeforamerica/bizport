@@ -50,5 +50,8 @@ SitemapGenerator::Sitemap.create do
 
   controller_paths.each { |path| add path }
 
+  # CMS
+  Comfy::Cms::Page.where(is_published: true).each { |page| add page.full_path }
+
 end
 
