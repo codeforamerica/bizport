@@ -45,6 +45,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'codeclimate-test-reporter', require: false
