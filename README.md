@@ -8,3 +8,9 @@ http://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-ke
 Configure SELinux
 http://linux.die.net/man/8/getsebool
 https://wiki.apache.org/httpd/13PermissionDenied
+
+
+----------
+
+To *import* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
+To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`

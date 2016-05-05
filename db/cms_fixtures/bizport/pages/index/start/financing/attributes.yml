@@ -3,6 +3,7 @@ label: Create a Financial Plan
 layout: step
 parent: start
 target_page: 
-categories: []
+categories:
+  - Step
 is_published: true
 position: 3

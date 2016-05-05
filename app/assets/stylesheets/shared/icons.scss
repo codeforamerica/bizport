@@ -3,13 +3,12 @@
   background-size: cover;
 }
 
-.icon-step-1, .icon-business-plan {
+.icon-step-1, .icon-determine-license {
   @include icon;
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 66px;
   position: relative;
-  left: 8px;
-  background-image: url(image_path('step1_icon_dark_blue.png'));
+  background-image: url(image_path('need_biz_lic_icon_dark_blue_2x.png'));
 }
 
 .icon-business-plan-blue {
@@ -20,7 +19,7 @@
   background-image: url(image_path('step1_icon_white.png'));
 }
 
-.icon-step-5, .icon-license {
+.icon-step-6, .icon-license {
   @include icon;
   height: 45px;
   width: 70px;
@@ -33,7 +32,14 @@
   background-image: url(image_path('noun_9041_License_light_blue.png'));
 }
 
-.icon-step-2, .icon-finance {
+.icon-step-2, .icon-plan {
+  @include icon;
+  height: 70px;
+  width: 54px;
+  background-image: url(image_path('plan_biz_icon_dark_blue_2x.png'));
+}
+
+.icon-step-3, .icon-finance {
   @include icon;
   height: 70px;
   width: 70px;
@@ -53,7 +59,7 @@
   background-image: url(image_path('noun_220210_Name.svg'));
 }
 
-.icon-step-4, .icon-register {
+.icon-step-5, .icon-register {
   @include icon;
   height: 48px;
   width: 70px;
@@ -66,7 +72,7 @@
   background-image: url(image_path('noun_154111_Register_light_blue.png'));
 }
 
-.icon-step-3, .icon-location {
+.icon-step-4, .icon-location {
   @include icon;
   height: 70px;
   width: 56px;
@@ -79,7 +85,7 @@
   background-image: url(image_path('noun_220213_Location_light_blue.png'));
 }
 
-.icon-step-6, .icon-building {
+.icon-step-7, .icon-building {
   @include icon;
   height: 70px;
   width: 70px;
@@ -92,7 +98,14 @@
   background-image: url(image_path('noun_179119_Building_light_blue.png'));
 }
 
-.icon-step-7, .icon-key {
+.icon-step-8, .icon-inspections {
+  @include icon;
+  height: 70px;
+  width: 70px;
+  background-image: url(image_path('inspection_step_icon_blue.png'))
+}
+
+.icon-step-9, .icon-key {
   @include icon;
   height: 70px;
   width: 70px;
@@ -103,6 +116,13 @@
   height: 34px;
   width: 70px;
   background-image: url(image_path('noun_206771_Key_light_blue.png'));
+}
+
+.icon-step-10, .icon-government {
+  @include icon;
+  height: 60px;
+  width: 60px;
+  background-image: url(image_path('gov_icon_darkblue_2x.png'));
 }
 
 .icon-container-circle {
@@ -125,4 +145,18 @@
   height: 48px;
   width: 48px;
   background-image: url(image_path('noun_216965_Do.svg'));
+}
+
+.icon-contact {
+  @include icon;
+  height: 55px;
+  width: 53px;
+  background-image: url(image_path('contact_dark_blue_icon_2x.png'));
+}
+
+.icon-resources {
+  @include icon;
+  height: 55px;
+  width: 49px;
+  background-image: url(image_path('resources_icon_darkblue_2x.png'));
 }
