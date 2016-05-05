@@ -24,8 +24,5 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore secrets - Capistrano will handle 'em
-/config/secrets.yml
-
 # Ignore system files
 .DS_Store
