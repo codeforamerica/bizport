@@ -14,13 +14,14 @@ $(function(){
         $(element).addClass('readmore-expanded');
         $(element).removeClass('readmore-collapsed');
         window.keen.addEvent("readmore", {
-          item: $(element).attr('id'),
-          referrer: document.referrer,
+          item: $(element).children().first().text().toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-'),
+          page: window.location.pathname,
+          host: window.location.hostname,
           keen: {
             timestamp: new Date().toISOString()
           }
         }, function(err, res){
-          console.log(err, res)
+          console.log(err, res);
         });
       } else if (expanded) { // The "close" link was clicked
         $(element).addClass('readmore-collapsed');
