@@ -25,4 +25,10 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :next_step_page
+
+  def page_slug
+    Comfy::Cms::Page.find_by(full_path: request.path).slug
+  end
+  helper_method :page_slug
+
 end
