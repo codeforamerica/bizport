@@ -13,6 +13,15 @@ $(function(){
       if (!expanded) { // The "open" link was clicked
         $(element).addClass('readmore-expanded');
         $(element).removeClass('readmore-collapsed');
+        window.keen.addEvent("readmore", {
+          item: $(element).attr('id'),
+          referrer: document.referrer,
+          keen: {
+            timestamp: new Date().toISOString()
+          }
+        }, function(err, res){
+          console.log(err, res)
+        });
       } else if (expanded) { // The "close" link was clicked
         $(element).addClass('readmore-collapsed');
         $(element).removeClass('readmore-expanded');

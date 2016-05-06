@@ -18,6 +18,7 @@
 //= require readmore-config
 
 //= require intercom
+//= require keen-tracker
 
 //= require_tree .
 

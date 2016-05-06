@@ -1,0 +1,6 @@
+// Configure an instance
+window.keen = new Keen({
+  projectId: "571e9b7307271969a17665f5",
+  writeKey: "684665572a6468c8e7aa77b79564a328fc085b040846369a5a08e22fb5a84dac78293d3651ff97bcf1ce816b307bacadb9bc9b70a1f0897eca8f53d3a0600dfa00ffa70bc4cc5110fc7d1575e148a7e72800672c2cd9c95c7e85a1b9d7a2e950",
+});
+
