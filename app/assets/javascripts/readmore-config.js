@@ -20,9 +20,7 @@ $(function(){
           keen: {
             timestamp: new Date().toISOString()
           }
-        }, function(err, res){
-          console.log(err, res);
-        });
+        }, function(err, res){});
       } else if (expanded) { // The "close" link was clicked
         $(element).addClass('readmore-collapsed');
         $(element).removeClass('readmore-expanded');
