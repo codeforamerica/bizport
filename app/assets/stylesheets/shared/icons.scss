@@ -7,166 +7,155 @@
   @include icon;
   height: 70px;
   width: 66px;
-  position: relative;
-  background-image: url(image_path('need_biz_lic_icon_dark_blue_2x.png'));
+  background-image: url(image_path('need_biz_license_319020-200_blue.png'));
 }
 .icon-determine-license-white {
   @include icon;
   height: 70px;
   width: 66px;
-  position: relative;
-  // TODO: background-image: url(image_path('need_biz_lic_icon_white_2x.png'));
-}
-
-.icon-business-plan-white {
-  @include icon;
-  height: 55px;
-  width: 55px;
-  opacity: 0.8; // gives it a light blue shade when placed on blue background
-  background-image: url(image_path('step1_icon_white.png'));
-}
-
-.icon-step-6, .icon-license {
-  @include icon;
-  height: 45px;
-  width: 70px;
-  background-image: url(image_path('step5_icon_dark_blue.png'));
-}
-.icon-license-white {
-  @include icon;
-  height: 52px;
-  width: 83px;
-  background-image: url(image_path('noun_9041_License_light_blue.png'));
+  background-image: url(image_path('need_biz_license_319020-200_white.png'));
 }
 
 .icon-step-2, .icon-plan {
   @include icon;
   height: 70px;
   width: 54px;
-  background-image: url(image_path('plan_biz_icon_dark_blue_2x.png'));
+  background-image: url(image_path('plan_173995-200_blue.png'));
 }
 .icon-plan-white {
   @include icon;
   height: 70px;
   width: 54px;
-  // TODO: background-image: url(image_path('plan_biz_icon_dark_blue_2x.png'));
+  background-image: url(image_path('plan_173995-200_white.png'));
 }
 
-.icon-step-3, .icon-finance {
+.icon-step-3, .icon-financing {
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('step2_icon_dark_blue.png'));
+  background-image: url(image_path('finance_blue.png'));
 }
-.icon-finance-white {
+.icon-financing-white {
   @include icon;
   height: 69px;
   width: 70px;
-  background-image: url(image_path('noun_220206_Funding_light_blue.png'));
-}
-
-.icon-step-5, .icon-register {
-  @include icon;
-  height: 48px;
-  width: 70px;
-  background-image: url(image_path('step4_icon_dark_blue.png'));
-}
-.icon-register-white {
-  @include icon;
-  height: 55px;
-  width: 80px;
-  background-image: url(image_path('noun_154111_Register_light_blue.png'));
+  background-image: url(image_path('finance_white.png'));
 }
 
 .icon-step-4, .icon-location {
   @include icon;
   height: 70px;
   width: 56px;
-  background-image: url(image_path('step3_icon_dark_blue.png'));
+  background-image: url(image_path('location_blue.png'));
 }
 .icon-location-white {
   @include icon;
   height: 70px;
   width: 55px;
-  background-image: url(image_path('noun_220213_Location_light_blue.png'));
+  background-image: url(image_path('location_white.png'));
 }
 
-.icon-step-7, .icon-building {
+.icon-step-5, .icon-register {
   @include icon;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('step6_icon_dark_blue.png'));
+  height: 48px;
+  width: 75px;
+  background-image: url(image_path('license_blue.png'));
 }
-.icon-building-white {
+.icon-register-white {
   @include icon;
-  height: 70px;
+  height: 48px;
+  width: 75px;
+  background-image: url(image_path('license_white.png'));
+}
+
+.icon-step-6, .icon-business-license {
+  @include icon;
+  height: 45px;
   width: 70px;
-  background-image: url(image_path('noun_179119_Building_light_blue.png'));
+  background-image: url(image_path('id_blue.png'));
+}
+.icon-business-license-white {
+  @include icon;
+  height: 45px;
+  width: 70px;
+  background-image: url(image_path('id_white.png'));
+}
+
+.icon-step-7, .icon-permits {
+  @include icon;
+  height: 68px;
+  width: 79px;
+  background-image: url(image_path('brick_111748-200_blue.png'));
+}
+.icon-permits-white {
+  @include icon;
+  height: 68px;
+  width: 79px;
+  background-image: url(image_path('brick_111748-200_white.png'));
 }
 
 .icon-step-8, .icon-inspections {
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('inspection_step_icon_blue.png'))
+  background-image: url(image_path('inspector_76604-200_blue.png'))
 }
 .icon-inspections-white {
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('inspection_icon_white_2x.png'))
+  background-image: url(image_path('inspector_76604-200_white.png'))
 }
 
-.icon-step-9, .icon-key {
+.icon-step-9, .icon-grow {
   @include icon;
   height: 70px;
   width: 70px;
-  background-image: url(image_path('step7_icon_dark_blue.png'));
+  background-image: url(image_path('key_324199-200_blue.png'));
 }
-.icon-key-white {
+.icon-grow-white {
   @include icon;
-  height: 34px;
+  height: 70px;
   width: 70px;
-  background-image: url(image_path('noun_206771_Key_light_blue.png'));
+  background-image: url(image_path('key_324199-200_white.png'));
 }
 
-.icon-step-10, .icon-government {
+.icon-step-10, .icon-city-contracts {
   @include icon;
   height: 60px;
   width: 60px;
-  background-image: url(image_path('gov_icon_darkblue_2x.png'));
+  background-image: url(image_path('government_143672-200_blue.png'));
 }
-
-.icon-government-white {
+.icon-city-contracts-white {
   @include icon;
   height: 60px;
   width: 60px;
-  background-image: url(image_path('gov_icon_white_2x.png')); 
+  background-image: url(image_path('government_143672-200_white.png')); 
 }
 
 .icon-checklist-white {
   @include icon;
   height: 58px;
   width: 48px;
-  background-image: url(image_path('my_checklist_icon_white.svg'));
+  background-image: url(image_path('checklist_white.png'));
 }
 
 .icon-contact-white {
   @include icon;
   height: 55px;
   width: 53px;
-  background-image: url(image_path('contact_icon_white_2x.png'));
+  background-image: url(image_path('contact_75084-200_white.png'));
 }
 
 .icon-resources {
   @include icon;
   height: 55px;
   width: 49px;
-  background-image: url(image_path('resources_icon_darkblue_2x.png'));
+  background-image: url(image_path('resources_212908-200_blue.png'));
 }
 .icon-resources-white {
   @include icon;
   height: 55px;
   width: 49px;
-  background-image: url(image_path('resources_icon_white_2x.png'));
+  background-image: url(image_path('resources_212908-200_white.png'));
 }
