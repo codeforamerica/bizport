@@ -8,6 +8,23 @@
       %h5.text-center
         Our site is a work in progress and we have a ways to go, so we would greatly appreciate your feedback.
 
+  .row.margin-bottom-30
+    Join us in designing! If you are an entrepreneur or current business owner, we want to ensure that the business portal we design meets your needs.
+    .columns.small-12.medium-8.medium-offset-2
+      .columns.small-12.medium-6
+        %strong Who:
+        %div City of Long Beach Innovation Team
+        %div Code for America
+        %strong When:
+        %div This Thursday, May 12th 1-3pm
+        %div This Saturday, May 14th 1-4pm
+      .columns.small-12.medium-6
+        %strong Where:
+        %div Long Beach Public Library
+        %div Main Branch
+        %div 101 Pacific Ave.
+        %div Long Beach, CA 90822
+
   .row.small-up-1.medium-up-3.text-center
     - Comfy::Cms::Page.find_by(slug:'start').children.published.order(:position).each do |page|
       .column.margin-bottom-30
@@ -19,4 +36,3 @@
               Step #{page.position}:
             .row
               = page.label
-      
