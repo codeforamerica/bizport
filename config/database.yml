@@ -1,16 +1,10 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
   adapter: postgresql
-  pool: 5
   timeout: 5000
 
 development:
   <<: *default
+  pool: 5
   database: bizport_development
 
 # Warning: The database defined as "test" will be erased and
@@ -18,8 +12,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  pool: 10
   database: bizport_test
 
 production:
   <<: *default
+  pool: 20
   database: bizport_production
