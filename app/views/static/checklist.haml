@@ -13,3 +13,5 @@
         %ul
           - ChecklistItem.where(category: category[:name]).order(:order_number).each do |item|
             = render 'shared/checklist_item', item_text: item.item_text
+    %h3 Need help?
+    %p Let us know if you need help completing these tasks by clicking the chat button in the bottom-right corner.
