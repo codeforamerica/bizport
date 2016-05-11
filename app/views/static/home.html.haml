@@ -6,25 +6,6 @@
       %h5.text-center
         Starting a business is both exciting and challenging. We’re here to help you navigate the process.
 
-  .row.columns.small-12
-    %h4 Join us in designing!
-    %div If you are an entrepreneur or current business owner, we want to ensure that the business portal we design meets your needs.
-  .row.margin-bottom-30
-    .columns.small-12.medium-4.margin-top-30
-      %strong Who:
-      %div City of Long Beach Innovation Team
-      %div Code for America
-    .columns.small-12.medium-4.margin-top-30
-      %strong When:
-      %div This Thursday, May 12th 1-3pm
-      %div This Saturday, May 14th 1-4pm
-    .columns.small-12.medium-4.margin-top-30
-      %strong Where:
-      %div Long Beach Public Library
-      %div Main Branch
-      %div 101 Pacific Ave.
-      %div Long Beach, CA 90822
-
   .row.small-up-1.medium-up-3.text-center
     - Comfy::Cms::Page.find_by(slug:'start').children.published.order(:position).each do |page|
       .column.margin-bottom-30
