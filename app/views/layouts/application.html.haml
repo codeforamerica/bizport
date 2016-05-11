@@ -11,6 +11,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    
     .off-canvas-wrapper
       .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
         / off-canvas title bar for 'small' screen
@@ -20,7 +21,7 @@
               %a{ href: root_path }
                 %span.logo-longbeach_long> LONG
                 %span.logo-longbeach_beach> BEACH
-                %div{ style:"font-size: 16px;color: white;margin-top: -7px;" } Business Portal Pilot
+                %div{ style:"font-size: 16px;color: white;margin-top: -7px;font-weight: 400;font-family:'Raleway'" } Business Portal Pilot
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
@@ -48,7 +49,7 @@
                 %a{ href: root_path }
                   %span.logo-longbeach_long> LONG
                   %span.logo-longbeach_beach> BEACH
-                  %div{ style:"font-size:16px;" } Business Portal Pilot
+                  %div{ style:"font-size: 16px;color: white;font-weight: 400;font-family:'Raleway'" } Business Portal Pilot
               %li.has-submenu
                 %a{ href: '/start' } Start a Business
                 %ul.menu.submenu.vertical{"data-submenu" => true}
@@ -65,4 +66,11 @@
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
           = yield
+    / %button.js-glossary-toggle Glossary
+    #glossary{"aria-describedby" => "glossary-title", "aria-hidden" => "true"}
+      %button.js-glossary-close{:title => "Close glossary"} Hide glossary
+      %h2#glossary-title Glossary
+      %label{:for => "glossary-search"} Filter glossary terms
+      %input#glossary-search.js-glossary-search{:placeholder => "e.g. Committee", :type => "search"}
+        %ul.js-glossary-list
     = render 'shared/footer'

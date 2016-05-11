@@ -1,7 +1,6 @@
-.title-bar,
 .top-bar,
 .top-bar .menu {
-  background-color: $color-black;
+  background-color: $color-extradarkblue;
   
   a:hover {
     text-decoration: underline;
@@ -9,8 +8,8 @@
 }
 
 .logo-longbeach {
-  font-size: 26px;
-  font-family: 'Raleway';
+  font-size: 30px;
+  font-family: 'Century Gothic', 'Raleway';
 }
 .logo-longbeach_long {
   color: $color-logo-darkblue;

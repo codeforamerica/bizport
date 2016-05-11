@@ -19,6 +19,7 @@
 
 //= require intercom
 //= require keen-tracker
+//= require glossary
 
 //= require_tree .
 
