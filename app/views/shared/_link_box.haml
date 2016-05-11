@@ -2,7 +2,7 @@
 - line_1 = line_1 || param_2
 - line_2 = line_2 || param_3
 
-%a.media-object.link-box{ href:"#{link}", target:'_blank' }
+%a.media-object.link-box{ href: "#{link}", target: '_blank', onclick: "trackOutboundLink('#{link}')" }
   .media-object-section.middle
     .link-box_icon
   .media-object-section.middle
