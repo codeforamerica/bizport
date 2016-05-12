@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'puma'
 
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 gem 'sitemap_generator'
 
