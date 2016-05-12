@@ -1,10 +1,15 @@
 - content_for :title, "My Checklist"
 
 .step
-  .step-header
+  .step-header.margin-bottom-0
     .step-title.text-center
       %i.icon-checklist-white
       %h1 My Checklist
+  .row.header-buttons.text-center.margin-bottom-30
+    .header-button.columns.small-6
+      %a{ href: "", onclick: "window.print()" } PRINT
+    .header-button.columns.small-6
+      %a{ href: "mailto:?subject=How%20to%20start%20a%20business%20in%20Long%20Beach&body=http://bizport.longbeach.gov/checklist" } EMAIL
   .content-container
     - [{ name: 'determine', link: '/start/determine-license' }, { name: 'planning', link: '/start/plan' }, { name: 'finance', link: '/start/financing' }, { name: 'location', link: '/start/location' }, { name: 'register', link: '/start/register' }, { name: 'license', link: '/start/business-license' }, { name: 'permits', link: '/start/permits' }, { name: 'inspections', link: '/start/inspections' }, { name: 'grow', link: '/start/grow' }, { name: 'city_contracts', link: '/start/city-contracts' }].each_with_index do |category, i|
       .row.checklist

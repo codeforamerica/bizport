@@ -25,6 +25,21 @@
   }
 }
 
+.header-buttons {
+  border-bottom: 1px solid $color-mediumgray;
+
+  .header-button {
+    padding: 10px;
+
+    a {
+      color: $color-black;
+    }
+
+    &:first-child {
+      border-right: 1px solid $color-mediumgray;
+    }
+  }
+}
 
 // CHECKLIST CHECKBOX STYLES
 
