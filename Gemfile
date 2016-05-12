@@ -17,8 +17,8 @@ gem 'jquery-rails'
 
 gem 'puma'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'sitemap_generator'
 

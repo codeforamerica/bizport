@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'static#home'
 
   get '/survey' => 'static#survey'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/resources' => 'static#resources'
 
-  comfy_route :cms_admin, :path => '/admin'
+  comfy_route :cms_admin, :path => '/cms'
   comfy_route :cms, :path => '/', :sitemap => false # Make sure this routeset is defined last
 
 end

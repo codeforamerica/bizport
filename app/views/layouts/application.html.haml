@@ -12,7 +12,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    
     .off-canvas-wrapper
       .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
         / off-canvas title bar for 'small' screen
@@ -66,6 +65,8 @@
           .top-bar-right
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
+          .notice= notice
+          .alert= alert
           = yield
     / glossary.js really wants this item to exist - leaving it empty so it's 'invisible'
     %button.js-glossary-toggle
