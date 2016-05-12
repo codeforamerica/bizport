@@ -7,7 +7,8 @@
     %title= content_for?(:title) ? "BizPort | "+yield(:title) : "BizPort"
     - if Rails.env.production?
       = javascript_include_tag "analytics"
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "print", media: "print"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
