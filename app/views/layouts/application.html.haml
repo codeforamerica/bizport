@@ -66,11 +66,15 @@
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
           = yield
-    / %button.js-glossary-toggle Glossary
-    #glossary{"aria-describedby" => "glossary-title", "aria-hidden" => "true"}
-      %button.js-glossary-close{:title => "Close glossary"} Hide glossary
-      %h2#glossary-title Glossary
-      %label{:for => "glossary-search"} Filter glossary terms
-      %input#glossary-search.js-glossary-search{:placeholder => "e.g. Committee", :type => "search"}
-        %ul.js-glossary-list
+    / glossary.js really wants this item to exist - leaving it empty so it's 'invisible'
+    %button.js-glossary-toggle
+    #glossary.drawer{"aria-describedby" => "glossary-result", "aria-hidden" => "true"}
+      .container
+        %button.button--close.js-glossary-close{:tabindex => "-1", :title => "Close glossary"}
+          .close-x
+      %h2.drawer-header Glossary
+      %label.label{:for => "drawer-search"} Filter glossary terms
+      %input.js-glossary-search.drawer-search{:placeholder => "e.g. Fossil fuel", :tabindex => "-1", :type => "search"}
+      #glossary-result
+        %ul.js-glossary-list{:accordion => ""}
     = render 'shared/footer'

@@ -12,16 +12,12 @@ $(document).ready(function () {
 },{"../src/glossary":22,"./terms.json":2}],2:[function(require,module,exports){
 module.exports=[
   {
-    "term": "Status",
-    "definition": "Refers to whether the candidate is an incumbent, challenger or running unopposed."
+    "term": "commercial broker",
+    "definition": "A professional seller of property."
   },
   {
-    "term": "Candidate ID",
-    "definition": "A unique identifier assigned to each candidate registered with the FEC. The initial character indicates the office sought. (H)ouse, (S)enate, (P)resident. If a person runs for several offices, they will have separate Candidate IDs for each office."
-  },
-  {
-    "term": "Party",
-    "definition": "Party affiliation as stated on a candidate’s \"Statement of Candidacy.\""
+    "term": "financial projections",
+    "definition": "Predictions about the future financial state of the business."
   },
 ]
 
@@ -2996,10 +2992,10 @@ var defaultSelectors = {
 };
 
 var defaultClasses = {
-  definitionClass: 'glossary__definition',
-  glossaryItemClass: 'glossary__item',
+  definitionClass: 'glossary-definition',
+  glossaryItemClass: 'glossary-item',
   highlightedTerm: 'term--highlight',
-  termClass: 'glossary__term'
+  termClass: 'glossary-term'
 };
 
 function removeTabindex(elm) {

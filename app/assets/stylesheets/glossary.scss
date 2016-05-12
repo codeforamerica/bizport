@@ -1,24 +1,36 @@
+@media only screen and (min-width: 30em) {
+  #glossary {
+    width: 300px;
+  }
+}
+
 #glossary {
-  background: $color-black;
-  border-left: 1px solid #205493;
-  width: 30rem;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding: .5rem;
-  transition: right .2s;
+  width: 100%;
 
   div[aria-hidden=true] {
     display: none !important;
   }
 
-  button {
+  input[type='search'] {
+    transition: border-color;
+    background-color: #ffffff;
+    border: 1px solid #303030;
+    border-radius: 5px;
+    box-shadow: none;
+    box-sizing: border-box;
+    margin-bottom: 1.25em;
+    padding: 0.6em 0.8em;
     width: 100%;
+  }
+
+  label {
+    background: none;
+    padding: 0;
   }
 
   ul {
     padding: 0;
+    margin-left: 0;
   }
 
   li {
@@ -26,9 +38,10 @@
   }
 
   button {
+    width: 100%;
+    background-color: initial;
     appearance: none;
-    color: #fff;
-    padding: .5rem;
+    color: $white;
     text-align: left;
   }
 
@@ -44,6 +57,100 @@
     margin: 0;
     margin-top: -2px;
   }
+
+  &.drawer {
+    transition: right, 0.3s;
+    background-color: #303030;
+    bottom: 0;
+    color: #ffffff;
+    max-width: 30rem;
+    overflow-y: scroll;
+    padding: 2rem;
+    padding-bottom: 3.125em;
+    position: fixed;
+    top: 0;
+    width: 300px;
+    z-index: 5000;
+  }
+  &.drawer h1,
+  &.drawer h2,
+  &.drawer p,
+  &.drawer label,
+  &.drawer i {
+      color: #ffffff;
+  }
+  &.drawer label {
+      font-size: 8.75px;
+      font-size: 0.875rem;
+  }
+  &.drawer[aria-hidden=true], .drawer[aria-expanded=false] {
+      display: block;
+      right: -100%;
+  }
+  &.drawer[aria-hidden=false], .drawer[aria-expanded=true] {
+      transition: right, 0.3s;
+      right: 0;
+  }
+  &.drawer .button--close {
+
+  }
+
+  &.drawer-icon {
+    padding-right: 0.41667em;
+  }
+
+  &.drawer-header i:before {
+    padding-left: 0;
+    padding-right: 0.41667em;
+  }
+
+  &.drawer-search {
+    border: none;
+    margin-top: 0;
+  }
+  &.drawer-search::-webkit-input-placeholder {
+      color: #ccc;
+      font-style: italic;
+  }
+  &.drawer-search::-moz-placeholder {
+      color: #ccc;
+      font-style: italic;
+  }
+  &.drawer-search:-moz-placeholder {
+      color: #ccc;
+      font-style: italic;
+  }
+  &.drawer-search:-ms-input-placeholder {
+      color: #ccc;
+      font-style: italic;
+  }
+
+  &.drawer-search_form {
+    width: 100%;
+  }
+
+  input.drawer-search_field {
+    border: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    display: inline;
+    font-size: 1rem;
+    height: 40px;
+    margin-top: 0;
+    padding-left: 0.5em;
+    width: 86%;
+  }
+
+  &.drawer-search_button {
+    background-color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    color: #157bac;
+    float: right;
+    height: 40px;
+    padding: 0.5em;
+    position: relative;
+    width: 14%;
+  }
 }
 
 #glossary[aria-hidden=true] {
@@ -58,11 +165,39 @@
   background-color: #112e51;
 }
 
-.glossary-term {
+span[data-term] {
+  transition: background-color, 0.2s, box-shadow, 0.2s, color, 0.2s;
   border-bottom: 1px dotted $color-black;
+  box-shadow: 0 0 0 4px transparent;
   cursor: pointer;
+  text-decoration: none;
 
-  &:hover {
+  &:focus, &:hover {
     border-bottom: 1px solid $color-black;
+    text-decoration: none;
   }
+}
+
+.glossary-term {
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 1.25em;
+}
+
+.close-x {
+  float: right;
+  width: 10px;
+}
+
+.close-x:after {
+  position: absolute;
+  top: 0;
+  content: '\d7'; /* hex value for cross-mark character */
+  font-size: 50px;
+  font-weight: 400;
+  color: $white;
+  text-align: center;
 }
