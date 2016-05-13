@@ -21,6 +21,8 @@
 //= require keen-tracker
 //= require glossary
 
+//= require leaflet
+
 //= require_tree .
 
 $(function(){
