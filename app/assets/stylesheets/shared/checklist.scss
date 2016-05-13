@@ -27,12 +27,16 @@
 
 .header-buttons {
   border-bottom: 1px solid $color-mediumgray;
+  max-width: none;
 
   .header-button {
-    padding: 10px;
 
     a {
       color: $color-black;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 10px;
     }
 
     &:first-child {
