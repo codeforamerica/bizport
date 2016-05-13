@@ -1,0 +1,16 @@
+-# make terms available for glossary.js
+- terms_hash = GlossaryItem.pluck(:term, :definition).map{|item| { term: item[0], definition: item[1] } }.to_json
+:javascript
+  window.glossaryTerms = #{ terms_hash }
+
+-# glossary.js really wants this item to exist - leaving it empty so it's 'invisible'
+%button.js-glossary-toggle
+#glossary.drawer{"aria-describedby" => "glossary-result", "aria-hidden" => "true"}
+  .container
+    %button.button--close.js-glossary-close{:tabindex => "-1", :title => "Close glossary"}
+      .close-x
+  %h2.drawer-header Glossary
+  %label.label{:for => "drawer-search"} Filter glossary terms
+  %input.js-glossary-search.drawer-search{:placeholder => "e.g. Fossil fuel", :tabindex => "-1", :type => "search"}
+  #glossary-result
+    %ul.js-glossary-list{:accordion => ""}

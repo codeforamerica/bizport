@@ -4,24 +4,12 @@
 
 $(document).ready(function () {
   var Glossary = require('../src/glossary');
-  var terms = require('./terms.json');
+  var terms = window.glossaryTerms;
 
   new Glossary(terms);
 });
 
-},{"../src/glossary":22,"./terms.json":2}],2:[function(require,module,exports){
-module.exports=[
-  {
-    "term": "commercial broker",
-    "definition": "A professional seller of property."
-  },
-  {
-    "term": "financial projections",
-    "definition": "Predictions about the future financial state of the business."
-  },
-]
-
-},{}],3:[function(require,module,exports){
+},{"../src/glossary":22}],3:[function(require,module,exports){
 'use strict';
 
 var _ = require('underscore');
