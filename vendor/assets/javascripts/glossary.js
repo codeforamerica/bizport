@@ -7,6 +7,20 @@ $(document).ready(function () {
   var terms = window.glossaryTerms;
 
   new Glossary(terms);
+
+  // turn all glossary words on the page into glossary triggers
+  // kinda slow, but tolerable if the glossary isn't too huge
+  // TODO: this could really use a test or two
+  $.each(terms, function (i, item) {
+    var word = item.term;
+    $.each( $(".step-section:contains("+word+")"), function (i, el) {
+      $(el).html(function (i, text) {
+        var regex = new RegExp("(?:^|\\s)"+word+".?(?:^|\\s)","gi");
+        var wordToReplace = text.match(regex) && text.match(regex)[0].trim()
+        return text.replace(regex, " <span data-term='"+wordToReplace+"'>"+wordToReplace+"</span> ");
+      });
+    });
+  })
 });
 
 },{"../src/glossary":22}],3:[function(require,module,exports){
