@@ -6,8 +6,25 @@
       border-right: 1px solid $color-mediumgray;
     }
 
-    h2 a {
-      text-decoration: underline;
+    .checklist-header {
+      margin-bottom: 20px;
+
+      display: table;
+      vertical-align: middle;
+      text-align: center;
+
+      .checklist-header_title {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 10px;
+
+        a {
+          text-decoration: underline;
+          font-family: 'Raleway';
+          font-size: 22px;
+          font-weight: 600;
+        }
+      }
     }
   }
 

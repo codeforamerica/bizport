@@ -171,6 +171,7 @@ span[data-term] {
   box-shadow: 0 0 0 4px transparent;
   cursor: pointer;
   text-decoration: none;
+  color: $color-darkblue;
 
   &:focus, &:hover {
     border-bottom: 1px solid $color-black;

@@ -140,6 +140,13 @@
   background-image: url(image_path('checklist_white.png'));
 }
 
+.icon-checklist-blue {
+  @include icon;
+  height: 58px;
+  width: 48px;
+  background-image: url(image_path('checklist_blue.png'));
+}
+
 .icon-contact-white {
   @include icon;
   height: 55px;
