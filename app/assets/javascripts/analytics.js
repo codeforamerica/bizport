@@ -32,3 +32,22 @@ var trackOutboundLink = function(url) {
   }, function(err, res){});
 
 }
+
+var trackGlossaryClick = function (term) {
+
+  // GA
+  ga('send', 'event', 'glossary', 'click', term, {
+    'transport': 'beacon',
+  });
+
+  // Keen.io
+  window.keen.addEvent('glossary', {
+    term: term,
+    page: window.location.pathname,
+    host: window.location.hostname,
+    keen: {
+      timestamp: new Date().toISOString()
+    }
+  }, function(err, res){});
+
+}

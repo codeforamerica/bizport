@@ -20,7 +20,12 @@ $(document).ready(function () {
         return text.replace(regex, " <span data-term='"+wordToReplace+"'>"+wordToReplace+"</span> ");
       });
     });
-  })
+
+  });
+
+  $("[data-term]").click(function () {
+    trackGlossaryClick( $(this).data('term') );
+  });
 });
 
 },{"../src/glossary":22}],3:[function(require,module,exports){
