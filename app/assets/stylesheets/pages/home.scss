@@ -1,16 +1,15 @@
 .home {
 
   .hero {
-    background-image: url(image_path('home-hero.jpg'));
+    background-image: url(image_path('home-hero.png'));
     background-size: cover;
+    background-position: bottom;
     margin-bottom: 30px;
 
     .hero-copy {
       width: 100%;
       padding: 20px;
       margin: 0 auto;
-
-      background-color: rgba(19,97,148,0.7);
       color: white;
     }
   }
