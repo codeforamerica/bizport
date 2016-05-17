@@ -1,0 +1,10 @@
+- title = title || param_1
+- address = address || param_2
+
+- parsed_address = address.gsub(' ', '+')
+
+%a.media-object.map-box{ href: "https://www.google.com/maps/place/#{parsed_address}/" }
+  .map-box_title
+    %div= title
+    %div= address
+  .map-box_image{ style: "background-image:url(http://maps.googleapis.com/maps/api/staticmap?center=#{parsed_address}&zoom=13&scale=false&size=400x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid|color:blue|#{parsed_address})", alt: "Google Map of #{address}" }

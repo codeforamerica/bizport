@@ -44,6 +44,7 @@
     display: block;
 
     &:hover, &:active {
+      color: $white;
       cursor: pointer;
       .contact-box_icon-phone {
         background-image: url(image_path('phone_341134-200_white.png'))
