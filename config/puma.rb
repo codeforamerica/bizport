@@ -3,7 +3,7 @@
 if false 
   directory "/var/www/bizport/current"
   environment 'production'
-  workers 1
+  workers 2
   threads 1, 8
 
   bind 'tcp://0.0.0.0:9951'
