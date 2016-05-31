@@ -1,0 +1,10 @@
+---
+label: Inspections
+layout: step
+parent: plan
+target_page: 
+categories:
+  - Step
+  - Plan
+is_published: true
+position: 2

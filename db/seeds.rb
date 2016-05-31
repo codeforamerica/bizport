@@ -1,6 +1,6 @@
 ChecklistItem.delete_all
 
-ChecklistItem.create(category: 'determine', category_name: 'Determine If You Need a Business License', order_number: 1, item_text: "Determine if you need a business license")
+ChecklistItem.create(category: 'business_license_determine', category_name: 'Determine If You Need a Business License', order_number: 1, item_text: "Determine if you need a business license")
 
 ChecklistItem.create(category: 'planning', category_name: 'Plan Out Your Business', order_number: 1, item_text: "Write a business plan")
 ChecklistItem.create(category: 'planning', category_name: 'Plan Out Your Business', order_number: 2, item_text: "Check out the classes at SBDC")
@@ -35,12 +35,12 @@ ChecklistItem.create(category: 'register', category_name: 'Register Your Busines
 ChecklistItem.create(category: 'register', category_name: 'Register Your Business', order_number: 6, item_text: "Determine which licenses and permits are required for your business type")
 ChecklistItem.create(category: 'register', category_name: 'Register Your Business', order_number: 7, item_text: "Apply for a City of Long Beach Business License")
 
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 1, item_text: "Understand the differences in terminology")
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 2, item_text: "Determine what type(s) of business licenses you need")
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 3, item_text: "Determine if you need an annual or short-term license")
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 4, item_text: "Fill out the Business License Application")
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 5, item_text: "Determine if you need to pay Business Improvement District (BID) fees")
-ChecklistItem.create(category: 'license', category_name: 'Apply for a Business License', order_number: 6, item_text: "Determine if you need additional licenses")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 1, item_text: "Understand the differences in terminology")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 2, item_text: "Determine what type(s) of business licenses you need")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 3, item_text: "Determine if you need an annual or short-term license")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 4, item_text: "Fill out the Business License Application")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 5, item_text: "Determine if you need to pay Business Improvement District (BID) fees")
+ChecklistItem.create(category: 'business_license_apply', category_name: 'Apply for a Business License', order_number: 6, item_text: "Determine if you need additional licenses")
 
 ChecklistItem.create(category: 'permits', category_name: 'Permits', order_number: 1, item_text: "Bring plans to the 4th Floor of City Hall for plan check")
 ChecklistItem.create(category: 'permits', category_name: 'Permits', order_number: 2, item_text: "Pick up your plans")

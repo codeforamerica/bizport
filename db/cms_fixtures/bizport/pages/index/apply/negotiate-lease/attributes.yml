@@ -1,0 +1,10 @@
+---
+label: Define Your Business Location
+layout: step
+parent: apply
+target_page: 
+categories:
+  - Step
+  - Apply
+is_published: true
+position: 4
