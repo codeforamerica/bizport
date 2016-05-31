@@ -30,6 +30,13 @@
             %li
               %a{ href: root_path } Home
             %li
+              #google_translate_element{style: 'margin-left: 15px;'}
+              :javascript
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,hy,km,ko,tl,vi,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-74906812-2'}, 'google_translate_element');
+                }
+              %script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
+            %li
               %a{ href: survey_path } Survey
             %li
               %a{ href: checklist_path } My Checklist
