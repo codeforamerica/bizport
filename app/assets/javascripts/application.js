@@ -14,13 +14,19 @@
 //= require jquery_ujs
 //= require foundation
 
+//= require keen-tracker
+//= require keen-config
+//= require tracking-checklist
+//= require analytics
+
 //= require readmore
 //= require readmore-config
 
 //= require intercom
-//= require keen-tracker
 //= require glossary
 
 //= require leaflet
+
+//= require_tree ./comfy
 
 //= require init

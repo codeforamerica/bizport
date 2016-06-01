@@ -22,16 +22,14 @@ var trackOutboundLink = function(url) {
   });
 
   // Keen.io
-  if (window.keen) { // fail gracefully if this object is missing
-    window.keen.addEvent('outbound', {
-      item: url,
-      page: window.location.pathname,
-      host: window.location.hostname,
-      keen: {
-        timestamp: new Date().toISOString()
-      }
-    }, function(err, res){});
-  }
+  window.keen.addEvent('outbound', {
+    item: url,
+    page: window.location.pathname,
+    host: window.location.hostname,
+    keen: {
+      timestamp: new Date().toISOString()
+    }
+  }, function(err, res){});
 
 }
 
