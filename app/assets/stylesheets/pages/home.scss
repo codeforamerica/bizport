@@ -15,11 +15,32 @@
     height: 75px;
   }
 
-  .step-group {
+  ul.step-group {
     .step-group-title {
       text-align: center;
       height: 50px;
       color: $white;
+    }
+
+    &.accordion,
+    .accordion-content {
+      border: none; // override for Foundation styling
+    }
+
+    .accordion-title {
+      font-size: 20px;
+    }
+
+    .accordion-title .arrow {
+      display: inline-block;
+      height: 8px;
+      width: 22px;
+      background-image: url(image_path('expand_light_blue.png'));
+      background-size: cover;
+    }
+
+    .is-active .accordion-title .arrow {
+      transform: rotate(180deg); // flips arrow upside down
     }
 
     &:nth-child(1) .step-group-title { background-color: $color-darkblue-3; }

@@ -15,18 +15,22 @@
 
   .row
     - ['plan','apply','launch'].each do |step_group|
-      .step-group.columns.small-12.large-4
-        %strong.step-group-title.media-object.text-centered= step_group.titleize
-        - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
-          .column.margin-bottom-10
-            %a{ href: page.full_path }
-              .step-card.media-object
-                .media-object-section.middle
-                  .thumbnail
-                    %i{ class: "icon-#{page.slug}" }
-                .media-object-section.middle
-                  %strong= page.label
-                  %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+      %ul.step-group.accordion.columns.small-12.large-4{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+        %li.accordion-item{ "data-accordion-item" => "true" }
+          %a.accordion-title.step-group-title.media-object.text-centered
+            = step_group.upcase
+            .arrow
+          .accordion-content{ "data-tab-content" => "true" }
+            - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
+              %a{ href: page.full_path }
+                .step-card.media-object
+                  .media-object-section.middle
+                    .thumbnail
+                      %i{ class: "icon-#{page.slug}" }
+                  .media-object-section.middle
+                    %strong= page.label
+                    %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+
   .row
     .typeform-widget{"data-text" => "BizPort features", "data-url" => "https://longbeachbusiness.typeform.com/to/rdHMEO", :style => "width:100%;height:500px;"}
     :javascript
