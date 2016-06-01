@@ -17,7 +17,7 @@
           %h3
             %a{ href: page.full_path, style: "text-decoration: underline;" }= page.label
           %ul
-            - ChecklistItem.where(category: page.slug).order(:order_number).each do |item|
+            - ChecklistItem.where(category: page.slug.gsub('-', '_')).order(:order_number).each do |item|
               = render 'shared/checklist_item', item_text: item.item_text
     %h3 Need help?
     %p Let us know if you need help completing these tasks by clicking the chat button in the bottom-right corner.
