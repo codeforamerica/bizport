@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     case component
     when "title"
       if next_page
-        return "Step #{next_page.position}: #{next_page.label}"
+        return "Next: #{next_page.label}"
       else
         return "Return to Homepage"
       end
