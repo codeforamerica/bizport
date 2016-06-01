@@ -1,14 +1,21 @@
 .home
-  .hero
+  .row.columns.small-12.large-8.large-offset-2.margin-bottom-30
+    .hero-title
+      .logo-longbeach
+        %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
+        %span.logo-longbeach_long> LONG
+        %span.logo-longbeach_beach> BEACH
+    .hero
+      %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
     .hero-copy
-      %h4.text-center
+      %h4
         Welcome!
-      %h5.text-center
-        Starting a business is both exciting and challenging. We’re here to help you navigate the process.
+      %h5
+        Starting a business is both exciting and challenging. BizPort is here to help you navigate the process.
 
   .row
     - ['plan','apply','launch'].each do |step_group|
-      .step-group.columns.small-12.medium-4
+      .step-group.columns.small-12.large-4
         %strong.step-group-title.media-object.text-centered= step_group.titleize
         - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
           .column.margin-bottom-10

@@ -1,38 +1,23 @@
-.top-bar,
-.top-bar .menu {
-  background-color: $color-mediumblue;
-  
-  a:hover {
-    text-decoration: underline;
-  }
-}
-
 .title-bar-title a {
   color: $white;
 }
 
 .logo-longbeach {
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Century Gothic', 'Raleway';
 }
 .logo-longbeach_long {
-  color: $color-logo-darkblue;
+  color: $color-darkblue;
   font-weight: 500;
 }
 .logo-longbeach_beach {
-  color: $color-lightblue;
+  color: $color-mediumblue;
   font-weight: 800;
 }
 
 // override for dropdown menu carat
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
   border-color: $white transparent transparent;
-}
-
-#widemenu {
-  .title {
-    display: table-cell;
-  }
 }
 
 .off-canvas {
@@ -60,7 +45,7 @@
   a {
     display: inline-block;
     padding: 10px 0;
-    
+
     &:hover {
       color: $color-mediumgray;
       text-decoration: underline;
