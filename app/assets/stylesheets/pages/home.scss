@@ -48,4 +48,12 @@
     &:nth-child(3) .step-group-title { background-color: $color-darkblue; }
   }
 
+  .accordion.desktop .accordion-title {
+    cursor: initial;
+  }
+
+  .accordion.desktop .accordion-content {
+    display: block; // override for default hidden style in Foundation
+  }
+
 }

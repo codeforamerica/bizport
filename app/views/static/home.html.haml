@@ -19,7 +19,7 @@
         %li.accordion-item{ "data-accordion-item" => "true" }
           %a.accordion-title.step-group-title.media-object.text-centered
             = step_group.upcase
-            .arrow
+            .arrow.hide-for-large
           .accordion-content{ "data-tab-content" => "true" }
             - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
               %a{ href: page.full_path }
