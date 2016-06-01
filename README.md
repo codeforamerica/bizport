@@ -26,4 +26,8 @@ To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:ex
 {{ cms:partial:shared/contact_box_combo:"(562) 570-6211":"LBBIZ@longbeach.gov" }}
 {{ cms:partial:shared/contact_box:"phone":"(562) 570-6105" }}
 {{ cms:partial:shared/contact_box:"email":"test@example.com" }}
+
+ <div class='callout'>
+    NOTE:
+  </div>
 ```
