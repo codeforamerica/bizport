@@ -6,18 +6,20 @@
       %h5.text-center
         Starting a business is both exciting and challenging. We’re here to help you navigate the process.
 
-  .row.small-up-1.medium-up-3.text-center
-    - ['start'].each do |step_group| # ['plan','apply','launch']
-      - Comfy::Cms::Page.find_by(slug: step_group).children.published.order(:position).each do |page|
-        .column.margin-bottom-30
-          %a{ href: page.full_path }
-            .row
-              %i{ class: "icon-step-#{page.position}" }
-            .row
-              .row
-                Step #{page.position}:
-              .row
-                = page.label
+  .row
+    - ['plan','apply','launch'].each do |step_group|
+      .step-group.columns.small-12.medium-4
+        .step-group-title.media-object.text-centered= step_group.titleize
+        - Comfy::Cms::Page.find_by(slug: step_group).children.published.order(:position).each do |page|
+          .column.margin-bottom-10
+            %a{ href: page.full_path }
+              .step-card.media-object
+                .media-object-section.middle
+                  .thumbnail
+                    %i{ class: "icon-#{page.slug}" }
+                .media-object-section.middle
+                  %strong= page.label
+                  %div= page.try(:subtitle)
   .row
     .typeform-widget{"data-text" => "BizPort features", "data-url" => "https://longbeachbusiness.typeform.com/to/rdHMEO", :style => "width:100%;height:500px;"}
     :javascript

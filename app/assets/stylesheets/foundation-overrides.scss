@@ -1,9 +1,13 @@
-.menu > li > a {
-  color: $white;
+.off-canvas-content {
+  .menu > li > a {
+    color: $color-darkgray;
+  }
 }
 
-.title-bar .menu-icon {
-  margin-top: 10px;
+#widemenu {
+  .menu > li > a {
+    color: $white;
+  }
 }
 
 .is-dropdown-submenu-parent.is-down-arrow > a::after {
@@ -16,4 +20,9 @@
 
 .off-canvas-content {
   padding-bottom: 0;
+  box-shadow: none;
+}
+
+#offCanvasRight {
+  box-shadow: inset 0 0 10px $color-darkgray;
 }

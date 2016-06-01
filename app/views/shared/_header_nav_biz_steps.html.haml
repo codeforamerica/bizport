@@ -1,7 +1,9 @@
+-# step_groups: []
+
 -# though the CMS DB never *should* be empty, this should run even if it is
 -# e.g. when running tests without CMS fixtures loaded
-- (pages = Comfy::Cms::Page.find_by(slug:'start').try(:children).try(:published)) && pages.each do |page|
-  %li.nav-mobile-business-step
-    %a{ href: "#{page.full_path}" }
-      .numbering> #{page.position})
-      .title> #{page.label}
+- step_groups.each do |group|
+  - (pages = Comfy::Cms::Page.find_by(slug: group).try(:children).try(:published)) && pages.each do |page|
+    %li.nav-business-step
+      %a{ href: "#{page.full_path}" }
+        .title #{page.label}

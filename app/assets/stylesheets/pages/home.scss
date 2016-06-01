@@ -13,4 +13,20 @@
       color: white;
     }
   }
+
+  .step-card {
+    height: 75px;
+  }
+
+  .step-group {
+    .step-group-title {
+      text-align: center;
+      height: 50px;
+    }
+
+    &:nth-child(1) .step-group-title { background-color: $color-darkblue-3; }
+    &:nth-child(2) .step-group-title { background-color: $color-darkblue-2; }
+    &:nth-child(3) .step-group-title { background-color: $color-darkblue; }
+  }
+
 }

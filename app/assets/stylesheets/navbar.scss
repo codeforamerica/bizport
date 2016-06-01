@@ -1,10 +1,14 @@
 .top-bar,
 .top-bar .menu {
-  background-color: $color-extradarkblue;
+  background-color: $color-mediumblue;
   
   a:hover {
     text-decoration: underline;
   }
+}
+
+.title-bar-title a {
+  color: $white;
 }
 
 .logo-longbeach {
@@ -26,25 +30,21 @@
 }
 
 #widemenu {
-  .numbering, .title {
+  .title {
     display: table-cell;
-  }
-  .numbering {
-    padding-right: 5px;
   }
 }
 
 .off-canvas {
-  background-color: $color-extradarkblue;
+  background-color: $white;
   height: 100%;
 
-  .nav-mobile-business-step {
-    margin-left: 20px;
+  .nav-business-step {
+    margin-left: 10px;
+  }
 
-    .numbering {
-      display: none;
-    }
-
+  ul {
+    list-style-type: none;
   }
 
   li.title {
@@ -54,7 +54,7 @@
   }
 
   li, a {
-    color: $white;
+    color: $color-darkgray;
   }
 
   a {
