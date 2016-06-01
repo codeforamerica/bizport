@@ -10,7 +10,7 @@
     - ['plan','apply','launch'].each do |step_group|
       .step-group.columns.small-12.medium-4
         .step-group-title.media-object.text-centered= step_group.titleize
-        - Comfy::Cms::Page.find_by(slug: step_group).children.published.order(:position).each do |page|
+        - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
           .column.margin-bottom-10
             %a{ href: page.full_path }
               .step-card.media-object
