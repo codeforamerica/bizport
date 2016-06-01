@@ -109,6 +109,6 @@ ChecklistItem.delete_all
   ]},
 ].each do |category|
   category[:checklist_items].each_with_index do |item, index|
-    ChecklistItem.create(category: category[:category_name], category_name: item[:category_name], order_number: (index+1), item_text: item[:item_text])
+    ChecklistItem.create(category: category[:category], category_name: category[:category_name], order_number: (index+1), item_text: item[:item_text])
   end
 end

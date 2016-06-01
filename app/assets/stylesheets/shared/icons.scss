@@ -3,166 +3,174 @@
   background-size: cover;
 }
 
-.icon-step-1, .icon-determine-license {
+.icon-get-idea {
   @include icon;
-  height: 70px;
-  width: 66px;
-  background-image: url(image_path('need_biz_license_319020-200_blue.png'));
+  height: 50px;
+  width: 50px;
+  background-image: url(image_path('idea_403891-200_blue.png'))
 }
-.icon-determine-license-white {
+.icon-business-taxes {
   @include icon;
-  height: 70px;
-  width: 66px;
-  background-image: url(image_path('need_biz_license_319020-200_white.png'));
+  height: 50px;
+  width: 37px;
+  background-image: url(image_path('tax_43686-200_blue.png'))
+}
+.icon-support-options {
+  @include icon;
+  height: 50px;
+  width: 48px;
+  background-image: url(image_path('support_icon_66723-200_blue.png'))
+}
+.icon-business-plan {}
+.icon-obtain-funding {}
+.icon-financial-plan {}
+.icon-zoning {
+  @include icon;
+  height: 50px;
+  width: 37px;
+  background-image: url(image_path('zoning_156645-200_blue.png'))
+}
+.icon-physical-location {}
+.icon-marketing {
+  @include icon;
+  background-image: url(image_path('marketing_169007-200_blue.png'))
+}
+.icon-negotiate-lease {
+  @include icon;
+  background-image: url(image_path('lease_150021-200_blue.png'))
+}
+.icon-register {
+  @include icon;
+  background-image: url(image_path('license_154111_Register_blue.svg'));
+}
+.icon-networking {
+  @include icon;
+  width: 50px;
+  height: 50px;
+  background-image: url(image_path('networking_122209-200_blue.png'));
+}
+.icon-hire-employees {
+  @include icon;
+  width: 80px;
+  height: 50px;
+  background-image: url(image_path('hire_33096-200_blue.png'));
 }
 
-.icon-step-2, .icon-plan {
+.icon-business-license-receive,
+.icon-business-license-apply,
+.icon-business-license-determine {
+  @include icon;
+  height: 50px;
+  width: 77px;
+  background-image: url(image_path('license_blue.png'));
+  &.white {
+    background-image: url(image_path('license_white.png'));
+  }
+}
+
+.icon-plan {
   @include icon;
   height: 70px;
   width: 54px;
   background-image: url(image_path('plan_173995-200_blue.png'));
+  &.white {
+    background-image: url(image_path('plan_173995-200_white.png'));
+  }
 }
-.icon-plan-white {
-  @include icon;
-  height: 70px;
-  width: 54px;
-  background-image: url(image_path('plan_173995-200_white.png'));
-}
-
-.icon-step-3, .icon-financing {
+.icon-financing {
   @include icon;
   height: 70px;
   width: 70px;
   background-image: url(image_path('finance_blue.png'));
-}
-.icon-financing-white {
-  @include icon;
-  height: 69px;
-  width: 70px;
-  background-image: url(image_path('finance_white.png'));
+  &.white {
+    background-image: url(image_path('finance_white.png'));
+  }
 }
 
-.icon-step-4, .icon-location {
+.icon-location {
   @include icon;
   height: 70px;
   width: 56px;
   background-image: url(image_path('location_blue.png'));
-}
-.icon-location-white {
-  @include icon;
-  height: 70px;
-  width: 55px;
-  background-image: url(image_path('location_white.png'));
+  &.white {
+    background-image: url(image_path('location_white.png'));
+  }
 }
 
-.icon-step-5, .icon-register {
-  @include icon;
-  height: 48px;
-  width: 75px;
-  background-image: url(image_path('license_blue.png'));
-}
-.icon-register-white {
-  @include icon;
-  height: 48px;
-  width: 75px;
-  background-image: url(image_path('license_white.png'));
-}
-
-.icon-step-6, .icon-business-license {
+.icon-business-license {
   @include icon;
   height: 45px;
   width: 70px;
   background-image: url(image_path('id_blue.png'));
-}
-.icon-business-license-white {
-  @include icon;
-  height: 45px;
-  width: 70px;
-  background-image: url(image_path('id_white.png'));
+  &.white {
+    background-image: url(image_path('id_white.png'));
+  }
 }
 
-.icon-step-7, .icon-permits {
+.icon-permits {
   @include icon;
-  height: 68px;
-  width: 79px;
+  height: 50px;
+  width: 58px;
   background-image: url(image_path('brick_111748-200_blue.png'));
-}
-.icon-permits-white {
-  @include icon;
-  height: 68px;
-  width: 79px;
-  background-image: url(image_path('brick_111748-200_white.png'));
+  &.white {
+    background-image: url(image_path('brick_111748-200_white.png'));
+  }
 }
 
-.icon-step-8, .icon-inspections {
+.icon-inspections {
   @include icon;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('inspector_76604-200_blue.png'))
-}
-.icon-inspections-white {
-  @include icon;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('inspector_76604-200_white.png'))
+  height: 50px;
+  width: 50px;
+  background-image: url(image_path('inspector_76604-200_blue.png'));
+  &.white {
+    background-image: url(image_path('inspector_76604-200_white.png'));
+  }
 }
 
-.icon-step-9, .icon-grow {
+.icon-grow {
   @include icon;
   height: 70px;
   width: 70px;
   background-image: url(image_path('key_324199-200_blue.png'));
-}
-.icon-grow-white {
-  @include icon;
-  height: 70px;
-  width: 70px;
-  background-image: url(image_path('key_324199-200_white.png'));
+  &.white {
+    background-image: url(image_path('key_324199-200_white.png'));
+  }
 }
 
-.icon-step-10, .icon-city-contracts {
+.icon-city-contracts {
   @include icon;
   height: 60px;
   width: 60px;
   background-image: url(image_path('government_143672-200_blue.png'));
-}
-.icon-city-contracts-white {
-  @include icon;
-  height: 60px;
-  width: 60px;
-  background-image: url(image_path('government_143672-200_white.png')); 
+  &.white {
+    background-image: url(image_path('government_143672-200_white.png'));
+  }
 }
 
-.icon-checklist-white {
-  @include icon;
-  height: 58px;
-  width: 48px;
-  background-image: url(image_path('checklist_white.png'));
-}
-
-.icon-checklist-blue {
+.icon-checklist {
   @include icon;
   height: 58px;
   width: 48px;
   background-image: url(image_path('checklist_blue.png'));
+  &.white {
+    background-image: url(image_path('checklist_white.png'));
+  }
 }
 
-.icon-contact-white {
+.icon-contact {
   @include icon;
   height: 55px;
   width: 53px;
-  background-image: url(image_path('contact_75084-200_white.png'));
+  &.white {
+    background-image: url(image_path('contact_75084-200_white.png'));
+  }
 }
 
 .icon-resources {
   @include icon;
   height: 55px;
   width: 49px;
-  background-image: url(image_path('resources_212908-200_blue.png'));
-}
-.icon-resources-white {
-  @include icon;
-  height: 55px;
-  width: 49px;
-  background-image: url(image_path('resources_212908-200_white.png'));
+  background-image: url(image_path('resources_212908-200_blue.png'));  &.white {
+    background-image: url(image_path('resources_212908-200_white.png'));
+  }
 }
