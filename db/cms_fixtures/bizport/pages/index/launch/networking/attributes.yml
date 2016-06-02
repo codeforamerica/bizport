@@ -4,7 +4,6 @@ layout: step
 parent: launch
 target_page: 
 categories:
-  - Step
-  - Launch
-is_published: true
+- Step
+is_published: false
 position: 6

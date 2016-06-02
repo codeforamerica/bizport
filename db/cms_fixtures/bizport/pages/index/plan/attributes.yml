@@ -2,7 +2,7 @@
 label: plan
 layout: content
 parent: index
-target_page: "/plan/determine-license"
+target_page: 
 categories: []
 is_published: true
-position: 5
+position: 0

@@ -1,10 +1,9 @@
 ---
-label: Maintain & Grow Your Business
+label: Hire Employees
 layout: step
 parent: launch
 target_page: 
 categories:
-  - Step
-  - Launch
+- Step
 is_published: true
 position: 9

@@ -4,5 +4,5 @@ layout: content
 parent: index
 target_page: "/start/determine-license"
 categories: []
-is_published: true
-position: 5
+is_published: false
+position: 3

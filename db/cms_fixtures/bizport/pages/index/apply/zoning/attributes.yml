@@ -1,10 +1,9 @@
 ---
-label: Define Your Business Location
+label: Check Zoning
 layout: step
 parent: apply
 target_page: 
 categories:
-  - Step
-  - Apply
+- Step
 is_published: true
-position: 4
+position: 1

@@ -4,7 +4,6 @@ layout: step
 parent: apply
 target_page: 
 categories:
-  - Step
-  - Apply
+- Step
 is_published: true
-position: 5
+position: 3

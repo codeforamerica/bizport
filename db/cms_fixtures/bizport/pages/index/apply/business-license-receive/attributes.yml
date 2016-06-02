@@ -1,10 +1,9 @@
 ---
-label: Apply for a Business License
+label: Receive Your License
 layout: step
 parent: apply
 target_page: 
 categories:
-  - Step
-  - Apply
+- Step
 is_published: true
-position: 6
+position: 8
