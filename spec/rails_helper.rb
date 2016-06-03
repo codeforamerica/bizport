@@ -66,5 +66,6 @@ RSpec.configure do |config|
 
     require 'rake'
     Rails.application.load_tasks
+    Rake::Task['cms:load_content'].invoke
   end
 end
