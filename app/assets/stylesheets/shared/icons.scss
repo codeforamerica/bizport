@@ -1,40 +1,50 @@
-// ($iconname, $filename, $width, $height)
+// ($iconname, $filename)
 $icons: (
-  ('get-idea','idea_403891-200_',50px,50px),
-  ('business-taxes','tax_43686-200_',37px,50px),
-  ('support-options','support_icon_66723-200_',48px,50px),
-  ('plan-check','plan_15641-200_',73px,50px),
-  ('zoning','zoning_156645-200_',37px,50px),
-  ('marketing','marketing_169007-200_',60px,50px),
-  ('negotiate-lease','lease_150021-200_',42px,50px),
-  ('register','cali_174136-200_',42px,50px),
-  ('networking','networking_122209-200_',50px,50px),
-  ('hire-employees','hire_33096-200_',79px,50px),
-  ('business-license-receive','license_',77px,50px),
-  ('business-license-apply','license_',77px,50px),
-  ('business-license-determine','license_',77px,50px),
-  ('business-plan','plan_173995-200_',38px,50px),
-  ('plan','plan_173995-200_',38px,50px),
-  ('financial-plan','money_220206_Funding_',50px,50px),
-  ('obtain-funding','finance_',50px,50px),
-  ('financing','finance_',50px,50px),
-  ('physical-location','location_',40px,50px),
-  ('business-license','id_',70px,45px),
-  ('permits','brick_111748-200_',58px,50px),
-  ('inspections','inspector_397573-200_',38px,50px),
-  ('grow','key_324199-200_',70px,70px),
-  ('city-contracts','government_143672-200_',60px,60px),
-  ('checklist','checklist_',48px,58px),
-  ('contact','contact_75084-200_',53px,55px),
-  ('resources','resources_212908-200_',49px,55px),
+  ('get-idea','idea_403891-200_'),
+  ('business-taxes','tax_43686-200_'),
+  ('support-options','support_icon_66723-200_'),
+  ('plan-check','plan_15641-200_'),
+  ('zoning','zoning_156645-200_'),
+  ('marketing','marketing_169007-200_'),
+  ('negotiate-lease','lease_150021-200_'),
+  ('register','cali_174136-200_'),
+  ('networking','networking_122209-200_'),
+  ('hire-employees','hire_33096-200_'),
+  ('business-license-receive','license_receive_154111_'),
+  ('business-license-apply','license_apply_154111_'),
+  ('business-license-determine','license_determine_154111_'),
+  ('business-plan','plan_173995-200_'),
+  ('plan','plan_173995-200_'),
+  ('financial-plan','money_220206_Funding_'),
+  ('obtain-funding','financing_'),
+  ('financing','financing_'),
+  ('physical-location','brick_87343-200_'),
+  ('business-license','id_'),
+  ('permits','permit_231568-200_'),
+  ('inspections','inspector_397573-200_'),
+  ('grow','key_324199-200_'),
+  ('city-contracts','government_143672-200_'),
+  ('checklist','checklist_'),
+  ('contact','contact_75084-200_'),
+  ('resources','resources_212908-200_'),
 );
+
+.icon {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-large {
+  width: 75px;
+  height: 75px;
+}
 
 @each $i in $icons {
   .icon-#{nth($i, 1)} {
-    display: inline-block;
-    background-size: cover;
-    width: nth($i, 3);
-    height: nth($i, 4);
     background-image: url(image_path(nth($i, 2)+'blue.png'));
     &.white { background-image: url(image_path(nth($i, 2)+'white.png')); }
   }

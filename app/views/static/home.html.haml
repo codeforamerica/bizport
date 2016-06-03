@@ -9,7 +9,7 @@
       %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
     .hero-copy
       %h4
-        Welcome!
+        Welcome to the pilot of BizPort!
       %h5
         Starting a business is both exciting and challenging. BizPort is here to help you navigate the process.
 
@@ -25,8 +25,7 @@
               %a{ href: page.full_path }
                 .step-card.media-object
                   .media-object-section.middle
-                    .thumbnail
-                      %i{ class: "icon-#{page.slug}" }
+                    %i.icon{ class: "icon-#{page.slug}" }
                   .media-object-section.middle
                     %strong= page.label
                     %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
