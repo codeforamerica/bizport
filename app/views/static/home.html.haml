@@ -22,10 +22,44 @@
             .arrow.hide-for-large
           .accordion-content{ "data-tab-content" => "true" }
             - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
-              %a{ href: page.full_path }
-                .step-card.media-object
-                  .media-object-section.middle
-                    %i.icon{ class: "icon-#{page.slug}" }
-                  .media-object-section.middle
-                    %strong= page.label
-                    %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+              - if step_group == 'apply' && page.label == 'Physical Location'
+                .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
+                  .text-center.choice-section.optional-disable{ style:'display: inline-block; width: 49%;'}
+                    %strong Solo Home Office
+                    %i.icon{ class: "icon-freelancer" }
+                  .text-center.choice-section.optional-enable.selected{ style:'display: inline-block; width: 49%;'}
+                    %strong Brick & Mortar
+                    %i.icon{ class: "icon-physical-location" }
+                  %a{ href: page.full_path }
+                    .text-center{ style: 'padding: 10px 0; border-top: 1px solid #dddddd;' }
+                      %strong UNSURE
+              - else
+                %a{ href: page.full_path }
+                  - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
+                  .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
+                    .media-object-section.middle
+                      %i.icon{ class: "icon-#{page.slug}" }
+                    .media-object-section.middle
+                      %strong= page.label
+                      %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+  :javascript
+    $('.optional-disable').click(function () {
+      var $optionalStep = $('.optional-step');
+      $('.choice-section').removeClass('selected');
+      if ( $optionalStep.hasClass('inactive') ) {
+        // do nothing
+      } else {
+        $(this).addClass('selected');
+        $optionalStep.addClass('inactive');
+      }
+    })
+    $('.optional-enable').click(function () {
+      var $optionalStep = $('.optional-step');
+      $('.choice-section').removeClass('selected');
+      if ( $optionalStep.hasClass('inactive') ) {
+        $optionalStep.removeClass('inactive');
+        $(this).addClass('selected');
+      } else {
+        // do nothing
+      }
+    })

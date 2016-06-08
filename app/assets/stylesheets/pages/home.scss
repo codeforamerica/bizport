@@ -13,6 +13,28 @@
 
   .step-card {
     height: 75px;
+
+    &.inactive {
+      color: $color-mediumgray;
+      background-color: $white;
+    }
+
+    .choice-section {
+      padding: 10px;
+      border-radius: 0.3rem;
+      color: $color-darkblue;
+
+      &.selected {
+        background-color: $color-darkblue;
+        color: $white;
+      }
+    }
+  }
+
+  .choice-card {
+    &:hover {
+      background-color: initial;
+    }
   }
 
   ul.step-group {

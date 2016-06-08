@@ -5,6 +5,7 @@ $icons: (
   ('support-options','support_icon_66723-200_'),
   ('plan-check','plan_15641-200_'),
   ('zoning','zoning_156645-200_'),
+  ('freelancer','freelance_icon_151727-200_'),
   ('marketing','marketing_169007-200_'),
   ('negotiate-lease','lease_150021-200_'),
   ('register','cali_174136-200_'),
@@ -53,5 +54,35 @@ $icons: (
     .icon-#{nth($i, 1)} {
       background-image: url(image_path(nth($i, 2)+'white.png'));
     }
+  }
+  .media-object.inactive:hover,
+  .media-object.inactive:active {
+    .icon-#{nth($i, 1)} {
+      background-image: url(image_path(nth($i, 2)+'grey.png'));
+    }
+  }
+  .inactive {
+    .icon-#{nth($i, 1)} {
+      background-image: url(image_path(nth($i, 2)+'grey.png'));
+    }
+  }
+}
+
+// hacky specific styles
+.choice-section:not(.selected) {
+  .icon-freelancer {
+    background-image: url(image_path('freelance_icon_151727-200_blue.png'));
+  }
+  .icon-physical-location {
+    background-image: url(image_path('brick_87343-200_blue.png'));
+  }
+}
+
+.choice-section.selected {
+  .icon-freelancer {
+    background-image: url(image_path('freelance_icon_151727-200_white.png'));
+  }
+  .icon-physical-location {
+    background-image: url(image_path('brick_87343-200_white.png'));
   }
 }
