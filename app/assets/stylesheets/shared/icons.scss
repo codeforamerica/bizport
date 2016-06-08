@@ -71,7 +71,7 @@ $icons: (
 // hacky specific styles
 .choice-section:not(.selected) {
   .icon-freelancer {
-    background-image: url(image_path('freelance_icon_151727-200_blue.png'));
+    background-image: url(image_path('freelance_151727-200_blue.png'));
   }
   .icon-physical-location {
     background-image: url(image_path('brick_87343-200_blue.png'));
@@ -80,7 +80,7 @@ $icons: (
 
 .choice-section.selected {
   .icon-freelancer {
-    background-image: url(image_path('freelance_icon_151727-200_white.png'));
+    background-image: url(image_path('freelance_151727-200_white.png'));
   }
   .icon-physical-location {
     background-image: url(image_path('brick_87343-200_white.png'));

@@ -20,18 +20,28 @@
     }
 
     .choice-section {
+      display: inline-block;
       padding: 10px;
-      border-radius: 0.3rem;
       color: $color-darkblue;
+      background-color: $color-extralightgray;
+      width: 50%;
+      &:first-child {
+        border-top-left-radius: 0.3rem;
+      }
+      &:nth-child(2) {
+        float: right;
+        border-top-right-radius: 0.3rem;
+      }
 
       &.selected {
-        background-color: $color-darkblue;
         color: $white;
+        background-color: $color-darkblue;
       }
     }
   }
 
   .choice-card {
+    position: relative; // so that this becomes the relative parent for two 50% choice-section elements
     &:hover {
       background-color: initial;
     }
