@@ -15,7 +15,7 @@
 
   .row
     - ['plan','apply','launch'].each do |step_group|
-      %ul.step-group.accordion.columns.small-12.large-4{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
         %li.accordion-item{ "data-accordion-item" => "true" }
           %a.accordion-title.step-group-title.media-object.text-centered
             = step_group.upcase

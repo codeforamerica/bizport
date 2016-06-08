@@ -54,6 +54,10 @@
       color: $white;
     }
 
+    &.plan .media-object-section { color: $color-darkblue-3 ; }
+    &.apply .media-object-section { color: $color-darkblue-2 ; }
+    &.launch .media-object-section { color: $color-darkblue ; }
+
     &.accordion,
     .accordion-content {
       border: none; // override for Foundation styling
