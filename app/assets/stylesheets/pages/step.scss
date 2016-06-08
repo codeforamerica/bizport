@@ -33,6 +33,8 @@
 
   .step-section {
     margin-top: 30px;
+    padding-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
+    padding-right: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
     position: relative; // gets the absolute positioning right for the :before pseudoelement below
 
     &:first-child {

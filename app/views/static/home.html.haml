@@ -25,11 +25,15 @@
               - if step_group == 'apply' && page.label == 'Physical Location'
                 .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
                   .text-center.choice-section.optional-disable
-                    %strong Solo Home Office
-                    %i.icon{ class: "icon-freelancer" }
+                    .row
+                      %strong Solo Home Office
+                    .row
+                      %i.icon{ class: "icon-freelancer" }
                   .text-center.choice-section.optional-enable.selected
-                    %strong Brick & Mortar
-                    %i.icon{ class: "icon-physical-location" }
+                    .row
+                      %strong Brick & Mortar
+                    .row
+                      %i.icon{ class: "icon-physical-location" }
                   %a{ href: page.full_path }
                     .text-center{ style: 'padding: 10px 0; border-top: 1px solid #dddddd;' }
                       %strong UNSURE
@@ -42,6 +46,24 @@
                     .media-object-section.middle
                       %strong= page.label
                       %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+  .row
+    .column.small-12.medium-6
+      %a{ href: checklist_path }
+        .media-object.text-center
+          .icon.icon-large.icon-checklist
+          .row
+            %strong My Checklist:
+          .row
+            Keep track of your to-do items
+    .column.small-12.medium-6
+      %a{ href: survey_path }
+        .media-object.text-center
+          .icon.icon-large.icon-survey
+          .row
+            %strong Survey:
+          .row
+            Tell us about your experience getting a business up and running
+
   :javascript
     $('.optional-disable').click(function () {
       var $optionalStep = $('.optional-step');
