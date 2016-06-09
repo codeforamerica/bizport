@@ -26,14 +26,25 @@
       background-color: $color-extralightgray;
       width: 50%;
       &:first-child {
-        border-top-left-radius: 0.3rem;
+        border-top-left-radius: $global-radius;
       }
       &:nth-child(2) {
         float: right;
-        border-top-right-radius: 0.3rem;
+        border-top-right-radius: $global-radius;
       }
 
       &.selected {
+        color: $white;
+        background-color: $color-darkblue;
+      }
+    }
+
+    .choice-link {
+      padding: 10px 0;
+      border-top: 1px solid $color-lightgray;
+      border-bottom-left-radius: $global-radius;
+      border-bottom-right-radius: $global-radius;
+      &:hover{
         color: $white;
         background-color: $color-darkblue;
       }
