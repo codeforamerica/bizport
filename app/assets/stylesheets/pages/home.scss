@@ -66,8 +66,11 @@
   ul.step-group {
     .step-group-title {
       text-align: center;
-      height: 50px;
       color: $white !important;
+
+      .step-group-title-text {
+        margin: 10px;
+      }
     }
 
     &.plan .media-object { color: $color-darkblue-3; }

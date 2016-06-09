@@ -18,8 +18,9 @@
       %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
         %li.accordion-item{ "data-accordion-item" => "true" }
           %a.accordion-title.step-group-title.media-object.text-centered
-            = step_group.upcase
-            .arrow.hide-for-large
+            .step-group-title-text
+              = step_group.upcase
+              .arrow.hide-for-large
           .accordion-content{ "data-tab-content" => "true" }
             - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
               - if step_group == 'apply' && page.label == 'Physical Location'
