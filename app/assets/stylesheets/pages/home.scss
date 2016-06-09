@@ -12,17 +12,20 @@
   }
 
   .step-card {
-    height: 75px;
 
-    &.inactive {
-      color: $color-mediumgray;
+    &.inactive,
+    &.inactive:hover {
       background-color: $white;
+      .media-object-section {
+        color: $color-mediumgray !important;
+      }
     }
 
     .choice-section {
+      cursor: pointer;
       display: inline-block;
       padding: 10px;
-      color: $color-darkblue;
+      color: $white;
       background-color: $color-extralightgray;
       width: 50%;
       &:first-child {
@@ -65,9 +68,11 @@
       color: $white;
     }
 
-    &.plan .media-object-section { color: $color-darkblue-3 ; }
-    &.apply .media-object-section { color: $color-darkblue-2 ; }
-    &.launch .media-object-section { color: $color-darkblue ; }
+    &.plan .media-object-section { color: $color-darkblue-3; }
+    &.apply .media-object-section { color: $color-darkblue-2; }
+    &.launch .media-object-section { color: $color-darkblue; }
+
+    .media-object-section:hover { color: $white; }
 
     &.accordion,
     .accordion-content {
