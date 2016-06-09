@@ -69,7 +69,7 @@
       var $optionalStep = $('.optional-step');
       $('.choice-section').removeClass('selected');
       if ( $optionalStep.hasClass('inactive') ) {
-        // do nothing
+        $(this).addClass('selected');
       } else {
         $(this).addClass('selected');
         $optionalStep.addClass('inactive');
@@ -82,6 +82,6 @@
         $optionalStep.removeClass('inactive');
         $(this).addClass('selected');
       } else {
-        // do nothing
+        $(this).addClass('selected');
       }
     })
