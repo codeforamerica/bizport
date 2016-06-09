@@ -15,9 +15,9 @@
 
     &.inactive,
     &.inactive:hover {
-      background-color: $white;
+      background-color: $white !important; // terrible, horrible, no good, very bad override over default hover
       .media-object-section {
-        color: $color-mediumgray !important;
+        color: $color-mediumgray !important; // terrible, horrible, no good, very bad override over default hover
       }
     }
 
@@ -38,7 +38,7 @@
 
       &.selected {
         color: $white;
-        background-color: $color-darkblue;
+        background-color: $color-darkblue-2;
       }
     }
 
@@ -47,9 +47,11 @@
       border-top: 1px solid $color-lightgray;
       border-bottom-left-radius: $global-radius;
       border-bottom-right-radius: $global-radius;
+      background-color: $white;
+      color: $color-darkblue-2;
       &:hover{
         color: $white;
-        background-color: $color-darkblue;
+        background-color: $color-darkblue-2;
       }
     }
   }
@@ -65,14 +67,14 @@
     .step-group-title {
       text-align: center;
       height: 50px;
-      color: $white;
+      color: $white !important;
     }
 
-    &.plan .media-object-section { color: $color-darkblue-3; }
-    &.apply .media-object-section { color: $color-darkblue-2; }
-    &.launch .media-object-section { color: $color-darkblue; }
+    &.plan .media-object { color: $color-darkblue-3; }
+    &.apply .media-object { color: $color-darkblue-2; }
+    &.launch .media-object { color: $color-darkblue; }
 
-    .media-object-section:hover { color: $white; }
+    .media-object:hover { color: $white; }
 
     &.accordion,
     .accordion-content {
@@ -95,9 +97,24 @@
       transform: rotate(180deg); // flips arrow upside down
     }
 
-    &:nth-child(1) .step-group-title { background-color: $color-darkblue-3; }
-    &:nth-child(2) .step-group-title { background-color: $color-darkblue-2; }
-    &:nth-child(3) .step-group-title { background-color: $color-darkblue; }
+    &.plan {
+      .step-group-title,
+      .media-object:hover {
+        background-color: $color-darkblue-3;
+      }
+    }
+    &.apply {
+      .step-group-title,
+      .media-object:hover {
+        background-color: $color-darkblue-2;
+      }
+    }
+    &.launch {
+      .step-group-title,
+      .media-object:hover {
+        background-color: $color-darkblue;
+      }
+    }
   }
 
   .accordion.desktop .accordion-title {
