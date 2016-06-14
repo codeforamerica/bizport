@@ -11,7 +11,7 @@
     = stylesheet_link_tag "print", media: "print"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body.no-js
     .off-canvas-wrapper
       .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
         / off-canvas title bar and menu
