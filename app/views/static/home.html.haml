@@ -25,6 +25,9 @@
             - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
               - if step_group == 'apply' && page.label == 'Physical Location'
                 .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
+                  %a{ href: page.full_path }
+                    .choice-link.text-center
+                      %strong Determine how much space you need:
                   .text-center.choice-section.optional-disable
                     .row
                       %strong Solo Home Office
@@ -35,9 +38,6 @@
                       %strong Brick & Mortar
                     .row
                       %i.icon{ class: "icon-physical-location" }
-                  %a{ href: page.full_path }
-                    .choice-link.text-center
-                      %strong UNSURE
               - else
                 %a{ href: page.full_path }
                   - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug

@@ -29,11 +29,11 @@
       background-color: $color-extralightgray;
       width: 50%;
       &:first-child {
-        border-top-left-radius: $global-radius;
+        border-bottom-left-radius: $global-radius;
       }
       &:nth-child(2) {
         float: right;
-        border-top-right-radius: $global-radius;
+        border-bottom-right-radius: $global-radius;
       }
 
       &.selected {
@@ -45,8 +45,8 @@
     .choice-link {
       padding: 10px 0;
       border-top: 1px solid $color-lightgray;
-      border-bottom-left-radius: $global-radius;
-      border-bottom-right-radius: $global-radius;
+      border-top-left-radius: $global-radius;
+      border-top-right-radius: $global-radius;
       background-color: $white;
       color: $color-darkblue-2;
       &:hover{
