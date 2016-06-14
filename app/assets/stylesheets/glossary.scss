@@ -66,6 +66,7 @@
     max-width: 30rem;
     overflow-y: scroll;
     padding: 2rem;
+    padding-top: 0px;
     padding-bottom: 3.125em;
     position: fixed;
     top: 0;
@@ -77,31 +78,27 @@
   &.drawer p,
   &.drawer label,
   &.drawer i {
-      color: #ffffff;
+    color: #ffffff;
   }
   &.drawer label {
-      font-size: 8.75px;
-      font-size: 0.875rem;
+    font-size: 8.75px;
+    font-size: 0.875rem;
   }
   &.drawer[aria-hidden=true], .drawer[aria-expanded=false] {
-      display: block;
-      right: -100%;
+    display: block;
+    right: -100%;
   }
   &.drawer[aria-hidden=false], .drawer[aria-expanded=true] {
-      transition: right, 0.3s;
-      right: 0;
-  }
-  &.drawer .button--close {
-
+    transition: right, 0.3s;
+    right: 0;
   }
 
   &.drawer-icon {
     padding-right: 0.41667em;
   }
 
-  &.drawer-header i:before {
-    padding-left: 0;
-    padding-right: 0.41667em;
+  .drawer-header {
+    clear: both;
   }
 
   &.drawer-search {
@@ -151,6 +148,23 @@
     position: relative;
     width: 14%;
   }
+
+  .close-bar {
+    padding-top: 0.5rem;
+
+    .close-x {
+      float: right;
+      cursor: pointer;
+      width: 50px;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 400;
+      color: $white;
+      text-align: right;
+    }
+
+  }
+
 }
 
 #glossary[aria-hidden=true] {
@@ -188,17 +202,3 @@ span[data-term] {
   padding-bottom: 1.25em;
 }
 
-.close-x {
-  float: right;
-  width: 10px;
-}
-
-.close-x:after {
-  position: absolute;
-  top: 0;
-  content: '\d7'; /* hex value for cross-mark character */
-  font-size: 50px;
-  font-weight: 400;
-  color: $white;
-  text-align: center;
-}

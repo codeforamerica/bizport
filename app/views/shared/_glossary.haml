@@ -5,12 +5,12 @@
 
 -# glossary.js really wants this item to exist - leaving it empty so it's 'invisible'
 %button.js-glossary-toggle
-#glossary.drawer{"aria-describedby" => "glossary-result", "aria-hidden" => "true"}
-  .container
-    %button.button--close.js-glossary-close{:tabindex => "-1", :title => "Close glossary"}
-      .close-x
+#glossary.drawer{ "aria-describedby" => "glossary-result", "aria-hidden" => "true" }
+  .close-bar
+    .button--close{ title: "Close glossary" }
+      .close-x.js-glossary-close= "\u00d7" # hex value for cross-mark character
   %h2.drawer-header Glossary
-  %label.label{:for => "drawer-search"} Filter glossary terms
-  %input.js-glossary-search.drawer-search{:placeholder => "e.g. Fossil fuel", :tabindex => "-1", :type => "search"}
+  %label.label{ for: "drawer-search" } Filter glossary terms
+  %input.js-glossary-search.drawer-search{ placeholder: "e.g. business license", type: "search" }
   #glossary-result
-    %ul.js-glossary-list{:accordion => ""}
+    %ul.js-glossary-list{ accordion: "" }
