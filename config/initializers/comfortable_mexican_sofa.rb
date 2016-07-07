@@ -35,7 +35,12 @@ ComfortableMexicanSofa.configure do |config|
   # http://rdoc.info/gems/paperclip/2.3.8/Paperclip/Storage/S3, and for
   # filesystem see: http://rdoc.info/gems/paperclip/2.3.8/Paperclip/Storage/Filesystem
   # If you are using S3 and HTTPS, pass :s3_protocol => '' to have URLs that use the protocol of the page
-  #   config.upload_file_options = {:url => '/system/:class/:id/:attachment/:style/:filename'}
+    config.upload_file_options = {
+      url: '/assets/cms_files/:id/:attachment/:style/:filename',
+      styles: {
+        compressed: '-quality 90 -strip -interlace Plane',
+      }
+    }
 
   # Sofa allows you to setup entire site from files. Database is updated with each
   # request (if necessary). Please note that database entries are destroyed if there's
