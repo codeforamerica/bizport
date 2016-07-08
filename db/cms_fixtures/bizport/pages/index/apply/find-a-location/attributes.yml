@@ -1,9 +1,9 @@
 ---
-label: Permits
+label: Determine Business Location
 layout: step
 parent: apply
 target_page: 
 categories:
 - Step
 is_published: true
-position: 7
+position: 1

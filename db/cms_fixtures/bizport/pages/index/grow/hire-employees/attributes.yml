@@ -1,9 +1,9 @@
 ---
-label: Permits
+label: Hire Employees
 layout: step
-parent: apply
+parent: grow
 target_page: 
 categories:
 - Step
 is_published: true
-position: 7
+position: 0

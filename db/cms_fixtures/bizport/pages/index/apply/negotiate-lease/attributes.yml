@@ -1,9 +1,9 @@
 ---
-label: Negotiate a Lease
+label: Negotiate Your Lease
 layout: step
 parent: apply
 target_page: 
 categories:
 - Step
 is_published: true
-position: 2
+position: 3
