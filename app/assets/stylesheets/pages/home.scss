@@ -75,7 +75,7 @@
 
     &.plan .media-object { color: $color-darkblue-3; }
     &.apply .media-object { color: $color-darkblue-2; }
-    &.launch .media-object { color: $color-darkblue; }
+    &.grow .media-object { color: $color-darkblue; }
 
     .media-object:hover { color: $white; }
 
@@ -112,7 +112,7 @@
         background-color: $color-darkblue-2;
       }
     }
-    &.launch {
+    &.grow {
       .step-group-title,
       .media-object:hover {
         background-color: $color-darkblue;

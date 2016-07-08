@@ -7,7 +7,7 @@ describe ApplicationHelper do
       request = OpenStruct.new({ path: '/plan/get-idea' })
       expect(ApplicationHelper.next_step_page_service('title', request)).to eq('Next: Support Options')
 
-      request = OpenStruct.new({ path: '/launch/business-taxes' })
+      request = OpenStruct.new({ path: '/grow/business-taxes' })
       expect(ApplicationHelper.next_step_page_service('title', request)).to eq('Next: Work with the City')
 
       request = OpenStruct.new({ path: '/apply/plan-check' })
