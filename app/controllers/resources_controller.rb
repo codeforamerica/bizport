@@ -25,8 +25,8 @@ class ResourcesController < ApplicationController
 
   def show
     opportunity_id = params[:id]
-    url = URI.parse(API_URL+opportunity_id+'/')
-    res = Net::HTTP.get(url)
+    url = URI.parse(API_URL+'opportunity/'+opportunity_id+'/')
+    res = Net::HTTP.get_response(url)
     @opportunity = JSON.parse(res.body)
   end
 
