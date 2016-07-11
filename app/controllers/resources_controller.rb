@@ -20,13 +20,21 @@ class ResourcesController < ApplicationController
     search_id = params[:id]
     url = URI.parse(API_URL+'search/'+search_id+'/')
     res = Net::HTTP.get_response(url)
-    @results = JSON.parse(res.body)
+    if res.code == "404"
+      raise ActiveRecord::RecordNotFound
+    end
+
+    @search_data = JSON.parse(res.body)
   end
 
   def show
     opportunity_id = params[:id]
     url = URI.parse(API_URL+'opportunity/'+opportunity_id+'/')
     res = Net::HTTP.get_response(url)
+    if res.code == "404"
+      raise ActiveRecord::RecordNotFound
+    end
+    
     @opportunity = JSON.parse(res.body)
   end
 
