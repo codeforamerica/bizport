@@ -6,7 +6,7 @@ CodeClimate::TestReporter.start
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -60,8 +60,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation, { except: %w[spatial_ref_sys] }
-    DatabaseCleaner.clean_with :truncation, { except: %w[spatial_ref_sys] }
+    DatabaseCleaner.strategy = :truncation, { except: %w(spatial_ref_sys) }
+    DatabaseCleaner.clean_with :truncation, { except: %w(spatial_ref_sys) }
     load "#{Rails.root}/db/seeds.rb"
 
     # require 'rake'
