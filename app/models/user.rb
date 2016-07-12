@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-    self.role == 'admin'
+    role == 'admin'
   end
 end

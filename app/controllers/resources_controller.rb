@@ -8,24 +8,23 @@ class ResourcesController < ApplicationController
 
   # POST
   def search
-    search_params = params
     url = URI.parse(API_URL + 'search/')
 
     @api_response = api_response_for(url, 'POST', params)
 
-    redirect_to '/resources/search/'+@api_response['id'].to_s
+    redirect_to '/resources/search/' + @api_response['id'].to_s
   end
 
   def results
     search_id = params[:id]
-    url = URI.parse(API_URL+'search/'+search_id+'/')
+    url = URI.parse(API_URL + 'search/' + search_id + '/')
 
     @search_data = api_response_for(url)
   end
 
   def show
     opportunity_id = params[:id]
-    url = URI.parse(API_URL+'opportunity/'+opportunity_id+'/')
+    url = URI.parse(API_URL + 'opportunity/' + opportunity_id + '/')
 
     @opportunity = api_response_for(url)
   end
@@ -38,7 +37,7 @@ class ResourcesController < ApplicationController
       return Net::HTTP.post_form(url, params)
     else
       res = Net::HTTP.get_response(url)
-      if res.code == "404"
+      if res.code == '404'
         raise ActiveRecord::RecordNotFound
       end
 

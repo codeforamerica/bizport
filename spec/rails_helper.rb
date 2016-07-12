@@ -64,8 +64,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with :truncation, { except: %w(spatial_ref_sys) }
     load "#{Rails.root}/db/seeds.rb"
 
-    # require 'rake'
-    # Rails.application.load_tasks
-    # Rake::Task['cms:load_content'].invoke
+    require 'rake'
+    Rails.application.load_tasks
+    Rake::Task['cms:load_content'].invoke
   end
 end

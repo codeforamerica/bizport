@@ -32,13 +32,12 @@ class SubscriptionsController < ApplicationController
       }
 
       format.html {
-
         @subscription = Subscription.new(subscription_params)
 
         if @subscription.save
           redirect_to contact_path, notice: "Thanks! You've been added to our newsletter."
         else
-          render :contact, notice: "A problem occurred when trying to add you to our newsletter. Please try again."
+          render :contact, notice: 'A problem occurred when trying to add you to our newsletter. Please try again.'
         end
       }
     end
@@ -60,13 +59,14 @@ class SubscriptionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subscription
-      @subscription = Subscription.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def subscription_params
-      params.require(:subscription).permit(:email)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subscription
+    @subscription = Subscription.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def subscription_params
+    params.require(:subscription).permit(:email)
+  end
 end
