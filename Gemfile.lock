@@ -178,6 +178,7 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    http_logger (0.5.1)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -361,6 +362,7 @@ DEPENDENCIES
   devise
   foundation-rails (~> 6.2.0)
   haml-rails (~> 0.9)
+  http_logger
   jquery-rails
   newrelic_rpm
   pg

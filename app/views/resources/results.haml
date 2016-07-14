@@ -1,1 +1,5 @@
-.foo= @search_data
+.resources.results
+  = @search_data
+
+  - @search_data['results'].each do |result|
+    .result= result

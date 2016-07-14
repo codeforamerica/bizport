@@ -1,16 +1,24 @@
 class ResourcesController < ApplicationController
   require 'net/http'
 
-  API_URL = 'http://52.53.197.246/wm-api/'
+  API_URL = 'https://longbeachresources.tk/wm-api/'
 
   def new
+    industries_url = URI.parse(API_URL + 'industry/')
+    purposes_url = URI.parse(API_URL + 'purpose/')
+
+    @industries = api_response_for(industries_url)
+      .map{ |industry| { id: industry["id"], name: industry["name"] } }
+    @purposes = api_response_for(purposes_url)
+      .map{ |purpose| { id: purpose["id"], name: purpose["name"] } }
   end
 
   # POST
   def search
     url = URI.parse(API_URL + 'search/')
 
-    @api_response = api_response_for(url, 'POST', params)
+    response = api_response_for(url, 'POST', api_params(params))
+    @api_response = JSON.parse(response.body)
 
     redirect_to '/resources/search/' + @api_response['id'].to_s
   end
@@ -43,6 +51,19 @@ class ResourcesController < ApplicationController
 
       return JSON.parse(res.body)
     end
+  end
+
+  def api_params(params)
+    valid_params = [
+      'city',
+      'state',
+      'industry',
+      'purposes',
+      'personal_investment',
+      'small_business',
+    ]
+
+    params.select{ |p| valid_params.include? p }
   end
 
 end

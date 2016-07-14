@@ -39,6 +39,7 @@ group :development do
   gem 'capistrano-rbenv', '2.0.4'
   gem 'capistrano-rails', '1.1.6'
   gem 'capistrano3-puma', git: 'https://github.com/seuros/capistrano-puma', branch: 'master'
+  gem 'http_logger'
 end
 
 group :test do

@@ -1,14 +1,39 @@
-= form_tag(resources_search_path, method: "post") do
-  = hidden_field_tag(:city, 'Long Beach')
-  = hidden_field_tag(:state, 'CA')
+- content_for :title, "Resources"
 
-  = label_tag(:opp_type, "I need:")
-  = radio_button_tag(:opp_type, 'money')
-  = label_tag(:opp_type_money, 'Money')
-  = radio_button_tag(:opp_type, 'advice')
-  = label_tag(:opp_type_advice, 'Advice')
-  = label_tag(:personal_investment, "I am willing to invest my own money:")
-  = check_box_tag(:personal_investment)
-  = label_tag(:small_business, "My business is a 'small business':")
-  = check_box_tag(:small_business)
-  = submit_tag("Search")
+.resources.new
+  .step
+    .step-header
+      .step-title.text-center
+        %i.icon-resources.white
+        %h1 Resources
+
+    .content-container
+      = form_tag(resources_search_path, method: "post") do
+        = hidden_field_tag(:city, 'Long Beach')
+        = hidden_field_tag(:state, 'CA')
+        = hidden_field_tag(:small_business, 1)
+
+        -# Industry
+        = label_tag(:industry, "Industry:")
+        - @industries.each do |industry|
+          %input{ type: 'radio', id: "industry-#{industry[:name].downcase}", name: 'industry', value: industry[:id] }
+          %label{ for: "industry-#{industry[:name].downcase}" }
+            = industry[:name]
+
+        -# Purposes
+        = label_tag(:purposes, "Purposes:")
+        - @purposes.each do |purpose|
+          %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
+          %label{ for: "purpose-#{purpose[:name].downcase}" }
+            = purpose[:name]
+
+        -# Personal Investment
+        %label I am willing to invest my own money:
+        %input{ type: 'radio', id: "personal_investment_true", name: 'personal_investment', value: 1 }
+        %label{ for: 'personal_investment_true' }
+          Yes
+        %input{ type: 'radio', id: "personal_investment_false", name: 'personal_investment', value: 0 }
+        %label{ for: 'personal_investment_false' }
+          No
+
+        = submit_tag("Search")
