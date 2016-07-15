@@ -2,8 +2,12 @@ require 'rails_helper'
 
 describe ResourcesController do
   describe '#new' do
-    it 'should return a template with a form' do
+
+    it 'should render the "new" template' do
+      expect_any_instance_of(ResourcesController).to receive(:api_response_for)
+        .exactly(3).times.and_return([])
       get :new
+
       expect(response).to have_http_status(200)
       expect(response).to render_template(:new)
     end
