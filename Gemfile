@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
-gem 'rails_12factor'
+gem 'rails', '4.2.7'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
@@ -26,6 +25,10 @@ gem 'comfortable_mexican_sofa'
 
 gem 'newrelic_rpm'
 gem 'bugsnag'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
