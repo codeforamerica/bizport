@@ -2,6 +2,8 @@
   &.new {
     fieldset + fieldset {
       border-top: 1px solid $color-extralightgray;
+      margin-top: 20px;
+      padding-top: 20px;
     }
     .fieldset-title {
       color: $color-darkblue;
@@ -14,8 +16,16 @@
 
   &.results {
     .result {
+      display: block;
       padding: 10px;
       box-shadow: 0px 1px 4px $color-extralightgray;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      &:hover {
+        background-color: $color-darkblue;
+        color: $white;
+      }
 
       .value-prop {
         border-bottom: 1px solid $color-extralightgray;

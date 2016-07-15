@@ -1,7 +1,10 @@
+- content_for :title, "Resources"
+- content_for :footer, "disable" # disables footer
+
 .resources.results
   .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
     - @search_data['results'].each do |result|
-      .result
+      %a.result{ href: "/resources/#{result['id']}" }
         .value-prop
           %i Icon
           %strong= result['value_prop']
@@ -14,3 +17,5 @@
         .industry
           %strong Industry:
           = result['industries'].map{ |i| i['name'] }.join(', ')
+
+    %a.button.primary.expanded{ href: resources_search_path } Search Again

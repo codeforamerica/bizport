@@ -52,5 +52,6 @@
           .notice= notice
           .alert= alert
           = yield
-          = render 'shared/footer'
+          - unless yield(:footer) == "disable"
+            = render 'shared/footer'
     = render 'shared/glossary'
