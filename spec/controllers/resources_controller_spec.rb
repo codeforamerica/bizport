@@ -13,18 +13,7 @@ describe ResourcesController do
     it 'should redirect to /results after a POST with valid search params' do
       allow_any_instance_of(ResourcesController).to receive(:api_response_for)
         .with(anything, 'POST', anything)
-        .and_return('id' => 1,
-                    'results' => [],
-                    'purposes' => [],
-                    'created_at' => '2016-07-12T23:41:13.282903Z',
-                    'updated_at' => '2016-07-12T23:41:13.282937Z',
-                    'city' => 'Long Beach',
-                    'state' => 'CA',
-                    'personal_investment' => false,
-                    'existing_business' => 'null',
-                    'small_business' => false,
-                    'view_count' => 1,
-                    'industry' => 'null')
+        .and_return({'id' => 1})
       post :search # no need for params - we'll just pretend this works
 
       expect(response).to have_http_status(302)
@@ -36,20 +25,6 @@ describe ResourcesController do
     it 'should accept a GET for an existing search result' do
       allow_any_instance_of(ResourcesController)
         .to receive(:api_response_for)
-        .and_return(
-          'id' => 1,
-          'results' => [],
-          'purposes' => [],
-          'created_at' => '2016-07-08T21:17:39.210313Z',
-          'updated_at' => '2016-07-08T21:17:39.210348Z',
-          'city' => 'Long Beach',
-          'state' => 'CA',
-          'personal_investment' => true,
-          'existing_business' => 'new',
-          'small_business' => true,
-          'view_count' => 1,
-          'industry' => nil
-        )
       get :results, id: 999_999
       expect(response).to render_template(:results)
     end
@@ -65,35 +40,6 @@ describe ResourcesController do
     it 'should return details for an existing resource' do
       allow_any_instance_of(ResourcesController)
         .to receive(:api_response_for)
-        .and_return('id' => 1,
-                    'created_at' => '2016-07-12T22:48:34.296731Z',
-                    'updated_at' => '2016-07-12T22:48:34.296757Z',
-                    'city' => 'Long Beach',
-                    'state' => 'CA',
-                    'personal_investment' => false,
-                    'existing_business' => nil,
-                    'small_business' => false,
-                    'title' => 'Hire Manufacturing People',
-                    'industries' => [
-                      {
-                        'id' => 1,
-                        'created_at' => '2016-07-12T22:48:12.651401Z',
-                        'updated_at' => '2016-07-12T22:48:12.651429Z',
-                        'name' => 'Manufacturing',
-                        'order' => 1,
-                        'creator' => 1
-                      }
-                    ],
-                    'purposes' => [
-                      {
-                        'id' => 1,
-                        'created_at' => '2016-07-12T22:48:25.006707Z',
-                        'updated_at' => '2016-07-12T22:48:25.006738Z',
-                        'name' => 'Hiring',
-                        'order' => 1,
-                        'creator' => 1
-                      }
-                    ])
       get :show, id: 999_999
       expect(response).to have_http_status(200)
     end
