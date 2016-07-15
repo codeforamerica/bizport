@@ -1,14 +1,24 @@
 .resources {
   &.new {
-
+    fieldset + fieldset {
+      border-top: 1px solid $color-extralightgray;
+    }
+    .fieldset-title {
+      color: $color-darkblue;
+      font-weight: 700;
+    }
+    .option {
+      margin-top: 10px;
+    }
   }
+
   &.results {
     .result {
       padding: 10px;
-      box-shadow: 0px 1px 4px $color-mediumgray;
+      box-shadow: 0px 1px 4px $color-extralightgray;
 
       .value-prop {
-        border-bottom: 1px solid $color-darkgray;
+        border-bottom: 1px solid $color-extralightgray;
       }
     }
   }

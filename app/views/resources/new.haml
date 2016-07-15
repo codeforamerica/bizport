@@ -8,32 +8,45 @@
         %h1 Resources
 
     .content-container
-      = form_tag(resources_search_path, method: "post") do
-        = hidden_field_tag(:city, 'Long Beach')
-        = hidden_field_tag(:state, 'CA')
-        = hidden_field_tag(:small_business, 1)
+      .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
+        = form_tag(resources_search_path, method: "post") do
+          = hidden_field_tag(:city, 'Long Beach')
+          = hidden_field_tag(:state, 'CA')
+          = hidden_field_tag(:personal_investment, 1)
+          = hidden_field_tag(:small_business, 1)
 
-        -# Industry
-        = label_tag(:industry, "Industry:")
-        - @industries.each do |industry|
-          %input{ type: 'radio', id: "industry-#{industry[:name].downcase}", name: 'industry', value: industry[:id] }
-          %label{ for: "industry-#{industry[:name].downcase}" }
-            = industry[:name]
+          -# Benefit Type
+          %fieldset
+            = label_tag(:benefit_types, "I need:", { class: 'fieldset-title' })
+            - @benefit_types.each do |benefit_type|
+              .option
+                %input{ type: 'checkbox', id: "benefit_type-#{benefit_type[:name].downcase}", name: 'benefit_types[]', value: benefit_type[:id] }
+                %label{ for: "benefit_type-#{benefit_type[:name].downcase}" }= benefit_type[:name]
 
-        -# Purposes
-        = label_tag(:purposes, "Purposes:")
-        - @purposes.each do |purpose|
-          %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
-          %label{ for: "purpose-#{purpose[:name].downcase}" }
-            = purpose[:name]
+          -# Industry
+          %fieldset
+            = label_tag(:industries, "My industry is:", { class: 'fieldset-title' })
+            - @industries.each do |industry|
+              .option
+                %input{ type: 'checkbox', id: "industry-#{industry[:name].downcase}", name: 'industries[]', value: industry[:id] }
+                %label{ for: "industry-#{industry[:name].downcase}" }= industry[:name]
 
-        -# Personal Investment
-        %label I am willing to invest my own money:
-        %input{ type: 'radio', id: "personal_investment_true", name: 'personal_investment', value: 1 }
-        %label{ for: 'personal_investment_true' }
-          Yes
-        %input{ type: 'radio', id: "personal_investment_false", name: 'personal_investment', value: 0 }
-        %label{ for: 'personal_investment_false' }
-          No
+          -# Purposes
+          %fieldset
+            = label_tag(:purposes, "Purposes:", { class: 'fieldset-title' })
+            %label (check all that apply)
+            - @purposes.each do |purpose|
+              .option
+                %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
+                %label{ for: "purpose-#{purpose[:name].downcase}" }= purpose[:name]
 
-        = submit_tag("Search")
+          -# Small Business
+          %fieldset
+            %label.fieldset-title I am:
+            .option
+              %input{ type: 'radio', id: "existing_business_new", name: 'existing_business', value: 'new' }
+              %label{ for: 'existing_business_new' } Starting a new business
+            .option
+              %input{ type: 'radio', id: "existing_business_existing", name: 'existing_business', value: 0 }
+              %label{ for: 'existing_business_existing' } Growing an existing business
+          = submit_tag("Search")
