@@ -1,1 +1,27 @@
-= @opportunity
+.resources.show
+  .value-prop
+    %i Icon
+    = @opportunity['value_prop']
+  .row
+    %table
+      %tbody
+        %tr
+          %td Purpose:
+          %td= @opportunity['title']
+        %tr
+          %td Opportunity:
+          %td= @opportunity['purposes'].map{ |p| p['name'] }.join(', ')
+        %tr
+          %td Source:
+          %td= @opportunity['agency']
+        %tr
+          %td Contact:
+          %td (MAKE ME)
+        %tr
+          %td Industry:
+          %td= @opportunity['industries'].map{ |p| p['name'] }.join(', ')
+        %tr
+          %td Description:
+          / Description in next `row` below
+  .row.description
+    = @opportunity['description']

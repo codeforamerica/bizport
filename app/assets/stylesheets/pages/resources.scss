@@ -1,3 +1,8 @@
+@mixin heavy-font {
+  color: $color-darkblue;
+  font-weight: 700;
+}
+
 .resources {
   &.new {
     fieldset + fieldset {
@@ -6,8 +11,7 @@
       padding-top: 20px;
     }
     .fieldset-title {
-      color: $color-darkblue;
-      font-weight: 700;
+      @include heavy-font;
     }
     .option {
       margin-top: 10px;
@@ -25,11 +29,35 @@
       &:hover {
         background-color: $color-darkblue;
         color: $white;
+        .value-prop {
+          color: $white;
+        }
       }
 
       .value-prop {
+        @include heavy-font;
         border-bottom: 1px solid $color-extralightgray;
       }
+    }
+  }
+
+  &.show {
+    padding: 10px;
+    tbody {
+      border: none;
+      tr {
+        background-color: #FFF; // override Foundation table striping
+      }
+      td {
+        padding-left: 0;
+      }
+      td:first-child {
+        @include heavy-font;
+      }
+    }
+    .value-prop {
+      @include heavy-font;
+      border-bottom: 1px solid $color-extralightgray;
     }
   }
 }
