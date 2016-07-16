@@ -6,16 +6,20 @@
     - @search_data['results'].each do |result|
       %a.result{ href: "/resources/#{result['id']}" }
         .value-prop
-          %i Icon
-          = result['value_prop']
+          - type = result['benefit_types'].try(:[], 0).try(:[], 'name')
+          - if type == 'Money'
+            .icon.icon-money
+          - if type == 'Advice'
+            .icon.icon-money
+          .value-prop_text= result['value_prop']
         .title
-          %strong Opportunity:
-          = result['title']
+          %strong.text Opportunity:
+          %span.text= result['title']
         .purpose
-          %strong Purpose:
-          = result['purposes'].map{ |p| p['name'] }.join(', ')
+          %strong.text Purpose:
+          %span.text= result['purposes'].map{ |p| p['name'] }.join(', ')
         .industry
-          %strong Industry:
-          = result['industries'].map{ |i| i['name'] }.join(', ')
+          %strong.text Industry:
+          %span.text= result['industries'].map{ |i| i['name'] }.join(', ')
 
     %a.button.primary.expanded{ href: resources_search_path } Search Again

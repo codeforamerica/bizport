@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
     purposes_url = URI.parse(API_URL + 'purpose/')
 
     @benefit_types = api_response_for(benefit_types_url)
-      .map{ |benefit_types| { id: benefit_types["id"], name: benefit_types["name"] } }
+      .map{ |benefit_type| { id: benefit_type["id"], name: benefit_type["name"] } }
     @industries = api_response_for(industries_url)
       .map{ |industry| { id: industry["id"], name: industry["name"] } }
     @purposes = api_response_for(purposes_url)
@@ -31,6 +31,7 @@ class ResourcesController < ApplicationController
   def results
     search_id = params[:id]
     url = URI.parse(API_URL + 'search/' + search_id + '/')
+
     @search_data = api_response_for(url)
   end
 

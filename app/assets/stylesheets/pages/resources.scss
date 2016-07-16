@@ -28,15 +28,25 @@
 
       &:hover {
         background-color: $color-darkblue;
-        color: $white;
-        .value-prop {
-          color: $white;
+        .value-prop_text,
+        .text {
+          color: $white !important;
+        }
+        .icon-money {
+          background-image: url('financing_white.png');
         }
       }
 
       .value-prop {
-        @include heavy-font;
         border-bottom: 1px solid $color-extralightgray;
+        padding: 10px 5px;
+
+        .value-prop_text {
+          @include heavy-font;
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 10px;
+        }
       }
     }
   }
@@ -59,5 +69,10 @@
       @include heavy-font;
       border-bottom: 1px solid $color-extralightgray;
     }
+  }
+
+  .icon-money {
+    display: table-cell;
+    background-image: url('financing_blue.png');
   }
 }
