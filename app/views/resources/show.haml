@@ -1,7 +1,11 @@
 .resources.show
   .value-prop
-    .icon.icon-money
-    = @opportunity['value_prop']
+    - type = @opportunity['benefit_types'].try(:[], 0).try(:[], 'name')
+    - if type == 'Money'
+      .icon.icon-money
+    - if type == 'Advice'
+      .icon.icon-money
+    .value-prop_text= @opportunity['value_prop']
   .row
     %table
       %tbody

@@ -4,6 +4,9 @@
 }
 
 .resources {
+  [type='checkbox'] + label {
+    margin-left: 0;
+  }
   &.new {
     fieldset + fieldset {
       border-top: 1px solid $color-extralightgray;
@@ -15,6 +18,45 @@
     }
     .option {
       margin-top: 10px;
+    }
+
+    fieldset.benefit_types {
+      .column { // override Foundation default
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+      }
+      .option-container {
+        position: relative;
+        input[type='checkbox'] {
+          float: left;
+        }
+        label {
+          position: relative;
+          width: 100%;
+          text-align: center;
+          height: 85px;
+          background-color: $color-darkblue;
+        }
+        [type="checkbox"] + label:before {
+          top: 5px;
+          left: 5px;
+        }
+        [type="checkbox"]:checked + label:after {
+          top: 6px;
+          left: 6px;
+        }
+      }
+      .benefit-name {
+        color: $white;
+        font-weight: 700;
+      }
+      .icon-container {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -25px;
+        pointer-events: none;
+      }
     }
   }
 
@@ -36,18 +78,6 @@
           background-image: url('financing_white.png');
         }
       }
-
-      .value-prop {
-        border-bottom: 1px solid $color-extralightgray;
-        padding: 10px 5px;
-
-        .value-prop_text {
-          @include heavy-font;
-          display: table-cell;
-          vertical-align: middle;
-          padding-left: 10px;
-        }
-      }
     }
   }
 
@@ -65,14 +95,28 @@
         @include heavy-font;
       }
     }
-    .value-prop {
+  }
+
+  .value-prop {
+    border-bottom: 1px solid $color-extralightgray;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .value-prop_text {
       @include heavy-font;
-      border-bottom: 1px solid $color-extralightgray;
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 10px;
     }
   }
 
   .icon-money {
     display: table-cell;
     background-image: url('financing_blue.png');
+    &.white {
+      background-image: url('financing_white.png');
+    }
   }
 }

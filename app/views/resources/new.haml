@@ -17,12 +17,25 @@
           = hidden_field_tag(:small_business, 1)
 
           -# Benefit Type
-          %fieldset
+          %fieldset.row.benefit_types
             = label_tag(:benefit_types, "I need:", { class: 'fieldset-title' })
             - @benefit_types.each do |benefit_type|
+              .option-container.column.small-6
+                .checkbox
+                  %input{ type: 'checkbox', id: "benefit_type-#{benefit_type[:name].downcase}", name: 'benefit_types[]', value: benefit_type[:id] }
+                  %label{ for: "benefit_type-#{benefit_type[:name].downcase}" }
+                .icon-container
+                  .icon.white{ class: "icon-#{benefit_type[:name].downcase}" }
+                  .benefit-name= benefit_type[:name]
+
+          -# Purposes
+          %fieldset
+            = label_tag(:purposes, "I want resources for:", { class: 'fieldset-title' })
+            %label (check all that apply)
+            - @purposes.each do |purpose|
               .option
-                %input{ type: 'checkbox', id: "benefit_type-#{benefit_type[:name].downcase}", name: 'benefit_types[]', value: benefit_type[:id] }
-                %label{ for: "benefit_type-#{benefit_type[:name].downcase}" }= benefit_type[:name]
+                %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
+                %label{ for: "purpose-#{purpose[:name].downcase}" }= purpose[:name]
 
           -# Industry
           %fieldset
@@ -31,15 +44,6 @@
               .option
                 %input{ type: 'checkbox', id: "industry-#{industry[:name].downcase}", name: 'industries[]', value: industry[:id] }
                 %label{ for: "industry-#{industry[:name].downcase}" }= industry[:name]
-
-          -# Purposes
-          %fieldset
-            = label_tag(:purposes, "Purposes:", { class: 'fieldset-title' })
-            %label (check all that apply)
-            - @purposes.each do |purpose|
-              .option
-                %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
-                %label{ for: "purpose-#{purpose[:name].downcase}" }= purpose[:name]
 
           -# Small Business
           %fieldset
