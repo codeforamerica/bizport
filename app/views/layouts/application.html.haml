@@ -6,6 +6,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title= content_for?(:title) ? "BizPort | "+yield(:title) : "BizPort"
     - if Rails.env.production?
+      = render 'shared/analytics_ga' # must be inline for domain verification
       = javascript_include_tag 'analytics'
     = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'print', media: 'print'
