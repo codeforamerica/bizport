@@ -16,11 +16,13 @@
         .title
           %strong.text Opportunity:
           %span.text= result['title']
-        .purpose
-          %strong.text Purpose:
-          %span.text= result['purposes'].map{ |p| p['name'] }.join(', ')
-        .industry
-          %strong.text Industry:
-          %span.text= result['industries'].map{ |i| i['name'] }.join(', ')
+        - if result['purposes'].count > 0
+          .purpose
+            %strong.text Purpose:
+            %span.text= result['purposes'].map{ |p| p['name'] }.join(', ')
+        - if result['industries'].count > 0
+          .industry
+            %strong.text Industry:
+            %span.text= result['industries'].map{ |i| i['name'] }.join(', ')
 
     %a.button.primary.expanded{ href: resources_search_path } Search Again

@@ -2,47 +2,50 @@
 - content_for :footer, "disable" # disables footer
 
 .resources.show
-  .value-prop
-    - type = @opportunity['benefit_types'].try(:[], 0).try(:[], 'name')
-    - if type == 'Money'
-      .icon.icon-money
-    - if type == 'Advice'
-      .icon.icon-money
-    .value-prop_text= @opportunity['value_prop']
-  .row
-    %table
-      %tbody
-        %tr
-          %td Purpose:
-          %td= @opportunity['title']
-        %tr
-          %td Opportunity:
-          %td= @opportunity['purposes'].map{ |p| p['name'] }.join(', ')
-        %tr
-          %td Source:
-          %td= @opportunity['agency']['name']
-        %tr
-          %td Contact:
-          %td
-            - @opportunity['agency'].select{ |attrib| ['phone','fax','street_address','email','url'].include? attrib }.each do |elem|
-              %div
-                %strong= elem[0].titleize
-                %span= elem[1]
-        %tr
-          %td Industry:
-          %td= @opportunity['industries'].map{ |p| p['name'] }.join(', ')
-        - if @opportunity['small_business'] || @opportunity['personal_investment']
+  .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
+    .value-prop
+      - type = @opportunity['benefit_types'].try(:[], 0).try(:[], 'name')
+      - if type == 'Money'
+        .icon.icon-money
+      - if type == 'Advice'
+        .icon.icon-money
+      .value-prop_text= @opportunity['value_prop']
+    .row
+      %table
+        %tbody
           %tr
-            %td To Qualify:
+            %td Purpose:
+            %td= @opportunity['title']
+          - if @opportunity['purposes'].count > 0
+            %tr
+              %td Opportunity:
+              %td= @opportunity['purposes'].map{ |p| p['name'] }.join(', ')
+          %tr
+            %td Source:
+            %td= @opportunity['agency']['name']
+          %tr
+            %td Contact:
             %td
-              - if @opportunity['small_business']
-                %div.margin-bottom-10 You must be a small business. Check this website to see if you are.
-              - if @opportunity['personal_investment']
-                %div You need to invest some of your own money into your business.
-        %tr
-          %td Description:
-          / Description in next `row` below
-  .row.description
-    = @opportunity['description']
-  %a.apply-cta{ href: @opportunity['application_link'] }
-    .apply-cta-text APPLY
+              - @opportunity['agency'].select{ |attrib| ['phone','fax','street_address','email','url'].include? attrib }.each do |elem|
+                %div= elem[1]
+          - if @opportunity['industries'].count > 0
+            %tr
+              %td Industry:
+              %td= @opportunity['industries'].map{ |p| p['name'] }.join(', ')
+          - if @opportunity['small_business'] || @opportunity['personal_investment']
+            %tr
+              %td To Qualify:
+              %td
+                - if @opportunity['small_business']
+                  %div.margin-bottom-10
+                    You must be a small business. Check
+                    %a{ href: 'https://www.sba.gov/contracting/getting-started-contractor/make-sure-you-meet-sba-size-standards/table-small-business-size-standards' } this website to see if you are.
+                - if @opportunity['personal_investment']
+                  %div You need to invest some of your own money into your business.
+          %tr
+            %td Description:
+            / Description in next `row` below
+    .row.description
+      = @opportunity['description']
+    %a.apply-cta{ href: @opportunity['application_link'] }
+      .apply-cta-text APPLY
