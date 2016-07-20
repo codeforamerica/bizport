@@ -40,7 +40,7 @@
           width: 100%;
           text-align: center;
           height: 85px;
-          background-color: $color-darkblue;
+          border: 2px solid $color-darkblue;
         }
         [type="checkbox"] + label:before {
           top: 5px;
@@ -52,7 +52,7 @@
         }
       }
       .benefit-name {
-        color: $white;
+        color: $color-darkblue;
         font-weight: 700;
       }
       .icon-container {
@@ -89,7 +89,7 @@
           color: $white !important;
         }
         .icon-money {
-          background-image: url('financing_white.png');
+          background-image: url('funding_215987-200_white.png');
         }
       }
     }
@@ -112,6 +112,11 @@
       td:first-child {
         @include heavy-font;
       }
+    }
+    .opp-details,
+    .description {
+      margin-left: 0;
+      margin-right: 0;
     }
     .apply-cta {
       position: fixed;
@@ -145,11 +150,20 @@
     }
   }
 
+  .icon-advice,
   .icon-money {
     display: table-cell;
-    background-image: url('financing_blue.png');
+  }
+  .icon-money {
+    background-image: url('funding_215987-200_blue.png');
     &.white {
-      background-image: url('financing_white.png');
+      background-image: url('funding_215987-200_white.png');
+    }
+  }
+  .icon-advice {
+    background-image: url('advice_33097-200_blue.png');
+    &.white {
+      background-image: url('advice_33097-200_white.png');
     }
   }
 }

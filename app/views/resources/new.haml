@@ -24,7 +24,7 @@
                   %input{ type: 'checkbox', id: "benefit_type-#{benefit_type[:name].downcase}", name: 'benefit_types[]', checked: true, value: benefit_type[:id] }
                   %label{ for: "benefit_type-#{benefit_type[:name].downcase}" }
                 .icon-container
-                  .icon.white{ class: "icon-#{benefit_type[:name].downcase}" }
+                  .icon{ class: "icon-#{benefit_type[:name].downcase}" }
                   .benefit-name= benefit_type[:name]
 
           -# Purposes
