@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/checklist' => 'static#checklist'
   resources :subscriptions, only: [:create]
 
+  get '/resources', to: redirect('/resources/search')
   get '/resources/search' => 'resources#new'
   post '/resources/search' => 'resources#search'
   get '/resources/search/:id' => 'resources#results'
