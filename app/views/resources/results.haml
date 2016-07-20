@@ -25,4 +25,5 @@
             %strong.text Industry:
             %span.text= result['industries'].map{ |i| i['name'] }.join(', ')
 
-    %a.button.primary.expanded{ href: resources_search_path } Search Again
+    %a.resources-fixed-cta{ href: resources_search_path }
+      .resources-fixed-cta-text Search Again

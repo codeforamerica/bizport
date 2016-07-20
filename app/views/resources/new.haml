@@ -1,4 +1,5 @@
 - content_for :title, "Resources"
+- content_for :footer, "disable" # disables footer
 
 .resources.new
   .step
@@ -58,4 +59,4 @@
                 %input{ type: 'checkbox', id: "industry-#{industry[:name].downcase}", name: 'industries[]', value: industry[:id] }
                 %label{ for: "industry-#{industry[:name].downcase}" }= industry[:name]
 
-          %input.button.primary.expanded.margin-top-10{:name => "commit", :type => "submit", :value => "Search"}/
+          %input.resources-fixed-cta.margin-top-10{:name => "commit", :type => "submit", :value => "Search Opportunities"}
