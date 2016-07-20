@@ -35,6 +35,9 @@
               .option
                 %input{ type: 'checkbox', id: "purpose-#{purpose[:name].downcase}", name: 'purposes[]', value: purpose[:id] }
                 %label{ for: "purpose-#{purpose[:name].downcase}" }= purpose[:name]
+            .option
+              %input{ type: 'checkbox', id: "purpose-other", name: 'purposes[]', value: 'Other' }
+              %label{ for: "purpose-other" } Other
 
           -# Existing Business
           %fieldset

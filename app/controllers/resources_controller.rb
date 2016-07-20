@@ -9,11 +9,11 @@ class ResourcesController < ApplicationController
     purposes_url = URI.parse(API_URL + 'purpose/')
 
     @benefit_types = api_response_for(benefit_types_url)
-      .map{ |benefit_type| { id: benefit_type["id"], name: benefit_type["name"] } }
+      .map { |benefit_type| { id: benefit_type["id"], name: benefit_type["name"] } }
     @industries = api_response_for(industries_url)
-      .map{ |industry| { id: industry["id"], name: industry["name"] } }
+      .map { |industry| { id: industry["id"], name: industry["name"] } }
     @purposes = api_response_for(purposes_url)
-      .map{ |purpose| { id: purpose["id"], name: purpose["name"] } }
+      .map { |purpose| { id: purpose["id"], name: purpose["name"] } }
   end
 
   # POST
@@ -67,10 +67,16 @@ class ResourcesController < ApplicationController
       'industries',
       'purposes',
       'personal_investment',
-      'small_business',
+      'small_business'
     ]
 
-    params.select{ |p| valid_params.include? p }
+    validated_params = params.select { |p| valid_params.include? p }
+
+    cleaned_params = validated_params.tap do |vp|
+      vp['purposes'] = vp['purposes'].reject { |p| p == 'Other' }
+    end
+
+    cleaned_params
   end
 
 end
