@@ -8,10 +8,7 @@
       %a.result{ href: "/resources/#{result['id']}" }
         .value-prop
           - type = result['benefit_types'].try(:[], 0).try(:[], 'name')
-          - if type == 'Money'
-            .icon.icon-money
-          - if type == 'Advice'
-            .icon.icon-money
+          .icon{ class: "icon-#{type.downcase}" }
           .value-prop_text= result['value_prop']
         .title
           %strong.text Opportunity:

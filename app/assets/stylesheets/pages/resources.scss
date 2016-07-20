@@ -93,9 +93,8 @@
         .text {
           color: $white !important;
         }
-        .icon-money {
-          background-image: url('funding_215987-200_white.png');
-        }
+        .icon-money { background-image: url(image_path('funding_215987-200_white.png')); }
+        .icon-advice { background-image: url(image_path('advice_33097-200_white.png')); }
       }
     }
   }
@@ -162,15 +161,15 @@
     display: table-cell;
   }
   .icon-money {
-    background-image: url('funding_215987-200_blue.png');
+    background-image: url(image_path('funding_215987-200_blue.png'));
     &.white {
-      background-image: url('funding_215987-200_white.png');
+      background-image: url(image_path('funding_215987-200_white.png'));
     }
   }
   .icon-advice {
-    background-image: url('advice_33097-200_blue.png');
+    background-image: url(image_path('advice_33097-200_blue.png'));
     &.white {
-      background-image: url('advice_33097-200_white.png');
+      background-image: url(image_path('advice_33097-200_white.png'));
     }
   }
 }
