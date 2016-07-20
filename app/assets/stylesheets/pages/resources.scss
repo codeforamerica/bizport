@@ -69,6 +69,8 @@
   }
 
   &.results {
+    padding-bottom: 40px; // make room for bottom fixed CTA
+
     .header-text {
       @include heavy-font;
       margin-top: 10px;
