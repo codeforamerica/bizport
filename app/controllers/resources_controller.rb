@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   require 'net/http'
 
   API_URL = 'https://longbeachresources.tk/wm-api/'
+  # API_URL = 'http://127.0.0.1:8000/wm-api/'
 
   def new
     benefit_types_url = URI.parse(API_URL + 'benefit-type/')
@@ -73,7 +74,9 @@ class ResourcesController < ApplicationController
     validated_params = params.select { |p| valid_params.include? p }
 
     cleaned_params = validated_params.tap do |vp|
-      vp['purposes'] = vp['purposes'].reject { |p| p == 'Other' }
+      if vp['purposes']
+        vp['purposes'] = vp['purposes'].reject { |p| p == 'Other' }
+      end
     end
 
     cleaned_params
