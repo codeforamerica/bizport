@@ -14,7 +14,7 @@ set :bugsnag_api_key, "7af36b6215b3d92b6cd8f20a3ceb6a26"
 
 # Notify NewRelic of new releases
 require 'new_relic/recipes'
-after "deploy:updated", "newrelic:notice_deployment"
+after 'deploy:updated', 'newrelic:notice_deployment'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

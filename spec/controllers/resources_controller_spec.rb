@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe ResourcesController do
   describe '#new' do
-
     it 'should render the "new" template' do
       expect_any_instance_of(ResourcesController).to receive(:api_response_for)
         .exactly(3).times.and_return([])
@@ -17,7 +16,7 @@ describe ResourcesController do
     it 'should redirect to /results after a POST with valid search params' do
       allow_any_instance_of(ResourcesController).to receive(:api_response_for)
         .with(anything, 'POST', anything)
-        .and_return({'id' => 1})
+        .and_return('id' => 1)
       post :search # no need for params - we'll just pretend this works
 
       expect(response).to have_http_status(302)

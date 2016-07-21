@@ -9,7 +9,7 @@ describe ChecklistsController do
         checklist_item = ChecklistItem.take
 
         expect do
-          patch :update, { "checklist_items"=>[checklist_item.id.to_s] }
+          patch :update, { "checklist_items" => [checklist_item.id.to_s] }
         end.to change(Accomplishment, :count).by(1)
 
         expect(response).to render_template(:show)
@@ -26,7 +26,7 @@ describe ChecklistsController do
       it 'should redirect the user to sign up' do
         checklist_item = ChecklistItem.take
 
-        patch :update, { 'checklist_items'=>[checklist_item.id.to_s] }
+        patch :update, { 'checklist_items' => [checklist_item.id.to_s] }
 
         expect(response).to redirect_to(new_user_registration_path)
       end
