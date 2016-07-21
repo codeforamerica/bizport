@@ -1,5 +1,5 @@
 # Added to top of file per instructions on CodeClimate
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
@@ -58,6 +58,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # allow devise to fake user sign-in
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation, { except: %w(spatial_ref_sys) }

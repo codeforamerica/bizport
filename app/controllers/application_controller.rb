@@ -15,4 +15,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :page_slug
 
+  def current_user
+    super || NotSignedInUser.new
+  end
 end

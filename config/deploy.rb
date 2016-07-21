@@ -9,7 +9,7 @@ set :rbenv_ruby, File.read('.ruby-version').strip
 set :puma_bind, 'tcp://0.0.0.0:9951'
 
 # Notify Bugsnag of new releases
-require "bugsnag/capistrano"
+require 'bugsnag/capistrano'
 set :bugsnag_api_key, "7af36b6215b3d92b6cd8f20a3ceb6a26"
 
 # Notify NewRelic of new releases

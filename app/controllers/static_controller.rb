@@ -9,9 +9,6 @@ class StaticController < ApplicationController
     @subscription = Subscription.new
   end
 
-  def checklist
-  end
-
   # START A BUSINESS STEPS
   def business_plan
   end

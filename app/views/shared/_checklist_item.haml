@@ -1,7 +1,8 @@
 -# item_text | String
-- random_id = SecureRandom.uuid
+-# item_id | Integer
+-# done | Boolean
 
 %li.checklist-item
-  %input{ type:'checkbox', id:"checklist-#{random_id}" } 
-  %label{ for:"checklist-#{random_id}" } 
+  %input{ type: 'checkbox', id: "checklist-#{item_id}", name: 'checklist_items[]', value: item_id, checked: done } 
+  %label{ for: "checklist-#{item_id}" } 
     = item_text

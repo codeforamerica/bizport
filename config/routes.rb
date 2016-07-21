@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get '/survey' => 'static#survey'
   get '/contact' => 'static#contact'
-  get '/checklist' => 'static#checklist'
+
+  resource :checklist, only: [:show, :update]
+  
   resources :subscriptions, only: [:create]
 
   get '/resources', to: redirect('/resources/search')

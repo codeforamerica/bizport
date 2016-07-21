@@ -1,4 +1,7 @@
--# param_1: category
+- category ||= param_1
+
 %ul
-  - ChecklistItem.where(category: param_1).each do |item|
-    = render 'shared/checklist_item', item_text: item.item_text
+  - accomplishment_ids = current_user.checklist_items.pluck(:id)
+  - ChecklistItem.where(category: category).each do |item|
+    - done = accomplishment_ids.include? item.id
+    = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done
