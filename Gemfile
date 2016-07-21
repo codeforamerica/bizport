@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'puma'
 
 gem 'devise'
+gem 'aws-sdk-rails'
+
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 gem 'sitemap_generator'

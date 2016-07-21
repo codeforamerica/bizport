@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '2283b973e9fbbf50641f31d310a469d0030ac48764b58975d2dbced013afaabbebec898b5c413eb362063799dc34a4033ce29bf5ed69a1406ea94e46518aa89d'
+  # config.secret_key = 'b3d04de7982b60e1f9dae856789df364c59079e67e106631b7fbf2b3346200a2873ceb89bf370e3f552ba945b2894fa0ceea91a85f11283ed3644f6601f66508'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'bizport@longbeach.gov'
+  config.mailer_sender = 'longbeach@codeforamerica.org'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -90,6 +90,12 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
+  # When false, Devise will not attempt to reload routes on eager load.
+  # This can reduce the time taken to boot the app but if your application
+  # requires the Devise mappings to be loaded during boot time the application
+  # won't boot properly.
+  # config.reload_routes = true
+
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 11. If
   # using other algorithms, it sets how many times you want the password to be hashed.
@@ -102,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '02135a5b8f3b11f77b676a3df9ba91e9bd9bbc8a91d4ba3b63d57465a7db1f781bafdb0a5222be5a3fee499b36460f2aafbba106111bbce992d64e1d6f2f649a'
+  # config.pepper = '94f6739368d7e33cc197d4fc1eba11b0426267a17dce97c33e3bafee05a6628dba81e303fb62c4cb42d6a9765b1e29764775c96ca8b78781c52f3d4a1113a5ac'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -198,7 +204,7 @@ Devise.setup do |config|
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
-  # config.sign_in_after_reset_password = true
+  config.sign_in_after_reset_password = true
 
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).

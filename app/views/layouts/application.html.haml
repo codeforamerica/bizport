@@ -25,6 +25,12 @@
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
+          .user-account-area
+            - if current_user
+              = link_to('Sign Out', destroy_user_session_path, method: :delete)
+            - else
+              = link_to 'Sign In', new_user_session_path
+
           %ul.vertical.menu{"data-dropdown-menu" => true}
             %li
               #google_translate_element{style: 'margin-left: 15px; padding-top: 15px;'}
