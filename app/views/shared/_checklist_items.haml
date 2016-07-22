@@ -1,0 +1,9 @@
+- category
+
+%input{ type: 'hidden', name: 'categories[]', value: category }
+  %ul
+    - done_ids = @done_ids || current_user.checklist_items.pluck(:id)
+    - ChecklistItem.where(category: category).order(:order_number).each do |item|
+      - done = done_ids.include? item.id
+      = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done
+  = submit_tag "Save My Progress", { class: 'button primary' }

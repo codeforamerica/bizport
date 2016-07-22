@@ -1,7 +1,9 @@
 - category ||= param_1
+- embedded_in_form ||= false
 
-%ul
-  - accomplishment_ids = current_user.checklist_items.pluck(:id)
-  - ChecklistItem.where(category: category).each do |item|
-    - done = accomplishment_ids.include? item.id
-    = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done
+- if embedded_in_form
+  = render 'shared/checklist_items', category: category
+- else
+  = form_tag(checklist_path, method: 'patch') do
+    = render 'shared/checklist_items', category: category
+  

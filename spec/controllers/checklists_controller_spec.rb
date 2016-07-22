@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 describe ChecklistsController do
+  let(:user) { FactoryGirl.create(:user) }
+
   describe '#show' do
     context 'with a logged-in user' do
       context 'when accomplishments are waiting to be updated (e.g. after login)' do
         it 'should update checklist items' do
-          user = FactoryGirl.create(:user)
           allow(controller).to receive(:current_user).and_return(user)
 
           checklist_item = ChecklistItem.take
-          session[:checklist_updates] = [checklist_item.id.to_s]
+          session[:checklist_updates] = {
+            categories: checklist_item.category,
+            items: [checklist_item.id.to_s]
+          }
           expect do
             get :show
           end.to change(Accomplishment, :count).by(1)
@@ -19,7 +23,6 @@ describe ChecklistsController do
 
         context 'when no accomplishments are waiting to be updated' do
           it 'should not change accomplishments' do
-            user = FactoryGirl.create(:user)
             user.accomplishments.create(checklist_item: ChecklistItem.take)
             allow(controller).to receive(:current_user).and_return(user)
 
@@ -37,7 +40,6 @@ describe ChecklistsController do
   describe '#update' do
     context 'with a logged-in user' do
       it 'should create an accomplishment record' do
-        user = FactoryGirl.create(:user)
         allow(controller).to receive(:current_user).and_return(user)
         checklist_item = ChecklistItem.take
 
@@ -48,10 +50,29 @@ describe ChecklistsController do
         expect(response).to redirect_to(checklist_path)
       end
 
-      xit 'should remove any unchecked accomplishment records from the same cateogry' do
-      end
+      it 'should only remove unchecked accomplishment records from the same category' do
+        allow(controller).to receive(:current_user).and_return(user)
 
-      xit 'should not remove unchecked accomplishment records from other categories' do
+        categories = ChecklistItem.pluck(:category).uniq
+        category_a = categories.first
+        category_b = categories.second
+
+        item_1_cat_a = ChecklistItem.find_by(category: category_a)
+        item_2_cat_a = ChecklistItem.find_by(category: category_a)
+        item_3_cat_b = ChecklistItem.find_by(category: category_b)
+
+        user.accomplishments.create(checklist_item: item_1_cat_a)
+        user.accomplishments.create(checklist_item: item_2_cat_a)
+        user.accomplishments.create(checklist_item: item_3_cat_b)
+
+        expect do
+          patch :update, 'checklist_categories' => [category_a],
+                         'checklist_items' => [item_1_cat_a.id.to_s]
+        end.to change {
+          cat_a_count = user.checklist_items.where(category: category_a).count
+          cat_b_count = user.checklist_items.where(category: category_b).count
+          [cat_a_count, cat_b_count]
+        }.from([2, 1]).to([1, 1])
       end
     end
 
@@ -59,7 +80,7 @@ describe ChecklistsController do
       it 'should redirect the user to sign up' do
         checklist_item = ChecklistItem.take
 
-        patch :update, { 'checklist_items' => [checklist_item.id.to_s] }
+        patch :update, 'checklist_items' => [checklist_item.id.to_s]
 
         expect(response).to redirect_to(new_user_registration_path)
       end
