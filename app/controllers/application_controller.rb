@@ -15,7 +15,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :page_slug
 
+  # NotSignedInUser allows for handy empty associations and such
   def current_user
     super || NotSignedInUser.new
+  end
+
+  # Devise's `user_signed_in?` doesn't work when NotSignedInUser is present
+  def user_signed_in?
+    current_user.instance_of?(User) || false
   end
 end

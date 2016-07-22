@@ -4,7 +4,7 @@ class ChecklistsController < ApplicationController
   end
 
   def update
-    if current_user
+    if user_signed_in?
       # "checklist_items"=>["164", "166", "168", "170"]
       checklist_items = ChecklistItem.where(id: params["checklist_items"].map(&:to_i))
 
