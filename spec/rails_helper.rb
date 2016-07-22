@@ -60,6 +60,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # allow devise to fake user sign-in
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include Warden::Test::Helpers
   config.before :suite do
     Warden.test_mode!

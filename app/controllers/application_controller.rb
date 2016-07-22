@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
   def user_signed_in?
     current_user.instance_of?(User) || false
   end
+
+  def after_sign_in_path_for(resource)
+    request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+  end
 end

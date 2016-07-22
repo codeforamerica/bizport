@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 describe 'the checklist page', type: :feature do
-
   it 'renders with some checklist items' do
     visit '/checklist'
     expect(page).to have_content ChecklistItem.first.category_name
   end
 
-  context "user is not signed in" do
+  context 'user is not signed in' do
     it 'prompts users to sign in on save' do
       visit '/checklist'
       first("input[type='checkbox']").set(true)

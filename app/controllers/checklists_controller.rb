@@ -1,18 +1,26 @@
 class ChecklistsController < ApplicationController
   def show
+    # if the user is coming here after logging in or signing up
+    # they'll have a set of checklist items that need to set accomplishments
+    if user_signed_in? && (items = session[:checklist_updates])
+      checklist_items = ChecklistItem.where(id: items.map(&:to_i))
+      set_accomplishments(checklist_items)
+      session.delete(:checklist_updates)
+    end
+
     @accomplishment_ids = current_user.checklist_items.pluck(:id)
   end
 
   def update
     if user_signed_in?
       # "checklist_items"=>["164", "166", "168", "170"]
-      checklist_items = ChecklistItem.where(id: params["checklist_items"].map(&:to_i))
-
+      checklist_items = ChecklistItem.where(id: params['checklist_items'].map(&:to_i))
       set_accomplishments(checklist_items)
 
       redirect_to checklist_path
     else
-      # TODO: Store the params in session for when they finish sign-in/up
+      store_location_for(:user, checklist_path)
+      session[:checklist_updates] = params['checklist_items']
       redirect_to new_user_registration_path
     end
   end
