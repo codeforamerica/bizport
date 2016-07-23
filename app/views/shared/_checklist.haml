@@ -6,4 +6,5 @@
 - else
   = form_tag(checklist_path, method: 'patch') do
     = render 'shared/checklist_items', category: category
+    = submit_tag "Save My Progress", { class: 'button primary expanded' }
   
