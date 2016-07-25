@@ -27,9 +27,13 @@
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
           .user-account-area
             - if user_signed_in?
-              = link_to('Sign Out', destroy_user_session_path, method: :delete)
+              .log-button= link_to('Sign Out', destroy_user_session_path, method: :delete, class: '')
+              .row
+                .icon.icon-profile.pull-right
+                .user-name= current_user.email
             - else
-              = link_to 'Sign In', new_user_session_path
+              .row
+                .log-button= link_to 'Sign In', new_user_session_path, class: 'pull-right'
 
           %ul.vertical.menu{"data-dropdown-menu" => true}
             %li

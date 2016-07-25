@@ -27,6 +27,16 @@
 
   .user-account-area {
     background-color: $color-lightgray;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    .log-button {
+      display: block;
+      text-align: right;
+      color: $color-darkgray;
+    }
   }
 
   .nav-business-step {
