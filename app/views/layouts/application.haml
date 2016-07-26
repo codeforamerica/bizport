@@ -26,6 +26,8 @@
               %a{ href: root_path }
                 %span BizPort
           .title-bar-right
+            .log-button= link_to 'Log In', new_user_session_path
+            .log-button= link_to 'Sign Up', new_user_registration_path
             %button.menu-icon{"data-open" => "offCanvasRight", :type => "button"}
         / off-canvas right menu
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
@@ -40,7 +42,7 @@
                   = '@'+split_email[1]
             - else
               .row
-                .log-button= link_to 'Sign In', new_user_session_path, class: 'pull-right'
+                .log-button= link_to 'Log In', new_user_session_path, class: 'pull-right'
 
           %ul.vertical.menu{"data-dropdown-menu" => true}
             %li

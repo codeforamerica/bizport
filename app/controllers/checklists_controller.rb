@@ -24,7 +24,6 @@ class ChecklistsController < ApplicationController
 
       redirect_to checklist_path
     else
-      store_location_for(:user, checklist_path)
       session[:checklist_updates] = {
         "categories" => params['categories'] || '',
         "items" => params['checklist_items'] || []
