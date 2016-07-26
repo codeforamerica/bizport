@@ -11,8 +11,8 @@ describe ChecklistsController do
 
           checklist_item = ChecklistItem.take
           session[:checklist_updates] = {
-            categories: checklist_item.category,
-            items: [checklist_item.id.to_s]
+            'categories' => checklist_item.category,
+            'items' => [checklist_item.id.to_s]
           }
           expect do
             get :show
