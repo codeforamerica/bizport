@@ -1,12 +1,14 @@
 .home
   .row.columns.small-12.large-8.large-offset-2.margin-bottom-30
-    .hero-title
-      .logo-longbeach
-        %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
-        %span.logo-longbeach_long> LONG
-        %span.logo-longbeach_beach> BEACH
+    / .hero-title
+    /   .logo-longbeach
+    /     %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
+    /     %span.logo-longbeach_long> LONG
+    /     %span.logo-longbeach_beach> BEACH
     .hero
-      %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
+      / %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
+      .video-container
+        %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/vA3X1WK_F7o?rel=0&showinfo=0', allowfullscreen: true, type: 'text/html' }
     .hero-copy
       %h4
         Welcome to the pilot of BizPort!
