@@ -44,8 +44,8 @@
       cursor: pointer;
       display: inline-block;
       padding: 10px;
-      color: $white;
-      background-color: $color-lightgray;
+      color: $color-lightgray;
+      background-color: $color-extralightgray;
       width: 50%;
       &:first-child {
         border-bottom-left-radius: $global-radius;
@@ -63,7 +63,7 @@
 
     .choice-link {
       padding: 10px 0;
-      border-top: 1px solid $color-lightgray;
+      border-top: 1px solid $color-extralightgray;
       border-top-left-radius: $global-radius;
       border-top-right-radius: $global-radius;
       background-color: $white;

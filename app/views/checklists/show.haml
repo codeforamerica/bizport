@@ -23,9 +23,6 @@
                 %a{ href: page.full_path, style: "text-decoration: underline;" }= page.label
               = render 'shared/checklist', category: checklist_category, embedded_in_form: true
         = submit_tag "Save My Progress", { class: 'button primary expanded' }
-        
-      %h3 Need help?
-      %p Let us know if you need help completing these tasks by clicking the chat button in the bottom-right corner.
 
 :javascript
   $('#submit-button').click(function () {

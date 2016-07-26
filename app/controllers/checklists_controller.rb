@@ -3,9 +3,9 @@ class ChecklistsController < ApplicationController
     # if the user is coming here after logging in or signing up
     # they'll have a set of checklist items that need to set accomplishments
     if user_signed_in? && (updates = session[:checklist_updates])
-      categories = updates[:categories]
+      categories = updates["categories"]
       checklist_items = ChecklistItem.where(
-        id: updates[:items].map(&:to_i),
+        id: updates["items"].map(&:to_i),
         category: categories
       )
       set_accomplishments(categories, checklist_items)
@@ -26,8 +26,8 @@ class ChecklistsController < ApplicationController
     else
       store_location_for(:user, checklist_path)
       session[:checklist_updates] = {
-        categories: params['checklist_categories'] || '',
-        items: params['checklist_items'] || []
+        "categories" => params['categories'] || '',
+        "items" => params['checklist_items'] || []
       }
       redirect_to new_user_registration_path
     end

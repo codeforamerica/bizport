@@ -13,7 +13,9 @@
             = f.email_field :email, autofocus: true
           .field
             = f.label :password
-            = f.password_field :password, autocomplete: "off"
+            = f.password_field :password, autocomplete: "off", class: 'margin-bottom-10'
+            - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+              = link_to "Forgot your password?", new_password_path(resource_name), class: 'margin-bottom-10', style: 'float: right;'
           - if devise_mapping.rememberable?
             .field
               = f.check_box :remember_me

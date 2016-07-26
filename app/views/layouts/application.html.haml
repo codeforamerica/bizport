@@ -13,6 +13,10 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body.no-js
+    - if notice
+      .notice.padding-all-10= notice
+    - if alert
+      .alert= alert
     .off-canvas-wrapper
       .off-canvas-wrapper-inner{"data-off-canvas-wrapper" => true}
         / off-canvas title bar and menu
@@ -30,7 +34,10 @@
               .log-button= link_to('Sign Out', destroy_user_session_path, method: :delete, class: '')
               .row
                 .icon.icon-profile.pull-right
-                .user-name= current_user.email
+                - split_email = current_user.email.split('@')
+                .user-name
+                  = split_email[0]
+                  = '@'+split_email[1]
             - else
               .row
                 .log-button= link_to 'Sign In', new_user_session_path, class: 'pull-right'
@@ -60,8 +67,6 @@
                 = render 'shared/header_nav_biz_steps', step_groups: [step_group]
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}
-          .notice= notice
-          .alert= alert
           = yield
           - unless yield(:footer) == "disable"
             = render 'shared/footer'
