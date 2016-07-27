@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'signup from a step page checklist' do
-  xit 'should redirect the user back to the page they got to signup from' do
+  it 'should redirect the user back to the page they got to signup from' do
     # any arbitrary CMS page is a good starting point
     starting_path = Comfy::Cms::Page.published.last.full_path
     visit starting_path

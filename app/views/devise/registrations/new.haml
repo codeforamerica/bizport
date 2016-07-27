@@ -4,6 +4,8 @@
       .step-title.text-center
         %i.icon.icon-large.icon-profile.white
         %h1 Create an Account
+        - if session[:checklist_updates]
+          %h2 to save your checklist progress
 
     .content-container
       .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
