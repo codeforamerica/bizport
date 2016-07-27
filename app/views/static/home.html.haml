@@ -1,5 +1,5 @@
 .home
-  .row.columns.small-12.large-8.large-offset-2.margin-bottom-30
+  .row.columns.small-12.large-8.large-offset-2.margin-bottom-10
     / .hero-title
     /   .logo-longbeach
     /     %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
@@ -14,6 +14,17 @@
         Welcome to the pilot of BizPort!
       %h5{ style: 'font-weight: 400;' }
         Starting a business is both exciting and challenging. BizPort is here to help you navigate the process.
+    %gcse:search
+    :javascript
+      (function() {
+        var cx = '003180083737835708997:hehme1kabdk';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
 
   .row
     - ['plan','apply','grow'].each do |step_group|

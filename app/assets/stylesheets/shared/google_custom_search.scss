@@ -1,0 +1,17 @@
+.gsc-control-cse * {
+  box-sizing:  content-box !important;
+  line-height: normal;
+  border-collapse: separate !important;
+}
+
+.gsc-control-cse input {
+  box-shadow: none !important;
+}
+
+tbody td {
+  padding: inherit;
+}
+
+.gsc-input-box, .gsc-search-box .gsc-input>input, .gsc-input-box-hover {
+  box-shadow: none !important;
+}
