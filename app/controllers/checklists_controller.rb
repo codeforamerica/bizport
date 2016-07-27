@@ -25,10 +25,10 @@ class ChecklistsController < ApplicationController
         checklist_ids = params['checklist_items'].map(&:to_i)
       end
       checklist_items = ChecklistItem.where(id: checklist_ids)
-      checklist_categories = params['checklist_categories']
+      checklist_categories = params['categories']
       set_accomplishments(checklist_categories, checklist_items)
 
-      redirect_to checklist_path
+      redirect_to request.referer || '/checklist'
     else
       session[:checklist_updates] = {
         "categories" => params['categories'] || '',

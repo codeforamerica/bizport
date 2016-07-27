@@ -24,7 +24,7 @@ describe 'save a step page checklist' do
   end
 
   context 'when logged in' do
-    xit 'should redirect back to the same step page' do
+    it 'should redirect back to the same step page' do
       login_as(FactoryGirl.create(:user), scope: :user)
 
       # any arbitrary CMS page is a good starting point
@@ -36,5 +36,4 @@ describe 'save a step page checklist' do
       expect(current_path).to eq(starting_path)
     end
   end
-
 end
