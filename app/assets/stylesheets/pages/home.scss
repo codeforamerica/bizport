@@ -86,9 +86,10 @@
     .step-group-title {
       text-align: center;
       color: $white !important;
+      box-shadow: 0px 1px 4px $color-mediumgray;
 
       .step-group-title-text {
-        margin: 10px;
+        margin: 15px;
       }
     }
 
@@ -98,13 +99,25 @@
 
     .media-object:hover { color: $white; }
 
+    &.accordion {
+      margin-bottom: 0;
+    }
+
     &.accordion,
     .accordion-content {
       border: none; // override for Foundation styling
     }
 
     .accordion-title {
+      @include font-raleway;
       font-size: 20px;
+      margin-bottom: 5px;
+      border-radius: 0;
+      border-bottom: none;
+
+      @media screen and (min-width: map-get($breakpoints, medium)) {
+        box-shadow: none;
+      }
     }
 
     .accordion-title .arrow {
@@ -147,12 +160,16 @@
     display: block; // override for default hidden style in Foundation
   }
 
-}
-
-@media screen and (max-width: 1024px) {
+  .bottom-ctas {
+    margin-top: 10px;
+  }
   .accordion {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }

@@ -30,17 +30,9 @@
   padding: 10px
 
 .notice
-  background-color: $color-darkblue
+  @include font-raleway
+  background-color: $color-accent
+  border-bottom: 1px solid #fff
 
 .alert
   background-color: $color-error
-
-
-.title-bar-right .log-button
-  display: inline-block
-  display: none
-  margin-right: 10px
-  a
-    color: $white
-  @media all and (min-width: map-get($breakpoints, medium))
-    display: inline-block

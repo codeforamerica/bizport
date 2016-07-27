@@ -19,7 +19,7 @@
     - ['plan','apply','grow'].each do |step_group|
       %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
         %li.accordion-item{ "data-accordion-item" => "true" }
-          %a.accordion-title.step-group-title.media-object.text-centered
+          %a.accordion-title.step-group-title.text-centered
             .step-group-title-text
               = step_group.upcase
               .arrow.hide-for-large
@@ -49,7 +49,7 @@
                     .media-object-section.middle
                       %strong= page.label
                       %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
-  .row
+  .row.bottom-ctas
     .column.small-12.medium-6
       %a{ href: checklist_path }
         .media-object.text-center

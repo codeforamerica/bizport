@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   # right page. If we're on a devise page, we don't want to store that as the
   # place to return to (for example, we don't want to return to the sign in page
   # after signing in), which is what the :unless prevents
-  before_filter :store_current_location, :unless => :devise_controller?
+  before_filter :store_current_location, unless: :devise_controller?
 
   # used in CMS "step" pages to set up "next page" links
   def next_step_page(component)
