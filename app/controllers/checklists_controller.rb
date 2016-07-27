@@ -20,7 +20,11 @@ class ChecklistsController < ApplicationController
   def update
     if user_signed_in?
       # "checklist_items"=>["164", "166", "168", "170"]
-      checklist_items = ChecklistItem.where(id: params['checklist_items'].map(&:to_i))
+      checklist_ids = []
+      if params['checklist_items']
+        checklist_ids = params['checklist_items'].map(&:to_i)
+      end
+      checklist_items = ChecklistItem.where(id: checklist_ids)
       checklist_categories = params['checklist_categories']
       set_accomplishments(checklist_categories, checklist_items)
 
