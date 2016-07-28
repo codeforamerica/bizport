@@ -1,24 +1,24 @@
-- content_for :title, "Resources"
+- content_for :title, "Opportunities"
 - content_for :footer, "disable" # disables footer
 
 .resources.results
   .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
-    .header-text Opportunities for me
+    .header-text #{@search_data['results'].count} opportunities for me
     - @search_data['results'].each do |result|
       %a.result{ href: "/resources/#{result['id']}" }
         .value-prop
           - type = result['benefit_types'].try(:[], 0).try(:[], 'name')
           .icon{ class: "icon-#{type.downcase}" }
           .value-prop_text= result['value_prop']
-        .title
+        .descriptor.title
           %strong.text Opportunity:
           %span.text= result['title']
         - if result['purposes'].count > 0
-          .purpose
+          .descriptor.purpose
             %strong.text Purpose:
             %span.text= result['purposes'].map{ |p| p['name'] }.join(', ')
         - if result['industries'].count > 0
-          .industry
+          .descriptor.industry
             %strong.text Industry:
             %span.text= result['industries'].map{ |i| i['name'] }.join(', ')
 

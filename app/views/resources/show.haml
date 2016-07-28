@@ -1,5 +1,7 @@
-- content_for :title, "Resources"
+- content_for :title, "Opportunities"
 - content_for :footer, "disable" # disables footer
+
+- agency = @opportunity['agency']
 
 .resources.show
   .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
@@ -10,7 +12,7 @@
       - if type == 'Advice'
         .icon.icon-advice
       .value-prop_text= @opportunity['value_prop']
-    .row.opp-details
+    .opp-details
       %table
         %tbody
           %tr
@@ -22,12 +24,28 @@
               %td= @opportunity['purposes'].map{ |p| p['name'] }.join(', ')
           %tr
             %td Source:
-            %td= @opportunity['agency']['name']
+            %td= agency['name']
           %tr
             %td Contact:
+            - if agency['phone'].present?
+              %td 
+                %a{ href: "tel: #{agency['phone']}" }= agency['phone']
+            - if agency['fax'].present?
+              %td 
+                = agency['fax']
+            - if agency['street_address'].present?
+              %td 
+                = agency['street_address']
+            - if agency['email'].present?
+              %td 
+                %a{ href: "mailto: #{agency['email']}" }= agency['email']
+            - if agency['url'].present?
+              %td 
+                %a{ href: agency['url'] }= agency['url']
+          %tr
+            %td Application:
             %td
-              - @opportunity['agency'].select{ |attrib| ['phone','fax','street_address','email','url'].include? attrib }.each do |elem|
-                %div= elem[1]
+              %a{ href: @opportunity['application_link'], onclick: "trackOutboundLink('#{@opportunity['application_link']}')"}= @opportunity['application_link']
           - if @opportunity['industries'].count > 0
             %tr
               %td Industry:

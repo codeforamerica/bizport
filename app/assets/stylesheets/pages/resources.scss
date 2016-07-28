@@ -42,16 +42,16 @@
           position: relative;
           width: 100%;
           text-align: center;
-          height: 85px;
+          height: 100px;
           border: 2px solid $color-darkblue;
         }
         [type="checkbox"] + label:before {
-          top: 5px;
-          left: 5px;
+          top: 10px;
+          left: 10px;
         }
         [type="checkbox"]:checked + label:after {
-          top: 6px;
-          left: 6px;
+          top: 11px;
+          left: 11px;
         }
       }
       .benefit-name {
@@ -60,7 +60,7 @@
       }
       .icon-container {
         position: absolute;
-        top: 5px;
+        top: 12px;
         left: 50%;
         margin-left: -25px;
         pointer-events: none;
@@ -79,10 +79,10 @@
     }
     .result {
       display: block;
-      padding: 10px;
+      padding: 15px;
       box-shadow: 0px 1px 4px $color-lightgray;
-      margin-top: 5px;
-      margin-bottom: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
 
       transition: all 0.25s ease;
 
@@ -96,6 +96,10 @@
         .icon-money { background-image: url(image_path('funding_215987-200_white.png')); }
         .icon-advice { background-image: url(image_path('advice_33097-200_white.png')); }
       }
+
+      .descriptor {
+        color: $color-darkgray; 
+      }
     }
   }
 
@@ -108,13 +112,15 @@
       border: none;
       tr {
         background-color: #FFF; // override Foundation table striping
+        padding-bottom: 10px;
       }
       td {
         padding-left: 0;
         vertical-align: top;
+        color: $color-darkgray;
       }
       td:first-child {
-        @include heavy-font;
+        font-weight: bold;
       }
     }
     .opp-details,
@@ -139,12 +145,14 @@
   .resources-fixed-cta-text {
     display: table-cell;
     vertical-align: middle;
+    font-weight: bold;
   }
 
   .value-prop {
     border-bottom: 1px solid $color-lightgray;
     padding-top: 0;
-    padding-bottom: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
     padding-left: 5px;
     padding-right: 5px;
 
