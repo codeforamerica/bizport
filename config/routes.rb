@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     passwords: 'users/passwords'
   }
+
+  get '/dashboard' => 'users#edit'
+  put '/dashboard' => 'users#update'
+
   ActiveAdmin.routes(self)
   root 'static#home'
 
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static#contact'
 
   resource :checklist, only: [:show, :update]
-  
+
   resources :subscriptions, only: [:create]
 
   get '/resources', to: redirect('/resources/search')

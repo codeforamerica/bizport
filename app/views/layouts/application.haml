@@ -32,7 +32,7 @@
           .user-account-area
             - if user_signed_in?
               .log-button= link_to('Sign Out', destroy_user_session_path, method: :delete, class: '')
-              .row
+              %a.row{ href: dashboard_path }
                 .icon.icon-profile.pull-right
                 - split_email = current_user.email.split('@')
                 .user-name

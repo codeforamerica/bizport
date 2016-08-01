@@ -1,0 +1,13 @@
+.resources.new
+  .step
+    .step-header
+      .step-title.text-center
+        %i.icon.icon-large.icon-resources.white
+        %h1 Opportunities
+
+    .content-container
+      .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
+        = form_for(@user, as: :user, url: dashboard_path, method: 'PUT') do |u|
+          = u.label :email
+          = u.email_field :email
+          = u.submit 'Save Account Changes', class: 'button primary expanded'
