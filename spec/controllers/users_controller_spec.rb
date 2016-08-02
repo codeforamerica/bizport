@@ -23,10 +23,8 @@ describe UsersController, type: :controller do
         old_email = user.email
 
         new_email = 'new@email.com'
-        patch :update, user:
-          {
-            email: new_email
-          }
+        put :update, user: { email: new_email }
+
         user.reload
         expect(user.email).not_to eq(old_email)
         expect(user.email).to eq(new_email)

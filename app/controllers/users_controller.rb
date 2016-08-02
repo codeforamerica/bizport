@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  # PATCH/PUT
+  # PUT
   def update
     @user = User.find(current_user.id)
     if @user.update_attributes(user_params)
@@ -19,6 +19,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end

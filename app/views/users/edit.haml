@@ -10,4 +10,8 @@
         = form_for(@user, as: :user, url: dashboard_path, method: 'PUT') do |u|
           = u.label :email
           = u.email_field :email
+          = u.label :password
+          = u.password_field :password, placeholder: 'Must be at least 6 characters long'
+          = u.label :password_confirmation
+          = u.password_field :password_confirmation, label: 'New password confirmation', placeholder: 'Please type new password again'
           = u.submit 'Save Account Changes', class: 'button primary expanded'
