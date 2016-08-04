@@ -21,11 +21,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :page_slug
 
-  # NotSignedInUser allows for handy empty associations and such
-  def current_user
-    super || NotSignedInUser.new
-  end
-
   # Devise's `user_signed_in?` doesn't work when NotSignedInUser is present
   def user_signed_in?
     current_user.instance_of?(User) || false
@@ -35,6 +30,20 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
 
+  def authenticate_admin_user! # overrides default method from activeadmin
+    if user_signed_in? && current_user.role == 'admin'
+      true
+    elsif user_signed_in? && current_user.role != 'admin'
+      not_found
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
   private
 
   # override the devise helper to store the current location so we can
@@ -42,5 +51,10 @@ class ApplicationController < ActionController::Base
   # and signing up work automatically.
   def store_current_location
     store_location_for(:user, request.url)
+  end
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(resource)
+    stored_location_for(resource) || request.referer || root_path
   end
 end

@@ -14,7 +14,8 @@ class ChecklistsController < ApplicationController
       redirect_to updates['source_page'] if updates['source_page']
     end
 
-    @done_ids = current_user.checklist_items.pluck(:id)
+    @done_ids = []
+    @done_ids = current_user.checklist_items.pluck(:id) if current_user
   end
 
   def update
