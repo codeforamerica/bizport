@@ -28,6 +28,10 @@ gem 'comfortable_mexican_sofa'
 gem 'newrelic_rpm'
 gem 'bugsnag'
 
+# For charts in /admin
+gem 'chartkick'
+gem 'groupdate'
+
 group :production do
   gem 'rails_12factor'
 end

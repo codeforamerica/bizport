@@ -4,10 +4,8 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
+      div "User Signups by Day"
+      div line_chart User.where(role: nil).group_by_day(:created_at).count
     end
 
     # Here is an example of a simple dashboard with columns and panels.
