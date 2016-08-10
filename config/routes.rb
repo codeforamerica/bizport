@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/resources/search/:id' => 'resources#results'
   get '/resources/:id' => 'resources#show'
 
+  get '/reports/user_count'
+
   get '/grow/obtain-funding', to: redirect('/resources/search') # covers a CMS route
   comfy_route :cms_admin, path: '/cms'
   comfy_route :cms, path: '/', sitemap: false # Make sure this routeset is defined last
