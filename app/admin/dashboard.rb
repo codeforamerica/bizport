@@ -8,6 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
       div line_chart User.where(role: nil).group_by_day(:created_at).count
     end
 
+    div do
+      div "Top Checklist Items"
+      div column_chart ChecklistItem.all.map{ |ci| [ ci.item_text, ci.accomplishments.count ] }.sort_by!{|item| item[1]}.last(10)
+    end
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

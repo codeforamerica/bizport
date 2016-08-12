@@ -25,6 +25,9 @@ gem 'sitemap_generator'
 
 gem 'comfortable_mexican_sofa'
 
+gem 'http'
+gem 'resque'
+
 gem 'newrelic_rpm'
 gem 'bugsnag'
 
