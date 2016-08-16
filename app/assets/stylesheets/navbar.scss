@@ -16,6 +16,15 @@
   font-weight: 800;
 }
 
+.menu-icon {
+  vertical-align: middle;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 5px;
+  @include font-opensans;
+  font-weight: bold;
+}
+
 // override for dropdown menu carat
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
   border-color: $white transparent transparent;
