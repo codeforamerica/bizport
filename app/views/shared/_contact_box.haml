@@ -2,7 +2,7 @@
 - contact_info = contact_info || param_2
 
 - if type == 'phone'
-  %a.media-object.contact-box{ href:"tel:+1#{contact_info.gsub(/\D/, '')}"} 
+  %a.media-object.contact-box{ href:"tel:+1#{contact_info.gsub(/\D/, '')}"}
     .media-object-section.middle
       %div{ class:"contact-box_icon-#{type}" }
     .media-object-section.middle

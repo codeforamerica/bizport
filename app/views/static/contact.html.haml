@@ -1,28 +1,42 @@
 - content_for :title, "Contact Us"
 
 .step
-  .step-header
+  .step-header.margin-bottom-0
     .step-title.text-center
       %i.icon.icon-large.icon-contact.white
       %h1 Contact Us
 
-  .content-container
-    %p The Long Beach business portal is a new initiative by the City of Long Beach, in partnership with Code for America, to centralize and improve the resources that entrepreneurs need to start a business in the city. While every effort has been made to ensure the quality and accuracy of information on this site, errors and omissions are likely to exist, and we welcome your feedback to improve the site.
+  .content-container{ style: 'width: 100%;' }
+    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong Long Beach City Hall
+              %div Protects citizens through legal enforcement
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          = render 'shared/modular_box', type: 'email', content: 'info@longbeach.gov'
+          = render 'shared/modular_box', type: 'phone', content: '408-784-5058'
+          = render 'shared/modular_box', type: 'hours', content: '10am-5pm M-F'
+          = render 'shared/modular_box', type: 'map', content: "333 W Ocean Blvd, Long Beach, CA 90802"
+          = render 'shared/modular_box', type: 'bus', content: "Metro Blue Line"
+          = render 'shared/modular_box', type: 'bike', content: "Bike racks and bike share pods available."
+          = render 'shared/modular_box', type: 'parking', content: "Parking is available at 332 West Broadway Avenue; the first 30 minutes are free, and each additional 20 minutes cost $1.25, with a maximum fee of $7.50. Metered parking is also available along Broadway and Cedar, directly in front of City Hall."
 
-    %p Feel free to reach out to us with comments.
-
-    = render 'shared/contact_box', type:'email', contact_info:'longbeach@codeforamerica.org'
-
-    %p If you have a moment, please fill out our survey on the process of starting a business. Your response will help us to identify where the most work and improvement is needed.
-
-    = render 'shared/link_box', link:'https://lisa317.typeform.com/to/mHoveY', line_1:'VISIT', line_2:'Business Process Survey'
-
-    .row.margin-top-20
-
-      To sign up for our newsletter and project updates, please enter your email below:
-
-      = render 'subscriptions/form'
-
-      - if flash[:notice].present?
-        .callout.success
-          = flash[:notice]
+    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong Business License Division
+              %div Grants business licenses and permits
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          = render 'shared/modular_box', type: 'email', content: 'info@longbeach.gov'
+          = render 'shared/modular_box', type: 'phone', content: '408-784-5058'
+          = render 'shared/modular_box', type: 'hours', content: '10am-5pm M-F'
+          = render 'shared/modular_box', type: 'map', content: "309 Pine Ave, Long Beach, CA 90802"
+          = render 'shared/modular_box', type: 'bus', content: "Metro Blue Line"
+          = render 'shared/modular_box', type: 'bike', content: "Bike racks and bike share pods available."
+          = render 'shared/modular_box', type: 'parking', content: "Parking is available at 332 West Broadway Avenue; the first 30 minutes are free, and each additional 20 minutes cost $1.25, with a maximum fee of $7.50. Metered parking is also available along Broadway and Cedar, directly in front of City Hall."

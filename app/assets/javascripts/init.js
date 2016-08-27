@@ -14,20 +14,22 @@ $(function(){
   });
 
   function setUpAccordions () {
-    if ( $(window).width() < 1024 ) {
-      $('.accordion').map(function (index, el) {
-        var $el = $(el);
-        $el.removeClass('desktop');
-        new Foundation.Accordion( $el );
-      });
-    } else {
-      $('.accordion').map(function (index, el) {
-        var $el = $(el);
-        $el.foundation('destroy');
-        if ( !$el.hasClass('desktop') ) {
-          $el.addClass('desktop');
-        }
-      });
+    if ( $('body').hasClass('home') ) {
+      if ( $(window).width() < 1024 ) {
+        $('.accordion').map(function (index, el) {
+          var $el = $(el);
+          $el.removeClass('desktop');
+          new Foundation.Accordion( $el );
+        });
+      } else {
+        $('.accordion').map(function (index, el) {
+          var $el = $(el);
+          $el.foundation('destroy');
+          if ( !$el.hasClass('desktop') ) {
+            $el.addClass('desktop');
+          }
+        });
+      }
     }
   }
 

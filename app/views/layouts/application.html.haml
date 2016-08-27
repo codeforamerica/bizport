@@ -1,9 +1,9 @@
 !!!
-%html{:lang => "en"}
+%html{ lang: "en"}
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta{:charset => "utf-8"}
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{ charset: "utf-8"}
+    %meta{ content: "width=device-width, initial-scale=1.0", name: "viewport"}
     %title= content_for?(:title) ? "BizPort | "+yield(:title) : "BizPort"
     - if Rails.env.production?
       = render 'shared/analytics_ga' # must be inline for domain verification
@@ -12,7 +12,7 @@
     = stylesheet_link_tag 'print', media: 'print'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body.no-js
+  %body.no-js{ class: yield(:body_class) }
     - if notice
       .notice.padding-all-10= notice
     - if alert

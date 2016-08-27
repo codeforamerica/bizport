@@ -1,0 +1,34 @@
+- type = type || param_1 # ['phone', 'email']
+- content = content || param_2
+
+- if type == 'phone'
+  %a.contact-pane{ href: "tel:+1#{content.gsub(/\D/, '')}"}
+    .contact-pane-section
+      %i.icon{ class: "contact-box_icon-phone" }
+    .contact-pane-section
+      #{content}
+
+- elsif type == 'email'
+  %a.contact-pane{ href: "mailto:#{content}"}
+    .contact-pane-section
+      %i.icon{ class: "contact-box_icon-email" }
+    .contact-pane-section
+      #{content}
+
+- elsif type == 'map'
+  - address = content
+  - parsed_address = content.gsub(' ', '+')
+
+  %a.contact-pane{ href: "https://www.google.com/maps/place/#{parsed_address}/" }
+    .map-box_image{ style: "background-image:url(http://maps.googleapis.com/maps/api/staticmap?center=#{parsed_address}&zoom=13&scale=false&size=400x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid|color:blue|#{parsed_address})", alt: "Google Map of #{address}" }
+    .contact-pane-section
+      %i.icon.icon-map
+    .contact-pane-section
+      = address
+
+- else
+  .contact-pane
+    .contact-pane-section
+      %i.icon{ class: "icon-#{type}" }
+    .contact-pane-section
+      #{content}

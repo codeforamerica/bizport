@@ -1,103 +1,104 @@
-.home
-  .row.columns.small-12.large-8.large-offset-2.margin-bottom-10
-    / .hero-title
-    /   .logo-longbeach
-    /     %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
-    /     %span.logo-longbeach_long> LONG
-    /     %span.logo-longbeach_beach> BEACH
-    .hero
-      / %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
-      .video-container
-        %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/vA3X1WK_F7o?rel=0&showinfo=0', allowfullscreen: true, type: 'text/html' }
-    .hero-copy
-      %h4
-        Welcome to the pilot of BizPort!
-      %h5{ style: 'font-weight: 400;' }
-        Starting a business is both exciting and challenging. BizPort is here to help you navigate the process.
-    %gcse:search
-    :javascript
-      (function() {
-        var cx = '003180083737835708997:hehme1kabdk';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-      })();
+- content_for(:body_class, 'home')
 
-  .row
-    - ['plan','apply','grow'].each do |step_group|
-      %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
-        %li.accordion-item{ "data-accordion-item" => "true" }
-          %a.accordion-title.step-group-title.text-centered
-            .step-group-title-text
-              = step_group.upcase
-              .arrow.hide-for-large
-          .accordion-content{ "data-tab-content" => "true" }
-            - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
-              - if step_group == 'apply' && page.label == 'Physical Location'
-                .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
-                  %a{ href: page.full_path }
-                    .choice-link.text-center
-                      %strong Determine how much space you need:
-                  .text-center.choice-section.optional-disable
-                    .row
-                      %strong Solo Home Office
-                    .row
-                      %i.icon{ class: "icon-freelancer" }
-                  .text-center.choice-section.optional-enable.selected
-                    .row
-                      %strong Brick & Mortar
-                    .row
-                      %i.icon{ class: "icon-physical-location" }
-              - else
-                %a{ href: page.full_path }
-                  - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
-                  .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
-                    .media-object-section.middle
-                      %i.icon{ class: "icon-#{page.slug}" }
-                    .media-object-section.middle
-                      %strong= page.label
-                      %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
-  .row.bottom-ctas
-    .column.small-12.medium-6
-      %a{ href: checklist_path }
-        .media-object.text-center
-          .icon.icon-large.icon-checklist
-          .row
-            %strong My Checklist:
-          .row{ style: "padding: 0.5rem;" }
-            Keep track of your to-do items
-    .column.small-12.medium-6
-      %a{ href: survey_path }
-        .media-object.text-center
-          .icon.icon-large.icon-survey
-          .row
-            %strong Survey:
-          .row{ style: "padding: 0.5rem;" }
-            Tell us about your experience getting a business up and running
-
+.row.columns.small-12.large-8.large-offset-2.margin-bottom-10
+  / .hero-title
+  /   .logo-longbeach
+  /     %div{ style: 'margin-bottom: -20px; font-size: 20px;' } CITY OF
+  /     %span.logo-longbeach_long> LONG
+  /     %span.logo-longbeach_beach> BEACH
+  .hero
+    / %img{ src: image_path('lb_skyline_61237790-f520-4527-a9da-67c0e0583032_light.png') }
+    .video-container
+      %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/vA3X1WK_F7o?rel=0&showinfo=0', allowfullscreen: true, type: 'text/html' }
+  .hero-copy
+    %h4
+      Welcome to the pilot of BizPort!
+    %h5{ style: 'font-weight: 400;' }
+      Starting a business is both exciting and challenging. BizPort is here to help you navigate the process.
+  %gcse:search
   :javascript
-    $(document).ready(function () {
-      $('.optional-disable').click(function () {
-        var $optionalStep = $('.optional-step');
-        $('.choice-section').removeClass('selected');
-        if ( $optionalStep.hasClass('inactive') ) {
-          $(this).addClass('selected');
-        } else {
-          $(this).addClass('selected');
-          $optionalStep.addClass('inactive');
-        }
-      });
-      $('.optional-enable').click(function () {
-        var $optionalStep = $('.optional-step');
-        $('.choice-section').removeClass('selected');
-        if ( $optionalStep.hasClass('inactive') ) {
-          $optionalStep.removeClass('inactive');
-          $(this).addClass('selected');
-        } else {
-          $(this).addClass('selected');
-        }
-      });
+    (function() {
+      var cx = '003180083737835708997:hehme1kabdk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+
+.row
+  - ['plan','apply','grow'].each do |step_group|
+    %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            = step_group.upcase
+            .arrow.hide-for-large
+        .accordion-content{ "data-tab-content" => "true" }
+          - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
+            - if step_group == 'apply' && page.label == 'Physical Location'
+              .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
+                %a{ href: page.full_path }
+                  .choice-link.text-center
+                    %strong Determine how much space you need:
+                .text-center.choice-section.optional-disable
+                  .row
+                    %strong Solo Home Office
+                  .row
+                    %i.icon{ class: "icon-freelancer" }
+                .text-center.choice-section.optional-enable.selected
+                  .row
+                    %strong Brick & Mortar
+                  .row
+                    %i.icon{ class: "icon-physical-location" }
+            - else
+              %a{ href: page.full_path }
+                - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
+                .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
+                  .media-object-section.middle
+                    %i.icon{ class: "icon-#{page.slug}" }
+                  .media-object-section.middle
+                    %strong= page.label
+                    %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+.row.bottom-ctas
+  .column.small-12.medium-6
+    %a{ href: checklist_path }
+      .media-object.text-center
+        .icon.icon-large.icon-checklist
+        .row
+          %strong My Checklist:
+        .row{ style: "padding: 0.5rem;" }
+          Keep track of your to-do items
+  .column.small-12.medium-6
+    %a{ href: survey_path }
+      .media-object.text-center
+        .icon.icon-large.icon-survey
+        .row
+          %strong Survey:
+        .row{ style: "padding: 0.5rem;" }
+          Tell us about your experience getting a business up and running
+
+:javascript
+  $(document).ready(function () {
+    $('.optional-disable').click(function () {
+      var $optionalStep = $('.optional-step');
+      $('.choice-section').removeClass('selected');
+      if ( $optionalStep.hasClass('inactive') ) {
+        $(this).addClass('selected');
+      } else {
+        $(this).addClass('selected');
+        $optionalStep.addClass('inactive');
+      }
     });
+    $('.optional-enable').click(function () {
+      var $optionalStep = $('.optional-step');
+      $('.choice-section').removeClass('selected');
+      if ( $optionalStep.hasClass('inactive') ) {
+        $optionalStep.removeClass('inactive');
+        $(this).addClass('selected');
+      } else {
+        $(this).addClass('selected');
+      }
+    });
+  });
