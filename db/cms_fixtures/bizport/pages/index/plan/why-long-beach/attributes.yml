@@ -1,9 +1,9 @@
 ---
-label: Get an Idea
+label: Why Long Beach?
 layout: step
 parent: plan
 target_page: 
 categories:
 - Step
-is_published: true
-position: 0
+is_published: false
+position: 1
