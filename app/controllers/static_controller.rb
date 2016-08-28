@@ -5,10 +5,6 @@ class StaticController < ApplicationController
   def survey
   end
 
-  def contact
-    @subscription = Subscription.new
-  end
-
   # START A BUSINESS STEPS
   def business_plan
   end

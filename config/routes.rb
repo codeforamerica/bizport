@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   root 'static#home'
 
   get '/survey' => 'static#survey'
-  get '/contact' => 'static#contact'
 
   resource :checklist, only: [:show, :update]
 

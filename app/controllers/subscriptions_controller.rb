@@ -35,7 +35,7 @@ class SubscriptionsController < ApplicationController
         @subscription = Subscription.new(subscription_params)
 
         if @subscription.save
-          redirect_to contact_path, notice: "Thanks! You've been added to our newsletter."
+          redirect_to '/contact', notice: "Thanks! You've been added to our newsletter."
         else
           render :contact, notice: 'A problem occurred when trying to add you to our newsletter. Please try again.'
         end
