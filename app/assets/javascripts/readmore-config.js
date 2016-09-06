@@ -1,5 +1,5 @@
 $(function(){
-  $('.step-section').readmore({
+  $('.readmore-section').readmore({
     collapsedHeight: 300,
     heightMargin: 300,
     speed: 250,
