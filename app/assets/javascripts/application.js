@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-icontains
 //= require foundation
 
 //= require keen-tracker

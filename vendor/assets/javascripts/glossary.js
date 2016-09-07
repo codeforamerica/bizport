@@ -13,7 +13,7 @@ $(document).ready(function () {
   // TODO: this could really use a test or two
   $.each(terms, function (i, item) {
     var word = item.term;
-    $.each( $("#step-content p:contains("+word+")"), function (i, el) {
+    $.each( $("#step-content p:icontains("+word+")"), function (i, el) {
       $(el).html(function (i, text) {
         var regex = new RegExp("(?:^|\\s)"+word+".?(?:^|\\s)","gi");
         var wordToReplace = text.match(regex) && text.match(regex)[0].trim()
