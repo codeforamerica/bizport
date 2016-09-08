@@ -1,0 +1,34 @@
+.row
+  - ['plan','launch','grow'].each do |step_group|
+    %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            = step_group.upcase
+            .arrow.hide-for-large
+        .accordion-content{ "data-tab-content" => "true" }
+          - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
+            - if step_group == 'launch' && page.label == 'Physical Location'
+              .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
+                %a{ href: page.full_path }
+                  .choice-link.text-center
+                    %strong Determine how much space you need:
+                .text-center.choice-section.optional-disable
+                  .row
+                    %strong Solo Home Office
+                  .row
+                    %i.icon{ class: "icon-freelancer" }
+                .text-center.choice-section.optional-enable.selected
+                  .row
+                    %strong Brick & Mortar
+                  .row
+                    %i.icon{ class: "icon-physical-location" }
+            - else
+              %a{ href: page.full_path }
+                - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
+                .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
+                  .media-object-section.middle
+                    %i.icon{ class: "icon-#{page.slug}" }
+                  .media-object-section.middle
+                    %strong= page.label
+                    %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
