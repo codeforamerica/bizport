@@ -11,7 +11,7 @@ describe ApplicationHelper do
       expect(ApplicationHelper.next_step_page_service('title', request))
         .to eq('Next: Obtain Funding')
 
-      request = OpenStruct.new(path: '/apply/plan-check')
+      request = OpenStruct.new(path: '/launch/plan-check')
       expect(ApplicationHelper.next_step_page_service('title', request))
         .to eq('Next: Permits')
     end

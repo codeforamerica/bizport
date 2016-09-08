@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'static#home'
 
+  get '/apply/:page', to: redirect('/launch/%{page}')
   get '/survey' => 'static#survey'
 
   resource :checklist, only: [:show, :update]
