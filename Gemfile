@@ -18,7 +18,7 @@ gem 'react-rails'
 gem 'puma'
 
 gem 'devise'
-gem 'aws-sdk-rails'
+gem 'aws-sdk'
 
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 

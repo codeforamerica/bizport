@@ -72,13 +72,11 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.5.0)
       execjs
-    aws-sdk-core (2.4.0)
-      jmespath (~> 1.0)
-    aws-sdk-rails (1.0.1)
-      aws-sdk-resources (~> 2)
-      railties (>= 3)
-    aws-sdk-resources (2.4.0)
-      aws-sdk-core (= 2.4.0)
+    aws-sdk (1.66.0)
+      aws-sdk-v1 (= 1.66.0)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -214,7 +212,6 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    jmespath (1.3.1)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -390,7 +387,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   autoprefixer-rails
-  aws-sdk-rails
+  aws-sdk
   bugsnag
   byebug
   capistrano (= 3.4.0)
