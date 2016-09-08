@@ -1,0 +1,9 @@
+---
+label: Negotiate Your Lease
+layout: step
+parent: launch
+target_page: 
+categories:
+- Step
+is_published: true
+position: 3
