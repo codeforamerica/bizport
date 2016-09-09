@@ -40,6 +40,27 @@
     list-style: none;
     margin-bottom: 10px;
   }
+  .title, .subtitle {
+    font-family: 'Raleway';
+    text-decoration: none;
+  }
+  .title {
+    font-weight: 600;
+  }
+  .subtitle {
+    font-weight: 400;
+  }
+
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+
+    border-left: 22px solid $color-darkblue-2;
+
+    margin-top: 7px; // centers the arrow in the div
+  }
 }
 
 .header-buttons {

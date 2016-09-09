@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
-  get '/dashboard' => 'users#edit'
-  put '/dashboard' => 'users#update'
+  get '/profile' => 'users#edit'
+  put '/profile' => 'users#update'
 
   ActiveAdmin.routes(self)
   root 'static#home'

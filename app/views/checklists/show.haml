@@ -17,7 +17,7 @@
       = form_tag(checklist_path, method: 'patch') do
         - ['plan','launch','grow'].each do |step_group|
           - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
-          - checklist_category = page.slug.gsub('-', '_')
+            - checklist_category = page.slug.gsub('-', '_')
             .row.checklist
               %h3
                 %a{ href: page.full_path, style: "text-decoration: underline;" }= page.label

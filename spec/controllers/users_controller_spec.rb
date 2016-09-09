@@ -28,7 +28,7 @@ describe UsersController, type: :controller do
         user.reload
         expect(user.email).not_to eq(old_email)
         expect(user.email).to eq(new_email)
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(profile_path)
         expect(flash[:notice]).to eq('Account email updated.')
       end
     end

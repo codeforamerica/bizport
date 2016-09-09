@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     if @user.update_attributes(user_params)
       flash[:notice] = 'Account email updated.'
-      redirect_to dashboard_path
+      redirect_to profile_path
     else
       render 'edit'
     end
