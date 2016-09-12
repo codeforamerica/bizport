@@ -1,0 +1,31 @@
+- content_for(:body_class, 'profile')
+
+.step
+  .step-header.margin-bottom-0
+    .step-title.text-center
+      %i.icon.icon-large.icon-profile.white
+      %h1 My Profile
+      %h2 track progress and essential info
+
+  .content-container{ style: 'width: 100%;' }
+    %ul.accordion.modules.details{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.is-active.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong My Details
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          .row
+            %strong Username:
+            %div= @user.email
+          %a.button.primary.expanded.margin-top-10{ href: users_edit_path } Change Username or Password
+    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong My Checklist
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          = render 'shared/user_checklist'

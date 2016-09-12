@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+
+  get '/users/edit' => 'users#edit'
+  get '/profile' => 'users#profile'
+  put '/profile' => 'users#update'
+
   devise_for :users, controllers: {
     passwords: 'users/passwords'
   }
 
-  get '/profile' => 'users#edit'
-  put '/profile' => 'users#update'
 
   ActiveAdmin.routes(self)
   root 'static#home'
@@ -12,7 +15,8 @@ Rails.application.routes.draw do
   get '/apply/:page', to: redirect('/launch/%{page}')
   get '/survey' => 'static#survey'
 
-  resource :checklist, only: [:show, :update]
+  get '/checklist', to: redirect('/profile')
+  patch '/checklist' => 'checklists#update'
 
   resources :subscriptions, only: [:create]
 

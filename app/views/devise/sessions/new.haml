@@ -1,25 +1,35 @@
-.resources.new
-  .step
-    .step-header
-      .step-title.text-center
-        %i.icon.icon-large.icon-profile.white
-        %h1 Log In
+- content_for(:body_class, 'profile')
 
-    .content-container
-      .row.columns.small-12.medium-8.medium-offset-2.large-6.large-offset-3
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+.step
+  .step-header
+    .step-title.text-center
+      %i.icon.icon-large.icon-profile.white
+      %h1 Log In
+
+  .content-container{ style: 'width: 100%;' }
+    .padding-h-10
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          = f.email_field :email, autofocus: true
+        .field
+          = f.label :password
+          = f.password_field :password, autocomplete: "off", class: 'margin-bottom-10'
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to "Forgot your password?", new_password_path(resource_name), class: 'margin-bottom-10', style: 'float: right;'
+        - if devise_mapping.rememberable?
           .field
-            = f.label :email
-            = f.email_field :email, autofocus: true
-          .field
-            = f.label :password
-            = f.password_field :password, autocomplete: "off", class: 'margin-bottom-10'
-            - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-              = link_to "Forgot your password?", new_password_path(resource_name), class: 'margin-bottom-10', style: 'float: right;'
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me
-          .actions
-            = f.submit "Log In", { class: 'button primary expanded margin-top-20' }
-        = render "devise/shared/links"
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log In", { class: 'button primary expanded margin-top-20' }
+      = render "devise/shared/links"
+    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong My Checklist
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          = render 'shared/user_checklist'

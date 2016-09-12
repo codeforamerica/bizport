@@ -3,7 +3,7 @@ require 'rails_helper'
 describe ChecklistsController do
   let(:user) { FactoryGirl.create(:user) }
 
-  describe '#show' do
+  xdescribe '#show' do
     context 'with a logged-in user' do
       context 'when accomplishments are waiting to be updated (e.g. after login)' do
         it 'should update checklist items' do
@@ -48,7 +48,7 @@ describe ChecklistsController do
                          'checklist_items' => [checklist_item.id.to_s]
         end.to change(Accomplishment, :count).by(1)
 
-        expect(response).to redirect_to(checklist_path)
+        expect(response).to redirect_to(profile_path)
       end
 
       it 'should remove unchecked accomplishment records from the same category' do

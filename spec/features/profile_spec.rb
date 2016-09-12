@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-describe 'the checklist page', type: :feature do
-  it 'renders with some checklist items' do
-    visit '/checklist'
+describe 'the profile page', type: :feature do
+  it 'renders with some profile items' do
+    visit '/profile'
     expect(page).to have_content ChecklistItem.first.category_name
   end
 
   context 'user is not signed in' do
     it 'prompts users to sign in on save' do
-      visit '/checklist'
+      visit '/profile'
       first("input[type='checkbox']").set(true)
       click_on('Save My Progress', match: :first)
 
@@ -21,11 +21,11 @@ describe 'the checklist page', type: :feature do
       user = FactoryGirl.create(:user)
       login_as(user, scope: :user, run_callbacks: false)
 
-      visit '/checklist'
+      visit '/profile'
       first("input[type='checkbox']").set(true)
       click_on('Save My Progress', match: :first)
 
-      expect(current_path).to eq(checklist_path)
+      expect(current_path).to eq(profile_path)
       expect(first("input[type='checkbox']")).to be_checked
     end
   end

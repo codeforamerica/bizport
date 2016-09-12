@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   # after signing in), which is what the :unless prevents
   before_filter :store_current_location, unless: :devise_controller?
 
+  before_action :set_checklist_items!
+
   # used in CMS "step" pages to set up "next page" links
   def next_step_page(component)
     ApplicationHelper.next_step_page_service(component, request)
@@ -56,5 +58,24 @@ class ApplicationController < ActionController::Base
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(resource)
     stored_location_for(resource) || request.referer || root_path
+  end
+
+  def set_checklist_items!
+    # if the user goes somewhere after logging in or signing up
+    # they'll have a set of checklist items that need to set accomplishments
+    if user_signed_in? && (updates = session[:checklist_updates])
+      session.delete(:checklist_updates)
+      categories = updates["categories"]
+      checklist_items = ChecklistItem.where(
+        id: updates["items"].map(&:to_i),
+        category: categories
+      )
+      ChecklistHelper.set_accomplishments(current_user, categories, checklist_items)
+
+      redirect_to updates['source_page'] if updates['source_page']
+    end
+
+    @done_ids = []
+    @done_ids = current_user.checklist_items.pluck(:id) if current_user
   end
 end

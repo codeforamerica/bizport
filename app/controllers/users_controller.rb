@@ -8,12 +8,18 @@ class UsersController < ApplicationController
   # PUT
   def update
     @user = User.find(current_user.id)
-    if @user.update_attributes(user_params)
-      flash[:notice] = 'Account email updated.'
-      redirect_to profile_path
+    if @user.update_attributes(user_params.reject{|k, v| v.blank?})
+      flash[:notice] = 'Account updated.'
+      redirect_to action: :profile
     else
-      render 'edit'
+      flash[:alert] = 'Account not updated. Please try again.'
+      redirect_to action: :edit
     end
+  end
+
+  def profile
+    @user = current_user
+    render 'profile'
   end
 
   private
