@@ -1,9 +1,0 @@
----
-label: Determine Business Location
-layout: step
-parent: apply
-target_page: 
-categories:
-- Step
-is_published: false
-position: 1
