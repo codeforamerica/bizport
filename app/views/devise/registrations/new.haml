@@ -28,7 +28,7 @@
           = f.submit "Sign Up", { class: 'button primary expanded margin-top-20' }
       = render "devise/shared/links"
     %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
-      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+      %li.accordion-item.is-active.modular-box{ "data-accordion-item" => "true" }
         %a.accordion-title.step-group-title.text-centered
           .step-group-title-text
             .text
@@ -36,3 +36,19 @@
             .arrow
         .accordion-content{ "data-tab-content" => "true" }
           = render 'shared/user_checklist'
+    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+      %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
+        %a.accordion-title.step-group-title.text-centered
+          .step-group-title-text
+            .text
+              %strong My Funding Opportunities
+            .arrow
+        .accordion-content{ "data-tab-content" => "true" }
+          Soon you will be able to save your funding opportunities here. In the meantime, explore them with our search tool.
+          %a{ href: '/resources/search' }
+            .step-card.media-object
+              .media-object-section.middle
+                %i.icon.icon-checklist
+              .media-object-section.middle
+                %strong Obtain Funding
+                %div Resource matching

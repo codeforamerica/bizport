@@ -5,4 +5,28 @@
   .accordion-content {
     padding: 10px;
   }
+
+  .sticky-action-items {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $color-darkblue;
+    border-top: 1px solid $color-lightgray;
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+      position: static;
+    }
+
+    > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: $white;
+      font-weight: 600;
+    }
+
+    > a + a {
+      border-left: 1px solid $color-lightgray;
+    }
+  }
 }
