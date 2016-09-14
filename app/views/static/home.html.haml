@@ -1,30 +1,31 @@
 - content_for(:body_class, 'home')
 
 .row.columns.small-12.medium-8.medium-offset-2.margin-bottom-10
-  .hero
-    - unless user_signed_in?
+  - if user_signed_in?
+    .hero
+      .hero-copy
+        Welcome back,
+        %strong= current_user.email
+        (
+        %a{ href: destroy_user_session_path, style: "text-decoration: underline;"}> log out
+        )
+        .margin-bottom-20
+        Starting a business is both exciting and challenging. We are here to help you navigate the process.
+      %a{ href: checklist_path }
+        .step-card.media-object
+          .media-object-section.middle
+            %i.icon.icon-checklist
+          .media-object-section.middle
+            %strong Check out your profile
+            %div • Track progress with a checklist
+            %div • Save funding opportunities
+  - else
+    .hero
+      .hero-copy
+        Welcome! Starting a business is both exciting and challenging. We are here to help you navigate the process.
       .video-container
         %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/JS-PZl65_Q4?list=PLTJ2czf5inR9SredhdnLQZ01YzmrGzTtr&showinfo=0', allowfullscreen: true, type: 'text/html' }
-  - if user_signed_in?
-    .hero-copy.margin-bottom-20
-      Welcome back,
-      %strong= current_user.email
-      (
-      %a{ href: destroy_user_session_path, style: "text-decoration: underline;"}> log out
-      )
-      .margin-bottom-20
-      Starting a business is both exciting and challenging. We are here to help you navigate the process.
-    %a{ href: checklist_path }
-      .step-card.media-object
-        .media-object-section.middle
-          %i.icon.icon-checklist
-        .media-object-section.middle
-          %strong Check out your profile
-          %div • Track progress with a checklist
-          %div • Save funding opportunities
-  - else
-    .hero-copy
-      Welcome! Starting a business is both exciting and challenging. We are here to help you navigate the process.
+
   %gcse:search
   :javascript
     (function() {
