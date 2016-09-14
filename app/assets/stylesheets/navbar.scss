@@ -1,6 +1,25 @@
+.title-bar {
+  position: relative; // to contain 'position: absolute' elements
+  height: 56px;
+  line-height: 1;
+}
+
+.title-bar-left {
+  position: absolute;
+  bottom: 18px;
+  left: 16px;
+}
+
+.title-bar-right {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+}
+
 .title-bar-title a {
   color: $white;
   font-size: 20px;
+  font-family: 'Raleway';
 }
 
 .logo-longbeach {
@@ -17,6 +36,11 @@
 }
 
 .menu-icon {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.menu-icon > div {
   vertical-align: middle;
   border: 1px solid white;
   border-radius: 0;
