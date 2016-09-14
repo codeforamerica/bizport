@@ -3,7 +3,8 @@
 .checklist {
   .sticky { // for sidebar checklist on step pages
     @include breakpoint(medium up) {
-      border-right: 1px solid $color-mediumgray;
+      border-left: 1px solid $color-mediumgray;
+      padding-left: 10px;
     }
 
     .checklist-header {
