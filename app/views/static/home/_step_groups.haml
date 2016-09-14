@@ -16,10 +16,14 @@
                 .row
                   %strong Solo Home Office
                 .row
+                  %strong 5 steps
+                .row
                   %i.icon{ class: "icon-freelancer" }
               .text-center.choice-section.optional-enable.selected
                 .row
                   %strong Brick & Mortar
+                .row
+                  %strong 9 steps
                 .row
                   %i.icon{ class: "icon-physical-location" }
           - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
@@ -31,3 +35,4 @@
                 .media-object-section.middle
                   %strong= page.label
                   %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+g
