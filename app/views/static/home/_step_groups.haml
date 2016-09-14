@@ -7,28 +7,27 @@
             = step_group.upcase
             .arrow.hide-for-large
         .accordion-content{ "data-tab-content" => "true" }
+          - if step_group == 'launch'
+            .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
+              %a{ href: '/launch/physical-location' }
+                .choice-link.text-center
+                  %strong Determine how much space you need:
+              .text-center.choice-section.optional-disable
+                .row
+                  %strong Solo Home Office
+                .row
+                  %i.icon{ class: "icon-freelancer" }
+              .text-center.choice-section.optional-enable.selected
+                .row
+                  %strong Brick & Mortar
+                .row
+                  %i.icon{ class: "icon-physical-location" }
           - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
-            - if step_group == 'launch' && page.label == 'Physical Location'
-              .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
-                %a{ href: page.full_path }
-                  .choice-link.text-center
-                    %strong Determine how much space you need:
-                .text-center.choice-section.optional-disable
-                  .row
-                    %strong Solo Home Office
-                  .row
-                    %i.icon{ class: "icon-freelancer" }
-                .text-center.choice-section.optional-enable.selected
-                  .row
-                    %strong Brick & Mortar
-                  .row
-                    %i.icon{ class: "icon-physical-location" }
-            - else
-              %a{ href: page.full_path }
-                - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
-                .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
-                  .media-object-section.middle
-                    %i.icon{ class: "icon-#{page.slug}" }
-                  .media-object-section.middle
-                    %strong= page.label
-                    %div= page.blocks.find_by(identifier: 'subtitle').try(:content)
+            %a{ href: page.full_path }
+              - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
+              .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
+                .media-object-section.middle
+                  %i.icon{ class: "icon-#{page.slug}" }
+                .media-object-section.middle
+                  %strong= page.label
+                  %div= page.blocks.find_by(identifier: 'subtitle').try(:content)

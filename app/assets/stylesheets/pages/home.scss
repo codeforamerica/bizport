@@ -32,6 +32,8 @@
 
   .step-card {
 
+    &.inactive { display: none; }
+
     &.inactive,
     &.inactive:hover {
       background-color: $white !important; // terrible, horrible, no good, very bad override over default hover
