@@ -23,8 +23,7 @@
     .hero
       .hero-copy
         Welcome! Starting a business is both exciting and challenging. We are here to help you navigate the process.
-      .video-container
-        %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/JS-PZl65_Q4?list=PLTJ2czf5inR9SredhdnLQZ01YzmrGzTtr&showinfo=0', allowfullscreen: true, type: 'text/html' }
+      = render 'shared/video_embed_youtube', youtube_embed_url: 'https://www.youtube.com/embed/JS-PZl65_Q4?list=PLTJ2czf5inR9SredhdnLQZ01YzmrGzTtr&showinfo=0'
 
   %gcse:search
   :javascript
@@ -60,8 +59,7 @@
 
 - if user_signed_in?
   .row.columns.small-12.large-8.large-offset-2.margin-bottom-10
-    .video-container
-      %iframe{ frameborder: '0', id: 'ytplayer', src: 'https://www.youtube.com/embed/JS-PZl65_Q4?list=PLTJ2czf5inR9SredhdnLQZ01YzmrGzTtr&showinfo=0', allowfullscreen: true, type: 'text/html' }
+    = render 'shared/video_embed_youtube', youtube_embed_url: 'https://www.youtube.com/embed/JS-PZl65_Q4?list=PLTJ2czf5inR9SredhdnLQZ01YzmrGzTtr&showinfo=0'
 
 :javascript
   $(document).ready(function () {
