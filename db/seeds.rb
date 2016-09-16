@@ -112,3 +112,8 @@ ChecklistItem.delete_all
     ChecklistItem.create(category: category[:category], category_name: category[:category_name], order_number: (index+1), item_text: item[:item_text])
   end
 end
+
+# Need to have at least one glossary term for the menu to work. 
+if Glossary.count < 1 
+  Glossary.create(term:'glossary term', definition:"the definition of the glossary term")
+end 

@@ -1,3 +1,53 @@
+----------
+
+# Setup Instructions
+
+Install Homebrew
+Check ruby version. If it's not 2.3.1, download this version and alter permissions as necessary (outlined here: https://github.com/Homebrew/legacy-homebrew/issues/17884)
+
+Install rbenv
+Follow these instructions *exactly*. https://github.com/rbenv/rbenv#homebrew-on-mac-os-x
+
+After rbenv has installed, navigate to the rails project's root directory (bizport) and source your bash profile in the shell. If you don't have postgres installed, brew install postgres. (Follow instructions here: https://launchschool.com/blog/how-to-install-postgresql-on-a-mac) <br>
+
+Install imagemagick. 
+```
+brew install imagemagick
+```
+
+Create your dev and test databases in psql. 
+```
+create db bizport_development; 
+```
+
+```
+create db bizport_test
+```
+
+Then execute the following commands. 
+
+```
+gem install bundler
+```
+
+```
+bundle install
+```
+
+Add a site object with the site name. 
+```
+Comfy::Cms::Site.create(identifier:'bizport')
+```
+
+Import fixtures. 
+
+To *import* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
+To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
+
+To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
+
+
+----------
 setup key-based SSH
 
 
@@ -10,12 +60,6 @@ http://linux.die.net/man/8/getsebool
 https://wiki.apache.org/httpd/13PermissionDenied
 
 
-----------
-
-To *import* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
-To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
-
-To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
 
 ----------
 
