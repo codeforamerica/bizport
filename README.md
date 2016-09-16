@@ -21,6 +21,10 @@ To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/ap
 
 ### CMS Content Type Examples
 
+#### General
+
+Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.youtube.com/embed/3ZtdlSmlC44" }}`
+
 #### Step Pages
 
 ```html
