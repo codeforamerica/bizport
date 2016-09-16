@@ -114,6 +114,6 @@ ChecklistItem.delete_all
 end
 
 # Need to have at least one glossary term for the menu to work. 
-if Glossary.count < 1 
-  Glossary.create(term:'glossary term', definition:"the definition of the glossary term")
+if GlossaryItem.count < 1 
+  GlossaryItem.create(term:'glossary term', definition:"the definition of the glossary term")
 end 
