@@ -1,13 +1,17 @@
 .row
-  - ['plan','launch','grow'].each do |step_group|
-    %ul.step-group.accordion.columns.small-12.large-4{ class: "#{step_group}", "data-accordion" => "true", "data-allow-all-closed" => "true" }
-      %li.accordion-item{ "data-accordion-item" => "true" }
+  - [ {step: 'plan', description: 'Getting your strategy together'}, {step: 'launch', description: 'Complying with rules to get your doors open'}, {step: 'grow', description: 'Opening your doors to the public'} ].each do |step_group|
+    - group_name = step_group[:step]
+    - group_description = step_group[:description]
+    %ul.step-group.accordion.columns.small-12.large-4{ class: "#{group_name}", 'data-accordion' => 'true', 'data-allow-all-closed' => 'true' }
+      %li.accordion-item{ 'data-accordion-item' => 'true' }
         %a.accordion-title.step-group-title.text-centered
           .step-group-title-text
-            = step_group.upcase
-            .arrow.hide-for-large
-        .accordion-content{ "data-tab-content" => "true" }
-          - if step_group == 'launch'
+            = group_name.upcase
+            .arrow
+          .step-group-description-text
+            = group_description
+        .accordion-content{ 'data-tab-content' => 'true' }
+          - if group_name == 'launch'
             .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
               %a{ href: '/launch/physical-location' }
                 .choice-link.text-center
@@ -18,15 +22,15 @@
                 .row
                   %strong 5 steps
                 .row
-                  %i.icon{ class: "icon-freelancer" }
+                  %i.icon{ class: 'icon-freelancer' }
               .text-center.choice-section.optional-enable.selected
                 .row
                   %strong Brick & Mortar
                 .row
                   %strong 9 steps
                 .row
-                  %i.icon{ class: "icon-physical-location" }
-          - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
+                  %i.icon{ class: 'icon-physical-location' }
+          - Comfy::Cms::Page.published.find_by(slug: group_name).children.published.order(:position).each do |page|
             %a{ href: page.full_path }
               - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
               .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }

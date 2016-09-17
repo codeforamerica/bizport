@@ -114,8 +114,18 @@
       background-size: cover;
     }
 
-    .is-active .accordion-title .arrow {
-      transform: rotate(180deg); // flips arrow upside down
+    .step-group-description-text {
+      display: none;
+    }
+
+    .is-active {
+      .step-group-description-text {
+        display: block;
+      }
+
+      .accordion-title .arrow {
+        transform: rotate(180deg); // flips arrow upside down
+      }
     }
 
     &.plan {
@@ -136,14 +146,6 @@
         background-color: $color-darkblue;
       }
     }
-  }
-
-  .accordion.desktop .accordion-title {
-    cursor: initial;
-  }
-
-  .accordion.desktop .accordion-content {
-    display: block; // override for default hidden style in Foundation
   }
 
   .bottom-ctas {
