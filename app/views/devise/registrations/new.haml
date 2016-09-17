@@ -5,8 +5,7 @@
     .step-title.text-center
       %i.icon.icon-large.icon-profile.white
       %h1 Create an Account
-      - if session[:checklist_updates]
-        %h2 to save your checklist progress
+      %h2 to track your progress
 
   .content-container{ style: 'width: 100%;' }
     .padding-h-10
@@ -22,10 +21,10 @@
             %em (#{@minimum_password_length} characters minimum)
           = f.password_field :password, autocomplete: "off"
         .field
-          = f.label :password_confirmation
+          = f.label :password_confirmation, "Confirm Password"
           = f.password_field :password_confirmation, autocomplete: "off"
         .actions
-          = f.submit "Sign Up", { class: 'button primary expanded margin-top-20' }
+          = f.submit "Save", { class: 'button primary expanded margin-top-20' }
       = render "devise/shared/links"
     %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
       %li.accordion-item.is-active.modular-box{ "data-accordion-item" => "true" }
