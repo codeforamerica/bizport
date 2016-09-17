@@ -39,23 +39,34 @@
 
 = render 'static/home/step_groups'
 
-.row.bottom-ctas
-  .column.small-12.medium-6
-    %a{ href: new_user_registration_path }
-      .media-object.text-center
-        .icon.icon-large.icon-checklist
-        .row
-          %strong Track your progress
-        .row{ style: "padding: 0.5rem;" }
-          Create an account
-  .column.small-12.medium-6
-    %a{ href: survey_path }
-      .media-object.text-center
-        .icon.icon-large.icon-survey
-        .row
-          %strong Survey:
-        .row{ style: "padding: 0.5rem;" }
-          Tell us about your experience getting a business up and running
+- if user_signed_in?
+  .row.bottom-ctas
+    .column.small-12.medium-8.medium-offset-2
+      %a{ href: survey_path }
+        .media-object.text-center
+          .icon.icon-large.icon-survey
+          .row
+            %strong Survey:
+          .row{ style: "padding: 0.5rem;" }
+            Tell us about your experience getting a business up and running
+- else
+  .row.bottom-ctas
+    .column.small-12.medium-6
+      %a{ href: new_user_registration_path }
+        .media-object.text-center
+          .icon.icon-large.icon-checklist
+          .row
+            %strong Track your progress
+          .row{ style: "padding: 0.5rem;" }
+            Create an account
+    .column.small-12.medium-6
+      %a{ href: survey_path }
+        .media-object.text-center
+          .icon.icon-large.icon-survey
+          .row
+            %strong Survey:
+          .row{ style: "padding: 0.5rem;" }
+            Tell us about your experience getting a business up and running
 
 - if user_signed_in?
   .row.columns.small-12.large-8.large-offset-2.margin-bottom-10
