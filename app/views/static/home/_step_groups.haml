@@ -15,24 +15,20 @@
             .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
               %a{ href: '/plan/physical-location' }
                 .choice-link.text-center
-                  %strong Determine how much space you need:
+                  %strong Which property type you select impacts the number of tasks below
               .text-center.choice-section.optional-disable
                 .row
-                  %strong Solo Home Office
-                .row
-                  %strong 5 steps
+                  %strong Home-based
                 .row
                   %i.icon{ class: 'icon-freelancer' }
               .text-center.choice-section.optional-enable.selected
                 .row
-                  %strong Brick & Mortar
-                .row
-                  %strong 9 steps
+                  %strong Business Property
                 .row
                   %i.icon{ class: 'icon-physical-location' }
           - Comfy::Cms::Page.published.find_by(slug: group_name).children.published.order(:position).each do |page|
             %a{ href: page.full_path }
-              - optional_step = ['negotiate-lease','plan-check','permits','inspections'].include? page.slug
+              - optional_step = ['site-selection','negotiate-lease','plan-check','permits','inspections'].include? page.slug
               .step-card.media-object{ class: "#{ optional_step ? 'optional-step' : '' }" }
                 .media-object-section.middle
                   %i.icon{ class: "icon-#{page.slug}" }
