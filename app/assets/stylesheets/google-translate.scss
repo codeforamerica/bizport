@@ -10,7 +10,7 @@
 
 #google_translate_element {
   display: inline-block !important;
-  font-size: 12px !important;
+  font-size: 16px !important;
   color: #e5e5e5 !important;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -23,7 +23,9 @@
 
   .goog-te-gadget:before {
     content: "\1F310";
-    font-size: 16px;
+    font-size: 18px;
+    position: relative;
+    top: 2px; // just enough to center with text
   }
 
   .goog-te-gadget-simple {
@@ -32,7 +34,7 @@
 
     span {
       vertical-align: inherit !important;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 
@@ -58,4 +60,9 @@
   .goog-te-menu-value:hover {
     color: #71BCD7 !important;
   }
+}
+
+.google-translate-sidebar #google_translate_element {
+  border: 1px solid #333333;
+  padding: 5px 8px;
 }

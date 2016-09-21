@@ -28,14 +28,9 @@
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", type: "button"}
               .div Menu
-        - unless session[:dismiss_gt] == true # saves user pref to disable bar
+        - if request.path == '/' && session[:dismiss_gt] != true # saves user pref to disable bar
           .translate-bar
-            #google_translate_element
-              :javascript
-                function googleTranslateElementInit() {
-                  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,hy,ja,km,ko,ru,tl,vi,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-74906812-2'}, 'google_translate_element');
-                }
-              %script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
+            = render 'shared/google_translate'
             = link_to '&#9447;'.html_safe, { dismissgt: true }, class: 'dismiss-gt-link', 'aria-label' => 'Disable Google Translate bar'
         / off-canvas right menu
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
@@ -53,6 +48,10 @@
                 .log-button= link_to 'Log In', new_user_session_path, class: 'pull-right'
 
           %ul.vertical.menu{"data-dropdown-menu" => true}
+            - unless request.path == '/'
+              %li
+                .google-translate-sidebar
+                  = render 'shared/google_translate'
             %li
               %a{ href: root_path } Home
             %li
