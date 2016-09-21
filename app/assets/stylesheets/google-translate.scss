@@ -1,5 +1,11 @@
 .translate-bar {
   background-color: $color-extralightgray;
+
+  .dismiss-gt-link {
+    float: right;
+    margin-top: 10px;
+    margin-right: 23px;
+  }
 }
 
 #google_translate_element {

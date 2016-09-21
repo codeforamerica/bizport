@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
   before_filter :store_current_location, unless: :devise_controller?
 
   before_action :set_checklist_items!
+  before_action :dismiss_gt!
+
+  def dismiss_gt!
+    if params[:dismissgt] == 'true'
+      session[:dismiss_gt] = true
+    end
+  end
 
   # used in CMS "step" pages to set up "next page" links
   def next_step_page(component)
