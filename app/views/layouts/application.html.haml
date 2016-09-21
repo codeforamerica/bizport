@@ -28,6 +28,13 @@
           .title-bar-right
             %button.menu-icon{"data-open" => "offCanvasRight", type: "button"}
               .div Menu
+        .translate-bar
+          #google_translate_element
+            :javascript
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,hy,ja,km,ko,ru,tl,vi,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-74906812-2'}, 'google_translate_element');
+              }
+            %script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
         / off-canvas right menu
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
           .user-account-area
@@ -44,13 +51,6 @@
                 .log-button= link_to 'Log In', new_user_session_path, class: 'pull-right'
 
           %ul.vertical.menu{"data-dropdown-menu" => true}
-            %li
-              #google_translate_element{style: 'margin-left: 15px; padding-top: 15px;'}
-              :javascript
-                function googleTranslateElementInit() {
-                  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,hy,km,ko,tl,vi,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-74906812-2'}, 'google_translate_element');
-                }
-              %script{:src => "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", :type => "text/javascript"}
             %li
               %a{ href: root_path } Home
             %li
