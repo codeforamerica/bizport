@@ -20,6 +20,7 @@
             %strong Username:
             %div= @user.email
           %a.inline-block.margin-top-10{ href: users_edit_path, style: 'text-decoration: underline;' } Change Username or Password
+          = react_component('Notebook', items: @notebook_items.map{ |k, v| {id: k, name: k, value: v} })
     / %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
     /   %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
     /     %a.accordion-title.step-group-title.text-centered

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :accomplishments
   has_many :checklist_items, through: :accomplishments
+  has_one :notebook
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
@@ -9,5 +10,9 @@ class User < ActiveRecord::Base
 
   def admin?
     role == 'admin'
+  end
+
+  def get_notebook
+    self.notebook || self.create_notebook!
   end
 end

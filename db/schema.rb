@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911154547) do
+ActiveRecord::Schema.define(version: 20160926215720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,27 @@ ActiveRecord::Schema.define(version: 20160911154547) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notebooks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "business_license"
+    t.string   "zip_code"
+    t.string   "e_account"
+    t.string   "state_sellers_permit"
+    t.string   "additional_state_license"
+    t.string   "business_structure"
+    t.string   "dba_name"
+    t.string   "business_type"
+    t.integer  "no_of_employees"
+    t.string   "street_address"
+    t.string   "bid"
+    t.integer  "square_footage"
+    t.integer  "no_parking_spaces"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "notebooks", ["user_id"], name: "index_notebooks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

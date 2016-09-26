@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/users/edit' => 'users#edit'
   get '/profile' => 'users#profile'
   put '/profile' => 'users#update'
+  put '/profile/update' => 'users#profile_update'
 
   devise_for :users, controllers: {
     passwords: 'users/passwords'
