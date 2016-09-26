@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # PUT
   def update
     @user = User.find(current_user.id)
-    if @user.update_attributes(user_params.reject{|k, v| v.blank?})
+    if @user.update_attributes(user_params.reject { |_k, v| v.blank? })
       flash[:notice] = 'Account updated.'
       redirect_to action: :profile
     else
@@ -19,12 +19,26 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @notebook_items = @user.get_notebook.attributes
     render 'profile'
+  end
+
+  def profile_update
+    @user = current_user
+    @user.get_notebook.update(notebook_params)
+    render(json: {
+             notebook: notebook_params,
+             status: 'OK'
+           })
   end
 
   private
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
+  end
+
+  def notebook_params
+    params.require(:notebook).permit!
   end
 end

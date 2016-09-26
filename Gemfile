@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'haml-rails', '~> 0.9'
 
 gem 'jquery-rails'
+gem 'react-rails'
 
 gem 'puma'
 
