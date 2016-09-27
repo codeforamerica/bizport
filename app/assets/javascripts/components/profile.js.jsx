@@ -1,11 +1,11 @@
 var NotebookItem = React.createClass({
   getInitialState: function () {
-    return {name: this.props.name, value: this.props.value}
+    return {slug: this.props.slug, name: this.props.name, value: this.props.value}
   },
   handleSubmit: function (e) {
     e.preventDefault();
     var data = { notebook: {} }
-    data.notebook[this.state.name] = this.state.value
+    data.notebook[this.state.slug] = this.state.value
     $.ajax({
       data: data,
       url: '/profile/update',
@@ -22,8 +22,8 @@ var NotebookItem = React.createClass({
   render: function () {
     return (
       <form className='row' onSubmit={this.handleSubmit}>
-        <label htmlFor={this.state.name}>{this.state.name}</label>
-        <input name={this.state.name} type='text' defaultValue={this.state.value} onChange={this.onChange} />
+        <label htmlFor={this.state.slug}>{this.state.name}</label>
+        <input name={this.state.slug} type='text' defaultValue={this.state.value} onChange={this.onChange} />
       </form>
     )
   }
@@ -37,7 +37,7 @@ var Notebook = React.createClass({
       <div>
         <h3>Notebook</h3>
         {this.state.items.map(function(item) {
-          return <NotebookItem key={item.id} name={item.name} value={item.value} />
+          return <NotebookItem key={item.slug} slug={item.slug} name={item.name} value={item.value} />
         })}
       </div>
     )
