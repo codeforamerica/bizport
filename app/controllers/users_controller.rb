@@ -20,6 +20,8 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @notebook_items = @user.get_notebook.attributes
+      .reject!{ |attrib| ["id","user_id","created_at","updated_at"].include? attrib }
+      .map{|item| {slug: item[0], name: NOTEBOOK_LABELS[item[0].to_sym], value: item[1]} }
     render 'profile'
   end
 

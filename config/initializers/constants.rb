@@ -1,0 +1,15 @@
+NOTEBOOK_LABELS = {
+  business_license: 'Business License Number',
+  zip_code: 'Zip Code',
+  e_account: 'E-Account Number',
+  state_sellers_permit: "State Seller's Permit Number",
+  additional_state_license: 'Additional State Licnese Number',
+  business_structure: 'Business Structure',
+  dba_name: 'DBA Name',
+  business_type: 'Business Type',
+  no_of_employees: 'Number of Employees',
+  street_address: 'Street Address',
+  bid: 'Business Improvement District (BID)',
+  square_footage: 'Square Footage',
+  no_parking_spaces: 'Number of Parking Spaces',
+}
