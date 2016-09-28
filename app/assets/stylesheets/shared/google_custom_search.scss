@@ -1,3 +1,7 @@
+.gsc-control-cse {
+  padding: 0 !important;
+}
+
 .gsc-control-cse * {
   box-sizing:  content-box !important;
   line-height: normal;
@@ -14,4 +18,15 @@ tbody td {
 
 .gsc-input-box, .gsc-search-box .gsc-input>input, .gsc-input-box-hover {
   box-shadow: none !important;
+}
+
+.gsc-search-button {
+  margin-left: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  padding-right: 0 !important;
 }
