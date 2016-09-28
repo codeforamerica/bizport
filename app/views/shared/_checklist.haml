@@ -2,9 +2,8 @@
 - embedded_in_form ||= false
 
 - if embedded_in_form
-  = render 'shared/checklist_items', category: category
-- else
   = form_tag(checklist_path, method: 'patch') do
     = render 'shared/checklist_items', category: category
     = submit_tag "Save My Progress", { class: 'button primary expanded' }
-  
+- else
+  = render 'shared/checklist_items', category: category

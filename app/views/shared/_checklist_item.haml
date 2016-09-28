@@ -2,8 +2,10 @@
 -# item_id | Integer
 -# done | Boolean
 
-= react_component('ChecklistItem', {id: item_id, text: item_text, checked: done})
-/ %li.checklist-item
-/   %input{ type: 'checkbox', id: "checklist-#{item_id}", name: 'checklist_items[]', value: item_id, checked: done } 
-/   %label{ for: "checklist-#{item_id}" } 
-/     = item_text
+- if user_signed_in?
+  = react_component('ChecklistItem', {id: item_id, text: item_text, checked: done}, {tag: 'ul'})
+- else
+  %li.checklist-item
+    %input{ type: 'checkbox', id: "checklist-#{item_id}", name: 'checklist_items[]', value: item_id, checked: done }
+    %label{ for: "checklist-#{item_id}" }
+      = item_text

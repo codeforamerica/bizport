@@ -21,7 +21,7 @@ var ChecklistItem = React.createClass({
   render: function () {
     return (
       <li className='checklist-item'>
-        <input type='checkbox' id={'checklist-'+this.props.id} name='checklist_items[]' value={this.props.id} checked={this.state.checked} onChange={this.onChange} />
+        <input type='checkbox' id={'checklist-'+this.props.id} name='checklist_items[]' value={this.props.id} defaultChecked={this.props.checked} onChange={this.onChange} />
         <label htmlFor={'checklist-'+this.props.id}>{this.props.text}</label>
       </li>
     )
