@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7'
+gem 'rails', '4.2.7.1'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
@@ -27,7 +27,6 @@ gem 'sitemap_generator'
 gem 'comfortable_mexican_sofa'
 
 gem 'http'
-gem 'resque'
 
 gem 'newrelic_rpm'
 gem 'bugsnag'
