@@ -36,7 +36,7 @@
         #offCanvasRight.off-canvas.position-right{"data-off-canvas" => true, "data-position" => "right"}
           .user-account-area
             - if user_signed_in?
-              .log-button= link_to('Sign Out', destroy_user_session_path, method: :delete, class: '')
+              .log-button= link_to('Sign Out', destroy_user_session_path, method: :delete)
               %a.row{ href: profile_path }
                 .icon.icon-profile.pull-right
                 - split_email = current_user.email.split('@')

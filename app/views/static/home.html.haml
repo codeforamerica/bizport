@@ -7,7 +7,7 @@
         Welcome back,
         %strong= current_user.email
         (
-        %a{ href: destroy_user_session_path, style: "text-decoration: underline;"}> log out
+        =link_to('log out', destroy_user_session_path, method: :delete, style: "text-decoration: underline;")
         )
         .margin-bottom-20
         Starting a business is both exciting and challenging. We are here to help you navigate the process.
