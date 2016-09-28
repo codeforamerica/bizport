@@ -16,8 +16,6 @@
 
   .step-card {
 
-    &.inactive { display: none; }
-
     &.inactive,
     &.inactive:hover {
       background-color: $white !important; // terrible, horrible, no good, very bad override over default hover
@@ -33,6 +31,9 @@
       color: $color-lightgray;
       background-color: $color-extralightgray;
       width: 50%;
+      font-size: 18px;
+      font-weight: normal;
+      border: 2px solid $color-extralightgray;
       &:first-child {
         border-bottom-left-radius: $global-radius;
       }
@@ -42,8 +43,11 @@
       }
 
       &.selected {
-        color: $white;
-        background-color: $color-darkblue-2;
+        font-weight: bold;
+        background-color: $white;
+        color: $color-darkblue-2;
+        border-color: $color-darkblue-2;
+        border-radius: 0.3rem;
       }
     }
 
@@ -54,10 +58,6 @@
       border-top-right-radius: $global-radius;
       background-color: $white;
       color: $color-darkblue-2;
-      &:hover{
-        color: $white;
-        background-color: $color-darkblue-2;
-      }
     }
   }
 
@@ -136,7 +136,7 @@
     }
     &.launch {
       .step-group-title,
-      .media-object:hover {
+      .media-object:hover:not(.choice-card) {
         background-color: $color-darkblue-2;
       }
     }

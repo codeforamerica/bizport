@@ -74,21 +74,20 @@
 
 :javascript
   $(document).ready(function () {
+    var $optionalSteps = $('.optional-step');
     $('.optional-disable').click(function () {
-      var $optionalStep = $('.optional-step');
       $('.choice-section').removeClass('selected');
-      if ( $optionalStep.hasClass('inactive') ) {
+      if ( $optionalSteps.css('display') === 'none' ) {
         $(this).addClass('selected');
       } else {
         $(this).addClass('selected');
-        $optionalStep.addClass('inactive');
+        $optionalSteps.slideUp();
       }
     });
     $('.optional-enable').click(function () {
-      var $optionalStep = $('.optional-step');
       $('.choice-section').removeClass('selected');
-      if ( $optionalStep.hasClass('inactive') ) {
-        $optionalStep.removeClass('inactive');
+      if ( $optionalSteps.css('display') === 'none' ) {
+        $optionalSteps.slideDown();
         $(this).addClass('selected');
       } else {
         $(this).addClass('selected');

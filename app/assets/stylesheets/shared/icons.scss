@@ -76,12 +76,19 @@ $icons: (
 }
 
 // hacky specific styles
-.choice-section.selected,
-.choice-section:not(.selected) {
+.choice-section.selected {
   .icon-freelancer {
-    background-image: url(image_path('freelance_151727-200_white.png'));
+    background-image: url(image_path('freelance_151727-200_blue.png'));
   }
   .icon-physical-location {
-    background-image: url(image_path('brick_87343-200_white.png'));
+    background-image: url(image_path('brick_87343-200_blue.png'));
+  }
+}
+.choice-section:not(.selected) {
+  .icon-freelancer {
+    background-image: url(image_path('freelance_151727-200_grey.png'));
+  }
+  .icon-physical-location {
+    background-image: url(image_path('brick_87343-200_grey.png'));
   }
 }
