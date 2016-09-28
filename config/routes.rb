@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/checklist', to: redirect('/profile')
   patch '/checklist' => 'checklists#update'
+  put '/checklist' => 'checklists#update_item'
 
   resources :subscriptions, only: [:create]
 
