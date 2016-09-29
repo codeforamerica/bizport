@@ -152,5 +152,40 @@
 
 /* hover style just for information */
 label:hover:before {
-  border: 1px solid #4778d9!important;
+  border: 1px solid #4778d9 !important;
+}
+
+.checklist-item {
+  position: relative; // to contain `position: absolute` children
+}
+
+.checkbox-area {
+  padding-right: 40px;
+}
+
+.disabled {
+ .checkbox-area > label {
+    text-decoration: line-through;
+    color: $color-darkgray;
+  }
+  .disable {
+    display: none;
+  }
+}
+
+.enabled {
+  .enable {
+    display: none;
+  }
+}
+
+.checkbox-edit-triggers {
+  position: absolute;
+  top: -13px; // that's the magic number that makes this line up with the label
+  right: 10px;
+}
+
+.checkbox-toggle {
+  font-size: 28px;
+  cursor: pointer;
 }

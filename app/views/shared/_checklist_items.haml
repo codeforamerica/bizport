@@ -3,7 +3,7 @@
 %input{ type: 'hidden', name: 'categories[]', value: category }
   %ul
     -# if this is rendered in a CMS view, the controller can't set up @done_ids
-    - done_ids = @done_ids || (current_user.checklist_items.pluck(:id) if current_user) || []
+    - done_ids = @done_ids || (current_user.all_checklist_items.pluck(:id) if current_user) || []
     - ChecklistItem.where(category: category).order(:order_number).each do |item|
       - done = done_ids.include? item.id
-      = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done
+      = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done, disabled: false

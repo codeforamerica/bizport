@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926215720) do
+ActiveRecord::Schema.define(version: 20160928184318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160926215720) do
     t.integer  "checklist_item_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.boolean  "completed"
+    t.boolean  "disabled"
   end
 
   add_index "accomplishments", ["checklist_item_id"], name: "index_accomplishments_on_checklist_item_id", using: :btree
@@ -52,8 +54,9 @@ ActiveRecord::Schema.define(version: 20160926215720) do
     t.string   "category"
     t.string   "category_name"
     t.integer  "order_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "created_by_user_id"
   end
 
   create_table "comfy_cms_blocks", force: :cascade do |t|

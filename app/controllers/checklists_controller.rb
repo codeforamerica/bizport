@@ -23,31 +23,25 @@ class ChecklistsController < ApplicationController
 
   def update_item
     if user_signed_in?
-      if checklist_item_params[:checked] == 'true'
-        Accomplishment.find_or_create_by(
-          user: current_user, 
-          checklist_item_id: checklist_item_params[:id]
-        )
-        render(json: {
-                 id: checklist_item_params[:id],
-                 checked: true
-               })
-      else
-        Accomplishment.find_by(
-          user: current_user,
-          checklist_item_id: checklist_item_params[:id]
-        ).destroy
-        render(json: {
-                 id: checklist_item_params[:id],
-                 checked: false
-               })
-      end
+      accomplishment = Accomplishment.find_or_create_by(
+        user: current_user, 
+        checklist_item_id: checklist_item_params[:id]
+      )
+      accomplishment.update_attributes(
+        completed: checklist_item_params[:completed] == 'true',
+        disabled: checklist_item_params[:disabled] == 'true'
+      )
+      render(json: {
+               id: checklist_item_params[:id],
+               completed: checklist_item_params[:completed],
+               disabled: checklist_item_params[:disabled]
+             })
     end
   end
 
   private
 
   def checklist_item_params
-    params.require(:checklist_item).permit(:id, :checked)
+    params.require(:checklist_item).permit(:id, :completed, :disabled)
   end
 end
