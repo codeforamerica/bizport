@@ -29,7 +29,7 @@
             .arrow
         .accordion-content{ "data-tab-content" => "true" }
           = react_component('Notebook', { items: @notebook_items }, { class: 'notebook' })
-    %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
+    %ul.accordion.modules.checklist{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
       %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
         %a.accordion-title.step-group-title.text-centered
           .step-group-title-text
@@ -37,15 +37,20 @@
               %strong My Checklist
             .arrow
         .accordion-content{ "data-tab-content" => "true" }
-          This is a list of most of the tasks necessary to plan, launch, and grow your business.
-          .row
-            Add and edit your own checklist items
-          .row
-            Cross out tasks that don't apply to you
-          .row
-            Reveal items you deleted
-          .row
-            Learn more about each section
+          .intro-copy
+            This is a list of most of the tasks necessary to plan, launch, and grow your business.
+            .row
+              %span.bullet.bullet-pencil &#x270e;
+              .intro-copy-item Add and edit your own checklist items
+            .row
+              %span.bullet.bullet-minus &#8854;
+              .intro-copy-item Cross out tasks that don't apply to you
+            .row
+              %span.bullet.bullet-plus &#8853;
+              .intro-copy-item Reveal items you deleted
+            .row
+              %span.bullet.arrow-right
+              .intro-copy-item Learn more about each section
           = render 'shared/user_checklist'
     %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
       %li.accordion-item.modular-box{ "data-accordion-item" => "true" }

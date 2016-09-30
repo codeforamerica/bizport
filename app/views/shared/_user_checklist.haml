@@ -1,6 +1,6 @@
 = form_tag(checklist_path, method: 'patch') do
   - ['plan','launch','grow'].each do |step_group|
-    .checklist-category-header{ class: step_group }
+    .category-header{ class: step_group }
       = step_group.upcase
     - Comfy::Cms::Page.published.find_by(slug: step_group).children.published.order(:position).each do |page|
       - checklist_category = page.slug.gsub('-', '_')
@@ -10,7 +10,7 @@
             .inline-block
               .title= page.label
               .subtitle= cms_block_content(:subtitle, page)
-            .arrow-right.inline-block.float-right
+            .arrow-right.float-right
         = render 'shared/checklist', category: checklist_category, embedded_in_form: false
   - unless user_signed_in?
     = submit_tag "Save My Progress", { class: 'button primary expanded submit-checklist' }

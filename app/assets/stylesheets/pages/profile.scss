@@ -54,12 +54,49 @@
     }
     .edit-enable {
       position: absolute;
-      top: 0;
+      top: 1px;
       right: 10px;
       width: 44px;
       cursor: pointer;
-      font-size: 30px;
+      font-size: 28px;
     }
   }
 
+
+  .checklist {
+    .intro-copy {
+      color: $black;
+      margin-bottom: 30px;
+      & > .row {
+        position: relative;
+      }
+    }
+    .intro-copy-item {
+      position: absolute;
+      left: 30px;
+      top: 13px;
+    }
+    .bullet {
+      font-size: 28px;
+      &.arrow-right {
+        margin-top: 20px;
+      }
+    }
+    .category-header {
+      &.plan {
+        background-color: $color-darkblue-3;
+      }
+      &.launch {
+        background-color: $color-darkblue-2;
+      }
+      &.grow {
+        background-color: $color-darkblue;
+      }
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: $white;
+    }
+
+  }
 }
