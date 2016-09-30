@@ -49,5 +49,14 @@ var ChecklistItem = React.createClass({
     )
   }
 });
-
-// <div className={'checkbox-toggle disabled'} onClick={this.enable} >&#8853;</div>
+var Checklist = React.createClass({
+  render: function () {
+    return (
+      <ul>
+        {this.props.items.map(function(item) {
+          return <ChecklistItem key={item.id} id={item.id} text={item.item_text} completed={item.completed} disabled={item.disabled} />
+        })}
+      </ul>
+    )
+  }
+});

@@ -11,6 +11,6 @@
               .title= page.label
               .subtitle= cms_block_content(:subtitle, page)
             .arrow-right.float-right
-        = render 'shared/checklist', category: checklist_category, embedded_in_form: false
+        = render 'shared/checklist', category: checklist_category, embedded_in_form: true
   - unless user_signed_in?
     = submit_tag "Save My Progress", { class: 'button primary expanded submit-checklist' }

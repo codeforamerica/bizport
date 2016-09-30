@@ -1,11 +1,9 @@
 - category
 
-%input{ type: 'hidden', name: 'categories[]', value: category }
-  %ul
-    -# if this is rendered in a CMS view, the controller can't set up @done_ids
-    - done_ids = @done_ids || (current_user.all_checklist_items.pluck(:id) if current_user) || []
-    - disabled_ids = @disabled_ids || (current_user.disabled_checklist_items.pluck(:id) if current_user) || []
-    - ChecklistItem.where(category: category).order(:order_number).each do |item|
-      - done = done_ids.include? item.id
-      - disabled = disabled_ids.include? item.id
-      = render 'shared/checklist_item', item_id: item.id, item_text: item.item_text, done: done, disabled: disabled
+- if user_signed_in?
+  - items = current_user.all_checklist_items.where(category: category).order(:order_number).map{ |item| item.with_state_for_user(current_user) }
+  = react_component('Checklist', {items: items, category: category})
+- else
+  %input{ type: 'hidden', name: 'categories[]', value: category }
+  - items = ChecklistItem.where(category: category).order(:order_number)
+  = react_component('Checklist', {items: items, category: category})

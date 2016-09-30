@@ -49,7 +49,7 @@ var Notebook = React.createClass({
     return (
       <div>
         <h3>Notebook</h3>
-        {this.state.items.map(function(item) {
+        {this.props.items.map(function(item) {
           return <NotebookItem key={item.slug} slug={item.slug} name={item.name} value={item.value} />
         })}
       </div>
