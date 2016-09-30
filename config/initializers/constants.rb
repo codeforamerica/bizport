@@ -3,7 +3,7 @@ NOTEBOOK_LABELS = {
   zip_code: 'Zip Code',
   e_account: 'E-Account Number',
   state_sellers_permit: "State Seller's Permit Number",
-  additional_state_license: 'Additional State Licnese Number',
+  additional_state_license: 'Additional State License Number',
   business_structure: 'Business Structure',
   dba_name: 'DBA Name',
   business_type: 'Business Type',

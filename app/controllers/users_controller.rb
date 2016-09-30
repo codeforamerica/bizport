@@ -28,10 +28,7 @@ class UsersController < ApplicationController
   def profile_update
     @user = current_user
     @user.get_notebook.update(notebook_params)
-    render(json: {
-             notebook: notebook_params,
-             status: 'OK'
-           })
+    render(json: { notebook: notebook_params })
   end
 
   private

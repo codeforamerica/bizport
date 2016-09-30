@@ -28,7 +28,7 @@
               %strong My Notebook
             .arrow
         .accordion-content{ "data-tab-content" => "true" }
-          = react_component('Notebook', items: @notebook_items)
+          = react_component('Notebook', { items: @notebook_items }, { class: 'notebook' })
     %ul.accordion.modules{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
       %li.accordion-item.modular-box{ "data-accordion-item" => "true" }
         %a.accordion-title.step-group-title.text-centered

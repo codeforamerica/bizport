@@ -29,4 +29,37 @@
       border-left: 1px solid $color-lightgray;
     }
   }
+
+  .notebook {
+    .notebook-item {
+      position: relative;
+    }
+    .notebook-item + .notebook-item {
+      border-top: 1px solid $color-darkgray;
+    }
+    p {
+      display: inline-block;
+    }
+    input {
+      width: 80%;
+      display: none;
+    }
+    .editing {
+      p {
+        display: none;
+      }
+      input {
+        display: inline-block;
+      }
+    }
+    .edit-enable {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 44px;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
+
 }
