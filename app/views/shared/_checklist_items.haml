@@ -2,8 +2,8 @@
 
 - if user_signed_in?
   - items = current_user.all_checklist_items.where(category: category).order(:order_number).map{ |item| item.with_state_for_user(current_user) }
-  = react_component('Checklist', {items: items, category: category})
+  = react_component('Checklist', {items: items, category: category}, {prerender: true})
 - else
   %input{ type: 'hidden', name: 'categories[]', value: category }
   - items = ChecklistItem.where(category: category).order(:order_number)
-  = react_component('Checklist', {items: items, category: category})
+  = react_component('Checklist', {items: items, category: category, static_form: true}, {prerender: true})

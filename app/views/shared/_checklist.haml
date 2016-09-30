@@ -1,7 +1,7 @@
 - category ||= param_1
 - embedded_in_form ||= false
 
-- if embedded_in_form
+- if embedded_in_form || user_signed_in?
   = render 'shared/checklist_items', category: category
 - else
   = form_tag(checklist_path, method: 'patch') do

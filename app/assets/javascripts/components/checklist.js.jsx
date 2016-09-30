@@ -38,10 +38,10 @@ var ChecklistItem = React.createClass({
     return (
       <li className={'checklist-item '+(this.state.disabled ? 'disabled' : 'enabled')} >
         <div className='checkbox-area'>
-          <input type='checkbox' id={'checklist-'+this.props.id} value={this.props.id} defaultChecked={this.props.completed} onChange={this.onChange} />
+          <input type='checkbox' id={'checklist-'+this.props.id} name='checklist_items[]' value={this.props.id} defaultChecked={this.props.completed} onChange={this.onChange} />
           <label htmlFor={'checklist-'+this.props.id}>{this.props.text}</label>
         </div>
-        <div className='checkbox-edit-triggers'>
+        <div className={'checkbox-edit-triggers ' + (this.props.staticForm ? 'hide' : '')} >
           <div className={'checkbox-toggle enable'} onClick={this.toggleDisabled} >&#8853;</div>
           <div className={'checkbox-toggle disable'} onClick={this.toggleDisabled} >&#8854;</div>
         </div>
@@ -51,10 +51,11 @@ var ChecklistItem = React.createClass({
 });
 var Checklist = React.createClass({
   render: function () {
+    var staticForm = this.props.static_form;
     return (
       <ul>
         {this.props.items.map(function(item) {
-          return <ChecklistItem key={item.id} id={item.id} text={item.item_text} completed={item.completed} disabled={item.disabled} />
+          return <ChecklistItem key={item.id} id={item.id} text={item.item_text} completed={item.completed} disabled={item.disabled} staticForm={staticForm} />
         })}
       </ul>
     )

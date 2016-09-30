@@ -6,7 +6,7 @@ module ChecklistHelper
         .where(checklist_items: { category: checklist_categories })
         .destroy_all
       checklist_items.each do |item|
-        user.accomplishments.create!(checklist_item: item)
+        user.accomplishments.create!(checklist_item: item, completed: true)
       end
     end
   end
