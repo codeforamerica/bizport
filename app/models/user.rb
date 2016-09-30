@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :accomplishments
+  has_many :accomplishments, dependent: :destroy
   has_many :checklist_items, through: :accomplishments
   has_many :custom_checklist_items, class_name: 'ChecklistItem', foreign_key: :created_by_user_id
   has_one :notebook
