@@ -4,7 +4,7 @@
 -# disabled | Boolean
 
 - if user_signed_in?
-  = react_component('ChecklistItem', {id: item_id, text: item_text, completed: done, disabled: disabled }, {tag: 'ul'})
+  = react_component('ChecklistItem', {id: item_id, text: item_text, completed: done, disabled: disabled }, {prerender: true, tag: 'ul'})
 - else
   %li.checklist-item
     %input{ type: 'checkbox', id: "checklist-#{item_id}", name: 'checklist_items[]', value: item_id, checked: done }

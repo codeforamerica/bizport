@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
       .where(accomplishments: { completed: true, user_id: id})
   end
 
+  def disabled_checklist_items
+    ChecklistItem.joins(:accomplishments)
+      .where(accomplishments: { disabled: true, user_id: id})
+  end
+
   def all_checklist_items
     ChecklistItem.where('created_by_user_id IS NULL or created_by_user_id = ?', id)
   end
