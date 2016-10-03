@@ -27,21 +27,23 @@
             %td= agency['name']
           %tr
             %td Contact:
-            - if agency['phone'].present?
-              %td 
-                %a{ href: "tel: #{agency['phone']}" }= agency['phone']
-            - if agency['fax'].present?
-              %td 
-                = agency['fax']
-            - if agency['street_address'].present?
-              %td 
-                = agency['street_address']
-            - if agency['email'].present?
-              %td 
-                %a{ href: "mailto: #{agency['email']}" }= agency['email']
-            - if agency['url'].present?
-              %td 
-                %a{ href: agency['url'] }= agency['url']
+            %td
+              - if agency['phone'].present?
+                %p
+                  %a{ href: "tel: #{agency['phone']}" }= agency['phone']
+              - if agency['fax'].present?
+                %p
+                  = agency['fax']
+                  (fax)
+              - if agency['street_address'].present?
+                %p
+                  = agency['street_address']
+              - if agency['email'].present?
+                %p
+                  %a{ href: "mailto: #{agency['email']}" }= agency['email']
+              - if agency['url'].present?
+                %p
+                  %a{ href: agency['url'] }= agency['url']
           %tr
             %td Application:
             %td
