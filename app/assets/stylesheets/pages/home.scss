@@ -12,6 +12,9 @@
     color: $color-darkblue-2;
     margin-bottom: 10px;
     line-height: 1.3;
+    .checklist-bullets {
+      @include font-opensans;
+    }
   }
 
   .step-card {

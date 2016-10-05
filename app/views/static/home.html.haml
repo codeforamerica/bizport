@@ -4,21 +4,19 @@
   - if user_signed_in?
     .hero
       .hero-copy
-        Welcome back,
-        %strong= current_user.email
-        (
-        =link_to('log out', destroy_user_session_path, method: :delete, style: "text-decoration: underline;")
-        )
         .margin-bottom-20
-        Starting a business is both exciting and challenging. We are here to help you navigate the process.
-      %a{ href: checklist_path }
-        .step-card.media-object
-          .media-object-section.middle
-            %i.icon.icon-checklist
-          .media-object-section.middle
-            %strong Check out your profile
-            %div • Track progress with a checklist
-            %div • Save funding opportunities
+          Welcome back,
+          %strong= current_user.email
+          (
+          =link_to('log out', destroy_user_session_path, method: :delete, style: "text-decoration: underline;")
+          )
+        .checklist-bullets
+          Now you can:
+          %ul
+            %li Track progress with the checklist
+            %li Save funding opportunities
+            %li Centralize key info for easy access
+        %a{ href: checklist_path, style: 'text-decoration: underline;' } Check out your profile
   - else
     .hero
       .hero-copy
