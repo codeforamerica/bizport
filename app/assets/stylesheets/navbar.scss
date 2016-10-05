@@ -45,8 +45,7 @@
   border: 1px solid white;
   border-radius: 0;
   padding: 5px;
-  @include font-opensans;
-  font-weight: bold;
+  @include font-raleway;
 }
 
 // override for dropdown menu carat
