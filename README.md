@@ -63,13 +63,13 @@ https://wiki.apache.org/httpd/13PermissionDenied
 
 ----------
 
-### CMS Content Type Examples
+## CMS Content Type Examples
 
-#### General
+### General
 
 Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.youtube.com/embed/3ZtdlSmlC44" }}`
 
-#### Step Pages
+### Step Pages
 
 ```html
 {{ cms:partial:shared/link_box:"https://paydirect.link2gov.com/LBCbuslicense/ItemSearch":"PAY":"Renewal Fee Online" }}
@@ -83,7 +83,19 @@ Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.you
   </div>
 ```
 
-#### Contact Page
+#### "Read More" Sections
+
+To make a section of content collapse if it goes beyond a certain height (presently set at 600px), simply add the class `readmore-section` to the div wrapper for that content block.
+
+Example:
+```html
+<div class='readmore-section'>
+  <h2>Title of This Section</h2>
+  <p>Copy for this section.</p>
+</div>
+```
+
+### Contact Page
 
 Each contact accordion section (for a particular agency, department, etc.) is created with the following code:
 
