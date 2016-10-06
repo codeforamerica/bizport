@@ -64,7 +64,13 @@ class ApplicationController < ActionController::Base
 
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(resource)
-    stored_location_for(resource) || request.referer || root_path
+    if params[:create_new_account] == 'true'
+      # corner case only used in profile view (profile.haml)
+      path = new_user_registration_path
+    else
+      path = (stored_location_for(resource) || request.referer || root_path)
+    end
+    path
   end
 
   def set_checklist_items!

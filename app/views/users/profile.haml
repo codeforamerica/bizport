@@ -20,6 +20,9 @@
             %strong Username:
             %div= @user.email
           %a.inline-block.margin-top-10{ href: users_edit_path, style: 'text-decoration: underline;' } Change Username or Password
+          .margin-top-10
+            If you have multiple businesses to keep track of, please
+            = link_to('create an account for each of them', destroy_user_session_path(create_new_account: 'true'), { style: "text-decoration: underline;", method: :delete })
     %ul.accordion.modules.notebook{ "data-accordion" => "true", "data-allow-all-closed" => "true" }
       %li.accordion-item.is-active.modular-box{ "data-accordion-item" => "true" }
         %a.accordion-title.step-group-title.text-centered
