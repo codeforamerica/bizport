@@ -7,8 +7,8 @@
     - # OPEN GRAPH
     - page_url = Comfy::Cms::Page.find_by_full_path(request.path).try(:url) || "bizport.longbeach.gov"
     %meta{:content => "http:#{page_url}", :property => "og:url"}/
-    %meta{:content => "BizPort | Long Beach Business Portal", :property => "og:title"}/
-    %meta{:content => "A centralized source of information for entrepreneurs in the City of Long Beach, California.", :property => "og:description"}/
+    %meta{:content => "Long Beach Business Portal", :property => "og:title"}/
+    %meta{:content => "Everything you need to plan, launch, and grow a business in Long Beach, California.", :property => "og:description"}/
     %meta{:content => ('http://bizport.longbeach.gov'+image_path('og_image.jpg')), :property => "og:image"}/
     %meta{:content => '1200', :property => "og:image:width"}/
     %meta{:content => '631', :property => "og:image:height"}/
@@ -17,8 +17,8 @@
     - # Twitter
     %meta{:content => "summary_large_image", :name => "twitter:card"}/
     %meta{:content => "@iteam_LongBeach", :name => "twitter:site"}/
-    %meta{:content => "BizPort | Long Beach Business Portal", :name => "twitter:title"}/
-    %meta{:content => "A centralized source of information for entrepreneurs in the City of Long Beach, California.", :name => "twitter:description"}/
+    %meta{:content => "Long Beach Business Portal", :name => "twitter:title"}/
+    %meta{:content => "Everything you need to plan, launch, and grow a business in Long Beach, California.", :name => "twitter:description"}/
     %meta{:content => ('http://bizport.longbeach.gov'+image_path('og_image.jpg')), :name => "twitter:image"}/
 
     %title= content_for?(:title) ? "Business Portal | "+yield(:title) : "Business Portal"
