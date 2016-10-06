@@ -1,15 +1,15 @@
-# TODO: this should actually read Rails.env.production?
-# this needs to be set up such that it can deploy on city server and Heroku equally smoothly
-if false 
-  directory '/var/www/bizport/current'
-  environment 'production'
-  workers 2
-  threads 1, 8
+workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+threads threads_count, threads_count
 
-  bind 'tcp://0.0.0.0:9951'
-  pidfile '/var/www/bizport/current/tmp/puma/pid'
-  state_path '/var/www/bizport/current/tmp/puma/state'
+preload_app!
 
-  preload_app!
-  activate_control_app
+rackup      DefaultRackup
+port        ENV['PORT']     || 3000
+environment ENV['RACK_ENV'] || 'development'
+
+on_worker_boot do
+  # Worker specific setup for Rails 4.1+
+  # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
+  ActiveRecord::Base.establish_connection
 end
