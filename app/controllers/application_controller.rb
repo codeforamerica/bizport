@@ -30,6 +30,16 @@ class ApplicationController < ActionController::Base
   end
   helper_method :page_slug
 
+  def category_class
+    category_class = ''
+    page = Comfy::Cms::Page.find_by(full_path: request.path)
+    ['plan','launch','grow'].each do |category_name|
+      category_class = category_name if (page && page.full_path.match(category_name).present?)
+    end
+    category_class
+  end
+  helper_method :category_class
+
   # Devise's `user_signed_in?` doesn't work when NotSignedInUser is present
   def user_signed_in?
     current_user.instance_of?(User) || false

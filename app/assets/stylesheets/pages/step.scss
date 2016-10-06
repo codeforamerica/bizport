@@ -89,3 +89,21 @@
   }
 
 }
+.plan {
+  .step-header,
+  .title-bar { 
+    background-color: $color-darkblue-3; 
+  }
+}
+.launch {
+  .step-header,
+  .title-bar { 
+    background-color: $color-darkblue-2; 
+  }
+}
+.grow {
+  .step-header,
+  .title-bar { 
+    background-color: $color-darkblue; 
+  }
+}

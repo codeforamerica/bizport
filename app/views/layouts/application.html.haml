@@ -21,7 +21,7 @@
     = stylesheet_link_tag 'print', media: 'print'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body.no-js{ class: yield(:body_class) }
+  %body.no-js{ class: [yield(:body_class), category_class].join(' ') }
     - if notice
       .notice.padding-all-10= notice
     - if alert
