@@ -1,5 +1,6 @@
-----------
+**This repository is under very active development, and may have undocumented or messy code. A more formal release of this code with better documentation will be available soon for cities looking to reuse the code for their own business portals.**
 
+----------
 # Setup Instructions
 
 Install Homebrew
