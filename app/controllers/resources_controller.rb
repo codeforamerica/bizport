@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
   require 'net/http'
 
-  API_URL = 'https://longbeachresources.tk/wm-api/'
+  API_URL = 'https://longbeach-resources.herokuapp.com/wm-api/'
 
   def new
     benefit_types_url = URI.parse(API_URL + 'benefit-type/')
