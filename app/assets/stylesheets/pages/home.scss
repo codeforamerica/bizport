@@ -83,7 +83,10 @@
     }
 
     &.plan .media-object { color: $color-darkblue-3; }
-    &.launch .media-object { color: $color-darkblue-2; }
+    &.launch {
+      .is-active .step-group-title { margin-bottom: 0; }
+      .media-object { color: $color-darkblue-2; }
+    }
     &.grow .media-object { color: $color-darkblue; }
 
     .media-object:hover { color: $white; }
