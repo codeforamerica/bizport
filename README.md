@@ -4,40 +4,42 @@
 # Setup Instructions
 
 Install Homebrew
-Check ruby version. If it's not 2.3.1, download this version and alter permissions as necessary (outlined here: https://github.com/Homebrew/legacy-homebrew/issues/17884)
+On certain versions of OSX, or if you've recently updated from an older version of OSX or Homebrew, you might have some permissions issues. This article may be helpful: https://github.com/Homebrew/legacy-homebrew/issues/17884
 
-Install rbenv
-Follow these instructions *exactly*. https://github.com/rbenv/rbenv#homebrew-on-mac-os-x
+Install `rbenv`
+BizPort specifies Ruby version 2.3.0 (in the `.ruby_version` file). To use a specific version of Ruby, you'll need a version managment package like `rvm` or `rbenv`. While either will work, we recommend `rbenv`.
+To install `rbenv`, follow these instructions *exactly*. https://github.com/rbenv/rbenv#homebrew-on-mac-os-x
 
 After rbenv has installed, navigate to the rails project's root directory (bizport) and source your bash profile in the shell. If you don't have postgres installed, brew install postgres. (Follow instructions here: https://launchschool.com/blog/how-to-install-postgresql-on-a-mac) <br>
 
 Install imagemagick. 
 ```
-brew install imagemagick
+$ brew install imagemagick
 ```
 
-Create your dev and test databases in psql. 
+Create your dev and test databases at the command line with the postgres shortcut `createdb`:
 ```
-create db bizport_development; 
+$ createdb bizport_development
 ```
 
 ```
-create db bizport_test
+$ createdb bizport_test
 ```
 
 Then execute the following commands. 
 
 ```
-gem install bundler
+$ gem install bundler
 ```
 
 ```
-bundle install
+$ bundle install
 ```
 
-Add a site object with the site name. 
+In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
 ```
-Comfy::Cms::Site.create(identifier:'bizport')
+$ bundle exec rails console
+> Comfy::Cms::Site.create(identifier:'bizport')
 ```
 
 Import fixtures. 
