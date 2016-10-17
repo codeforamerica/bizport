@@ -1,21 +1,17 @@
 **This repository is under very active development, and may have undocumented or messy code. A more formal release of this code with better documentation will be available soon for cities looking to reuse the code for their own business portals.**
 
 ----------
-# Setup Instructions
+# Development Setup Instructions (OSX)
 
-Install Homebrew
-On certain versions of OSX, or if you've recently updated from an older version of OSX or Homebrew, you might have some permissions issues. This article may be helpful: https://github.com/Homebrew/legacy-homebrew/issues/17884
+## Homebrew
+Homebrew is a package manager for system-level packages, and will help with installing a few libraries throughout the setup process. It can be installed by following the instructions at http://brew.sh/. On certain versions of OSX, or if you've recently updated from an older version of OSX or Homebrew, you might have some permissions issues. This article may be helpful: https://github.com/Homebrew/legacy-homebrew/issues/17884
 
-Install `rbenv`
+## `rbenv`
 BizPort specifies Ruby version 2.3.0 (in the `.ruby_version` file). To use a specific version of Ruby, you'll need a version managment package like `rvm` or `rbenv`. While either will work, we recommend `rbenv`.
 To install `rbenv`, follow these instructions *exactly*. https://github.com/rbenv/rbenv#homebrew-on-mac-os-x
 
-After rbenv has installed, navigate to the rails project's root directory (bizport) and source your bash profile in the shell. If you don't have postgres installed, brew install postgres. (Follow instructions here: https://launchschool.com/blog/how-to-install-postgresql-on-a-mac) <br>
-
-Install imagemagick. 
-```
-$ brew install imagemagick
-```
+## Postgres
+After rbenv has installed, navigate to the Rails project's root directory (bizport) and source your bash profile in the shell. If you don't have postgres installed, do so by using `brew install postgres` or another installation method of your choice (e.g. Postgres.app). (Follow instructions here: https://launchschool.com/blog/how-to-install-postgresql-on-a-mac)
 
 Create your dev and test databases at the command line with the postgres shortcut `createdb`:
 ```
@@ -26,16 +22,37 @@ $ createdb bizport_development
 $ createdb bizport_test
 ```
 
-Then execute the following commands. 
-
+## Imagemagick
+BizPort (more specifically, the CMS) uses the system package Imagemagick to compress and store uploaded images.
 ```
+$ brew install imagemagick
+```
+
+## Gems
+Rails uses Bundler (http://bundler.io/) to manage gem dependencies. Simply `cd` into the directory where you cloned this repo and run:
+
+```bash
 $ gem install bundler
-```
-
-```
 $ bundle install
 ```
 
+## Loading Seed Data
+
+There are two options for loading seed data: fixtures or a production database import. Fixtures are more portable if you're setting up on a computer without access to the production Heroku account. Importing direct from the Heroku account is likely to produce an environment with better production parity, and is the recommended approach.
+
+### Production Database Import
+Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
+First, install the Heroku CLI tool:
+```
+$ brew install heroku
+```
+Then `cd` into the repo folder and begin the database copy with:
+```
+$ heroku pg:pull DATABASE_URL bizport_development
+```
+Note that you may be prompted to drop your local database before pulling the new one. Also note that `DATABASE_URL` is the default name for the main DB URL of a Heroku application. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
+
+### Fixtures
 In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
 ```
 $ bundle exec rails console
@@ -49,22 +66,12 @@ To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:ex
 
 To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
 
+## Starting the Application
 
-----------
-setup key-based SSH
-
-
-Set secret key on remote server
-http://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-key-base-for-production-environment-on-h/26172408#26172408
+You should now be able to boot the application by running `bundle exec rails server` or simply `bundle exec rails s`. Visit `localhost:3000` to verify that everything is working. The homepage uses a blend of code and database content to render, and so is a fairly complete test that everything is set up correctly.
 
 
-Configure SELinux
-http://linux.die.net/man/8/getsebool
-https://wiki.apache.org/httpd/13PermissionDenied
-
-
-
-----------
+# CMS Editing Instructions
 
 ## CMS Content Type Examples
 
