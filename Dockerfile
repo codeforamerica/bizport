@@ -13,6 +13,10 @@ RUN apt-get install -y libqt4-webkit libqt4-dev xvfb
 RUN apt-get install -y nodejs
 # for imagemagick
 RUN apt-get install -y imagemagick
+# Heroku toolbelt
+RUN apt-get install -y sudo curl openssh-client git
+RUN curl https://toolbelt.heroku.com/install.sh | sh
+ENV PATH $PATH:/usr/local/heroku/bin
 
 # Configure the main working directory. This is the base 
 # directory used in any further RUN, COPY, and ENTRYPOINT 
