@@ -30,7 +30,7 @@ First, spin up the DB docker image:
 $ docker-compose up db
 ```
 
-Next, access the command line of the Bizport DB docker image, run:
+Next, access the command line of the Bizport DB docker image:
 ```
 $ docker exec -it bizport_db_1 /bin/bash
 ```
