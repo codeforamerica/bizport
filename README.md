@@ -64,7 +64,7 @@ There are two options for loading seed data: fixtures or a production database i
 Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
 First, access the command line of the Bizport DB docker image:
 ```
-$ docker exec -it bizport_db_1 /bin/bash
+$ docker exec -it bizport_web_1 /bin/bash
 ```
 Next, install the Heroku CLI tool and login with your Heroku account credentials:
 ```
