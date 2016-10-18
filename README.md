@@ -66,7 +66,7 @@ First, access the command line of the Bizport DB docker image:
 ```
 $ docker exec -it bizport_web_1 /bin/bash
 ```
-Next, install the Heroku CLI tool and login with your Heroku account credentials:
+Next, login to Heroku with your account credentials:
 ```
 $ heroku
 ```
