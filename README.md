@@ -1,16 +1,111 @@
 **This repository is under very active development, and may have undocumented or messy code. A more formal release of this code with better documentation will be available soon for cities looking to reuse the code for their own business portals.**
 
 ----------
-# Development Setup Instructions (OSX)
+# Development Setup Instructions
+- [Docker](#docker)
+- [Mac OS X / Mac OS](#mac-os-x)
 
-## Homebrew
+## Docker
+
+### What is Docker?
+>Docker containers wrap a piece of software in a complete filesystem that contains everything needed
+>to run: code, runtime, system tools, system libraries – anything that can be installed on a server.
+>This guarantees that the software will always run the same, regardless of its environment.
+[Docker - What is Docker?](https://www.docker.com/what-docker)
+
+#### Installing Docker
+The latest Docker downloads and setup instructions for your operating system can be found
+in the [Docker downloads page](https://www.docker.com/products/docker).
+
+### Getting Up and Running with Docker
+
+Build the Bizport docker image:
+```
+$ docker-compose build
+```
+
+#### Preparing the Database
+First, spin up the DB docker image:
+```
+$ docker-compose up db
+```
+
+Next, access the command line of the Bizport DB docker image, run:
+```
+$ docker exec -it bizport_db_1 /bin/bash
+```
+
+Switch to the `postgres` user:
+```
+$ su postgres
+```
+
+Create your dev and test databases at the command line with the postgres shortcut `createdb`:
+```
+$ createdb bizport_development
+```
+
+```
+$ createdb bizport_test
+```
+
+Close/terminate your bash sessions.
+
+Next, setup the database via rake: 
+```
+$ docker-compose run web rake db:setup
+```
+
+#### Loading Seed Data
+
+There are two options for loading seed data: fixtures or a production database import. Fixtures are more portable if you're setting up on a computer without access to the production Heroku account. Importing direct from the Heroku account is likely to produce an environment with better production parity, and is the recommended approach.
+
+##### Production Database Import
+Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
+First, access the command line of the Bizport DB docker image:
+```
+$ docker exec -it bizport_db_1 /bin/bash
+```
+Next, install the Heroku CLI tool and login with your Heroku account credentials:
+```
+$ heroku
+```
+Then begin the database copy with:
+```
+$ heroku pg:pull DATABASE_URL bizport_development
+```
+Note that you may be prompted to drop your local database before pulling the new one. Also note that `DATABASE_URL` is the default name for the main DB URL of a Heroku application. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
+
+##### Fixtures
+In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
+```
+$ docker-compose run web bundle exec rails console
+> Comfy::Cms::Site.create(identifier:'bizport')
+```
+
+Close/terminate the `web` image bash session.
+
+Import fixtures. 
+
+To *import* CMS fixtures: `docker-compose run web bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
+To *export* CMS fixtures: `docker-compose run web bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
+
+To copy CMS fixtures from remote to local: `docker-compose run web scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
+
+### Starting the Application
+
+You should now be able to boot the application by running `docker-compose up` or `docker-compose up web` if the `db` container is already running. Visit `localhost:3000` to verify that everything is working. The homepage uses a blend of code and database content to render, and so is a fairly complete test that everything is set up correctly.
+
+## Mac OS X
+
+### Homebrew
 Homebrew is a package manager for system-level packages, and will help with installing a few libraries throughout the setup process. It can be installed by following the instructions at http://brew.sh/. On certain versions of OSX, or if you've recently updated from an older version of OSX or Homebrew, you might have some permissions issues. This article may be helpful: https://github.com/Homebrew/legacy-homebrew/issues/17884
 
-## `rbenv`
+### `rbenv`
 BizPort specifies Ruby version 2.3.0 (in the `.ruby_version` file). To use a specific version of Ruby, you'll need a version managment package like `rvm` or `rbenv`. While either will work, we recommend `rbenv`.
 To install `rbenv`, follow these instructions *exactly*. https://github.com/rbenv/rbenv#homebrew-on-mac-os-x
 
-## Postgres
+### Postgres
 After rbenv has installed, navigate to the Rails project's root directory (bizport) and source your bash profile in the shell. If you don't have postgres installed, do so by using `brew install postgres` or another installation method of your choice (e.g. Postgres.app). (Follow instructions here: https://launchschool.com/blog/how-to-install-postgresql-on-a-mac)
 
 Create your dev and test databases at the command line with the postgres shortcut `createdb`:
@@ -22,13 +117,13 @@ $ createdb bizport_development
 $ createdb bizport_test
 ```
 
-## Imagemagick
+### Imagemagick
 BizPort (more specifically, the CMS) uses the system package Imagemagick to compress and store uploaded images.
 ```
 $ brew install imagemagick
 ```
 
-## Gems
+### Gems
 Rails uses Bundler (http://bundler.io/) to manage gem dependencies. Simply `cd` into the directory where you cloned this repo and run:
 
 ```bash
@@ -36,11 +131,11 @@ $ gem install bundler
 $ bundle install
 ```
 
-## Loading Seed Data
+### Loading Seed Data
 
 There are two options for loading seed data: fixtures or a production database import. Fixtures are more portable if you're setting up on a computer without access to the production Heroku account. Importing direct from the Heroku account is likely to produce an environment with better production parity, and is the recommended approach.
 
-### Production Database Import
+#### Production Database Import
 Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
 First, install the Heroku CLI tool:
 ```
@@ -52,7 +147,7 @@ $ heroku pg:pull DATABASE_URL bizport_development
 ```
 Note that you may be prompted to drop your local database before pulling the new one. Also note that `DATABASE_URL` is the default name for the main DB URL of a Heroku application. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
 
-### Fixtures
+#### Fixtures
 In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
 ```
 $ bundle exec rails console
@@ -66,10 +161,8 @@ To *export* CMS fixtures: `bundle exec rake comfortable_mexican_sofa:fixtures:ex
 
 To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
 
-## Starting the Application
-
+### Starting the Application
 You should now be able to boot the application by running `bundle exec rails server` or simply `bundle exec rails s`. Visit `localhost:3000` to verify that everything is working. The homepage uses a blend of code and database content to render, and so is a fairly complete test that everything is set up correctly.
-
 
 # CMS Editing Instructions
 
