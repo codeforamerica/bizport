@@ -1,5 +1,5 @@
 .row
-  - [ {step: 'plan', description: 'Getting your strategy together'}, {step: 'launch', description: 'Complying with rules to get your doors open'}, {step: 'grow', description: 'Opening your doors to the public'} ].each do |step_group|
+  - [ {step: 'plan', description: 'Getting your strategy together'}, {step: 'launch', description: 'Property type selection impacts number of steps below'}, {step: 'grow', description: 'Opening your doors to the public'} ].each do |step_group|
     - group_name = step_group[:step]
     - group_description = step_group[:description]
     %ul.step-group.accordion.columns.small-12.large-4{ class: "#{group_name}", 'data-accordion' => 'true', 'data-allow-all-closed' => 'true' }
@@ -15,7 +15,7 @@
             .step-card.choice-card.media-object{ style: 'height: initial; padding: 0;' }
               .text-center.choice-section.optional-disable
                 .row
-                  %p Home
+                  %p Home-based
                 .row
                   %i.icon.icon-freelancer
               .text-center.choice-section.optional-enable.selected
