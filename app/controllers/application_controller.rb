@@ -99,6 +99,6 @@ class ApplicationController < ActionController::Base
     end
 
     @done_ids = []
-    @done_ids = current_user.completed_checklist_items.pluck(:id) if current_user
+    @done_ids = current_user.completed_checklist_items.pluck(:id) if current_user.present?
   end
 end
