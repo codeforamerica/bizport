@@ -38,3 +38,9 @@ RUN gem install bundler && bundle install
 
 # Copy the main application.
 COPY . ./
+
+# Precompile Rails assets
+RUN bundle exec rake assets:precompile
+
+# CMD must be present or Heroku deploy will fail
+CMD bundle exec puma -C config/puma.rb

@@ -96,7 +96,15 @@ To copy CMS fixtures from remote to local: `docker-compose run web scp -r <usern
 
 You should now be able to boot the application by running `docker-compose up` or `docker-compose up web` if the `db` container is already running. Visit `localhost:3000` to verify that everything is working. The homepage uses a blend of code and database content to render, and so is a fairly complete test that everything is set up correctly.
 
-## Mac OS X
+### Deploying to Heroku Container Registry and Runtime
+Heroku's Container Registry and Runtime is a service specifically for deploying Docker containers. BizPort's docker-compose file specifies two containers, `web` and `db`, but Heroku will simply connect the `web` container to its hosted DB service, so we only need to deploy the `web` container.
+
+To do this, first log in to Heroku's Docker container registry: `heroku container:login`
+The application can then be deployed with `heroku container:push`
+
+That's it!
+
+## Mac OS X Setup (non-Docker option)
 
 ### Homebrew
 Homebrew is a package manager for system-level packages, and will help with installing a few libraries throughout the setup process. It can be installed by following the instructions at http://brew.sh/. On certain versions of OSX, or if you've recently updated from an older version of OSX or Homebrew, you might have some permissions issues. This article may be helpful: https://github.com/Homebrew/legacy-homebrew/issues/17884
