@@ -1,4 +1,5 @@
 class ChecklistsController < ApplicationController
+  # PATCH /checklist
   def update
     if user_signed_in?
       # "checklist_items"=>["164", "166", "168", "170"]
@@ -21,6 +22,7 @@ class ChecklistsController < ApplicationController
     end
   end
 
+  # PUT /checklist
   def update_item
     if user_signed_in?
       accomplishment = Accomplishment.find_or_create_by(

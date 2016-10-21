@@ -10,15 +10,16 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   root 'static#home'
-
-  get '/apply/:page', to: redirect('/launch/%{page}')
   get '/survey' => 'static#survey'
 
+  # redirect all 'apply' pages (old name) to matching 'launch' pages
+  get '/apply/:page', to: redirect('/launch/%{page}')
+
+  # redirect from original home of 'checklist' page to new 'profile' page
   get '/checklist', to: redirect('/profile')
+
   patch '/checklist' => 'checklists#update'
   put '/checklist' => 'checklists#update_item'
-
-  resources :subscriptions, only: [:create]
 
   get '/resources', to: redirect('/resources/search')
   get '/resources/search' => 'resources#new'
@@ -28,7 +29,9 @@ Rails.application.routes.draw do
 
   get '/reports/user_count'
 
-  get '/grow/obtain-funding', to: redirect('/resources/search') # covers a CMS route
+  # must come before CMS - covers a CMS route, redirecting to Resource Matching
+  get '/grow/obtain-funding', to: redirect('/resources/search')
+
   comfy_route :cms_admin, path: '/cms'
   comfy_route :cms, path: '/', sitemap: false # Make sure this routeset is defined last
 end
