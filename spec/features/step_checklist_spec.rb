@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'save a step page checklist' do
 
   context 'when not logged in' do
-    it 'should redirect the user back to the step page after signup' do
+    xit 'should redirect the user back to the step page after signup' do
       # any arbitrary CMS page is a good starting point
       starting_path = Comfy::Cms::Page.published.last.full_path
       visit starting_path
@@ -24,7 +24,7 @@ describe 'save a step page checklist' do
   end
 
   context 'when logged in' do
-    it 'should redirect back to the same step page' do
+    xit 'should redirect back to the same step page' do
       login_as(FactoryGirl.create(:user), scope: :user)
 
       # any arbitrary CMS page is a good starting point
