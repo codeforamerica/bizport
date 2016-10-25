@@ -172,7 +172,62 @@ To copy CMS fixtures from remote to local: `scp -r <username>@<host>:<path/to/ap
 ### Starting the Application
 You should now be able to boot the application by running `bundle exec rails server` or simply `bundle exec rails s`. Visit `localhost:3000` to verify that everything is working. The homepage uses a blend of code and database content to render, and so is a fairly complete test that everything is set up correctly.
 
+# Application Architecture
+
+## Request Routing and Rendering
+
+As with all Rails apps, `config/routes.rb` defines the way that routes are initially dispatched to controllers. Routes are read from top to bottom, with the first match taking precedence, and routes further down the file having lower priority. In BizPort, `routes.rb` contains a few types of routes:
+- "Static" routes that serve `haml` templates, managed by the StaticController. In spite of the name, these pages may still contain some dynamic content.
+- CMS routes (e.g. `comfy_route :cms_admin, path: '/cms'`), which delegates to the CMS for individual page lookups
+- Devise routes (e.g. `devise_for :users`), which delegate to the `devise` gem for user accounts/authentication/etc.
+- API routes (e.g. `put '/checklist'`), which provide an interface for front-end libs like React to modify DB records.
+
+### Static Routes
+These routes call StaticController, which will look for a template with the same name as the controller method called. I.e. a request for `static#home` will cause it to look for `home.haml`.
+
+### CMS Routes
+These paths are defined by creating pages in the CMS. Note that the CMS routes are placed near the bottom of `routes.rb` so that any named routes above will take precedence over CMS content.
+
+### Devise Routes
+Devise defines a set of default controllers for most things you'll want to do with users, signup, and login. In most cases, therefore, declaring `devise_for :users` to load the default routes is sufficient. Refer to the Devise docs for instructions overriding routes and controllers.
+
+### API Routes
+Serving as endpoints for the React portions of the site (`/profile` page at this point), these routes are *approximately* RESTful, but are probably ripe for some rearchitecting as the app grows and matures.
+
+## Page Rendering
+
+### Root Layout
+By Rails convention, all pages inherit by default from the site's master layout, `views/layouts/application.haml`. Consequently, this layout includes components present on every page like the sidebar, analytics code, and `<head>` `<meta>` tags. Child templates (i.e. pages that use this layout) are rendered at the `= yield` statement.
+
+### CMS Layouts
+The CMS has the ability to manage layouts as content (rather than code), but can also use code-based layouts, and include template partials inside CMS pages. All CMS pages *must* inherit from a root code-based layout - in BizPort, this is always `application.rb`.
+
+For any given CMS page, the path of template/layout inheritance can be traced by the following steps:
+1. In the CMS Pages editing interface, look at the "Layout" property for the page
+1. In the CMS Layouts editing interface, find the relevant layout. If the layout has a "Parent Layout", go to that parent layout and repeat this step.
+1. When you find a layout that does not have a "Parent Layout" value, look at the "App Layout" value. This is the name of the `html.haml` file in the codebase that is serving as the root layout. N.B.: As of `comfortable_mexican_sofa` `1.12.9`, this file *must* contain `html` in the file extension in order for the CMS to recognize it. This appears to be a bug, and is tracked in https://github.com/comfy/comfortable-mexican-sofa/issues/734
+
+Code-based partials can be included in pages with a special tag that the CMS provides: `{{ cms:partial:shared/partial_name:param_1:param_2 }}`. While it's possible to pass arguments to partials, these arguments cannot be named, and are simply called `param_1` and `param_2`. As a result, partials like `shared/_checklist.haml` often use the pattern `- category ||= param_1` at the top of the file to name these params when they're passed in from the CMS. More documentation on these types of CMS tags is available in the gem's wiki.
+
+## Structured Content
+Some parts of the application - the checklists and profile page in particular - rely on custom-structured content like checklists and form fields. This content is managed outside of the CMS, and can be viewed and edited via the ActiveAdmin interface at `/admin`.
+
+### Checklist Items
+
+### Glossary Items
+
+## React
+In order to allow users to edit their checklist and notebook on their Profile page without refreshing the page on each save, BizPort uses a front-end MVC framework, React, to make calls to an API for each user edit. React was chosen because, at time of writing (October 2016), it had a strong user base, was likely to continue to be supported for the next several years, provided an easy way to pre-render the page on the server (which helps with accessibility, slow internet connections, etc.), and seemed like a generally way to write modular JS.
+
+## Devise
+User accounts (signup and login) are managed with Devise, which is the most-used Ruby authentication gem. So far, the app only uses the email/password form of authentication, but modules are available for all manner of OAuth connections like Facebook and Twitter.
+
 # CMS Editing Instructions
+
+## Overview
+
+### Logging In
+To log in to the CMS, first visit `/admin` and enter your username and password. If you're already able to view the "dashboard" (should have a couple of graphs/charts on it) at `/admin`, then you're logged in! Once you're in, change the URL to `/cms` to get to the CMS editing view.
 
 ## CMS Content Type Examples
 
