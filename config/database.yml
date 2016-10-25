@@ -6,6 +6,8 @@ development:
   <<: *default
   pool: 5
   database: bizport_development
+  username: <%= 'postgres' if ENV['IS_DOCKER_CONTAINER'] %>
+  host: <%= 'bizport_db_1' if ENV['IS_DOCKER_CONTAINER'] %> 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -14,6 +16,8 @@ test:
   <<: *default
   pool: 10
   database: bizport_test
+  username: <%= 'postgres' if ENV['IS_DOCKER_CONTAINER'] %>
+  host: <%= 'bizport_db_1' if ENV['IS_DOCKER_CONTAINER'] %>
 
 production:
   <<: *default

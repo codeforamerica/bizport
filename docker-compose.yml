@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    ports:
+        - "5432:5432"
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/bizport
+    ports:
+      - "3000:3000"
+    entrypoint: ./docker-entry.sh
+    environment:
+      - IS_DOCKER_CONTAINER=true 
+    depends_on:
+      - db
