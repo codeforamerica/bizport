@@ -99,7 +99,10 @@ You should now be able to boot the application by running `docker-compose up` or
 ### Deploying to Heroku Container Registry and Runtime
 Heroku's Container Registry and Runtime is a service specifically for deploying Docker containers. BizPort's docker-compose file specifies two containers, `web` and `db`, but Heroku will simply connect the `web` container to its hosted DB service, so we only need to deploy the `web` container.
 
-To do this, first log in to Heroku's Docker container registry: `heroku container:login`
+If this is the first time you're using Heroku's container service, you'll need to install the plugin with `heroku plugins:install heroku-container-registry`
+Further setup instructions, if needed, are available at https://devcenter.heroku.com/articles/container-registry-and-runtime
+
+Log in to Heroku's Docker container registry: `heroku container:login`
 The application can then be deployed with `heroku container:push`
 
 That's it!
