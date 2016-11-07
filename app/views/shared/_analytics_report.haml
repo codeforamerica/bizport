@@ -1,0 +1,9 @@
+-# only used as a partial to include on the /analytics page,
+-# which is otherwise managed in the CMS
+-# this partial makes it easier to use chartkick stuff
+
+= javascript_include_tag "https://www.google.com/jsapi", "chartkick"
+
+-# Cumulative Users Over Time
+- sum = 0 # helper for chart on next line - can maybe be refactored out
+= line_chart User.where(role: nil).group_by_day(:created_at).order("day asc").count.map{ |x,y| { x => (sum += y)} }.reduce({}, :merge)
