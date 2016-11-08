@@ -18,13 +18,13 @@ gem 'react-rails'
 gem 'puma'
 
 gem 'devise'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.66'
 
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 gem 'sitemap_generator'
 
-gem 'comfortable_mexican_sofa'
+gem 'comfortable_mexican_sofa', git: 'https://github.com/rossettistone/comfortable-mexican-sofa', branch: 'markdown-fix'
 
 gem 'http'
 
@@ -32,8 +32,8 @@ gem 'newrelic_rpm'
 gem 'bugsnag'
 
 # For charts in /admin
-gem 'chartkick'
-gem 'groupdate'
+gem 'chartkick', '~> 1.5.0'
+gem 'groupdate', '~> 2.5.3'
 
 group :production do
   gem 'rails_12factor'
