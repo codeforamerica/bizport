@@ -1,7 +1,7 @@
 $(function(){
   // COMMENT HERE
   $('.readmore-section').each(function(index, el) {
-    var $readmoreGroup = $(el).nextUntil('h2').andSelf();
+    var $readmoreGroup = $(el).nextUntil('h2, .nextpage-button').andSelf();
     $readmoreGroup.wrapAll("<div class='readmore-group'></div>");
   });
 
