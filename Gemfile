@@ -56,7 +56,8 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'codeclimate-test-reporter', require: false
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
