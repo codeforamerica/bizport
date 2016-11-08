@@ -1,5 +1,11 @@
 $(function(){
-  $('.readmore-section').readmore({
+  // COMMENT HERE
+  $('.readmore-section').each(function(index, el) {
+    var $readmoreGroup = $(el).nextUntil('h2').andSelf();
+    $readmoreGroup.wrapAll("<div class='readmore-group'></div>");
+  });
+
+  $('.readmore-group').readmore({
     collapsedHeight: 300,
     heightMargin: 300,
     speed: 250,
@@ -7,9 +13,9 @@ $(function(){
     lessLink: '<a href="#" class="readmore text-center"><span class="arrow arrow-less"></span></a>',
 
     blockCSS: 'display: block;', // override default CSS, which has width settings that conflict with Foundation
-    
+
     // seems like these classes should be added by the library, but they're not...
-    beforeToggle: function(trigger, element, expanded) { 
+    beforeToggle: function(trigger, element, expanded) {
       if (!expanded) { // The "open" link was clicked
         $(element).addClass('readmore-expanded');
         $(element).removeClass('readmore-collapsed');

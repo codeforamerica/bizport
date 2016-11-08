@@ -41,7 +41,7 @@
     }
   }
 
-  .readmore-section {
+  .readmore-group {
     padding-left: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
     padding-right: 2px; // give room for box-shadow to show when inside overflow:hidden readmore containers
     position: relative; // gets the absolute positioning right for the :before pseudoelement below
@@ -51,7 +51,7 @@
     }
   }
 
-  .readmore-section[data-readmore]:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
+  .readmore-group[data-readmore]:not(.readmore-expanded):before { // transparent gradient overlay on readmore text blocks
     content: '';
     width: 100%;
     height: 100%;
