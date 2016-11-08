@@ -85,11 +85,12 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.5.2)
       execjs
-    aws-sdk (1.66.0)
-      aws-sdk-v1 (= 1.66.0)
-    aws-sdk-v1 (1.66.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
+    aws-sdk (2.6.18)
+      aws-sdk-resources (= 2.6.18)
+    aws-sdk-core (2.6.18)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.6.18)
+      aws-sdk-core (= 2.6.18)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -115,7 +116,7 @@ GEM
     capybara-webkit (1.11.1)
       capybara (>= 2.3.0, < 2.8.0)
       json
-    chartkick (1.5.0)
+    chartkick (1.5.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -195,6 +196,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    jmespath (1.3.1)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -217,7 +219,7 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
-    newrelic_rpm (3.17.0.325)
+    newrelic_rpm (3.17.1.326)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
@@ -359,7 +361,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   autoprefixer-rails
-  aws-sdk (~> 1.66)
+  aws-sdk
   bugsnag
   byebug
   capybara
