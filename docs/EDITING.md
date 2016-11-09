@@ -1,15 +1,60 @@
 # Content Editing Instructions
 
-## Overview
+## Becoming an Admin
+
+In order to edit content, you'll need to be made an "admin" user. Any existing admin user can do this for you by visiting the Users Admin page (`<your-site's-URL>/admin/users`) and creating a new user for you with admin privileges. If there are no existing Admin users, just let the software engineer who set up the application know that they need to create a user for you with the attribute `role: 'admin'`.
 
 ### Logging In
 To log in to the CMS, first visit `/admin` and enter your username and password. If you're already able to view the "dashboard" (should have a couple of graphs/charts on it) at `/admin`, then you're logged in! Once you're in, change the URL to `/cms` to get to the CMS editing view.
 
-## Writing in Markdown
+## Content Types
 
-The content in the CMS is stored as Markdown. This is a common open-source markup language that allows for easy-to-read text that renders with special formatting when users view a page.
+The content for most pages on BizPort is managed through the content management system (CMS), and can be edited by a non-technical user without coding knowledge. Most pages are made up of a few types of content:
+• CMS "Markdown" Content
+• CMS "Tag" Content
 
-http://dillinger.io/
+Here's a typical page on BizPort that contains all of these types:
+![Page content elements](https://github.com/codeforamerica/bizport/docs/images/page_content_elements.png)
+
+Each of these types is discussed in more detail below.
+
+### CMS "Markdown" Content
+The majority of BizPort content is text. In the CMS, this text is written using a common open-source programming language called Markdown. Markdown allows you to express text with formatting in a way that works on the web, but is easier to read than pure HTML (the alternative language that most sites use). 
+
+The official documentation for Markdown is available [here](https://daringfireball.net/projects/markdown/syntax), but one of the fastest ways to learn Markdown is by just trying it out in a live online editor like http://dillinger.io/. An editor like this allows you to edit Markdown on the left and see what the rendered result will be on the right.
+
+For examples and quick reference, here are some of the most commonly-used bits of Markdown syntax:
+
+```markdown
+[link to another page](http://longbeach.gov/)
+```
+[link to another page](http://longbeach.gov/)
+
+---
+
+```markdown
+ - Bullet 1
+ - Bullet 2
+ - Bullet 3
+```
+ - Bullet 1
+ - Bullet 2
+ - Bullet 3
+
+---
+
+```markdown
+ 1. Numbered Item 1
+ 1. Numbered Item 2
+ 1. Numbered Item 3
+```
+ 1. Numbered Item 1
+ 1. Numbered Item 2
+ 1. Numbered Item 3
+
+### CMS "Tag" Content
+
+Certain sections of content like links, maps, and contact buttons are more complex than simple text, and cannot be expressed with Markdown. 
 
 ## CMS Content Tags
 
