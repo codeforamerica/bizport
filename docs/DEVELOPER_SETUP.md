@@ -59,19 +59,43 @@ There are two options for loading seed data: fixtures or a production database i
 
 ##### Production Database Import
 Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
+
 First, access the command line of the Bizport DB docker image:
 ```
 $ docker exec -it bizport_web_1 /bin/bash
 ```
+
 Next, login to Heroku with your account credentials:
 ```
 $ heroku
 ```
-Then begin the database copy with:
+
+Afterward, create a new backup of the current state of the database:
 ```
-$ heroku pg:pull DATABASE_URL bizport_development
+$ heroku pg:backups capture --app bizport
 ```
-Note that you may be prompted to drop your local database before pulling the new one. Also note that `DATABASE_URL` is the default name for the main DB URL of a Heroku application. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
+
+Download the dump to the project delivery:
+```
+$ curl -o latest.dump `heroku pg:backups public-url --app bizport`
+```
+
+Next, access the command line of the Bizport DB docker image:
+```
+$ docker exec -it bizport_db_1 /bin/bash
+```
+
+cd to the `bizport` volume:
+```
+$ cd /bizport
+```
+
+Then restore from latest.dump with `pg_restore`:
+```
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d bizport_development latest.dump
+```
+
+Note that you may be prompted to drop your local database before pulling the new one. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
 
 ##### Fixtures
 In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
