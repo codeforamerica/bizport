@@ -60,7 +60,13 @@ There are two options for loading seed data: fixtures or a production database i
 ##### Production Database Import
 Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
 
-First, access the command line of the Bizport DB docker image:
+If you have not spun up the web image yet, do so now:
+```
+$ docker-compose up web
+```
+
+Access the command line of the Bizport DB docker image:
+
 ```
 $ docker exec -it bizport_web_1 /bin/bash
 ```
@@ -108,7 +114,7 @@ Close/terminate the `web` image bash session.
 
 Import fixtures. 
 
-To *import* CMS fixtures: `heroku run bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
+To *import* CMS fixtures: `docker-compose run web bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
 To *export* CMS fixtures: `heroku run bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
 
 To copy CMS fixtures from remote to local: `docker-compose run web scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
