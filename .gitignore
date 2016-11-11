@@ -24,5 +24,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore system files
+# Ignore misc files
 .DS_Store
+
+# Ignore postgres dumps
+*.dump
