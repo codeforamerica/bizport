@@ -10,16 +10,16 @@ To log in to the CMS, first visit `/admin` and enter your username and password.
 ## Content Types
 
 The content for most pages on BizPort is managed through the content management system (CMS), and can be edited by a non-technical user without coding knowledge. Most pages are made up of a few types of content:
-• CMS "Markdown" Content
-• CMS "Tag" Content
+ - CMS "Markdown" Content
+ - CMS "Tag" Content
 
 Here's a typical page on BizPort that contains all of these types:
-![Page content elements](https://github.com/codeforamerica/bizport/docs/images/page_content_elements.png)
+![Page content elements](images/page_content_elements.png)
 
 Each of these types is discussed in more detail below.
 
 ### CMS "Markdown" Content
-The majority of BizPort content is text. In the CMS, this text is written using a common open-source programming language called Markdown. Markdown allows you to express text with formatting in a way that works on the web, but is easier to read than pure HTML (the alternative language that most sites use). 
+The majority of BizPort content is text. In the CMS, this text is written using a common open-source programming language called Markdown. Markdown allows you to express text with formatting in a way that works on the web, but is easier to read than pure HTML (the alternative language that most sites use).
 
 The official documentation for Markdown is available [here](https://daringfireball.net/projects/markdown/syntax), but one of the fastest ways to learn Markdown is by just trying it out in a live online editor like http://dillinger.io/. An editor like this allows you to edit Markdown on the left and see what the rendered result will be on the right.
 
@@ -52,9 +52,11 @@ For examples and quick reference, here are some of the most commonly-used bits o
  1. Numbered Item 2
  1. Numbered Item 3
 
+Note that your items will magically be numbered in order if you just put `1.` in front of all of them!
+
 ### CMS "Tag" Content
 
-Certain sections of content like links, maps, and contact buttons are more complex than simple text, and cannot be expressed with Markdown. 
+Certain sections of content like links, maps, and contact buttons are more complex than simple text, and cannot be expressed with Markdown.
 
 ## CMS Content Tags
 
@@ -75,21 +77,26 @@ Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.you
 {{ cms:partial:shared/contact_box:"phone":"(562) 570-6105" }}
 {{ cms:partial:shared/contact_box:"email":"test@example.com" }}
 
- <div class='callout'>
-    NOTE:
-  </div>
+
 ```
+
+To create a visually distinct box for high-priority information, use the `callout` class right below the content you want to highlight.
+```markdown
+NOTE: Do not sign a lease until you've checked with the city to make sure the building can be used for your type of business.
+{: .callout}
+```
+![Page content elements](images/callout.png)
 
 #### "Read More" Sections
 
-To make a section of content collapse if it goes beyond a certain height (presently set at 600px), simply add the class `readmore-section` to the div wrapper for that content block.
+To make a section of content collapse if it goes beyond a certain height (presently set at 600px), simply add the class `readmore-section` right underneath the header of that section.
 
 Example:
-```html
-<div class='readmore-section'>
-  <h2>Title of This Section</h2>
-  <p>Copy for this section.</p>
-</div>
+```markdown
+## Title of This Section
+{: .readmore-section}
+
+Copy for this section.
 ```
 
 ### Contact Page
