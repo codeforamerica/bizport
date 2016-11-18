@@ -56,19 +56,21 @@ Note that your items will magically be numbered in order if you just put `1.` in
 
 ### CMS "Tag" Content
 
-Certain sections of content like links, maps, and contact buttons are more complex than simple text, and cannot be expressed with Markdown.
-
-## CMS Content Tags
-
-The CMS
+The CMS supports a special syntax, called a "tag" (`{{...}}`), that allows you to write a small amount of code and get back a complex item on the page like a map or button. Below are the tags that have currently been created for BizPort. A software engineer can build new ones if you have a need not provided for here.
 
 ### General
 
-The following tags can be used anywhere.
+Tags are structured as follows:
+ - `cms:partial:`: They always start with this - this tells the CMS that it's a tag
+ - `shared/<name-of-tag>`: Which type of tag it is
+ - `:<argument-1>:<argument-2>:<etc>`: Any "arguments" (additional pieces of information) that the tag needs in order to display what you want. This information will be different for eacy type of tag. Have a look at some of the examples below to get an idea of what those different pieces of info might be. Keep in mind that the *order of this information is important*. For example, a `shared/contact_box_combo` tag always needs phone number first, then email, resulting in `{{ cms:partial:shared/contact_box_combo:"(562) 570-6211":"LBBIZ@longbeach.gov" }}`
 
-Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.youtube.com/embed/3ZtdlSmlC44" }}`
+### Video Tag
+This tag can be used anywhere to create a Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.youtube.com/embed/3ZtdlSmlC44" }}`
 
-### Step Pages
+### Info Category Pages
+
+The following tags can be used on the "info category" pages throughout the site - the pages on how to start a business that are linked from the homepage and comprise most of the structure of the site.
 
 ```html
 {{ cms:partial:shared/link_box:"https://paydirect.link2gov.com/LBCbuslicense/ItemSearch":"PAY":"Renewal Fee Online" }}
@@ -76,8 +78,6 @@ Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.you
 {{ cms:partial:shared/contact_box_combo:"(562) 570-6211":"LBBIZ@longbeach.gov" }}
 {{ cms:partial:shared/contact_box:"phone":"(562) 570-6105" }}
 {{ cms:partial:shared/contact_box:"email":"test@example.com" }}
-
-
 ```
 
 To create a visually distinct box for high-priority information, use the `callout` class right below the content you want to highlight.
