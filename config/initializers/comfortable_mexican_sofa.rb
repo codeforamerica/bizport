@@ -39,6 +39,7 @@ ComfortableMexicanSofa.configure do |config|
     config.upload_file_options = {
       storage: :s3,
       s3_protocol: '',
+      s3_region: 'us-east-1',
       s3_credentials: {
         bucket: Rails.application.secrets.bucketeer_bucket_name,
         access_key_id: Rails.application.secrets.bucketeer_aws_access_key_id,
