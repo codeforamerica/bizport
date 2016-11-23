@@ -29,3 +29,6 @@
 
 # Ignore postgres dumps
 *.dump
+
+# Ignore CMS fixtures
+/db/cms_fixtures/bizport/*
