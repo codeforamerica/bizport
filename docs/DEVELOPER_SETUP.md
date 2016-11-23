@@ -27,27 +27,6 @@ First, spin up the DB docker image:
 $ docker-compose up db
 ```
 
-Next, access the command line of the Bizport DB docker image:
-```
-$ docker exec -it bizport_db_1 /bin/bash
-```
-
-Switch to the `postgres` user:
-```
-$ su postgres
-```
-
-Create your dev and test databases at the command line with the postgres shortcut `createdb`:
-```
-$ createdb bizport_development
-```
-
-```
-$ createdb bizport_test
-```
-
-Close/terminate your bash sessions.
-
 Next, setup the database via rake: 
 ```
 $ docker-compose run web rake db:setup
@@ -60,12 +39,12 @@ There are two options for loading seed data: fixtures or a production database i
 ##### Production Database Import
 Heroku provides a database import feature. Because importing an entire database is a major operation, and has the potential to overwrite or destroy data, the command line utility has several warnings before it begins work.
 
-If you have not spun up the web image yet, do so now:
+If the `web` container isn't running, you can spin it up by running:
 ```
 $ docker-compose up web
 ```
 
-Access the command line of the Bizport DB docker image:
+First access the command line of the Bizport DB docker image:
 
 ```
 $ docker exec -it bizport_web_1 /bin/bash
@@ -81,30 +60,37 @@ Afterward, create a new backup of the current state of the database:
 $ heroku pg:backups capture --app bizport
 ```
 
-Download the dump to the project delivery:
+Download the dump to the project directory:
 ```
 $ curl -o latest.dump `heroku pg:backups public-url --app bizport`
 ```
+
+Close/terminate the `web` image bash session after downloading the dump.
 
 Next, access the command line of the Bizport DB docker image:
 ```
 $ docker exec -it bizport_db_1 /bin/bash
 ```
 
-cd to the `bizport` volume:
-```
-$ cd /bizport
-```
-
 Then restore from latest.dump with `pg_restore`:
 ```
-$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d bizport_development latest.dump
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d bizport_development /bizport/latest.dump
 ```
 
-Note that you may be prompted to drop your local database before pulling the new one. If this doesn't work, you can use `heroku pg:info` to check the correct URL name for your database.
+Afterward, you need to set the hostname field of the CMS site to `bizport`:
+```
+$ psql -U postgres -d bizport_development -c "UPDATE comfy_cms_sites SET hostname = 'bizport'"
+```
+
+Close/terminate the `bizport_db_1` image bash session. You are now ready to [start the web application](#starting-the-application).
 
 ##### Fixtures
-In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this, open the Rails console and add a site object with the site name.
+
+Instead of reading CMS content from our development database, you can choose to work with CMS fixtures. Comfortable Mexican Sofa allows you to build your entire site using files instead of updating the database via the admin area. This significantly speeds up initial content population and is especially useful if you are deploying this site from scratch within your city or organization. 
+
+Before continuing with CMS fixtures, you will need to go to the initializer and set this to enable fixtures in development environment: `config.enable_fixtures = Rails.env.development?`.
+
+In order to load the `bizport` CMS fixtures, the CMS needs to have a `Site` object in the DB called `bizport` with which to associate the fixtures. To do this open the Rails console and add a site object with the site name:
 ```
 $ docker-compose run web bundle exec rails console
 > Comfy::Cms::Site.create(identifier:'bizport')
@@ -112,12 +98,11 @@ $ docker-compose run web bundle exec rails console
 
 Close/terminate the `web` image bash session.
 
-Import fixtures. 
+###### Importing/exporting fixtures
 
 To *import* CMS fixtures: `docker-compose run web bundle exec rake comfortable_mexican_sofa:fixtures:import FROM=bizport TO=bizport`
-To *export* CMS fixtures: `heroku run bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
 
-To copy CMS fixtures from remote to local: `docker-compose run web scp -r <username>@<host>:<path/to/app/folder>/db/cms_fixtures/bizport db/cms_fixtures/`
+To *export* CMS fixtures: `docker-compose run web heroku run bundle exec rake comfortable_mexican_sofa:fixtures:export FROM=bizport TO=bizport`
 
 ### Starting the Application
 
