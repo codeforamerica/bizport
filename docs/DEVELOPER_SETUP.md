@@ -79,7 +79,7 @@ $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d b
 
 Afterward, you need to set the hostname field of the CMS site to `bizport`:
 ```
-$ psql -U postgres -d bizport_development -c "UPDATE comfy_cms_sites SET hostname = 'bizport'"
+$ psql -U postgres -d bizport_development -c "UPDATE comfy_cms_sites SET hostname = 'bizport' WHERE identifier = 'bizport'"
 ```
 
 Close/terminate the `bizport_db_1` image bash session. You are now ready to [start the web application](#starting-the-application).
