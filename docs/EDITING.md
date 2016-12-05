@@ -63,7 +63,7 @@ The CMS supports a special syntax, called a "tag" (`{{...}}`), that allows you t
 Tags are structured as follows:
  - `cms:partial:`: They always start with this - this tells the CMS that it's a tag
  - `shared/<name-of-tag>`: Which type of tag it is
- - `:<argument-1>:<argument-2>:<etc>`: Any "arguments" (additional pieces of information) that the tag needs in order to display what you want. This information will be different for eacy type of tag. Have a look at some of the examples below to get an idea of what those different pieces of info might be. Keep in mind that the *order of this information is important*. For example, a `shared/contact_box_combo` tag always needs phone number first, then email, resulting in `{{ cms:partial:shared/contact_box_combo:"(562) 570-6211":"LBBIZ@longbeach.gov" }}`
+ - `:<argument-1>:<argument-2>:<etc>`: Any "arguments" (additional pieces of information) that the tag needs in order to display what you want. This information will be different for each type of tag. Have a look at some of the examples below to get an idea of what those different pieces of info might be. Keep in mind that the *order of this information is important*. For example, a `shared/contact_box_combo` tag always needs phone number first, then email, resulting in `{{ cms:partial:shared/contact_box_combo:"(562) 570-6211":"LBBIZ@longbeach.gov" }}`
 
 ### Video Tag
 This tag can be used anywhere to create a Youtube video embed: `{{ cms:partial:shared/video_embed_youtube:"https://www.youtube.com/embed/3ZtdlSmlC44" }}`
