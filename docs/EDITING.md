@@ -56,12 +56,6 @@ Note that your items will magically be numbered in order if you just put `1.` in
 
 ---
 
-```markdown
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-```
 It is possible to use inline Markdown syntax for [tables](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables), but that is not recommended. To create responsive/mobile-friendly tables, use full HTML markup with an appropriate responsive modifier instead. Find available responsive modifiers in Foundation's [docs](https://foundation.zurb.com/sites/docs/table.html). 
 
 ```html
