@@ -54,6 +54,24 @@ For examples and quick reference, here are some of the most commonly-used bits o
 
 Note that your items will magically be numbered in order if you just put `1.` in front of all of them!
 
+---
+
+```markdown
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+```
+It is possible to use inline Markdown syntax for [tables](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables), but that is not recommended. To create responsive/mobile-friendly tables, use full HTML markup with an appropriate responsive modifier instead. Find available responsive modifiers in Foundation's [docs](https://foundation.zurb.com/sites/docs/table.html). 
+
+```html
+<div class="table-scroll">
+  <table></table>
+</div>
+```
+
+In the example above, the responsive modifier is `table-scroll` and follows the keyword `class`.
+
 ### CMS "Tag" Content
 
 The CMS supports a special syntax, called a "tag" (`{{...}}`), that allows you to write a small amount of code and get back a complex item on the page like a map or button. Below are the tags that have currently been created for BizPort. A software engineer can build new ones if you have a need not provided for here.
