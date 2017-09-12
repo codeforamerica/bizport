@@ -1,4 +1,4 @@
-class CreateSubscriptions < ActiveRecord::Migration[5.0]
+class CreateSubscriptions < ActiveRecord::Migration
   def change
     create_table :subscriptions do |t|
       t.string :email
