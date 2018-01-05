@@ -9,14 +9,14 @@ describe 'admin authorization' do
   context 'with a logged-in user' do
     context "with role: nil" do
       it 'should throw a 404 when a non-admin user tries to view /admin' do
-        user = FactoryGirl.create(:user, role: nil)
+        user = FactoryBot.create(:user, role: nil)
         login_as(user, scope: :user, run_callbacks: false)
         expect{ visit '/admin' }.to raise_error(ActionController::RoutingError)
       end
     end
     context "with a role: '' user" do
       it 'should throw a 404 when a non-admin user tries to view /admin' do
-        user = FactoryGirl.create(:user, role: nil)
+        user = FactoryBot.create(:user, role: nil)
         login_as(user, scope: :user, run_callbacks: false)
         expect{ visit '/admin' }.to raise_error(ActionController::RoutingError)
       end

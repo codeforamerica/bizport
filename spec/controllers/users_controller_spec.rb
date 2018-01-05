@@ -10,7 +10,7 @@ describe UsersController, type: :controller do
     end
   end
   context 'with a logged-in user' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     before :each do
       sign_in user
     end

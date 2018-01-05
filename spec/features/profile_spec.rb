@@ -18,7 +18,7 @@ describe 'the profile page', type: :feature do
 
   context 'user is signed in' do
     xit 'lets users save their checked items' do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       login_as(user, scope: :user, run_callbacks: false)
 
       visit '/profile'

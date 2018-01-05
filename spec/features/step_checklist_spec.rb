@@ -25,7 +25,7 @@ describe 'save a step page checklist' do
 
   context 'when logged in' do
     xit 'should redirect back to the same step page' do
-      login_as(FactoryGirl.create(:user), scope: :user)
+      login_as(FactoryBot.create(:user), scope: :user)
 
       # any arbitrary CMS page is a good starting point
       starting_path = Comfy::Cms::Page.published.last.full_path

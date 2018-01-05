@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe ChecklistsController do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   xdescribe '#show' do
     context 'with a logged-in user' do
