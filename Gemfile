@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby "2.3.0"
+ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
-gem 'pg'
+gem 'rails', '4.2.10'
+gem 'pg', '~> 1.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
 
@@ -20,11 +20,11 @@ gem 'puma'
 gem 'devise'
 gem 'aws-sdk'
 
-gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'activeadmin'
 
 gem 'sitemap_generator'
 
-gem 'comfortable_mexican_sofa', git: 'https://github.com/rossettistone/comfortable-mexican-sofa', branch: 'markdown-fix'
+gem 'comfortable_mexican_sofa', git: 'https://github.com/rossettistone/comfortable-mexican-sofa', branch: 'markdown-fix-1.12.10'
 
 gem 'http'
 
