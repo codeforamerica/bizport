@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.5.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.10'
-gem 'pg', '~> 1.0.0'
+gem 'rails', '4.2.11.1'
+gem 'pg', '~> 0.21'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
 
@@ -17,7 +16,7 @@ gem 'react-rails'
 
 gem 'puma'
 
-gem 'devise'
+gem 'devise', '~> 4.4.3'
 gem 'aws-sdk'
 
 gem 'activeadmin'
@@ -54,7 +53,7 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
-  gem 'capybara'
+  gem 'capybara', '~> 2.7.1'
   gem 'capybara-webkit'
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
